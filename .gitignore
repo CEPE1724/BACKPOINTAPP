@@ -1,0 +1,37 @@
+# Node.js modules
+node_modules/
+
+# Expo directories
+.expo/
+
+# Build directories
+dist/
+web-build/
+
+# Logs
+npm-debug.*
+yarn-debug.log*
+yarn-error.log*
+
+# Credentials and secrets files
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# macOS system files
+.DS_Store
+
+# Environmental variable files
+.env
+
+# IDE and editor directories
+.vscode/
+.idea/
+
+# OS-generated files
+Thumbs.db
+
+ApiCobrador/api/key/credentials.json
