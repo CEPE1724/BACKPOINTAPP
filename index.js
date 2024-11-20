@@ -54,7 +54,7 @@ const routes = [
     require('./ApiCobrador/api/googleApi/router'),
     require('./ApiCobrador/api/SolicitudNCListaProductos/router'),
     require('./ApiCobrador/api/GestionDiaria/router'),
-    require('./Equifax/api/InsertData/router')
+    require('./Equifax/api/EQFX_IdentificacionConsultada/router')
 ];
 
 // Inicializa la conexión a la base de datos
@@ -74,7 +74,7 @@ initializeDatabase()
         });
 
         // Iniciar el servidor
-        const port = process.env.PORT || 3025;
+        const port = process.env.PORT || 3035;
         server.listen(port, '0.0.0.0', () => {
             console.log(`Server is running on port ${port}`);
         });

@@ -15,6 +15,13 @@ const entities = [
     require('../TerrenaGestionDomicilio/model'),
     require('../TerrenaGestionTrabajo/model'),
     require('../GestionDiaria/model'),
+    require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
+    require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
+    require('../../../Equifax/api/EQFX_ResultadoPoliticas/model'),
+    require('../../../Equifax/api/EQFX_ScorePuntajeyGraficoV3/model'),
+    require('../../../Equifax/api/EQFX_DeudaReportadaINFOCOM/model'),
+    require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoSICOM/model'),
+    require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoEducativo/model'),
 ];
 
 const AppDataSource = new DataSource({
