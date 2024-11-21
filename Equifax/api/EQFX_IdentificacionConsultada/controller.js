@@ -6,6 +6,12 @@ const EQFX_ScorePuntajeyGraficoV3 = require("../EQFX_ScorePuntajeyGraficoV3/mode
 const EQFX_DeudaReportadaINFOCOM = require("../EQFX_DeudaReportadaINFOCOM/model");
 const EQFX_EvolucionHistoricaDistEndeudamientoSICOM = require("../EQFX_EvolucionHistoricaDistEndeudamientoSICOM/model");
 const EQFX_EvolucionHistoricaDistEndeudamientoEducativo = require("../EQFX_EvolucionHistoricaDistEndeudamientoEducativo/model"); 
+const EQFX_DeudaTotalSICOM = require("../EQFX_DeudaTotalSICOM/model");
+const EQFX_CuotaEstimadaMensualWeb = require("../EQFX_CuotaEstimadaMensualWeb/model");
+const EQFX_AnalisisSaldosPorVencerSistemaFinanciero = require("../EQFX_AnalisisSaldosPorVencerSistemaFinanciero/model");
+const EQFX_HistorialCrediticio = require("../EQFX_HistorialCrediticio/model");
+const EQFX_PerfilRiesgoDirecto = require("../EQFX_PerfilRiesgoDirecto/model");
+const EQFX_EvolucionHistoricaDistEndeudamiento = require("../EQFX_EvolucionHistoricaDistEndeudamiento/model");
 exports.allInsert = async (req, res) => {
   // Desestructurar los objetos recibidos en el body
   const {
@@ -15,7 +21,13 @@ exports.allInsert = async (req, res) => {
     scorePuntaje,
     deudaReportada,
     evolucionHistorica,
-    detalleDistribucionEndeudamientoEducativo
+    detalleDistribucionEndeudamientoEducativo,
+    deudaTotalSegmentosSinIESS,
+    cuotaData,
+    obtenerAnalisisSaldosPorVencerSistemaFinanciero,
+    mantieneHistorialCrediticioDesde,
+    ObtenerIdentificadorPerfilRiesgoDirecto,
+    RecursivoComposicionEstructuraVencimiento
 
   } = req.body;
 
@@ -160,11 +172,107 @@ exports.allInsert = async (req, res) => {
         TarjetaCredito : detalle.tarjetaCredito,
         AcuerdoConcordatorio : detalle.acuerdoConcordatorio,
         Detalle : detalle.detalle,
-        ResaltadaInv : detalle.resaltadaInv
+        ResaltadaInv : detalle.resaltadaInv,
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada
       };
       await queryRunner.manager.save(EQFX_EvolucionHistoricaDistEndeudamientoEducativo, distribucionEndeudamientoEducativo);
     }
 
+    // Insertar la deuda total SICOM si existe en el array deudaTotalSegmentosSinIESS
+    for (const deuda of deudaTotalSegmentosSinIESS) {
+      const deudaTotalSICOM = {
+        Titulo: deuda.titulo,
+        TituloWSInv: deuda.tituloWSInv,
+        PorVencer: deuda.porVencer,
+        NoDevengaInt: deuda.noDevengaInt,
+        Vencido: deuda.vencido,
+        Total: deuda.total,
+        DemandaJudicial: deuda.demandaJudicial,
+        CarteraCastigada: deuda.carteraCastigada,
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada
+      };
+      await queryRunner.manager.save(EQFX_DeudaTotalSICOM, deudaTotalSICOM);
+    }
+
+    // Insertar la cuota estimada mensual web si existe en el array cuotaEstimadaMensualWeb
+    for (const cuota of cuotaData) {
+      const cuotaData = {
+        Pago: cuota.pago,
+        NumeroCreditosComercial: cuota.numeroCreditosComercial,
+        TotalVencido: cuota.totalVencido,
+        TotalDemanda: cuota.totalDemanda,
+        TotalCartera: cuota.totalCartera,
+        NumeroCreditosIece: cuota.numeroCreditosIece,
+        NumeroOperacionesExcluidas: cuota.numeroOperacionesExcluidas,
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada
+      };
+      await queryRunner.manager.save(EQFX_CuotaEstimadaMensualWeb, cuotaData);
+    }
+
+    // Insertar el análisis de saldos por vencer en el sistema financiero si existe en el array obtenerAnalisisSaldosPorVencerSistemaFinanciero
+    for (const analisis of obtenerAnalisisSaldosPorVencerSistemaFinanciero) {
+      const analisisSaldosPorVencerSistemaFinanciero = {
+        FechaCorte: analisis.fechaCorte ? analisis.fechaCorte.split('T')[0] + ' ' + analisis.fechaCorte.split('T')[1].split('-')[0] : null, // Formatear la fecha eliminando la zona horaria
+        Institucion: analisis.institucion,
+        TipoCredito: analisis.tipoCredito,
+        SaldoVencido: analisis.saldoVencido,
+        SaldoPorVencer: analisis.saldoPorVencer,
+        SaldoTotal: analisis.saldoTotal,
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada
+      };
+      await queryRunner.manager.save(EQFX_AnalisisSaldosPorVencerSistemaFinanciero, analisisSaldosPorVencerSistemaFinanciero);
+    }
+
+    // Insertar el historial crediticio si existe en el array mantieneHistorialCrediticioDesde
+    for (const historial of mantieneHistorialCrediticioDesde) {
+      const historialCrediticio = {
+        Titulo: historial.titulo,
+        PrimeraFecha: historial.primeraFecha ? historial.primeraFecha.split('T')[0] + ' ' + historial.primeraFecha.split('T')[1].split('-')[0] : null, // Formatear la fecha eliminando la zona horaria
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada
+      };
+      await queryRunner.manager.save(EQFX_HistorialCrediticio, historialCrediticio);
+    }
+
+    // Insertar el perfil de riesgo directo si existe en el array ObtenerIdentificadorPerfilRiesgoDirecto
+    for (const perfil of ObtenerIdentificadorPerfilRiesgoDirecto) {
+      const perfilRiesgoDirecto = {
+        Indicador: perfil.indicador,
+        Valor: perfil.valor,
+        Fecha: perfil.fecha ? perfil.fecha.split('T')[0] + ' ' + perfil.fecha.split('T')[1].split('-')[0] : null, // Formatear la fecha eliminando la zona horaria
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada
+      };
+      await queryRunner.manager.save(EQFX_PerfilRiesgoDirecto, perfilRiesgoDirecto);
+    }
+
+    // Insertar la evolución histórica de distribución de endeudamiento si existe en el array RecursivoComposicionEstructuraVencimiento
+    for (const evolucion of RecursivoComposicionEstructuraVencimiento) {
+      // Validar y formatear los valores antes de guardarlos
+      const evolucionHistoricaDistEndeudamiento = {
+        FechaCorte: evolucion.fechaCorte
+          ? evolucion.fechaCorte.split('T')[0] + ' ' + evolucion.fechaCorte.split('T')[1].split('-')[0] 
+          : null, // Formatear la fecha eliminando la zona horaria
+        Institucion: evolucion.institucion || '',  // Validar valor de Institucion
+        PorVencer: isNaN(evolucion.porVencer) ? 0 : parseFloat(evolucion.porVencer), // Asegurarse de que sea un número
+        Vencido: isNaN(evolucion.vencido) ? 0 : parseFloat(evolucion.vencido),
+        NoDevengaInt: isNaN(evolucion.noDevengaInt) ? 0 : parseFloat(evolucion.noDevengaInt),
+        SaldoDeuda: isNaN(evolucion.saldoDeuda) ? 0 : parseFloat(evolucion.saldoDeuda),
+        DemandaJudicial: isNaN(evolucion.demandaJudicial) ? 0 : parseFloat(evolucion.demandaJudicial),
+        CarteraCastigada: isNaN(evolucion.carteraCastigada) ? 0 : parseFloat(evolucion.carteraCastigada),
+        CodigoInstitucionParam: isNaN(evolucion.codigoInstitucionParam) ? 0 : parseFloat(evolucion.codigoInstitucionParam),
+        AcuerdoConcordatorio: evolucion.acuerdoConcordatorio || '', // Validar valor de AcuerdoConcordatorio
+        InstitucionParam: evolucion.institucionParam || '', // Validar valor de InstitucionParam
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,  // ID de la consulta, asegurarse de que esté presente
+      };
+    
+      // Guardar el objeto en la base de datos
+      try {
+        await queryRunner.manager.save(EQFX_EvolucionHistoricaDistEndeudamiento, evolucionHistoricaDistEndeudamiento);
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Opcional: manejar el error, como hacer un rollback o continuar con la siguiente iteración
+      }
+    }
+    
 
     // Crear el objeto de puntaje y gráfico con la ID del registro guardado
     const scorePuntajeObj = {

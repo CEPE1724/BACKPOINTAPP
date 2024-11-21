@@ -22,6 +22,12 @@ const entities = [
     require('../../../Equifax/api/EQFX_DeudaReportadaINFOCOM/model'),
     require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoSICOM/model'),
     require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoEducativo/model'),
+    require('../../../Equifax/api/EQFX_DeudaTotalSICOM/model'),
+    require('../../../Equifax/api/EQFX_CuotaEstimadaMensualWeb/model'),
+    require('../../../Equifax/api/EQFX_AnalisisSaldosPorVencerSistemaFinanciero/model'),
+    require('../../../Equifax/api/EQFX_HistorialCrediticio/model'),
+    require('../../../Equifax/api/EQFX_PerfilRiesgoDirecto/model'),
+    require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamiento/model'),
 ];
 
 const AppDataSource = new DataSource({
