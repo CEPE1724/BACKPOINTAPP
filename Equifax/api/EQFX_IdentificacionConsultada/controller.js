@@ -12,6 +12,9 @@ const EQFX_AnalisisSaldosPorVencerSistemaFinanciero = require("../EQFX_AnalisisS
 const EQFX_HistorialCrediticio = require("../EQFX_HistorialCrediticio/model");
 const EQFX_PerfilRiesgoDirecto = require("../EQFX_PerfilRiesgoDirecto/model");
 const EQFX_EvolucionHistoricaDistEndeudamiento = require("../EQFX_EvolucionHistoricaDistEndeudamiento/model");
+const EQFX_AnalisisDetalleVencido = require("../EQFX_AnalisisDetalleVencido/model");
+const EQFX_EvolucionHistoricaDistEndeudamientoRecursivo = require("../EQFX_EvolucionHistoricaDistEndeudamientoRecursivo/model");
+const EQFX_Ultimas10OperacionesCanceladas = require("../EQFX_Ultimas10OperacionesCanceladas/model");
 exports.allInsert = async (req, res) => {
   // Desestructurar los objetos recibidos en el body
   const {
@@ -27,10 +30,14 @@ exports.allInsert = async (req, res) => {
     obtenerAnalisisSaldosPorVencerSistemaFinanciero,
     mantieneHistorialCrediticioDesde,
     ObtenerIdentificadorPerfilRiesgoDirecto,
-    RecursivoComposicionEstructuraVencimiento
+    RecursivoComposicionEstructuraVencimiento,
+    AnalisisDetalleVencido,
+    RecursivoDeudaHistorica,
+    UltimasOperacionesCanceladas
+
 
   } = req.body;
-
+  console.log("UltimasOperacionesCanceladas", UltimasOperacionesCanceladas);
   // Desestructurar los datos dentro de cada objeto
   const { nombreSujeto, tipoDocumento, numeroDocumento } = identificacionConsultada;
   const {
@@ -243,7 +250,112 @@ exports.allInsert = async (req, res) => {
       };
       await queryRunner.manager.save(EQFX_PerfilRiesgoDirecto, perfilRiesgoDirecto);
     }
+    
+    // Insertar el análisis de detalle vencido si existe en el array AnalisisDetalleVencido
+    for (const detalle of AnalisisDetalleVencido) {
+      const analisisDetalleVencido = {
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,
+        FechaCorte: detalle.fechaCorte ? detalle.fechaCorte.split('T')[0] + ' ' + detalle.fechaCorte.split('T')[1].split('-')[0] : null,
+        CodigoInstitucionInv: detalle.codigoInstitucionInv,
+        Institucion: detalle.institucion || '',
+        Vencido0a1: detalle.vencido0a1 || 0,
+        Vencido1a2: detalle.vencido1a2 || 0,
+        Vencido2a3: detalle.vencido2a3  || 0,
+        Vencido3a6: detalle.vencido3a6 || 0,
+        Vencido6a9: detalle.vencido6a9 || 0,
+        Vencido9a12: detalle.vencido9a12 || 0,
+        Vencido12a24: detalle.vencido12a24 || 0,
+        Vencido24a36: detalle.vencido24a36 || 0,
+        Vencido36: detalle.vencido36 || 0,
+        DemandaJudicial: detalle.demandaJudicial || 0,
+        CarteraCastigada: detalle.carteraCastigada || 0,
+        NoDevengaInteresesInv: detalle.noDevengaInteresesInv  || 0,
+        TotalVencidoInv: detalle.totalVencidoInv || 0,
+        AcuerdoConcordato: detalle.acuerdoConcordato || '',
+      };
+      await queryRunner.manager.save(EQFX_AnalisisDetalleVencido, analisisDetalleVencido);
+    }
 
+    // Insertar la evolución histórica de distribución de endeudamiento si existe en el array RecursivoDeudaHistorica
+    for (const evolucion of RecursivoDeudaHistorica) {
+      // Validar y formatear los valores antes de guardarlos
+      const evolucionHistoricaDistEndeudamiento = {
+        FechaCorte: evolucion.fechaCorte ? evolucion.fechaCorte.split('T')[0] + ' ' + evolucion.fechaCorte.split('T')[1].split('-')[0] : null, // Formatear la fecha eliminando la zona horaria
+       FechaCorteParam : evolucion.fechaCorteParam ? evolucion.fechaCorteParam.split('T')[0] + ' ' + evolucion.fechaCorteParam.split('T')[1].split('-')[0] : null, // Formatear la fecha eliminando la zona horaria
+        PorVencer: isNaN(evolucion.porVencer) ? 0 : parseFloat(evolucion.porVencer), // Asegurarse de que sea un número
+        NoDevengaInt: isNaN(evolucion.noDevengaInt) ? 0 : parseFloat(evolucion.noDevengaInt),
+        Vencido0a1: isNaN(evolucion.vencido0a1) ? 0 : parseFloat(evolucion.vencido0a1),
+        Vencido1a2: isNaN(evolucion.vencido1a2) ? 0 : parseFloat(evolucion.vencido1a2),
+        Vencido2a3: isNaN(evolucion.vencido2a3) ? 0 : parseFloat(evolucion.vencido2a3),
+        Vencido3a6: isNaN(evolucion.vencido3a6) ? 0 : parseFloat(evolucion.vencido3a6),
+        Vencido6a9: isNaN(evolucion.vencido6a9) ? 0 : parseFloat(evolucion.vencido6a9),
+        Vencido9a12: isNaN(evolucion.vencido9a12) ? 0 : parseFloat(evolucion.vencido9a12),
+        Vencido12a24: isNaN(evolucion.vencido12a24) ? 0 : parseFloat(evolucion.vencido12a24),
+        Vencido24a36: isNaN(evolucion.vencido24a36) ? 0 : parseFloat(evolucion.vencido24a36),
+        Vencido36: isNaN(evolucion.vencido36) ? 0 : parseFloat(evolucion.vencido36),
+        DemandaJudicial: isNaN(evolucion.demandaJudicial) ? 0 : parseFloat(evolucion.demandaJudicial),
+        CarteraCastigada: isNaN(evolucion.carteraCastigada) ? 0 : parseFloat(evolucion.carteraCastigada),
+        SaldoDeuda: isNaN(evolucion.saldoDeuda) ? 0 : parseFloat(evolucion.saldoDeuda),
+        tipoDeudaParam: evolucion.tipoDeudaParam || '', // Validar valor de TipoDeudaParam
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,  // ID de la consulta, asegurarse de que esté presente
+      };
+      // Guardar el objeto en la base de datos
+      try {
+        await queryRunner.manager.save(EQFX_EvolucionHistoricaDistEndeudamientoRecursivo, evolucionHistoricaDistEndeudamiento);
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Opcional: manejar el error, como hacer un rollback o continuar con la siguiente iteración
+      }
+    }
+
+    // Insertar las últimas operaciones canceladas si existe en el array UltimasOperacionesCanceladas
+    for (const operacion of UltimasOperacionesCanceladas) {
+      // Validación y formateo de los datos antes de guardarlos en la base de datos
+      const ultimasOperacionesCanceladas = {
+        // Asegúrate de que CodigoInstitucionInv sea un string (por ejemplo, '1006')
+        CodigoInstitucionInv: operacion.codigoInstitucionInv || '',
+    
+        Institucion: operacion.institucion || '', // Asegúrate de que no sea undefined
+    
+        // El numeroOperaciones es un string, así que no necesitas convertirlo
+        NumeroOperaciones: operacion.numeroOperaciones || '',
+    
+        // Convertir valorOriginal a decimal (asegurándose de que tenga 2 decimales)
+        ValorOriginal: isNaN(operacion.valorOriginal) 
+          ? 0 
+          : parseFloat(operacion.valorOriginal).toFixed(2), // Redondeo a 2 decimales
+    
+        CodFormaCancelacionInv: operacion.codFormaCancelacionInv || '',
+    
+        FormaCancelacion: operacion.formaCancelacion || '',
+    
+        // Formateo de la fecha para SQL Server (formato: 'YYYY-MM-DD HH:mm:ss')
+        FechaCancelacion: operacion.fechaCancelacion 
+          ? operacion.fechaCancelacion.split('T')[0] + ' ' + operacion.fechaCancelacion.split('T')[1].split('-')[0] 
+          : null, // Si no hay fecha, dejamos null
+        
+        // ID de la identificación consultada
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada
+      };
+    
+      try {
+        console.log("ultimasOperacionesCanceladas", ultimasOperacionesCanceladas);
+        
+        // Guardar en la base de datos
+        await queryRunner.manager.save(EQFX_Ultimas10OperacionesCanceladas, ultimasOperacionesCanceladas);
+        
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Manejo de errores: Opcional rollback o continuar con la siguiente iteración
+        // await queryRunner.rollbackTransaction(); // Descomentar si quieres hacer rollback
+      }
+    }
+    
+
+
+        
+      
+    
     // Insertar la evolución histórica de distribución de endeudamiento si existe en el array RecursivoComposicionEstructuraVencimiento
     for (const evolucion of RecursivoComposicionEstructuraVencimiento) {
       // Validar y formatear los valores antes de guardarlos
@@ -263,7 +375,6 @@ exports.allInsert = async (req, res) => {
         InstitucionParam: evolucion.institucionParam || '', // Validar valor de InstitucionParam
         idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,  // ID de la consulta, asegurarse de que esté presente
       };
-    
       // Guardar el objeto en la base de datos
       try {
         await queryRunner.manager.save(EQFX_EvolucionHistoricaDistEndeudamiento, evolucionHistoricaDistEndeudamiento);

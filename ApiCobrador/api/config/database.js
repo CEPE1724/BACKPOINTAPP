@@ -28,6 +28,9 @@ const entities = [
     require('../../../Equifax/api/EQFX_HistorialCrediticio/model'),
     require('../../../Equifax/api/EQFX_PerfilRiesgoDirecto/model'),
     require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamiento/model'),
+    require('../../../Equifax/api/EQFX_AnalisisDetalleVencido/model'),
+    require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoRecursivo/model'),
+    require('../../../Equifax/api/EQFX_Ultimas10OperacionesCanceladas/model'),
 ];
 
 const AppDataSource = new DataSource({
