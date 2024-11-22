@@ -15,6 +15,7 @@ const entities = [
     require('../TerrenaGestionDomicilio/model'),
     require('../TerrenaGestionTrabajo/model'),
     require('../GestionDiaria/model'),
+    require('../ProteccionDatos/model'),
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
     require('../../../Equifax/api/EQFX_ResultadoPoliticas/model'),
@@ -33,6 +34,9 @@ const entities = [
     require('../../../Equifax/api/EQFX_Ultimas10OperacionesCanceladas/model'),
     require('../../../Equifax/api/NivelDetalleDeLaOperacion/EQFX_DetalleOperacion/model'),
     require('../../../Equifax/api/NivelDetalleOperacionesYEntidades/EQFX_RecursivoAnalisisOperacionesDeudaHistorica/model'),
+    require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DobleInfo/model'),
+    require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleDirecciones/model'),
+    require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleTelefonos/model'),
 ];
 
 const AppDataSource = new DataSource({

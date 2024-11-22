@@ -1,0 +1,65 @@
+// models/Usuario.js
+
+
+const { EntitySchema } = require('typeorm');
+
+
+const ProtecionDatosWeb = new EntitySchema({
+    name: 'ProtecionDatosWeb',
+    tableName: 'ProtecionDatosWeb',
+    target: class ProtecionDatosWeb {
+        constructor() {
+            this.idProtecionDatosWeb = undefined;
+            this.Cedula = "",
+            this.Nombre = "",
+            this.Apellido = "",
+            this.CodigoDactilar = "",
+            this.IpWeb = "",
+            this.Fecha = new Date(),
+            this.Estacion = "",
+            this.Usuario = ""
+        }
+    },
+    columns: {
+        idProtecionDatosWeb: {
+            primary: true,
+            type: 'int',
+            generated: true
+        },
+        Cedula: {
+            type: 'varchar',
+            length: 13
+        },
+        Nombre: {
+            type: 'varchar',
+            length: 100
+        },
+        Apellido: {
+            type: 'varchar',
+            length: 100
+        },
+        CodigoDactilar: {
+            type: 'varchar',
+            length: 50
+        },
+        IpWeb: {
+            type: 'varchar',
+            length: 50
+        },
+        Fecha: {
+            type: 'datetime'
+        },
+        Estacion: {
+            type: 'varchar',
+            length: 50
+        },
+        Usuario: {
+            type: 'varchar',
+            length: 50
+        }
+    }
+});
+
+module.exports = ProtecionDatosWeb;
+
+          

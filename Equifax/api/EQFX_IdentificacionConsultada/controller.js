@@ -17,6 +17,9 @@ const EQFX_EvolucionHistoricaDistEndeudamientoRecursivo = require("../EQFX_Evolu
 const EQFX_Ultimas10OperacionesCanceladas = require("../EQFX_Ultimas10OperacionesCanceladas/model");
 const EQFX_DetalleOperacion = require("../NivelDetalleDeLaOperacion/EQFX_DetalleOperacion/model");
 const EQFX_RecursivoAnalisisOperacionesDeudaHistorica = require("../NivelDetalleOperacionesYEntidades/EQFX_RecursivoAnalisisOperacionesDeudaHistorica/model");
+const EQFX_DetalleDirecciones = require("../NivelDireccionesyTelefonos/EQFX_DetalleDirecciones/model");
+const EQFX_DetalleTelefonos = require("../NivelDireccionesyTelefonos/EQFX_DetalleTelefonos/model");
+const EQFX_DobleInfo = require("../NivelDireccionesyTelefonos/EQFX_DobleInfo/model");
 exports.allInsert = async (req, res) => {
   // Desestructurar los objetos recibidos en el body
   const {
@@ -38,7 +41,6 @@ exports.allInsert = async (req, res) => {
     UltimasOperacionesCanceladas,
     Detalle_x0020_operacion,
     operacionesYEntidadesRecursivo_x0020
-
 
   } = req.body;
   console.log("UltimasOperacionesCanceladas", UltimasOperacionesCanceladas);
