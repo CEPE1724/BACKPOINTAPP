@@ -31,6 +31,8 @@ const entities = [
     require('../../../Equifax/api/EQFX_AnalisisDetalleVencido/model'),
     require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoRecursivo/model'),
     require('../../../Equifax/api/EQFX_Ultimas10OperacionesCanceladas/model'),
+    require('../../../Equifax/api/NivelDetalleDeLaOperacion/EQFX_DetalleOperacion/model'),
+    require('../../../Equifax/api/NivelDetalleOperacionesYEntidades/EQFX_RecursivoAnalisisOperacionesDeudaHistorica/model'),
 ];
 
 const AppDataSource = new DataSource({

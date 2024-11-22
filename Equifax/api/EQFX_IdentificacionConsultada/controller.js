@@ -15,6 +15,8 @@ const EQFX_EvolucionHistoricaDistEndeudamiento = require("../EQFX_EvolucionHisto
 const EQFX_AnalisisDetalleVencido = require("../EQFX_AnalisisDetalleVencido/model");
 const EQFX_EvolucionHistoricaDistEndeudamientoRecursivo = require("../EQFX_EvolucionHistoricaDistEndeudamientoRecursivo/model");
 const EQFX_Ultimas10OperacionesCanceladas = require("../EQFX_Ultimas10OperacionesCanceladas/model");
+const EQFX_DetalleOperacion = require("../NivelDetalleDeLaOperacion/EQFX_DetalleOperacion/model");
+const EQFX_RecursivoAnalisisOperacionesDeudaHistorica = require("../NivelDetalleOperacionesYEntidades/EQFX_RecursivoAnalisisOperacionesDeudaHistorica/model");
 exports.allInsert = async (req, res) => {
   // Desestructurar los objetos recibidos en el body
   const {
@@ -33,7 +35,9 @@ exports.allInsert = async (req, res) => {
     RecursivoComposicionEstructuraVencimiento,
     AnalisisDetalleVencido,
     RecursivoDeudaHistorica,
-    UltimasOperacionesCanceladas
+    UltimasOperacionesCanceladas,
+    Detalle_x0020_operacion,
+    operacionesYEntidadesRecursivo_x0020
 
 
   } = req.body;
@@ -351,11 +355,27 @@ exports.allInsert = async (req, res) => {
       }
     }
     
-
-
+    // Insertar el detalle de la operación si existe en el array Detalle_x0020_operacion
+    for (const detalle of Detalle_x0020_operacion) {
+      // Validación y formateo de los datos antes de guardarlos en la base de datos
+      const detalleOperacion = {
+        // Asegúrate de que CodigoInstitucionInv sea un string (por ejemplo, '1006')
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,
+        Concepto: detalle.concepto || '',
+        Valor: detalle.valor || ''
+      };
+       try {
+        console.log("detalleOperacion", detalleOperacion);
         
-      
-    
+        // Guardar en la base de datos
+        await queryRunner.manager.save(EQFX_DetalleOperacion, detalleOperacion);
+
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Manejo de errores: Opcional rollback o continuar con la siguiente iteración
+        // await queryRunner.rollbackTransaction(); // Descomentar si quieres hacer rollback
+      }
+    }
     // Insertar la evolución histórica de distribución de endeudamiento si existe en el array RecursivoComposicionEstructuraVencimiento
     for (const evolucion of RecursivoComposicionEstructuraVencimiento) {
       // Validar y formatear los valores antes de guardarlos
@@ -383,6 +403,62 @@ exports.allInsert = async (req, res) => {
         // Opcional: manejar el error, como hacer un rollback o continuar con la siguiente iteración
       }
     }
+
+    // Insertar el detalle de la operación si existe en el array operacionesYEntidadesRecursivo_x0020
+    for (const detalle of operacionesYEntidadesRecursivo_x0020) {
+      // Validación y formateo de los datos antes de guardarlos en la base de datos
+      const detalleOperacion = {
+
+            FechaCorte: detalle.fechaCorte ? detalle.fechaCorte.split('T')[0] + ' ' + detalle.fechaCorte.split('T')[1].split('-')[0] : null,
+            Operacion: detalle.operacion || '',
+            FechaOperacion: detalle.fechaOperacion ? detalle.fechaOperacion.split('T')[0] + ' ' + detalle.fechaOperacion.split('T')[1].split('-')[0] : null,
+            Institucion: detalle.institucion || '',
+            TipoDeudor: detalle.tipoDeudor || '',
+            TipoCredito: detalle.tipoCredito || '',
+            Calificacion: detalle.calificacion || '',
+            CalificacionHomologada: detalle.calificacionHomologada || '',
+            ValorTotal: isNaN(detalle.valorTotal) ? 0 : parseFloat(detalle.valorTotal),
+            ValorTotalPorVencer: isNaN(detalle.valorTotalPorVencer) ? 0 : parseFloat(detalle.valorTotalPorVencer),
+            ValorTotalNdi: isNaN(detalle.valorTotalNdi) ? 0 : parseFloat(detalle.valorTotalNdi),
+            ValorVencido0_1: isNaN(detalle.valorVencido0_1) ? 0 : parseFloat(detalle.valorVencido0_1),
+            ValorVencido1_2: isNaN(detalle.valorVencido1_2) ? 0 : parseFloat(detalle.valorVencido1_2),
+            ValorVencido2_3: isNaN(detalle.valorVencido2_3) ? 0 : parseFloat(detalle.valorVencido2_3),
+            ValorVencido3_6: isNaN(detalle.valorVencido3_6) ? 0 : parseFloat(detalle.valorVencido3_6),
+            ValorVencido6_9: isNaN(detalle.valorVencido6_9) ? 0 : parseFloat(detalle.valorVencido6_9),
+            ValorVencido9_12: isNaN(detalle.valorVencido9_12) ? 0 : parseFloat(detalle.valorVencido9_12),
+            ValorVencido12_24: isNaN(detalle.valorVencido12_24) ? 0 : parseFloat(detalle.valorVencido12_24),
+            ValorVencido24_36: isNaN(detalle.valorVencido24_36) ? 0 : parseFloat(detalle.valorVencido24_36),
+            ValorVencido36: isNaN(detalle.valorVencido36) ? 0 : parseFloat(detalle.valorVencido36),
+            ValorDemandaJudicial: isNaN(detalle.valorDemandaJudicial) ? 0 : parseFloat(detalle.valorDemandaJudicial),
+            ValorCarteraCastigada: isNaN(detalle.valorCarteraCastigada) ? 0 : parseFloat(detalle.valorCarteraCastigada),
+            ValorVencidoInv: isNaN(detalle.valorVencidoInv) ? 0 : parseFloat(detalle.valorVencidoInv),
+            OperacionParam: detalle.operacionParam || '',
+            CodigoInstitucionParam: detalle.codigoInstitucionParam || '',
+            TipoDocumentoParam: detalle.tipoDocumentoParam || '',
+            NumeroDocumentoParam: detalle.numeroDocumentoParam || '',
+            TipoRegistroParam: detalle.tipoRegistroParam || '',
+            CodigoTarjetaParam: detalle.codigoTarjetaParam || '',
+            CodigoTcParam: detalle.codigoTcParam || '',
+            FechaCorteParam: detalle.fechaCorteParam ? detalle.fechaCorteParam.split('T')[0] + ' ' + detalle.fechaCorteParam.split('T')[1].split('-')[0] : null,
+            FechaInv: detalle.fechaInv ? detalle.fechaInv.split('T')[0] + ' ' + detalle.fechaInv.split('T')[1].split('-')[0] : null,
+            CodigoTipoDeudorParam: detalle.codigoTipoDeudorParam || '',
+            FechaTablaInv: detalle.fechaTablaInv ? detalle.fechaTablaInv.split('T')[0] + ' ' + detalle.fechaTablaInv.split('T')[1].split('-')[0] : null,
+            AcuerdoConcordatorio: detalle.acuerdoConcordatorio || '',
+            idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,
+      };
+       try {
+        console.log("detalleOperacion", detalleOperacion);
+        
+        // Guardar en la base de datos
+        await queryRunner.manager.save(EQFX_RecursivoAnalisisOperacionesDeudaHistorica, detalleOperacion);
+
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Manejo de errores: Opcional rollback o continuar con la siguiente iteración
+        // await queryRunner.rollbackTransaction(); // Descomentar si quieres hacer rollback
+      }
+    }
+
     
 
     // Crear el objeto de puntaje y gráfico con la ID del registro guardado
