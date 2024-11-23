@@ -15,6 +15,8 @@ const ProtecionDatosWeb = new EntitySchema({
             this.Apellido = "",
             this.CodigoDactilar = "",
             this.IpWeb = "",
+            this.UrlContrato = "",
+            this.UrlImage = "",
             this.Fecha = new Date(),
             this.Estacion = "",
             this.Usuario = ""
@@ -45,6 +47,14 @@ const ProtecionDatosWeb = new EntitySchema({
         IpWeb: {
             type: 'varchar',
             length: 50
+        },
+        UrlContrato: {
+            type: 'varchar',
+            length: 600
+        },
+        UrlImage: {
+            type: 'varchar',
+            length: 600
         },
         Fecha: {
             type: 'datetime'
