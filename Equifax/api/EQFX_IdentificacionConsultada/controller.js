@@ -40,10 +40,13 @@ exports.allInsert = async (req, res) => {
     RecursivoDeudaHistorica,
     UltimasOperacionesCanceladas,
     Detalle_x0020_operacion,
-    operacionesYEntidadesRecursivo_x0020
+    operacionesYEntidadesRecursivo_x0020,
+    SoapNivelDireccionesyTelefonos,
+    SoapNivelDireccionesyTelefonosDetDirecciones,
+    SoapNivelDireccionesyTelefonosDetTelefonos
 
   } = req.body;
-  console.log("UltimasOperacionesCanceladas", UltimasOperacionesCanceladas);
+
   // Desestructurar los datos dentro de cada objeto
   const { nombreSujeto, tipoDocumento, numeroDocumento } = identificacionConsultada;
   const {
@@ -345,7 +348,6 @@ exports.allInsert = async (req, res) => {
       };
     
       try {
-        console.log("ultimasOperacionesCanceladas", ultimasOperacionesCanceladas);
         
         // Guardar en la base de datos
         await queryRunner.manager.save(EQFX_Ultimas10OperacionesCanceladas, ultimasOperacionesCanceladas);
@@ -367,7 +369,7 @@ exports.allInsert = async (req, res) => {
         Valor: detalle.valor || ''
       };
        try {
-        console.log("detalleOperacion", detalleOperacion);
+
         
         // Guardar en la base de datos
         await queryRunner.manager.save(EQFX_DetalleOperacion, detalleOperacion);
@@ -406,6 +408,62 @@ exports.allInsert = async (req, res) => {
       }
     }
 
+    // Insertar el detalle de direcciones si existe en el array SoapNivelDireccionesyTelefonos
+    for (const detalle of SoapNivelDireccionesyTelefonos) {
+      // Validación y formateo de los datos antes de guardarlos en la base de datos
+      const detalleDireccion = {
+        // Asegúrate de que CodigoInstitucionInv sea un string (por ejemplo, '1006')
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,
+        NombreSujeto: detalle.nombreSujeto || '',
+        TipoDocumentoDobleInfo : detalle.tipoDocumentoDobleInfo || '',
+        NumeroDocumentoDobleInfo : detalle.numeroDocumentoDobleInfo || '',
+      };
+        try {
+        await queryRunner.manager.save(EQFX_DobleInfo, detalleDireccion);
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Manejo de errores: Opcional rollback o continuar con la siguiente iteración
+        // await queryRunner.rollbackTransaction(); // Descomentar si quieres hacer rollback
+      }
+    }
+
+    // Insertar el detalle de direcciones si existe en el array SoapNivelDireccionesyTelefonosDetDirecciones
+    for (const detalle of SoapNivelDireccionesyTelefonosDetDirecciones) {
+      // Validación y formateo de los datos antes de guardarlos en la base de datos
+      console.log("detalle", detalle);
+      const detalleDireccion = {
+        // Asegúrate de que CodigoInstitucionInv sea un string (por ejemplo, '1006')
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,
+        Direccion: detalle.columna1 || '',
+      };
+        try {
+        console.log("detalleDireccion", detalleDireccion);
+        await queryRunner.manager.save(EQFX_DetalleDirecciones, detalleDireccion);
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Manejo de errores: Opcional rollback o continuar con la siguiente iteración
+        // await queryRunner.rollbackTransaction(); // Descomentar si quieres hacer rollback
+      }
+    }
+
+    // Insertar el detalle de direcciones si existe en el array SoapNivelDireccionesyTelefonosDetTelefonos
+    for (const detalle of SoapNivelDireccionesyTelefonosDetTelefonos) {
+      // Validación y formateo de los datos antes de guardarlos en la base de datos
+      const detalleDireccion = {
+        // Asegúrate de que CodigoInstitucionInv sea un string (por ejemplo, '1006')
+        idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,
+        telefono: detalle.telefono || '',
+      };
+        try {
+        await queryRunner.manager.save(EQFX_DetalleTelefonos, detalleDireccion);
+      } catch (error) {
+        console.error('Error al guardar la evolución histórica:', error);
+        // Manejo de errores: Opcional rollback o continuar con la siguiente iteración
+        // await queryRunner.rollbackTransaction(); // Descomentar si quieres hacer rollback
+      }
+    }
+
+      
     // Insertar el detalle de la operación si existe en el array operacionesYEntidadesRecursivo_x0020
     for (const detalle of operacionesYEntidadesRecursivo_x0020) {
       // Validación y formateo de los datos antes de guardarlos en la base de datos
@@ -449,7 +507,6 @@ exports.allInsert = async (req, res) => {
             idEQFX_IdentificacionConsultada: savedRegistro.idEQFX_IdentificacionConsultada,
       };
        try {
-        console.log("detalleOperacion", detalleOperacion);
         
         // Guardar en la base de datos
         await queryRunner.manager.save(EQFX_RecursivoAnalisisOperacionesDeudaHistorica, detalleOperacion);
