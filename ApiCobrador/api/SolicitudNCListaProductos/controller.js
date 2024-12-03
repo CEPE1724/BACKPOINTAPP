@@ -16,6 +16,105 @@ exports.all = async (req, res) => {
     }
 };
 
+exports.ViewGestionesDeCobranzas = async (req, res) => {
+    try {
+        const  { idCompra } = req.query;
+
+        const result = await AppDataSource.query(
+            `EXEC ConsultaCbo_GestionesDeCobranzas_APP @idCompra = ${idCompra}`
+        );
+
+        res.json(result); // Envía los resultados al cliente
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).send("Error al ejecutar el procedimiento almacenado.");
+    }
+};
+
+exports.TablaAmortizacion = async (req, res) => {
+    try {
+        const { idCompra } = req.query;
+        const Fecha = new Date().toISOString().slice(0, 10);
+
+        const result = await AppDataSource.query(
+            `EXEC Cobranzas @idCompra = ${idCompra}, @Fecha = '${Fecha}'`
+        );
+
+        res.json(result); // Envía los resultados al cliente
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).send("Error al ejecutar el procedimiento almacenado.");
+    }
+};
+exports.Inventario = async (req, res) => {
+    // Desestructuramos los parámetros de la solicitud con valores predeterminados
+    const { Bodega, Articulo, PaginaNumero = 1, RegistrosPorPagina = 10 } = req.query;
+
+    // Validamos los parámetros de entrada para asegurar que no sean valores maliciosos o incorrectos
+    if (!Bodega || isNaN(Bodega) ) {
+        return res.status(400).json({ error: "Parámetros inválidos: bodega o artículo no proporcionados correctamente." });
+    }
+
+    // Validar los parámetros de paginación
+    if (isNaN(PaginaNumero) || PaginaNumero <= 0) {
+        return res.status(400).json({ error: "El número de página debe ser un número positivo." });
+    }
+
+    if (isNaN(RegistrosPorPagina) || RegistrosPorPagina <= 0) {
+        return res.status(400).json({ error: "La cantidad de registros por página debe ser un número positivo." });
+    }
+
+    try {
+        // Utilizamos parámetros vinculados para prevenir inyección SQL
+        const result = await AppDataSource.query(`
+            EXEC APP_ListaProductos
+                @Bodega = ${Bodega},
+                @Articulo = '${Articulo}',
+                @PaginaNumero = ${PaginaNumero},
+                @RegistrosPorPagina = ${RegistrosPorPagina}
+        `);
+
+        // Si la consulta no devuelve resultados, enviar un mensaje adecuado
+        if (!result || result.length === 0) {
+            return res.status(404).json({ message: "No se encontraron productos." });
+        }
+
+        // Enviar los resultados de manera estructurada
+        res.json({
+            success: true,
+            data: result,
+            pagination: {
+                page: PaginaNumero,
+                recordsPerPage: RegistrosPorPagina,
+                totalRecords: result.length // Deberías calcular el total de registros si es necesario
+            }
+        });
+
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).json({ error: "Error interno del servidor." });
+    }
+};
+
+
+exports.TablaAmortizacionValores = async (req, res) => {
+    try {
+        const { idCompra } = req.query;
+        const Fecha = new Date().toISOString().slice(0, 10);
+
+        const result = await AppDataSource.query(
+            `EXEC ValoresCobranza @idCompra = ${idCompra}, @Fecha = '${Fecha}'`
+        );
+
+        res.json(result); // Envía los resultados al cliente
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).send("Error al ejecutar el procedimiento almacenado.");
+    }
+};
+
+
+
 
 exports.find = async (req, res) => {
     try {
