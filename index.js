@@ -56,6 +56,8 @@ const routes = [
     require('./ApiCobrador/api/GestionDiaria/router'),
     require('./Equifax/api/EQFX_IdentificacionConsultada/router'),
     require('./ApiCobrador/api/ProteccionDatos/router'),
+    require('./ApiCobrador/api/Bodega/router'),
+   
 ];
 
 // Inicializa la conexión a la base de datos

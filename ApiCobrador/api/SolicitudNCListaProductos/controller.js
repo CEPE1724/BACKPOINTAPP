@@ -51,7 +51,7 @@ exports.Inventario = async (req, res) => {
     const { Bodega, Articulo, PaginaNumero = 1, RegistrosPorPagina = 10 } = req.query;
 
     // Validamos los parámetros de entrada para asegurar que no sean valores maliciosos o incorrectos
-    if (!Bodega || isNaN(Bodega) ) {
+    if (!Bodega || isNaN(Bodega)) {
         return res.status(400).json({ error: "Parámetros inválidos: bodega o artículo no proporcionados correctamente." });
     }
 
@@ -74,19 +74,14 @@ exports.Inventario = async (req, res) => {
                 @RegistrosPorPagina = ${RegistrosPorPagina}
         `);
 
-        // Si la consulta no devuelve resultados, enviar un mensaje adecuado
-        if (!result || result.length === 0) {
-            return res.status(404).json({ message: "No se encontraron productos." });
-        }
-
-        // Enviar los resultados de manera estructurada
+        // En lugar de retornar un error 404, simplemente devolvemos una respuesta vacía si no hay productos
         res.json({
             success: true,
-            data: result,
+            data: result || [], // Si no hay resultados, retornamos un array vacío
             pagination: {
                 page: PaginaNumero,
                 recordsPerPage: RegistrosPorPagina,
-                totalRecords: result.length // Deberías calcular el total de registros si es necesario
+                totalRecords: result.length || 0 // Total de registros encontrados
             }
         });
 
@@ -95,6 +90,7 @@ exports.Inventario = async (req, res) => {
         res.status(500).json({ error: "Error interno del servidor." });
     }
 };
+
 
 
 exports.TablaAmortizacionValores = async (req, res) => {

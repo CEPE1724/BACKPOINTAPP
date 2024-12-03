@@ -4,7 +4,9 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const { AppDataSource } = require("../config/database");
 const UsuarioSchema = require("./model");
+const UsuariosBodegas = require("../UsuariosBodegas/model");
 const IngresoCobradorSchema = require("../IngresoCobrador/model");
+const PermisosMenus = require("../PermisosMenus/model");
 const JWT_SECRET = process.env.JWT_SECRET;
 
 exports.getVaEmPass = async (req, res) => {
@@ -15,7 +17,8 @@ exports.getVaEmPass = async (req, res) => {
     const ingresoCobradorRepository = AppDataSource.getRepository(
       IngresoCobradorSchema
     );
-
+    const UsuariosBodegasRepository = AppDataSource.getRepository(UsuariosBodegas);
+    const PermisosMenusRepository = AppDataSource.getRepository(PermisosMenus);
     // Buscar al usuario por nombre y que esté activo
     const usuario = await usuarioRepository.findOne({
       where: { Nombre: nombre, Activo: 1, Clave: clave },
@@ -29,6 +32,13 @@ exports.getVaEmPass = async (req, res) => {
     const Cedula = ingresoCobradorData.Cedula;
     console.log(ingresoCobradorData);
     if (usuario) {
+      const UsuariosBodegas = await UsuariosBodegasRepository.find({
+        where: { idUsuario: usuario.idUsuario },
+      });
+
+      const PermisosMenus = await PermisosMenusRepository.find({
+        where: { idRol: usuario.idGrupo },
+      });
       const token = generateToken(usuario);
       return res.json({
         estado: "success",
@@ -39,11 +49,14 @@ exports.getVaEmPass = async (req, res) => {
           idGrupo: usuario.idGrupo,
           Activo: usuario.Activo,
           ingresoCobrador: {
-            nombre: ingresoCobradorData.Nombre,
-            cedula: ingresoCobradorData.Cedula,
-            codigo: ingresoCobradorData.Codigo,
-            idIngresoCobrador: ingresoCobradorData.idIngresoCobrador,
+            nombre: ingresoCobradorData.Nombre ? ingresoCobradorData.Nombre : usuario.Nombre,
+            cedula: ingresoCobradorData.Cedula ? ingresoCobradorData.Cedula : "",
+            codigo: ingresoCobradorData.Codigo ? ingresoCobradorData.Codigo : usuario.Nombre,
+            idIngresoCobrador: ingresoCobradorData.idIngresoCobrador ? ingresoCobradorData.idIngresoCobrador : usuario.idUsuario,
           },
+          bodegas: UsuariosBodegas.map((ub) => ub.Bodega),
+          permisosMenu: PermisosMenus.map((pm) => pm.idMenu),
+
         },
       });
     } else {
