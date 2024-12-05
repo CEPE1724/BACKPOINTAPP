@@ -20,6 +20,8 @@ const entities = [
     require('../PermisosMenus/model'),
     require('../Bodega/model'),
     require('../DispositivosAPP/model'),
+    require('../Nomina/model'),
+    require('../Com_AsignacionDeVendedores/model'),
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
     require('../../../Equifax/api/EQFX_ResultadoPoliticas/model'),

@@ -17,7 +17,7 @@ exports.alllist = async (req, res) => {
     const usuario = await usuarioRepository.findOne({
       where: { Cedula: Cedula, Activo: 0, idCom_Estado: Not(2) },
     });
-    console.log("usuario:", usuario);
+    console.log("edison:", usuario);
 
     // Verificar si el usuario existe
     if (usuario) {
@@ -30,7 +30,7 @@ exports.alllist = async (req, res) => {
           Activo: usuario.Activo,
           Cedula: usuario.Cedula,
           KeyDispositivo: usuario.KeyDispositivo,
-          iTipoPersonal: usuario.iTipoPersonal
+          iTipoPersonal: usuario.idTipoPersonal
         },
         JWT_SECRET,
         { expiresIn: "1h" }  // El token expirará en 1 hora
@@ -45,7 +45,7 @@ exports.alllist = async (req, res) => {
         Activo: usuario.Activo,
         Cedula: usuario.Cedula,
         KeyDispositivo: usuario.KeyDispositivo,
-        iTipoPersonal: usuario.iTipoPersonal
+        iTipoPersonal: usuario.idTipoPersonal
       });
 
     } else {
