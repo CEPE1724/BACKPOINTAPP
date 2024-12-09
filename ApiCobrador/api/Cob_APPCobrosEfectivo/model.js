@@ -40,8 +40,8 @@ const Cob_APPCobrosEfectivoSchema = new EntitySchema({
         },
         Valor: {
             type: 'decimal',
-            length: 18,
-            precision: 2
+            precision: 18,
+            scale: 2
         },
         Estado: {
             type: 'int'

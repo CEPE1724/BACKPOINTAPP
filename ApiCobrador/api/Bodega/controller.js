@@ -19,7 +19,7 @@ exports.getBodegasPorIds = async (req, res) => {
         const bodegas = await AppDataSource.getRepository(Bodega)
             .createQueryBuilder("bodega") // Usamos el query builder para más control
             .select(["bodega.Nombre", "bodega.Bodega", "bodega.Codigo"]) // Seleccionamos solo los campos necesarios
-            .where("bodega.idBodega IN (:...ids)", { ids: idsArray }) // Usamos IN para los IDs
+            .where("bodega.Bodega IN (:...ids)", { ids: idsArray }) // Usamos IN para los IDs
             .andWhere("bodega.Almacen = :almacen", { almacen: 1 }) // Condición adicional
             .andWhere("bodega.Factura = :factura", { factura: 1 }) // Condición adicional
             .andWhere("bodega.Inventario = :inventario", { inventario: 1 }) // Condición adicional
