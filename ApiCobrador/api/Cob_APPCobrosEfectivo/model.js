@@ -66,6 +66,14 @@ const Cob_APPCobrosEfectivoSchema = new EntitySchema({
         },
         Bodega: {
             type: 'int'
+        },
+        Numero: {
+            type: 'varchar',
+            length: 60
+        },
+        Voucher: {
+            type: 'varchar',
+            length: 60
         }
         
     }
