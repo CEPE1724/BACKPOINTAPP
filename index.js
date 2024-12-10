@@ -56,6 +56,7 @@ const routes = [
     require('./ApiCobrador/api/GestionDiaria/router'),
     require('./Equifax/api/EQFX_IdentificacionConsultada/router'),
     require('./ApiCobrador/api/ProteccionDatos/router'),
+    require('./ApiCobrador/api/DocTerrena/router'),
     require('./ApiCobrador/api/Bodega/router'),
     require('./ApiCobrador/api/DispositivosAPP/router'),
     require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router'),
