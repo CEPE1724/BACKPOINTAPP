@@ -8,19 +8,19 @@ const ClientesVerificionTerrena = require("../ClientesVerificionTerrena/model");
 const TerrenaGestionDomicilio = require("../TerrenaGestionDomicilio/model");
 const TerrenaGestionTrabajo = require("../TerrenaGestionTrabajo/model");
 const IngresoCobrador = require("../IngresoCobrador/model");
+const { uploadFileToCloud } = require("./uploadFileToCloud");
 
-exports.addNew = async (req, res) => {
-    const { idClienteVerificacion } = req.body;
+function getOptionLabel(value, options) {
+    const selectedOption = options.find(option => option.value === value);
+    return selectedOption ? selectedOption.label : '';
+}
 
-    // Validación de campos obligatorios
+async function getPdfDomicilio(idClienteVerificacion) {
     if (!idClienteVerificacion) {
         return res.status(400).json({ message: "El campo idClienteVerificacion es obligatorio" });
     }
-
-    // Inicia una transacción
     const queryRunner = AppDataSource.createQueryRunner();
     await queryRunner.startTransaction();
-
     try {
         // Obtener el cliente
         const cliente = await queryRunner.manager.findOne(ClientesVerificionTerrena, { where: { idClienteVerificacion: idClienteVerificacion } });
@@ -45,7 +45,7 @@ exports.addNew = async (req, res) => {
             { value: 3, label: "Villa", icon: "tree" },
             { value: 4, label: "Mixta", icon: "building" }
         ]);
-        
+
         let A = Domicilio?.iTiempoVivienda === 1 ? 'X' : '';
         let B = Domicilio?.iTiempoVivienda === 2 ? 'X' : '';
         let C = Domicilio?.iTiempoVivienda === 5 ? 'X' : '';
@@ -127,7 +127,12 @@ exports.addNew = async (req, res) => {
             TelefonoTrabajo: Trabajo?.TelefonoTrabajo ?? '',
             PuntoReferenciaTrabajo: Trabajo?.PuntoReferencia ?? '',
             PersonaEntrevistadaTrabajo: Trabajo?.PersonaEntrevistada ?? '',
-            VERIFICADOR: Ingreso?.Nombre ?? ''
+            VERIFICADOR: Ingreso?.Nombre ?? '',
+            Alq: Domicilio?.ValorArrendado ?? '',
+            CallePrincipal: Domicilio?.CallePrincipal ?? '',
+            CalleSecundaria: Domicilio?.CalleSecundaria ?? '',
+            CallePrincipalTrabajo: Trabajo?.CallePrincipal ?? '',
+            CalleSecundariaTrabajo: Trabajo?.CalleSecundaria ?? '',
         };
 
         // Crear un nuevo documento DOCX
@@ -151,24 +156,25 @@ exports.addNew = async (req, res) => {
         const docxPath = path.join(__dirname, `contrato_${cliente.Ruc}_${timestamp}.docx`);
         fs.writeFileSync(docxPath, modifiedDocument);
 
-        return res.status(200).json({ message: "Documento creado y subido correctamente." });
+        // Llamar a la función para subir el archivo a Google Cloud Storage
+        const bucketName = "sparta_bucket";  // Nombre de tu bucket en Google Cloud
+        const cloudPath = `VerificaciónTerrena/${cliente.Ruc}/contrato_${cliente.Ruc}_${timestamp}.docx`;  // Ruta en el bucket
+        const publicUrl = await uploadFileToCloud(docxPath, bucketName, cloudPath);  // Subir archivo
+
+        return { message: "Documento creado y subido correctamente.", url: publicUrl };
 
     } catch (error) {
         await queryRunner.rollbackTransaction();
         console.error("Error al guardar los datos de protección:", error);
 
+        // Return specific error based on the error code or a generic error message
         if (error.code === '23505') {
-            return res.status(400).json({ message: "El dato ya existe" });
+            return { error: "El dato ya existe" };
         }
 
-        res.status(500).json({ message: "Error interno del servidor" });
+        return { error: "Error interno del servidor" };  // Return generic error message
     } finally {
         await queryRunner.release();
     }
-};
-
-// Función auxiliar para obtener la etiqueta de la opción
-function getOptionLabel(value, options) {
-    const selectedOption = options.find(option => option.value === value);
-    return selectedOption ? selectedOption.label : '';
 }
+module.exports = { getPdfDomicilio };

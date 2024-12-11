@@ -2,7 +2,7 @@ const { AppDataSource } = require("../config/database");
 const TerrenaGestionTrabajo = require("./model");
 const ClientesVerificionTerrena = require("../ClientesVerificionTerrena/model");
 const { handleNewLocation } = require("../../sockets/eventHandlers");
-
+const { getPdfDomicilio } = require('../TerrenaGestionDomicilio/services');
 exports.save = async (req, res) => {
   const {
     idTerrenaGestionTrabajo,
@@ -19,6 +19,9 @@ exports.save = async (req, res) => {
     Latitud,
     Longitud,
     trabajoImages,
+    CallePrincipal,
+    CalleSecundaria,
+
   } = req.body;
   const requiredFields = [
     { name: 'idClienteVerificacion', value: idClienteVerificacion },
@@ -34,6 +37,8 @@ exports.save = async (req, res) => {
     { name: 'Latitud', value: Latitud },
     { name: 'Longitud', value: Longitud },
     { name: 'trabajoImages', value: trabajoImages },
+    { name: 'CallePrincipal', value: CallePrincipal },
+    { name: 'CalleSecundaria', value: CalleSecundaria },
   ];
 
   for (const field of requiredFields) {
@@ -59,6 +64,8 @@ exports.save = async (req, res) => {
         Latitud,
         Longitud,
         trabajoImages: trabajoImagesString,
+        CallePrincipal,
+        CalleSecundaria,
       }
     );
 
@@ -86,11 +93,61 @@ exports.save = async (req, res) => {
       idTerrenaGestionTrabajoV = cliente.idTerrenaGestionTrabajo;
     }
 
+
     if (bDomicilio && idTerrenaGestionDomicilioV > 0) {
-      await clientesRepo.update({ idClienteVerificacion }, { iEstado: 1 });
+      try {
+        const result = await getPdfDomicilio(idClienteVerificacion);
+        
+        // Verifica si la respuesta contiene un error
+        if (result.error) {
+          console.log("Error: ", result.error);
+          return; // O maneja el error de la manera que consideres
+        }
+    
+        // Si no hubo error, obtiene la URL del documento generado
+        const urldoc = result.url;
+        console.log("URL del documento:", urldoc);
+        
+        // Realiza la actualización del cliente
+        await clientesRepo.update(
+          { idClienteVerificacion },          // Condición para identificar el cliente
+          { iEstado: 1, UrlGoogle: urldoc,
+            FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
+           }   // Los campos a actualizar
+        );
+    
+      } catch (error) {
+        console.error("Error en el proceso:", error);
+        // Aquí puedes manejar errores adicionales si es necesario
+      }
     }
+    
     if (!bDomicilio) {
-      await clientesRepo.update({ idClienteVerificacion }, { iEstado: 1 });
+      try {
+        const result = await getPdfDomicilio(idClienteVerificacion);
+        
+        // Verifica si la respuesta contiene un error
+        if (result.error) {
+          console.log("Error: ", result.error);
+          return; // O maneja el error de la manera que consideres
+        }
+    
+        // Si no hubo error, obtiene la URL del documento generado
+        const urldoc = result.url;
+        console.log("URL del documento:", urldoc);
+        
+        // Realiza la actualización del cliente
+        await clientesRepo.update(
+          { idClienteVerificacion },          // Condición para identificar el cliente
+          { iEstado: 1, UrlGoogle: urldoc,
+            FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
+           }   // Los campos a actualizar
+        );
+    
+      } catch (error) {
+        console.error("Error en el proceso:", error);
+        // Aquí puedes manejar errores adicionales si es necesario
+      }
     }
 
     res.status(201).json({

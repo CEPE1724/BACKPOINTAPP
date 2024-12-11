@@ -28,7 +28,8 @@ const ClientesVerificionTerrena = new EntitySchema({
             this.bDomicilioVerifica = 0,
             this.bTrabajoVerifica = 0,
             this.idTerrenaGestionDomicilio = 0,
-            this.idTerrenaGestionTrabajo = 0
+            this.idTerrenaGestionTrabajo = 0,
+            this.UrlGoogle= ''
         }
     },
     columns: {
@@ -81,7 +82,7 @@ const ClientesVerificionTerrena = new EntitySchema({
             length: 1000
         },
         FechaEnvio: {
-            type: 'date'
+            type: 'datetime'
         },
         FechaSistema: {
             type: 'datetime'
@@ -111,6 +112,10 @@ const ClientesVerificionTerrena = new EntitySchema({
         },
         idTerrenaGestionTrabajo: {
             type: 'int'
+        },
+        UrlGoogle: {
+            type: 'varchar',
+            length: 600
         }
     }
 });

@@ -19,6 +19,9 @@ const TerrenaGestionTrabajo = new EntitySchema({
             this.Latitud = 0;
             this.Longitud = 0;
             this.trabajoImages ='';
+            this.CallePrincipal = '';
+            this.CalleSecundaria = '';
+
         }
     }
     ,
@@ -66,6 +69,14 @@ const TerrenaGestionTrabajo = new EntitySchema({
         },
         trabajoImages: {
             type: 'varchar'
+        },
+        CallePrincipal: {
+            type: 'varchar',
+            length: 250
+        },
+        CalleSecundaria: {
+            type: 'varchar',
+            length: 250
         }
     }
 });

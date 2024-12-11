@@ -26,6 +26,9 @@ const TerrenaGestionDomicilio = new EntitySchema({
             this.Estacion = '';
             this.Usuario = '';
             this.domicilioImages = '';
+            this.CallePrincipal = '';
+            this.CalleSecundaria = '';
+            this.ValorArrendado = 0;
 
         }
     }
@@ -103,6 +106,17 @@ const TerrenaGestionDomicilio = new EntitySchema({
         },
         domicilioImages: {
             type: 'varchar'
+        },
+        CallePrincipal: {
+            type: 'varchar',
+            length: 255
+        },
+        CalleSecundaria: {
+            type: 'varchar',
+            length: 255
+        },
+        ValorArrendado: {
+            type: 'float'
         }
     }
 });
