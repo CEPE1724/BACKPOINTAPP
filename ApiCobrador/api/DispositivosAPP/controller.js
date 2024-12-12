@@ -50,7 +50,7 @@ exports.alllist = async (req, res) => {
 
     } else {
       // Si no se encuentra al usuario
-      res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuquise con R.R.H.H/Desarrollo" });
+      res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H/Desarrollo" });
     }
   } catch (error) {
     console.error("Error al buscar usuario:", error);

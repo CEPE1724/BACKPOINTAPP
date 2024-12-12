@@ -60,6 +60,7 @@ const routes = [
     require('./ApiCobrador/api/Bodega/router'),
     require('./ApiCobrador/api/DispositivosAPP/router'),
     require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router'),
+    require('./WebProductos/api/Productos/router'),
    
 ];
 

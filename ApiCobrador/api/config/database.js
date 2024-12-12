@@ -44,6 +44,7 @@ const entities = [
     require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DobleInfo/model'),
     require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleDirecciones/model'),
     require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleTelefonos/model'),
+    require('../../../WebProductos/api/Productos/model'),
 ];
 
 const AppDataSource = new DataSource({
