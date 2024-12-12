@@ -92,6 +92,68 @@ exports.Inventario = async (req, res) => {
 };
 
 
+exports.InventarioV2 = async (req, res) => {
+    // Desestructuramos los parámetros de la solicitud con valores predeterminados
+    const { Bodega, Articulo, PaginaNumero = 1, RegistrosPorPagina = 10, Inventario  } = req.query;
+    // Validamos los parámetros de entrada para asegurar que no sean valores maliciosos o incorrectos
+    if (!Bodega || isNaN(Bodega)) {
+        return res.status(400).json({ error: "Parámetros inválidos: bodega o artículo no proporcionados correctamente." });
+    }
+
+    // Validar los parámetros de paginación
+    if (isNaN(PaginaNumero) || PaginaNumero <= 0) {
+        return res.status(400).json({ error: "El número de página debe ser un número positivo." });
+    }
+
+    if (isNaN(RegistrosPorPagina) || RegistrosPorPagina <= 0) {
+        return res.status(400).json({ error: "La cantidad de registros por página debe ser un número positivo." });
+    }
+   
+    try {
+        // Utilizamos parámetros vinculados para prevenir inyección SQL
+        const result = await AppDataSource.query(`
+            EXEC APP_ListaProductos
+                @Bodega = ${Bodega},
+                @Articulo = '${Articulo}',
+                @PaginaNumero = ${PaginaNumero},
+                @RegistrosPorPagina = ${RegistrosPorPagina},
+                @Stock = ${parseInt(Inventario)}
+        `);
+
+        // En lugar de retornar un error 404, simplemente devolvemos una respuesta vacía si no hay productos
+        res.json({
+            success: true,
+            data: result || [], // Si no hay resultados, retornamos un array vacío
+            pagination: {
+                page: PaginaNumero,
+                recordsPerPage: RegistrosPorPagina,
+                totalRecords: result.length || 0 // Total de registros encontrados
+            }
+        });
+
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).json({ error: "Error interno del servidor." });
+    }
+};
+
+exports.InventarioV2det = async (req, res) => {
+    const { idArticulo } = req.query;
+    if(!idArticulo || isNaN(idArticulo)){
+        return res.status(400).json({ error: "Parámetros inválidos: idArticulo no proporcionado correctamente." });
+    }
+    try {
+        const result = await AppDataSource.query(` EXEC APP_ListaProductosBodega @idArticulo = ${idArticulo}`);
+        res.json({
+            success: true,
+            data: result || [], // Si no hay resultados, retornamos un array vacío
+        });
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).json({ error: "Error interno del servidor." });
+    }
+};
+
 
 exports.TablaAmortizacionValores = async (req, res) => {
     try {

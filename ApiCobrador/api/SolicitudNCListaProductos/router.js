@@ -14,4 +14,6 @@ router.get('/AppSave/TablaAmrtizacion', controller.TablaAmortizacion); /* ruta p
 router.get('/AppSave/TablaAmrtizacion', controller.TablaAmortizacion); /* ruta para insertar un recojo detalle*/
 router.get('/AppSave/TablaValoresPendientes', controller.TablaAmortizacionValores); /* ruta para insertar un recojo detalle*/
 router.get('/Inventario/Productos', controller.Inventario); /* ruta para insertar un recojo detalle*/
+router.get('/Inventario/V1/Productos', controller.InventarioV2); /* ruta para insertar un recojo detalle*/
+router.get('/Inventario/V1/Productos/Det', controller.InventarioV2det); /* ruta para insertar un recojo detalle*/
 module.exports = router;
