@@ -82,7 +82,7 @@ exports.UpdateEstado = async (req, res) => {
     if (usuario) {
       // Actualizar el estado del usuario a activo
       usuario.Activo = 1;
-      usuario.Pin = Pin;
+      usuario.PinSeguridad = Pin;
       await usuarioRepository.save(usuario);
 
       return res.json({

@@ -196,7 +196,7 @@ exports.getVaEmPassV1 = async (req, res) => {
     // Función para obtener el dispositivo
     const getDispositivo = async () => {
       return await DispositivosAPPRepository.findOne({
-        where: { Pin: KeyPinPass, KeyDispositivo: KeyDispositivo, idCom_Estado: Not(2) },
+        where: { PinSeguridad: KeyPinPass, KeyDispositivo: KeyDispositivo, idCom_Estado: Not(2) },
       });
     };
 
