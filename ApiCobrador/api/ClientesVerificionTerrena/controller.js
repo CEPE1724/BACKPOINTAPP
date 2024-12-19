@@ -8,18 +8,17 @@ exports.alllist = async (req, res) => {
     const { idVerificador } = req.query; // Obtener los parámetros de consulta
     const page = parseInt(req.query.page) || 1; // Página actual
     const limit = parseInt(req.query.limit) || 200; // Número de registros por página
-  
-    try {
-        const offset = (page - 1) * limit; // Calcular el desplazamiento
+    const offset = (page - 1) * limit; // Calcular el desplazamiento
 
-        // Obtener registros con paginación y ordenamiento
+    try {
+        // Usar un enfoque con `where` optimizado por `FechaSistema` u otro campo único
         const [registros, total] = await Promise.all([
             AppDataSource.getRepository(ClientesVerificionTerrena).find({
                 where: {
                     idVerificador: idVerificador
                 },
-                skip: offset, // Paginación
                 take: limit, // Límite de registros por página
+                skip: offset, // Paginación
                 order: {
                     FechaSistema: 'DESC' // Ordenar por FechaSistema en orden descendente
                 }
@@ -40,6 +39,7 @@ exports.alllist = async (req, res) => {
         res.status(500).json({ message: "Error interno del servidor" });
     }
 };
+
 
 exports.countEstado = async (req, res) => {
     const { idVerificador } = req.query; // Obtener los parámetros de consulta
