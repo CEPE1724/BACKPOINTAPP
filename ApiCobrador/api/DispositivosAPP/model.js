@@ -14,7 +14,9 @@ const DispositivosAPP = new EntitySchema({
             this.Cedula = "";
             this.KeyDispositivo = "";
             this.iTipoPersonal = 0;
-            this.Pin = 0;
+            this.Pin = "";
+            this.PinSeguridad = "";
+           
         }
     },
     columns: {
@@ -47,7 +49,12 @@ const DispositivosAPP = new EntitySchema({
             type: 'int'
         },
         Pin: {
-            type: 'int'
+            type: 'varchar',
+            length: 6
+        },
+        PinSeguridad: {
+            type: 'varchar',
+            length: 6
         }
     }
 });
