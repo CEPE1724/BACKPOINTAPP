@@ -18,7 +18,9 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
             this.idCompra = 0,
             this.idCliente = 0,
             this.Dias_Mora_Proyectado = 0,
-            this.Banco = " "	
+            this.Banco = " ",
+            this.Direccion = " ",
+            this.Barrio = " "
         }
     },
     columns: {
@@ -61,6 +63,14 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
             type: 'int'
         } ,
         Banco: {
+            type: 'varchar',
+            length: 255
+        },
+        Direccion: {
+            type: 'varchar',
+            length: 300
+        },
+        Barrio: {
             type: 'varchar',
             length: 255
         }

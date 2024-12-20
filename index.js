@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 const http = require('http');
 const socketIo = require('./ApiCobrador/sockets/socketio');
@@ -8,7 +7,8 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
-const {initializeDatabase} = require('./ApiCobrador/api/config/database');
+const { initializeDatabase } = require('./ApiCobrador/api/config/database');
+const authenticateToken = require('./ApiCobrador/api/auth/authMiddelware'); // Asegúrate de que esta ruta sea correcta
 
 const app = express();
 const server = http.createServer(app);
@@ -32,46 +32,58 @@ app.use(morgan('dev'));
 app.use(helmet());
 
 // Limitar la tasa de solicitudes
-//const apiLimiter = rateLimit({
-  //  windowMs: 15 * 60 * 1000, // 15 minutos
-    //max: 100, // Limite de 100 solicitudes por ventana
-//});
-//app.use('/cobranza/api/v1/point/', apiLimiter);
+// const apiLimiter = rateLimit({
+//     windowMs: 15 * 60 * 1000, // 15 minutos
+//     max: 100, // Limite de 100 solicitudes por ventana
+// });
+// app.use('/cobranza/api/v1/point/', apiLimiter);
 
-// Importar rutas
-// Importar rutas
-const routes = [
-    require('./ApiCobrador/api/Usuario/router'),
-    require('./ApiCobrador/api/Cbo_GestorDeCobranzas/router'),
-    require('./ApiCobrador/api/Cbo_EstadosGestion/router'),
-    require('./ApiCobrador/api/Cbo_EstadosTipocontacto/router'),
-    require('./ApiCobrador/api/Cbo_ResultadoGestion/router'),
-    require('./ApiCobrador/api/Cbo_GestionesDeCobranzas/router'),
-    require('./ApiCobrador/api/ClientesVerificionTerrena/router'),
-    require('./ApiCobrador/api/UbicacionesAPP/router'),
-    require('./ApiCobrador/api/TerrenaGestionDomicilio/router'),
-    require('./ApiCobrador/api/TerrenaGestionTrabajo/router'),
-    require('./ApiCobrador/api/googleApi/router'),
-    require('./ApiCobrador/api/SolicitudNCListaProductos/router'),
-    require('./ApiCobrador/api/GestionDiaria/router'),
-    require('./Equifax/api/EQFX_IdentificacionConsultada/router'),
-    require('./ApiCobrador/api/ProteccionDatos/router'),
-    require('./ApiCobrador/api/DocTerrena/router'),
-    require('./ApiCobrador/api/Bodega/router'),
-    require('./ApiCobrador/api/DispositivosAPP/router'),
-    require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router'),
-    require('./WebProductos/api/Productos/router'),
+// Rutas sin autenticación (sin middleware)
+const publicRoutes = [
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Usuario/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./Equifax/api/EQFX_IdentificacionConsultada/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/ProteccionDatos/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Bodega/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/DispositivosAPP/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./WebProductos/api/Productos/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/UbicacionesAPP/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/googleApi/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/SolicitudNCListaProductos/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/DocTerrena/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cre_GCTelefono/router') },
+
+];
+
+// Rutas protegidas (con middleware)
+const protectedRoutes = [
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_GestorDeCobranzas/router') },//
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_EstadosGestion/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_EstadosTipocontacto/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_ResultadoGestion/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_GestionesDeCobranzas/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/ClientesVerificionTerrena/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionDomicilio/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionTrabajo/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/GestionDiaria/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router') },
+ 
    
 ];
+
+// Aplica las rutas sin protección
+publicRoutes.forEach(route => {
+    app.use(route.path, route.route);
+});
+
+// Aplica las rutas con protección de token
+protectedRoutes.forEach(route => {
+    app.use(route.path, authenticateToken,  route.route);
+});
 
 // Inicializa la conexión a la base de datos
 initializeDatabase()
     .then(() => {
         console.log('Conexión a la base de datos establecida');
-
-        routes.forEach(route => {
-            app.use('/cobranza/api/v1/point/', route);
-        });
 
         // Manejar rutas no encontradas y errores
         app.use((req, res) => res.status(404).json({ message: "Route not found" }));

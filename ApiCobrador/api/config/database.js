@@ -23,6 +23,7 @@ const entities = [
     require('../Nomina/model'),
     require('../Com_AsignacionDeVendedores/model'),
     require('../Cob_APPCobrosEfectivo/model'),
+    require('../Cre_GCTelefono/model'),
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
     require('../../../Equifax/api/EQFX_ResultadoPoliticas/model'),

@@ -4,7 +4,7 @@ const { Like, Repository, Brackets } = require('typeorm'); // Asegúrate de que 
 
 exports.allCbo_GestorCount = async (req, res) => {
     const { idCobrador } = req.body;  // Asegúrate de que idCobrador esté presente en el cuerpo de la solicitud
-    console.log(idCobrador);
+    
     if(!idCobrador) {
         return res.status(400).json({ message: "Falta parametros." });
     }

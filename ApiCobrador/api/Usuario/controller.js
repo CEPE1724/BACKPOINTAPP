@@ -382,7 +382,7 @@ function generateToken(user) {
         Activo: user.Activo,
       },
       JWT_SECRET,
-      { expiresIn: "24h" } // Token expires in 24 hours
+      { expiresIn: "10m" } // Token expires in 24 hours
     );
   } catch (error) {
     console.error('Error generating token:', error);
