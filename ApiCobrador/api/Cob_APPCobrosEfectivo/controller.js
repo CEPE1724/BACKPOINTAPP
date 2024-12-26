@@ -1,23 +1,56 @@
 const { AppDataSource } = require("../config/database");
 const Cob_APPCobrosEfectivoSchema = require('./model'); // Ajusta la ruta según sea necesario
-
+const  IngresoCobrador = require('../IngresoCobrador/model');
 exports.save = async (req, res) => {
     const { idCompra, idCobrador, Valor, Imagen, Usuario, Voucher } = req.body;
 
     try {
         // Validaciones de los campos obligatorios
-        if (!idCompra)
+        console.log('idCompra:', idCompra);
+        if (!idCompra) {
+            console.log('idCompra no proporcionado');
             return res.status(400).json({ message: "El campo idCompra es obligatorio" });
-        if (!idCobrador)
+        }
+
+        console.log('idCobrador:', idCobrador);
+        if (!idCobrador) {
+            console.log('idCobrador no proporcionado');
             return res.status(400).json({ message: "El campo idCobrador es obligatorio" });
-        if (!Valor)
+        }
+
+        console.log('Valor:', Valor);
+        if (!Valor) {
+            console.log('Valor no proporcionado');
             return res.status(400).json({ message: "El campo Valor es obligatorio" });
-        if (!Imagen)
+        }
+
+        console.log('Imagen:', Imagen);
+        if (!Imagen) {
+            console.log('Imagen no proporcionado');
             return res.status(400).json({ message: "El campo Imagen es obligatorio" });
-        if (!Usuario)
-            return res.status(400).json({ message: "El campo Usuario es obligatorio" });
-        if (!Voucher)
+        }
+
+        console.log('Usuario:', Usuario);
+        if (!Usuario) {
+            // Traemos solo el campo 'codigo' de la tabla 'IngresoCobrador' usando select
+            Usuario = await AppDataSource.getRepository(IngresoCobrador)
+                .findOne({ 
+                    select: ["Codigo"],  // Solo seleccionamos el campo 'codigo'
+                    where: { idIngresoCobrador: idCobrador }
+                });
+        
+            // Si el código es encontrado, puedes usarlo de la siguiente manera:
+            if (!Usuario) {
+                return res.status(400).json({ message: "El Cobrador no fue encontrado" });
+            }
+        }
+        
+
+        console.log('Voucher:', Voucher);
+        if (!Voucher) {
+            console.log('Voucher no proporcionado');
             return res.status(400).json({ message: "El campo Voucher es obligatorio" });
+        }
 
         // Si Imagen es un array, convertirlo a una cadena separada por comas
         let imagenString = Imagen;
@@ -35,7 +68,7 @@ exports.save = async (req, res) => {
             Voucher
         };
 
-        
+
         // Obtener la fecha actual
         const FechaSistema = new Date();
         registro.Fecha = FechaSistema;

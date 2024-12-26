@@ -51,6 +51,9 @@ const publicRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/SolicitudNCListaProductos/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/DocTerrena/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cre_GCTelefono/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionDomicilio/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionTrabajo/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/GestionDiaria/router') },
 
 ];
 
@@ -62,9 +65,6 @@ const protectedRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_ResultadoGestion/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_GestionesDeCobranzas/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/ClientesVerificionTerrena/router') },
-    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionDomicilio/router') },
-    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionTrabajo/router') },
-    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/GestionDiaria/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router') },
  
    
