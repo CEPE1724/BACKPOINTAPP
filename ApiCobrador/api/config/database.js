@@ -55,6 +55,11 @@ const entities = [
     require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoRFR/model'),
     require('../../../Equifax/api/EQFX_CalificaDetalleTarjetas/model'),
     require('../../../Equifax/api/EQFX_InformacionPosteriorFechaCorteOperacionesCanceladas/model'),
+    require('../../../Equifax/api/EQFX_PersonasInhabilitadasSinProtestos/model'),
+    require('../../../Equifax/api/EQFX_CreditosOtorgados12UltimosMesesEducativo/model'),
+    require('../../../Equifax/api/EQFX_SujetoAlDiaInfocom/model'),
+    require('../../../Equifax/api/EQFX_RecursivoGarantiasPersonalesCodeudoresOperacionesVigentes/model'),
+    require('../../../Equifax/api/EQFX_GarantiasPersonalesCodeudoresOperacionesNoVigentes/model'),
     require('../../../WebProductos/api/Productos/model'),
     //soap Equifax
 

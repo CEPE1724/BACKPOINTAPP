@@ -14,10 +14,10 @@ exports.consultarEquifax = async (req, res) => {
         const result = await equifaxService.consultarExpertoPointTech(tipoDocumento, numeroDocumento);
 
         // Capturar los valores de la respuesta
-        const { idEQFX_IdentificacionConsultada, codigoConsulta, mensajeError } = result;
+        const { idEQFX_IdentificacionConsultada, codigoConsulta,countarraydata, countdata, mensajeError } = result;
 
-        console.log('Datos de IdentificacionConsultada:', idEQFX_IdentificacionConsultada, codigoConsulta, mensajeError);
-
+        console.log('Datos de IdentificacionConsultada:', idEQFX_IdentificacionConsultada, codigoConsulta, countarraydata, countdata, mensajeError);
+  
         // Devolver la respuesta al cliente con los datos capturados
         return res.status(200).json({
             success: true,
@@ -25,7 +25,9 @@ exports.consultarEquifax = async (req, res) => {
             data: {
                 idEQFX_IdentificacionConsultada,
                 codigoConsulta,
-                mensajeError
+                mensajeError,
+                'Total Tablas': countdata ,
+                'Tablas Guardadas': countarraydata
             },
             details: 'La información fue obtenida correctamente desde Equifax.'
         });

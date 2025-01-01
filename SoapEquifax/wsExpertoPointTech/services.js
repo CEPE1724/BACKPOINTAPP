@@ -24,9 +24,14 @@ const EQFX_EvolucionHistoricaDistEndeudamientoSICOM = require('../../Equifax/api
 const EQFX_DeudaReportadaRFR = require('../../Equifax/api/EQFX_DeudaReportadaRFR/model');
 const EQFX_CalificaDetalleTarjetas = require('../../Equifax/api/EQFX_CalificaDetalleTarjetas/model');
 const EQFX_EvolucionHistoricaDistEndeudamientoRFR = require('../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoRFR/model');
-const EQFX_AnalisisSaldosPorVencerSistemaFinanciero = require('../../Equifax/api/EQFX_AnalisisSaldosPorVencerSistemaFinanciero/model'); 
+const EQFX_AnalisisSaldosPorVencerSistemaFinanciero = require('../../Equifax/api/EQFX_AnalisisSaldosPorVencerSistemaFinanciero/model');
 const EQFX_InformacionPosteriorFechaCorteOperacionesCanceladas = require('../../Equifax/api/EQFX_InformacionPosteriorFechaCorteOperacionesCanceladas/model');
 const EQFX_Ultimas10OperacionesCanceladas = require('../../Equifax/api/EQFX_Ultimas10OperacionesCanceladas/model');
+const EQFX_PersonasInhabilitadasSinProtestos = require('../../Equifax/api/EQFX_PersonasInhabilitadasSinProtestos/model');
+const EQFX_CreditosOtorgados12UltimosMesesEducativo = require('../../Equifax/api/EQFX_CreditosOtorgados12UltimosMesesEducativo/model');
+const EQFX_RecursivoGarantiasPersonalesCodeudoresOperacionesVigentes = require('../../Equifax/api/EQFX_RecursivoGarantiasPersonalesCodeudoresOperacionesVigentes/model');
+const EQFX_SujetoAlDiaInfocom = require('../../Equifax/api/EQFX_SujetoAlDiaInfocom/model');
+const EQFX_GarantiasPersonalesCodeudoresOperacionesNoVigentes = require('../../Equifax/api/EQFX_GarantiasPersonalesCodeudoresOperacionesNoVigentes/model');
 // URL del servicio SOAP
 const url = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
 
@@ -107,7 +112,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                     // Mostrar la respuesta del servicio
                     //console.log('Respuesta SOAP:', result);
                     //console.log('Solicitud SOAP enviada:', client.lastRequest);  // Ver XML enviado
-                   // console.log('Respuesta SOAP completa:', result);
+                    // console.log('Respuesta SOAP completa:', result);
 
                     // Acceder a los datos del resultado
                     if (result && result.ObtenerResultadoExpertoPointTechResult && result.ObtenerResultadoExpertoPointTechResult.diffgram) {
@@ -119,27 +124,22 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                         console.log('Cantidad de datos:', countdata);
                         const keys = Object.keys(data);
                         console.log('Keys:', keys);
-                        return;
-                        // Verificar si existe IdentificacionConsultada
+                        let countarraydata = 0;
                         if (data && data.IdentificacionConsultada) {
-                            // Si IdentificacionConsultada es un array
+                            countarraydata = countarraydata + 1;
                             const identificacionData = Array.isArray(data.IdentificacionConsultada) ? data.IdentificacionConsultada[0] : data.IdentificacionConsultada;
-
                             const registro = {
                                 NombreSujeto: identificacionData.NombreSujeto || '',
                                 TipoDocumento: identificacionData.TipoDocumento || '',
                                 NumeroDocumento: identificacionData.NumeroDocumento || '',
                             };
-
                             const repository = AppDataSource.getRepository(EQFX_IdentificacionConsultada);
                             await repository.save(registro);
-                           // console.log('Registro guardado:', registro);
+                            console.log('Registro guardado:', registro);
                             idEQFX_IdentificacionConsultada = registro.idEQFX_IdentificacionConsultada;
-                            //console.log('ID de IdentificacionConsultada:', idEQFX_IdentificacionConsultada);
                         }
-
-                        // Verificar y manejar los datos de ResultadoSegmentacion
                         if (data.ResultadoSegmentacion) {
+                            countarraydata = countarraydata + 1;
                             const dataResultadoSe = data.ResultadoSegmentacion;  // Aquí ya no es un array
                             const segmentacionRegistro = {
                                 ResultadoEvaluacion: dataResultadoSe.ResultadoEvaluacion || 0,
@@ -155,12 +155,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 ScoreSobreendeudamiento: dataResultadoSe.ScoreSobreendeudamiento || '',
                                 idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada
                             };
+                            console.log('Datos de ResultadoSegmentacion:', segmentacionRegistro);
                             const repository = AppDataSource.getRepository(EQFX_ResultadoSegmentacion);
                             await repository.save(segmentacionRegistro);
-                           // console.log('Datos de segmentación:', segmentacionRegistro);
                         }
 
                         if (data.ResultadoPoliticas) {
+                            countarraydata = countarraydata + 1;
                             const dataResultadoPoliticas = data.ResultadoPoliticas;
                             const politicasRegistro = {
                                 idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
@@ -168,12 +169,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 Valor: dataResultadoPoliticas.Valor || '',
                                 Resultado: dataResultadoPoliticas.Resultado || ''
                             };
+                            console.log('Datos de ResultadoPoliticas:', politicasRegistro);
                             const repository = AppDataSource.getRepository(EQFX_ResultadoPoliticas);
                             await repository.save(politicasRegistro);
-                            //console.log('Datos de políticas:', politicasRegistro);
                         }
 
                         if (data.Score_x0020_Puntaje_x0020_y_x0020_Grafico_x0020_V3_x0020__x0028_Institucion_x0029_) {
+                            countarraydata = countarraydata + 1;
                             const dataScorePuntajeyGraficoV3 = data.Score_x0020_Puntaje_x0020_y_x0020_Grafico_x0020_V3_x0020__x0028_Institucion_x0029_;
                             const scoreRegistro = {
                                 idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
@@ -185,12 +187,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 FechaInicial: dataScorePuntajeyGraficoV3.FechaInicial || new Date(),
                                 FechaFinal: dataScorePuntajeyGraficoV3.FechaFinal || new Date()
                             };
+                            console.log('Datos de ScorePuntajeyGraficoV3:', scoreRegistro);
                             const repository = AppDataSource.getRepository(EQFX_ScorePuntajeyGraficoV3);
                             await repository.save(scoreRegistro);
-                           // console.log('Datos de ScorePuntajeyGraficoV3:', scoreRegistro);
                         }
 
-                        if(data.Deuda_x0020_reportada_x0020_por_x0020_INFOCOM_x0020__x0028_excluyendo_x0020_IESS_x0029_){
+                        if (data.Deuda_x0020_reportada_x0020_por_x0020_INFOCOM_x0020__x0028_excluyendo_x0020_IESS_x0029_) {
+                            countarraydata = countarraydata + 1;
                             const dataDeudaReportadaINFOCOM = Array.isArray(data.Deuda_x0020_reportada_x0020_por_x0020_INFOCOM_x0020__x0028_excluyendo_x0020_IESS_x0029_)
                                 ? data.Deuda_x0020_reportada_x0020_por_x0020_INFOCOM_x0020__x0028_excluyendo_x0020_IESS_x0029_
                                 : [data.Deuda_x0020_reportada_x0020_por_x0020_INFOCOM_x0020__x0028_excluyendo_x0020_IESS_x0029_];
@@ -213,13 +216,14 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     NumeroDocumentoInv: handleEmptyString(item.NumeroDocumentoInv),
                                     NombreSujetoInv: handleEmptyString(item.NombreSujetoInv)
                                 };
-                               // console.log('Datos de DeudaReportadaINFOCOM:', deudaReportadaINFOCOMRegistro);
+                                console.log('Datos de DeudaReportadaINFOCOM:', deudaReportadaINFOCOMRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_DeudaReportadaINFOCOM);
                                 await repository.save(deudaReportadaINFOCOMRegistro);
                             }
                         }
 
-                        if(data.Deuda_x0020_reportada_x0020_por_x0020_RFR){
+                        if (data.Deuda_x0020_reportada_x0020_por_x0020_RFR) {
+                             countarraydata = countarraydata + 1;                            
                             const dataDeudaReportadaRFR = Array.isArray(data.Deuda_x0020_reportada_x0020_por_x0020_RFR)
                                 ? data.Deuda_x0020_reportada_x0020_por_x0020_RFR
                                 : [data.Deuda_x0020_reportada_x0020_por_x0020_RFR];
@@ -253,9 +257,10 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 const repository = AppDataSource.getRepository(EQFX_DeudaReportadaRFR);
                                 await repository.save(deudaReportadaRFRRegistro);
                             }
-                        }    
-                        
-                        if(data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_RFR){
+                        }
+
+                        if (data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_RFR) {
+                            countarraydata = countarraydata + 1;
                             const dataEvolucionHistoricaDistEndeudamientoRFR = Array.isArray(data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_RFR)
                                 ? data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_RFR
                                 : [data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_RFR];
@@ -279,9 +284,10 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 const repository = AppDataSource.getRepository(EQFX_EvolucionHistoricaDistEndeudamientoRFR);
                                 await repository.save(evolucionRegistro);
                             }
-                        }                   
+                        }
 
-                        if(data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_SICOM){
+                        if (data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_SICOM) {
+                            countarraydata = countarraydata + 1;
                             const dataEvolucionHistoricaDistEndeudamientoSICOM = Array.isArray(data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_SICOM)
                                 ? data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_SICOM
                                 : [data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_SICOM];
@@ -306,6 +312,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                         }
 
                         if (data.Recursivo_x0020_Detalle_x0020_distribucion_x0020_endeudamiento_x0020_Educativo) {
+                            countarraydata = countarraydata + 1;
                             // Asegurarse de que es un array (si no lo es, conviértelo a uno)
                             const dataEvolucionHistoricaDistEndeudamientoEducativo = Array.isArray(data.Recursivo_x0020_Detalle_x0020_distribucion_x0020_endeudamiento_x0020_Educativo)
                                 ? data.Recursivo_x0020_Detalle_x0020_distribucion_x0020_endeudamiento_x0020_Educativo
@@ -315,7 +322,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             for (let i = 0; i < dataEvolucionHistoricaDistEndeudamientoEducativo.length; i++) {
                                 const item = dataEvolucionHistoricaDistEndeudamientoEducativo[i];
                                 // Función para asegurarse de que un valor sea una cadena vacía si está vacío
-                               
+
                                 // Crear el registro para cada elemento
                                 const evolucionRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
@@ -333,20 +340,19 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     Codeudor: item.Codeudor || 0,
                                     TarjetaCredito: item.TarjetaCredito || 0,
                                     AcuerdoAcuerdoConcordatorio: handleEmptyString(item.AcuerdoConcordatorio),
-                                    Detalle: handleEmptyString(item.Detalle), 
+                                    Detalle: handleEmptyString(item.Detalle),
                                     Concordatorio: handleEmptyString(item.Concordatorio),
                                     Detalle: handleEmptyString(item.Detalle),
                                     ResaltadaInv: handleEmptyString(item.ResaltadaInv)
                                 };
                                 console.log('Datos de EvolucionHistoricaDistEndeudamientoEducativo:', evolucionRegistro);
-
-                                // Guardar en la base de datos
                                 const repository = AppDataSource.getRepository(EQFX_EvolucionHistoricaDistEndeudamientoEducativo);
                                 await repository.save(evolucionRegistro);
                             }
                         }
-                        
-                        if( data.Valor_x0020_deuda_x0020_total_x0020_en_x0020_los_x0020_3_x0020_segmentos_x0020_SIN_x0020_IESS){
+
+                        if (data.Valor_x0020_deuda_x0020_total_x0020_en_x0020_los_x0020_3_x0020_segmentos_x0020_SIN_x0020_IESS) {
+                            countarraydata = countarraydata + 1;
                             const dataDeudaTotalSICOM = Array.isArray(data.Valor_x0020_deuda_x0020_total_x0020_en_x0020_los_x0020_3_x0020_segmentos_x0020_SIN_x0020_IESS)
                                 ? data.Valor_x0020_deuda_x0020_total_x0020_en_x0020_los_x0020_3_x0020_segmentos_x0020_SIN_x0020_IESS
                                 : [data.Valor_x0020_deuda_x0020_total_x0020_en_x0020_los_x0020_3_x0020_segmentos_x0020_SIN_x0020_IESS];
@@ -369,21 +375,22 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if( data.Cuota_x0020_estimada_x0020_Mensual_x0020_Web){
+                        if (data.Cuota_x0020_estimada_x0020_Mensual_x0020_Web) {
+                            countarraydata = countarraydata + 1;
                             const dataCuotaEstimadaMensualWeb = Array.isArray(data.Cuota_x0020_estimada_x0020_Mensual_x0020_Web)
-                                ? data.Cuota_x0020_estimada_x0020_Mensual_x0020_Web 
+                                ? data.Cuota_x0020_estimada_x0020_Mensual_x0020_Web
                                 : [data.Cuota_x0020_estimada_x0020_Mensual_x0020_Web];
                             for (let i = 0; i < dataCuotaEstimadaMensualWeb.length; i++) {
                                 const item = dataCuotaEstimadaMensualWeb[i];
                                 const cuotaEstimadaMensualWebRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
-                                    Pago : handleEmpyDecimal(item.Pago),
-                                    NumeroCreditosComercial : handleEmptyInt(item.NumeroCreditosComercial),
-                                    TotalVencido : handleEmpyDecimal(item.TotalVencido),
+                                    Pago: handleEmpyDecimal(item.Pago),
+                                    NumeroCreditosComercial: handleEmptyInt(item.NumeroCreditosComercial),
+                                    TotalVencido: handleEmpyDecimal(item.TotalVencido),
                                     TotalDemanda: handleEmpyDecimal(item.TotalDemanda),
-                                    TotalCartera : handleEmpyDecimal(item.TotalCartera),
-                                    NumeroCreditosIece : handleEmptyInt(item.NumeroCreditosIece),
-                                    NumeroOperacionesExcluidas : handleEmptyInt(item.NumeroOperacionesExcluidas)
+                                    TotalCartera: handleEmpyDecimal(item.TotalCartera),
+                                    NumeroCreditosIece: handleEmptyInt(item.NumeroCreditosIece),
+                                    NumeroOperacionesExcluidas: handleEmptyInt(item.NumeroOperacionesExcluidas)
                                 };
                                 console.log('Datos de CuotaEstimadaMensualWeb:', cuotaEstimadaMensualWebRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_CuotaEstimadaMensualWeb);
@@ -391,8 +398,9 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if( data.Mantiene_x0020_historial_x0020_crediticio_x0020_desde){
-                             const dataHistorialCrediticio = Array.isArray(data.Mantiene_x0020_historial_x0020_crediticio_x0020_desde)
+                        if (data.Mantiene_x0020_historial_x0020_crediticio_x0020_desde) {
+                            countarraydata = countarraydata + 1;
+                            const dataHistorialCrediticio = Array.isArray(data.Mantiene_x0020_historial_x0020_crediticio_x0020_desde)
                                 ? data.Mantiene_x0020_historial_x0020_crediticio_x0020_desde
                                 : [data.Mantiene_x0020_historial_x0020_crediticio_x0020_desde];
                             for (let i = 0; i < dataHistorialCrediticio.length; i++) {
@@ -408,7 +416,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if( data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_desde_x0020_20051){
+                        if (data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_desde_x0020_20051) {
+                            countarraydata = countarraydata + 1;
                             const dataPerfilRiesgoDirecto = Array.isArray(data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_desde_x0020_20051)
                                 ? data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_desde_x0020_20051
                                 : [data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_desde_x0020_20051];
@@ -416,9 +425,9 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 const item = dataPerfilRiesgoDirecto[i];
                                 const perfilRiesgoDirectoRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
-                                    Indicador : handleEmptyString(item.Indicador),
-                                    Valor : handleEmpyDecimal(item.Valor),
-                                    Fecha : item.Fecha || new Date()
+                                    Indicador: handleEmptyString(item.Indicador),
+                                    Valor: handleEmpyDecimal(item.Valor),
+                                    Fecha: item.Fecha || new Date()
                                 };
                                 console.log('Datos de PerfilRiesgoDirecto:', perfilRiesgoDirectoRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_PerfilRiesgoDirecto);
@@ -426,7 +435,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if(data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_6_x0020_meses2){
+                        if (data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_6_x0020_meses2) {
+                            countarraydata = countarraydata + 1;
                             const dataPerfilRiesgoDirectoSeis = Array.isArray(data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_6_x0020_meses2)
                                 ? data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_6_x0020_meses2
                                 : [data.Identificador_x0020_perfil_x0020_riesgo_x0020_directo_x0020_6_x0020_meses2];
@@ -434,9 +444,9 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 const item = dataPerfilRiesgoDirectoSeis[i];
                                 const perfilRiesgoDirectoSeisRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
-                                    Indicador : handleEmptyString(item.Indicador),
-                                    Valor : handleEmpyDecimal(item.Valor),
-                                    Fecha : item.Fecha || new Date()
+                                    Indicador: handleEmptyString(item.Indicador),
+                                    Valor: handleEmpyDecimal(item.Valor),
+                                    Fecha: item.Fecha || new Date()
                                 };
                                 console.log('Datos de PerfilRiesgoDirectoSeis:', perfilRiesgoDirectoSeisRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_PerfilRiesgoDirectoSeis);
@@ -444,7 +454,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if(data.Recursivo_x0020_Composicion_x0020_estructura_x0020_de_x0020_vencimiento){
+                        if (data.Recursivo_x0020_Composicion_x0020_estructura_x0020_de_x0020_vencimiento) {
+                            countarraydata = countarraydata + 1;
                             const dataEvolucionHistoricaDistEndeudamiento = Array.isArray(data.Recursivo_x0020_Composicion_x0020_estructura_x0020_de_x0020_vencimiento)
                                 ? data.Recursivo_x0020_Composicion_x0020_estructura_x0020_de_x0020_vencimiento
                                 : [data.Recursivo_x0020_Composicion_x0020_estructura_x0020_de_x0020_vencimiento];
@@ -471,7 +482,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if (data.Analisis_x0020_detalle_x0020_del_x0020_vencido){
+                        if (data.Analisis_x0020_detalle_x0020_del_x0020_vencido) {
+                            countarraydata = countarraydata + 1;
                             const dataAnalisisDetalleVencido = Array.isArray(data.Analisis_x0020_detalle_x0020_del_x0020_vencido)
                                 ? data.Analisis_x0020_detalle_x0020_del_x0020_vencido
                                 : [data.Analisis_x0020_detalle_x0020_del_x0020_vencido];
@@ -502,8 +514,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if(data.Recursivo_x0020_deuda_x0020_historica1)
-                        {
+                        if (data.Recursivo_x0020_deuda_x0020_historica1) {
+                            countarraydata = countarraydata + 1;
                             const dataEvolucionHistoricaDistEndeudamientoRecursivo = Array.isArray(data.Recursivo_x0020_deuda_x0020_historica1)
                                 ? data.Recursivo_x0020_deuda_x0020_historica1
                                 : [data.Recursivo_x0020_deuda_x0020_historica1];
@@ -515,28 +527,28 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     FechaCorteParam: item.FechaCorteParam || new Date(),
                                     PorVencer: handleEmpyDecimal(item.PorVencer),
                                     NoDevengaInt: handleEmpyDecimal(item.NoDevengaInt),
-                                    Vencido0a1 : handleEmpyDecimal(item.Vencido0a1),
-                                    Vencido1a2 : handleEmpyDecimal(item.Vencido1a2),
-                                    Vencido2a3 : handleEmpyDecimal(item.Vencido2a3),
-                                    Vencido3a6 : handleEmpyDecimal(item.Vencido3a6),
-                                    Vencido6a9 : handleEmpyDecimal(item.Vencido6a9),
-                                    Vencido9a12 : handleEmpyDecimal(item.Vencido9a12),
-                                    Vencido12a24 : handleEmpyDecimal(item.Vencido12a24),
-                                    Vencido24 : handleEmpyDecimal(item.Vencido24),
-                                    Vencido36 : handleEmpyDecimal(item.Vencido36),
-                                    DemandaJudicial : handleEmpyDecimal(item.DemandaJudicial),
-                                    CarteraCastigada : handleEmpyDecimal(item.CarteraCastigada),
-                                    SaldoDeuda : handleEmpyDecimal(item.SaldoDeuda),
-                                    tipoDeudaParam : handleEmptyString(item.tipoDeudaParam)
+                                    Vencido0a1: handleEmpyDecimal(item.Vencido0a1),
+                                    Vencido1a2: handleEmpyDecimal(item.Vencido1a2),
+                                    Vencido2a3: handleEmpyDecimal(item.Vencido2a3),
+                                    Vencido3a6: handleEmpyDecimal(item.Vencido3a6),
+                                    Vencido6a9: handleEmpyDecimal(item.Vencido6a9),
+                                    Vencido9a12: handleEmpyDecimal(item.Vencido9a12),
+                                    Vencido12a24: handleEmpyDecimal(item.Vencido12a24),
+                                    Vencido24: handleEmpyDecimal(item.Vencido24),
+                                    Vencido36: handleEmpyDecimal(item.Vencido36),
+                                    DemandaJudicial: handleEmpyDecimal(item.DemandaJudicial),
+                                    CarteraCastigada: handleEmpyDecimal(item.CarteraCastigada),
+                                    SaldoDeuda: handleEmpyDecimal(item.SaldoDeuda),
+                                    tipoDeudaParam: handleEmptyString(item.tipoDeudaParam)
                                 };
                                 console.log('Datos de EvolucionHistoricaDistEndeudamientoRecursivo:', evolucionRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_EvolucionHistoricaDistEndeudamientoRecursivo);
                                 await repository.save(evolucionRegistro);
                             }
                         }
-                        
-                        if(data.Entidades_x0020_que_x0020_han_x0020_consultado)
-                        {
+
+                        if (data.Entidades_x0020_que_x0020_han_x0020_consultado) {
+                            countarraydata = countarraydata + 1;
                             const dataEntidadesQueConsultaron = Array.isArray(data.Entidades_x0020_que_x0020_han_x0020_consultado)
                                 ? data.Entidades_x0020_que_x0020_han_x0020_consultado
                                 : [data.Entidades_x0020_que_x0020_han_x0020_consultado];
@@ -565,8 +577,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if(data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr)
-                        {
+                        if (data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr) {
+                            countarraydata = countarraydata + 1;
                             const dataIndicadoresDeudaActualSbsSicomRfr = Array.isArray(data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr)
                                 ? data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr
                                 : [data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr];
@@ -594,8 +606,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if(data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr)
-                        {
+                        if (data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr) {
+                            countarraydata = countarraydata + 1;
                             const dataIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores = Array.isArray(data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr)
                                 ? data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr
                                 : [data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr];
@@ -609,12 +621,12 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     TipoRiesgo: handleEmptyString(item.TipoRiesgo),
                                     TipoCredito: handleEmptyString(item.TipoCredito),
                                     Calificacion: handleEmptyString(item.Calificacion),
-                                    MayorValorVencido : handleEmpyDecimal(item.MayorValorVencido),
-                                    FechaMayorValor : handleEmptyString(item.FechaMayorValor),
-                                    MayorPlazoVencido : handleEmptyString(item.MayorPlazoVencido),
-                                    FechaMayorPlazo : handleEmptyString(item.FechaMayorPlazo),
-                                    FechaUltimoVencido : handleEmptyString(item.FechaUltimoVencido),
-                                    Operacion : handleEmptyString(item.Operacion)
+                                    MayorValorVencido: handleEmpyDecimal(item.MayorValorVencido),
+                                    FechaMayorValor: handleEmptyString(item.FechaMayorValor),
+                                    MayorPlazoVencido: handleEmptyString(item.MayorPlazoVencido),
+                                    FechaMayorPlazo: handleEmptyString(item.FechaMayorPlazo),
+                                    FechaUltimoVencido: handleEmptyString(item.FechaUltimoVencido),
+                                    Operacion: handleEmptyString(item.Operacion)
                                 };
                                 console.log('Datos de IndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores:', indicadoresDeudaHistoricaInstitucionSbsSicomRfrdoresRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_IndicaIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores);
@@ -623,10 +635,11 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                         }
 
                         if (data.DetalleDeudaActualReportadaSBS) {
+                            countarraydata = countarraydata + 1;
                             const dataDetalleDeudaActualReportadaSBS = Array.isArray(data.DetalleDeudaActualReportadaSBS)
                                 ? data.DetalleDeudaActualReportadaSBS
                                 : [data.DetalleDeudaActualReportadaSBS];
-                            
+
                             for (let i = 0; i < dataDetalleDeudaActualReportadaSBS.length; i++) {
                                 const item = dataDetalleDeudaActualReportadaSBS[i];
                                 const detalleDeudaActualReportadaSBSRegistro = {
@@ -638,7 +651,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     CupoMontoOriginal: handleEmpyDecimal(item.Cupo_x0020__x002F__x0020_Monto_x0020_Original),
                                     FechaApertura: handleEmptyString(item.Fecha_x0020_de_x0020_Apertura),
                                     FechaVencimiento: handleEmptyString(item.Fecha_x0020_de_x0020_Vencimiento),
-                                    CalifPropia: handleEmptyString (item["Calif._x0020_Propia"]),
+                                    CalifPropia: handleEmptyString(item["Calif._x0020_Propia"]),
                                     TotalVencer: handleEmpyDecimal(item.Total_x0020_Vencer),
                                     NDI: handleEmptyString(item.NDI),
                                     TotalVencido: handleEmpyDecimal(item.Total_x0020_Vencido),
@@ -647,16 +660,16 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     SaldoDeuda: handleEmpyDecimal(item.Saldo_x0020_Deuda),
                                     CuotaMensual: handleEmpyDecimal(item.Cuota_x0020_Mensual)
                                 };
-                        
+
                                 console.log('Datos de DetalleDeudaActualReportadaSBS:', detalleDeudaActualReportadaSBSRegistro);
-                                
+
                                 const repository = AppDataSource.getRepository(EQFX_DetalleDeudaActualReportadaSBS);
                                 await repository.save(detalleDeudaActualReportadaSBSRegistro);
                             }
                         }
 
-                        if(data.Califica_x0020_Detalle_x0020_de_x0020_tarjetas)
-                        {
+                        if (data.Califica_x0020_Detalle_x0020_de_x0020_tarjetas) {
+                            countarraydata = countarraydata + 1;
                             const dataCalificaDetalleTarjetas = Array.isArray(data.Califica_x0020_Detalle_x0020_de_x0020_tarjetas)
                                 ? data.Califica_x0020_Detalle_x0020_de_x0020_tarjetas
                                 : [data.Califica_x0020_Detalle_x0020_de_x0020_tarjetas];
@@ -665,23 +678,23 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 const calificaDetalleTarjetasRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
                                     Institucion: handleEmptyString(item.Institucion),
-                                    Emisor : handleEmptyString(item.Emisor),
-                                    Antiguedad : handleEmptyInt(item.Antiguedad),
-                                    Cupo : handleEmpyDecimal(item.Cupo),
-                                    SaldoActual : handleEmpyDecimal(item.SaldoActual),
-                                    SaldoPromedioUltimos6Meses : handleEmpyDecimal(item.SaldoPromedioUltimos6Meses),
-                                    PorcentajeUsoTarjeta : handleEmpyDecimal(item.PorcentajeUsoTarjeta),   
-                                    PorcentajeRelacionDeudaTCDeudaTotal : handleEmpyDecimal(item.PorcentajeRelacionDeudaTCDeudaTotal),
-                                    NumeroTarjetaInv : handleEmptyString(item.NumeroTarjetaInv)
+                                    Emisor: handleEmptyString(item.Emisor),
+                                    Antiguedad: handleEmptyInt(item.Antiguedad),
+                                    Cupo: handleEmpyDecimal(item.Cupo),
+                                    SaldoActual: handleEmpyDecimal(item.SaldoActual),
+                                    SaldoPromedioUltimos6Meses: handleEmpyDecimal(item.SaldoPromedioUltimos6Meses),
+                                    PorcentajeUsoTarjeta: handleEmpyDecimal(item.PorcentajeUsoTarjeta),
+                                    PorcentajeRelacionDeudaTCDeudaTotal: handleEmpyDecimal(item.PorcentajeRelacionDeudaTCDeudaTotal),
+                                    NumeroTarjetaInv: handleEmptyString(item.NumeroTarjetaInv)
                                 };
                                 console.log('Datos de CalificaDetalleTarjetas:', calificaDetalleTarjetasRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_CalificaDetalleTarjetas);
                                 await repository.save(calificaDetalleTarjetasRegistro);
                             }
                         }
-                        
-                        if(data.Analisis_x0020_saldos_x0020_por_x0020_vencer_x0020_sistema_x0020_financiero)
-                        {
+
+                        if (data.Analisis_x0020_saldos_x0020_por_x0020_vencer_x0020_sistema_x0020_financiero) {
+                            countarraydata = countarraydata + 1;
                             const dataAnalisisSaldosPorVencerSistemaFinanciero = Array.isArray(data.Analisis_x0020_saldos_x0020_por_x0020_vencer_x0020_sistema_x0020_financiero)
                                 ? data.Analisis_x0020_saldos_x0020_por_x0020_vencer_x0020_sistema_x0020_financiero
                                 : [data.Analisis_x0020_saldos_x0020_por_x0020_vencer_x0020_sistema_x0020_financiero];
@@ -693,13 +706,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
                                     FechaCorte: fechaCorte,
                                     Institucion: handleEmptyString(item.Institucion),
-                                    CodigoInstitucionInv : handleEmpyDecimal(item.CodigoInstitucionInv),
-                                    TotalPorVencer : handleEmpyDecimal(item.TotalPorVencer),
-                                    PorVencer0a1 : handleEmpyDecimal(item.PorVencer0a1),
-                                    PorVencer1a3 : handleEmpyDecimal(item.PorVencer1a3),
-                                    PorVencer3a6 : handleEmpyDecimal(item.PorVencer3a6),
-                                    PorVencer6a12 : handleEmpyDecimal(item.PorVencer6a12),
-                                    PorVencer12 : handleEmpyDecimal(item.PorVencer12)
+                                    CodigoInstitucionInv: handleEmpyDecimal(item.CodigoInstitucionInv),
+                                    TotalPorVencer: handleEmpyDecimal(item.TotalPorVencer),
+                                    PorVencer0a1: handleEmpyDecimal(item.PorVencer0a1),
+                                    PorVencer1a3: handleEmpyDecimal(item.PorVencer1a3),
+                                    PorVencer3a6: handleEmpyDecimal(item.PorVencer3a6),
+                                    PorVencer6a12: handleEmpyDecimal(item.PorVencer6a12),
+                                    PorVencer12: handleEmpyDecimal(item.PorVencer12)
                                 };
                                 console.log('Datos de AnalisisSaldosPorVencerSistemaFinanciero:', analisisSaldosPorVencerSistemaFinancieroRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_AnalisisSaldosPorVencerSistemaFinanciero);
@@ -707,41 +720,179 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             }
                         }
 
-                        if(data.Ultimas_x0020_10_x0020_operaciones_x0020_canceladas)
-                        {
+                        if (data.Ultimas_x0020_10_x0020_operaciones_x0020_canceladas) {
+                            countarraydata = countarraydata + 1;
                             const dataUltimasOperacionesCanceladas = Array.isArray(data.Ultimas_x0020_10_x0020_operaciones_x0020_canceladas)
                                 ? data.Ultimas_x0020_10_x0020_operaciones_x0020_canceladas
                                 : [data.Ultimas_x0020_10_x0020_operaciones_x0020_canceladas];
                             for (let i = 0; i < dataUltimasOperacionesCanceladas.length; i++) {
                                 const item = dataUltimasOperacionesCanceladas[i];
-                                fechaCancelacion = item.FechaCancelacion ? new Date(item.FechaCancelacion).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const fechaCancelacion = item.FechaCancelacion ? new Date(item.FechaCancelacion).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
                                 const ultimasOperacionesCanceladasRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
-                                    CodigoInstitucionInv : handleEmpyDecimal(item.CodigoInstitucionInv),
+                                    CodigoInstitucionInv: handleEmpyDecimal(item.CodigoInstitucionInv),
                                     Institucion: handleEmptyString(item.Institucion),
-                                    NumeroOperaciones : handleEmptyString(item.NumeroOperaciones),
-                                    ValorOriginal : handleEmpyDecimal(item.ValorOriginal),
-                                    CodFormaCancelacionInv : handleEmptyString(item.CodFormaCancelacionInv),
-                                    FormaCancelacion : handleEmptyString(item.FormaCancelacion),
-                                    FechaCancelacion : fechaCancelacion
+                                    NumeroOperaciones: handleEmptyString(item.NumeroOperaciones),
+                                    ValorOriginal: handleEmpyDecimal(item.ValorOriginal),
+                                    CodFormaCancelacionInv: handleEmptyString(item.CodFormaCancelacionInv),
+                                    FormaCancelacion: handleEmptyString(item.FormaCancelacion),
+                                    FechaCancelacion: fechaCancelacion
                                 };
                                 console.log('Datos de UltimasOperacionesCanceladas:', ultimasOperacionesCanceladasRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_Ultimas10OperacionesCanceladas);
                                 await repository.save(ultimasOperacionesCanceladasRegistro);
                             }
                         }
-                        
+
+                        if (data.Creditos_x0020_otorgados_x0020_12_x0020_ultimos_x0020_meses_x0020_Educativo) {
+                            countarraydata = countarraydata + 1;
+                            const dataCreditosOtorgadosUltimos12MesesEducativo = Array.isArray(data.Creditos_x0020_otorgados_x0020_12_x0020_ultimos_x0020_meses_x0020_Educativo)
+                                ? data.Creditos_x0020_otorgados_x0020_12_x0020_ultimos_x0020_meses_x0020_Educativo
+                                : [data.Creditos_x0020_otorgados_x0020_12_x0020_ultimos_x0020_meses_x0020_Educativo];
+                            for (let i = 0; i < dataCreditosOtorgadosUltimos12MesesEducativo.length; i++) {
+                                const item = dataCreditosOtorgadosUltimos12MesesEducativo[i];
+                                const fechaConcesion = item.FechaConcesion ? new Date(item.FechaConcesion).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const fechaVencimiento = item.FechaVencimiento ? new Date(item.FechaVencimiento).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const creditosOtorgadosUltimos12MesesEducativoRegistro = {
+                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
+                                    CodigoInstitucionInv: handleEmptyString(item.CodigoInstitucionInv),
+                                    Institucion: handleEmptyString(item.Institucion),
+                                    EstadoOperacion: handleEmptyString(item.EstadoOperacion),
+                                    TipoCredito: handleEmptyString(item.TipoCredito),
+                                    ValorOperacion: handleEmpyDecimal(item.ValorOperacion),
+                                    Titular: handleEmpyDecimal(item.Titular),
+                                    Codeudor: handleEmpyDecimal(item.Codeudor),
+                                    Garante: handleEmpyDecimal(item.Garante),
+                                    FechaConcesion: fechaConcesion,
+                                    FechaVencimiento: fechaVencimiento,
+                                    CodEstadoOpInv: handleEmptyString(item.CodEstadoOpInv),
+                                    CodTipoCreditoInv: handleEmptyString(item.CodTipoCreditoInv),
+                                    CodTipoDeudorInv: handleEmptyString(item.CodTipoDeudorInv),
+                                    CodCalificacionInv: handleEmptyString(item.CodCalificacionInv)
+                                };
+                                console.log('Datos de CreditosOtorgadosUltimos12MesesEducativo:', creditosOtorgadosUltimos12MesesEducativoRegistro);
+                                const repository = AppDataSource.getRepository(EQFX_CreditosOtorgados12UltimosMesesEducativo);
+                                await repository.save(creditosOtorgadosUltimos12MesesEducativoRegistro);
+                            }
+                        }
+
+                        if (data.Sujeto_x0020_Al_x0020_Dia_x0020_Infocom) {
+                            countarraydata = countarraydata + 1;
+                            const dataSujetoAlDiaInfocom = Array.isArray(data.Sujeto_x0020_Al_x0020_Dia_x0020_Infocom)
+                                ? data.Sujeto_x0020_Al_x0020_Dia_x0020_Infocom
+                                : [data.Sujeto_x0020_Al_x0020_Dia_x0020_Infocom];
+                            for (let i = 0; i < dataSujetoAlDiaInfocom.length; i++) {
+                                const item = dataSujetoAlDiaInfocom[i];
+                                const sujetoAlDiaInfocomRegistro = {
+                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
+                                    Institucion: handleEmptyString(item.Institucion),
+                                    FechaCorte: handleEmptyString(item.FechaCorte),
+                                    Mensaje: handleEmptyString(item.Mensaje)
+                                };
+                                console.log('Datos de SujetoAlDiaInfocom:', sujetoAlDiaInfocomRegistro);
+                                const repository = AppDataSource.getRepository(EQFX_SujetoAlDiaInfocom);
+                                await repository.save(sujetoAlDiaInfocomRegistro);
+                            }
+                        }
+
+                        if (data.Recursivo_x0020_Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_vigentes) {
+                            countarraydata = countarraydata + 1;
+                            const dataGarantiasPersonalesCodeudoresOperacionesVigentes = Array.isArray(data.Recursivo_x0020_Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_vigentes)
+                                ? data.Recursivo_x0020_Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_vigentes
+                                : [data.Recursivo_x0020_Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_vigentes];
+                            for (let i = 0; i < dataGarantiasPersonalesCodeudoresOperacionesVigentes.length; i++) {
+                                const item = dataGarantiasPersonalesCodeudoresOperacionesVigentes[i];
+                                const fechacorteParam = item.FechaCorteParam ? new Date(item.FechaCorteParam).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const garantiasPersonalesCodeudoresOperacionesVigentesRegistro = {
+                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
+                                    TipoDeudor: handleEmptyString(item.TipoDeudor),
+                                    NombreTitular: handleEmptyString(item.NombreTitular),
+                                    IdentificacionTitular: handleEmptyString(item.IdentificacionTitular),
+                                    NumeroOperacion: handleEmptyString(item.NumeroOperacion),
+                                    Institucion: handleEmptyString(item.Institucion),
+                                    DeudaTotal: handleEmpyDecimal(item.DeudaTotal),
+                                    CodigoInstitucionParam: handleEmpyDecimal(item.CodigoInstitucionParam),
+                                    OperacionParam: handleEmptyString(item.OperacionParam),
+                                    CodigoTipoDeudorParam: handleEmptyString(item.CodigoTipoDeudorParam),
+                                    TipoDocumentoTitularParam: handleEmptyString(item.TipoDocumentoTitularParam),
+                                    NumeroDocumentoTitularParam: handleEmptyString(item.NumeroDocumentoTitularParam),
+                                    FechaCorteParam: fechacorteParam
+                                };
+                                console.log('Datos de GarantiasPersonalesCodeudoresOperacionesVigentes:', garantiasPersonalesCodeudoresOperacionesVigentesRegistro);
+                                const repository = AppDataSource.getRepository(EQFX_RecursivoGarantiasPersonalesCodeudoresOperacionesVigentes);
+                                await repository.save(garantiasPersonalesCodeudoresOperacionesVigentesRegistro);
+                            }
+                        }
+
+                        if (data.Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_no_x0020_vigentes) {
+                            countarraydata = countarraydata + 1;
+                            const dataGarantiasPersonalesCodeudoresOperacionesNoVigentes = Array.isArray(data.Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_no_x0020_vigentes)
+                                ? data.Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_no_x0020_vigentes
+                                : [data.Garantias_x0020_personales_x0020_codeudores_x0020_operaciones_x0020_no_x0020_vigentes];
+                            for (let i = 0; i < dataGarantiasPersonalesCodeudoresOperacionesNoVigentes.length; i++) {
+                                const item = dataGarantiasPersonalesCodeudoresOperacionesNoVigentes[i];
+                                const fechaconcesion = item.FechaConcesion ? new Date(item.FechaConcesion).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const fechaeliminacion = item.FechaEliminacin ? new Date(item.FechaEliminacin).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const fechacancelacin = item.FechaCancelacin ? new Date(item.FechaCancelacin).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const fechacorteinv = item.FechaCorteInv ? new Date(item.FechaCorteInv).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const garantiasPersonalesCodeudoresOperacionesNoVigentesRegistro = {
+                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
+                                    TipoDeudor: handleEmptyString(item.TipoDeudor),
+                                    FechaConcesion: fechaconcesion,
+                                    FechaEliminacin: fechaeliminacion,
+                                    NumeroDocumento: handleEmptyString(item.NumeroDocumento),
+                                    NombreSujeto: handleEmptyString(item.NombreSujeto),
+                                    Institucion: handleEmptyString(item.Institucion),
+                                    NumeroOperacion: handleEmptyString(item.NumeroOperacion),
+                                    ValorOperacion: handleEmpyDecimal(item.ValorOperacion),
+                                    FechaCancelacin: fechacancelacin,
+                                    FechaCorteInv: fechacorteinv
+                                };
+                                console.log('Datos de GarantiasPersonalesCodeudoresOperacionesNoVigentes:', garantiasPersonalesCodeudoresOperacionesNoVigentesRegistro);
+                                const repository = AppDataSource.getRepository(EQFX_GarantiasPersonalesCodeudoresOperacionesNoVigentes);
+                                await repository.save(garantiasPersonalesCodeudoresOperacionesNoVigentesRegistro);
+                            }
+                        }
+
+
+                        if (data.PersonasInhabilitadasSinProtestos) {
+                            countarraydata = countarraydata + 1;
+                            const dataPersonasInhabilitadasSinProtestos = Array.isArray(data.PersonasInhabilitadasSinProtestos)
+                                ? data.PersonasInhabilitadasSinProtestos
+                                : [data.PersonasInhabilitadasSinProtestos];
+
+                            for (let i = 0; i < dataPersonasInhabilitadasSinProtestos.length; i++) {
+                                const item = dataPersonasInhabilitadasSinProtestos[i];
+                                const fechaInhabilitacion = item.FechaInhabilitacion ? new Date(item.FechaInhabilitacion).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+                                const personasInhabilitadasSinProtestosRegistro = {
+                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
+                                    NumeroDocumentoInv: handleEmptyString(item.NumeroDocumentoInv),
+                                    NombreSujetoInv: handleEmptyString(item.NombreSujetoInv),
+                                    FechaInhabilitacion: fechaInhabilitacion,
+                                    TiempoInhabilitacion: handleEmptyString(item.TiempoInhabilitacion),
+                                    Accion: handleEmptyString(item.Accion),
+                                    MotivoInv: handleEmptyString(item.MotivoInv),
+                                    CodigoInhabilitado: handleEmptyString(item.CodigoInhabilitado),
+                                    NumeroProtestos: handleEmptyInt(item.NumeroProtestos)
+                                };
+                                console.log('Datos de PersonasInhabilitadasSinProtestos:', personasInhabilitadasSinProtestosRegistro);
+                                const repository = AppDataSource.getRepository(EQFX_PersonasInhabilitadasSinProtestos);
+                                await repository.save(personasInhabilitadasSinProtestosRegistro);
+                            }
+                        }
+
                         if (data["Información_x0020_posterior_x0020_a_x0020_Fecha_x0020_de_x0020_Corte_x0020_-_x0020_Operaciones_x0020_Canceladas"]) {
+                            countarraydata = countarraydata + 1;
                             // Asegúrate de procesar la data aquí
                             const dataInformacionPosteriorFechaCorteOperacionesCanceladas = Array.isArray(data["Información_x0020_posterior_x0020_a_x0020_Fecha_x0020_de_x0020_Corte_x0020_-_x0020_Operaciones_x0020_Canceladas"])
                                 ? data["Información_x0020_posterior_x0020_a_x0020_Fecha_x0020_de_x0020_Corte_x0020_-_x0020_Operaciones_x0020_Canceladas"]
                                 : [data["Información_x0020_posterior_x0020_a_x0020_Fecha_x0020_de_x0020_Corte_x0020_-_x0020_Operaciones_x0020_Canceladas"]];
-                            
+
                             for (let i = 0; i < dataInformacionPosteriorFechaCorteOperacionesCanceladas.length; i++) {
                                 const item = dataInformacionPosteriorFechaCorteOperacionesCanceladas[i];
                                 const fechaCorte = item.FechaCorte ? new Date(item.FechaCorte).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
                                 const fechaCancelacion = item.FechaCancelacion ? new Date(item.FechaCancelacion).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
-                        
+
                                 const informacionPosteriorFechaCorteOperacionesCanceladasRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
                                     FechaCorte: fechaCorte,  // Formato 'yyyy-mm-dd'
@@ -749,48 +900,49 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                     NumeroOperacion: handleEmptyString(item.NumeroOperacion),
                                     FechaCancelacion: fechaCancelacion  // Formato 'yyyy-mm-dd'
                                 };
-                        
+
                                 console.log('Datos de InformacionPosteriorFechaCorteOperacionesCanceladas:', informacionPosteriorFechaCorteOperacionesCanceladasRegistro);
-                                
+
                                 const repository = AppDataSource.getRepository(EQFX_InformacionPosteriorFechaCorteOperacionesCanceladas);
                                 await repository.save(informacionPosteriorFechaCorteOperacionesCanceladasRegistro);
                             }
                         }
-     
-                        if(data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas)
-                        {
 
-                            const dataDetalleOperacionesVencidas = Array.isArray(data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas)    
+                        if (data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas) {
+                            countarraydata = countarraydata + 1;
+                            const dataDetalleOperacionesVencidas = Array.isArray(data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas)
                                 ? data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas
                                 : [data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas];
                             for (let i = 0; i < dataDetalleOperacionesVencidas.length; i++) {
                                 const item = dataDetalleOperacionesVencidas[i];
                                 const detalleOperacionesVencidasRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
-                                    Titulo : handleEmptyString(item.Titulo),
-                                    Vencido0a1 : handleEmpyDecimal(item.Vencido0a1),
-                                    Vencido1a2 : handleEmpyDecimal(item.Vencido1a2),
-                                    Vencido2a3 : handleEmpyDecimal(item.Vencido2a3),
-                                    Vencido3a6 : handleEmpyDecimal(item.Vencido3a6),
-                                    Vencido6a9 : handleEmpyDecimal(item.Vencido6a9),
-                                    Vencido9a12 : handleEmpyDecimal(item.Vencido9a12),
-                                    Vencido12a24 : handleEmpyDecimal(item.Vencido12a24),
-                                    Vencido24 : handleEmpyDecimal(item.Vencido24),
-                                    Vencido36 : handleEmpyDecimal(item.Vencido36),
-                                    DemandaJudicial : handleEmpyDecimal(item.DemandaJudicial),
-                                    CarteraCastigada : handleEmpyDecimal(item.CarteraCastigada),
-                                    Total : handleEmpyDecimal(item.Total)
+                                    Titulo: handleEmptyString(item.Titulo),
+                                    Vencido0a1: handleEmpyDecimal(item.Vencido0a1),
+                                    Vencido1a2: handleEmpyDecimal(item.Vencido1a2),
+                                    Vencido2a3: handleEmpyDecimal(item.Vencido2a3),
+                                    Vencido3a6: handleEmpyDecimal(item.Vencido3a6),
+                                    Vencido6a9: handleEmpyDecimal(item.Vencido6a9),
+                                    Vencido9a12: handleEmpyDecimal(item.Vencido9a12),
+                                    Vencido12a24: handleEmpyDecimal(item.Vencido12a24),
+                                    Vencido24: handleEmpyDecimal(item.Vencido24),
+                                    Vencido36: handleEmpyDecimal(item.Vencido36),
+                                    DemandaJudicial: handleEmpyDecimal(item.DemandaJudicial),
+                                    CarteraCastigada: handleEmpyDecimal(item.CarteraCastigada),
+                                    Total: handleEmpyDecimal(item.Total)
                                 };
                                 console.log('Datos de DetalleOperacionesVencidas:', detalleOperacionesVencidasRegistro);
                                 const repository = AppDataSource.getRepository(EQFX_DetalleOperacionesVencidas);
                                 await repository.save(detalleOperacionesVencidasRegistro);
                             }
                         }
-                         console.log('Datos de IdentificacionConsultada:', idEQFX_IdentificacionConsultada, codigoConsulta, mensaje);
-                         resolve({
+                        console.log('Datos de IdentificacionConsultada:', idEQFX_IdentificacionConsultada, codigoConsulta, mensaje);
+                        resolve({
                             idEQFX_IdentificacionConsultada,
                             codigoConsulta,
-                            mensajeError: mensaje
+                            mensajeError: mensaje,
+                            countarraydata,
+                            countdata
                         });
                     } else {
                         reject('No se encontraron datos de IdentificacionConsultada en la respuesta');
