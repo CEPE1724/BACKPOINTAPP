@@ -45,7 +45,19 @@ const entities = [
     require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DobleInfo/model'),
     require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleDirecciones/model'),
     require('../../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleTelefonos/model'),
+    require('../../../Equifax/api/EQFX_PerfilRiesgoDirectoSeis/model'),
+    require('../../../Equifax/api/EntidadesQueConsultaron/model'),
+    require('../../../Equifax/api/EQFX_IndicadoresDeudaActualSbsSicomRfr/model'),
+    require('../../../Equifax/api/EQFX_IndicaIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores/model'),
+    require('../../../Equifax/api/EQFX_DetalleDeudaActualReportadaSBS/model'),
+    require('../../../Equifax/api/EQFX_DetalleOperacionesVencidas/model'),
+    require('../../../Equifax/api/EQFX_DeudaReportadaRFR/model'),
+    require('../../../Equifax/api/EQFX_EvolucionHistoricaDistEndeudamientoRFR/model'),
+    require('../../../Equifax/api/EQFX_CalificaDetalleTarjetas/model'),
+    require('../../../Equifax/api/EQFX_InformacionPosteriorFechaCorteOperacionesCanceladas/model'),
     require('../../../WebProductos/api/Productos/model'),
+    //soap Equifax
+
 ];
 
 const AppDataSource = new DataSource({

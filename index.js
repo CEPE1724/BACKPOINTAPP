@@ -70,6 +70,11 @@ const protectedRoutes = [
    
 ];
 
+// rutas de Equifax
+const publicRoutesEquifax = [
+    { path: '/v1/equifax/', route: require('./SoapEquifax/wsExpertoPointTech/router') },
+];
+
 // Aplica las rutas sin protección
 publicRoutes.forEach(route => {
     app.use(route.path, route.route);
@@ -78,6 +83,11 @@ publicRoutes.forEach(route => {
 // Aplica las rutas con protección de token
 protectedRoutes.forEach(route => {
     app.use(route.path, authenticateToken,  route.route);
+});
+
+// Aplica las rutas de Equifax
+publicRoutesEquifax.forEach(route => {
+    app.use(route.path, route.route);
 });
 
 // Inicializa la conexión a la base de datos
