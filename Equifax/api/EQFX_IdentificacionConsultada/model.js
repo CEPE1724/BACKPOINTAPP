@@ -10,6 +10,7 @@ const EQFX_IdentificacionConsultada = new EntitySchema({
             this.NombreSujeto = "";
             this.TipoDocumento = "";
             this.NumeroDocumento = "";
+            this.idReportePadre = 0;
             this.Estacion = "";
             this.Usuario = "";
         }
@@ -41,6 +42,10 @@ const EQFX_IdentificacionConsultada = new EntitySchema({
             type: 'varchar',
             length: 50,
             default: () => 'SUSER_NAME()'
+        },
+        idReportePadre: {
+            type: 'int',
+            default: 0
         }
     }
 });

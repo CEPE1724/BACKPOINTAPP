@@ -99,6 +99,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
             }
             let idEQFX_IdentificacionConsultada = 0;
             try {
+                let countdata = 0;
+                let countarraydata = 0;
                 // Agregar el header explícito al cliente SOAP
                 client.addSoapHeader(soapHeader);
 
@@ -120,11 +122,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                         const respuesta = result;
                         const codigoConsulta = respuesta.codigoConsulta || '';
                         const mensaje = respuesta.mensajeError || '';
-                        const countdata = Object.keys(data).length;
+                         countdata = Object.keys(data).length;
                         console.log('Cantidad de datos:', countdata);
                         const keys = Object.keys(data);
                         console.log('Keys:', keys);
-                        let countarraydata = 0;
+                         countarraydata = 0;
+
+                         const idReportePadre = codigoConsulta;
                         if (data && data.IdentificacionConsultada) {
                             countarraydata = countarraydata + 1;
                             const identificacionData = Array.isArray(data.IdentificacionConsultada) ? data.IdentificacionConsultada[0] : data.IdentificacionConsultada;
@@ -132,6 +136,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 NombreSujeto: identificacionData.NombreSujeto || '',
                                 TipoDocumento: identificacionData.TipoDocumento || '',
                                 NumeroDocumento: identificacionData.NumeroDocumento || '',
+                                idReportePadre: idReportePadre,
                             };
                             const repository = AppDataSource.getRepository(EQFX_IdentificacionConsultada);
                             await repository.save(registro);
@@ -191,7 +196,6 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             const repository = AppDataSource.getRepository(EQFX_ScorePuntajeyGraficoV3);
                             await repository.save(scoreRegistro);
                         }
-
                         if (data.Deuda_x0020_reportada_x0020_por_x0020_INFOCOM_x0020__x0028_excluyendo_x0020_IESS_x0029_) {
                             countarraydata = countarraydata + 1;
                             const dataDeudaReportadaINFOCOM = Array.isArray(data.Deuda_x0020_reportada_x0020_por_x0020_INFOCOM_x0020__x0028_excluyendo_x0020_IESS_x0029_)
@@ -223,7 +227,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                         }
 
                         if (data.Deuda_x0020_reportada_x0020_por_x0020_RFR) {
-                             countarraydata = countarraydata + 1;                            
+                            countarraydata = countarraydata + 1;
                             const dataDeudaReportadaRFR = Array.isArray(data.Deuda_x0020_reportada_x0020_por_x0020_RFR)
                                 ? data.Deuda_x0020_reportada_x0020_por_x0020_RFR
                                 : [data.Deuda_x0020_reportada_x0020_por_x0020_RFR];
@@ -258,7 +262,6 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 await repository.save(deudaReportadaRFRRegistro);
                             }
                         }
-
                         if (data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_RFR) {
                             countarraydata = countarraydata + 1;
                             const dataEvolucionHistoricaDistEndeudamientoRFR = Array.isArray(data.Evolucion_x0020_Historica_x0020_y_x0020_Dist_x0020_Endeudamiento_x0020_RFR)
@@ -907,12 +910,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 await repository.save(informacionPosteriorFechaCorteOperacionesCanceladasRegistro);
                             }
                         }
-
+                      
                         if (data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas) {
                             countarraydata = countarraydata + 1;
                             const dataDetalleOperacionesVencidas = Array.isArray(data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas)
                                 ? data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas
                                 : [data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas];
+                                //0983267357
                             for (let i = 0; i < dataDetalleOperacionesVencidas.length; i++) {
                                 const item = dataDetalleOperacionesVencidas[i];
                                 const detalleOperacionesVencidasRegistro = {
@@ -936,6 +940,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 await repository.save(detalleOperacionesVencidasRegistro);
                             }
                         }
+                    
                         console.log('Datos de IdentificacionConsultada:', idEQFX_IdentificacionConsultada, codigoConsulta, mensaje);
                         resolve({
                             idEQFX_IdentificacionConsultada,
