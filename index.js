@@ -9,6 +9,9 @@ const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 const { initializeDatabase } = require('./ApiCobrador/api/config/database');
 const authenticateToken = require('./ApiCobrador/api/auth/authMiddelware'); // Asegúrate de que esta ruta sea correcta
+const fs = require('fs');
+const path = require('path');
+const { format } = require('date-fns'); // Para formatear la fecha
 
 const app = express();
 const server = http.createServer(app);
@@ -37,6 +40,21 @@ app.use(helmet());
 //     max: 100, // Limite de 100 solicitudes por ventana
 // });
 // app.use('/cobranza/api/v1/point/', apiLimiter);
+
+// Obtener la fecha actual en formato yyyy-MM-dd
+const currentDate = format(new Date(), 'yyyy-MM-dd');
+const logFilePath = path.join(__dirname, 'logs', `${currentDate}.log`);
+
+// Asegurarnos de que el directorio de logs exista
+if (!fs.existsSync(path.dirname(logFilePath))) {
+    fs.mkdirSync(path.dirname(logFilePath), { recursive: true });
+}
+
+// Crear un flujo de escritura para almacenar los logs en el archivo de log del día
+const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+
+// Configura morgan para escribir en un archivo de log por día
+app.use(morgan('combined', { stream: logStream }));
 
 // Rutas sin autenticación (sin middleware)
 const publicRoutes = [
