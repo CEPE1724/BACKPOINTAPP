@@ -105,22 +105,21 @@ exports.save = async (req, res) => {
 
     if (bTrabajo && idTerrenaGestionTrabajoV > 0) {
       try {
-        const result = await getPdfDomicilio(idClienteVerificacion);
+        /*const result = await getPdfDomicilio(idClienteVerificacion);
         
         // Verifica si la respuesta contiene un error
         if (result.error) {
           console.log("Error: ", result.error);
           return; // O maneja el error de la manera que consideres
-        }
+        }*/
     
         // Si no hubo error, obtiene la URL del documento generado
-        const urldoc = result.url;
-        console.log("URL del documento:", urldoc);
-        
+       // const urldoc = result.url;
+
         // Realiza la actualización del cliente
         await clientesRepo.update(
           { idClienteVerificacion },          // Condición para identificar el cliente
-          { iEstado: 1, UrlGoogle: urldoc,
+          { iEstado: 1, UrlGoogle: "",
             FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
            }   // Los campos a actualizar
         );
@@ -133,22 +132,20 @@ exports.save = async (req, res) => {
     
     if (!bTrabajo) {
       try {
-        const result = await getPdfDomicilio(idClienteVerificacion);
+        /*const result = await getPdfDomicilio(idClienteVerificacion);
         
         // Verifica si la respuesta contiene un error
         if (result.error) {
           console.log("Error: ", result.error);
           return; // O maneja el error de la manera que consideres
-        }
+        }*/
     
         // Si no hubo error, obtiene la URL del documento generado
-        const urldoc = result.url;
-        console.log("URL del documento:", urldoc);
-        
+        //const urldoc = result.url;
         // Realiza la actualización del cliente
         await clientesRepo.update(
           { idClienteVerificacion },          // Condición para identificar el cliente
-          { iEstado: 1, UrlGoogle: urldoc,
+          { iEstado: 1, UrlGoogle: "",
             FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
            }   // Los campos a actualizar
         );
