@@ -18,7 +18,7 @@ exports.all = async (req, res) => {
 
 exports.ViewGestionesDeCobranzas = async (req, res) => {
     try {
-        const  { idCompra } = req.query;
+        const { idCompra } = req.query;
 
         const result = await AppDataSource.query(
             `EXEC ConsultaCbo_GestionesDeCobranzas_APP @idCompra = ${idCompra}`
@@ -94,7 +94,7 @@ exports.Inventario = async (req, res) => {
 
 exports.InventarioV2 = async (req, res) => {
     // Desestructuramos los parámetros de la solicitud con valores predeterminados
-    const { Bodega, Articulo, PaginaNumero = 1, RegistrosPorPagina = 10, Inventario  } = req.query;
+    const { Bodega, Articulo, PaginaNumero = 1, RegistrosPorPagina = 10, Inventario } = req.query;
     // Validamos los parámetros de entrada para asegurar que no sean valores maliciosos o incorrectos
     if (!Bodega || isNaN(Bodega)) {
         return res.status(400).json({ error: "Parámetros inválidos: bodega o artículo no proporcionados correctamente." });
@@ -108,7 +108,7 @@ exports.InventarioV2 = async (req, res) => {
     if (isNaN(RegistrosPorPagina) || RegistrosPorPagina <= 0) {
         return res.status(400).json({ error: "La cantidad de registros por página debe ser un número positivo." });
     }
-   
+
     try {
         // Utilizamos parámetros vinculados para prevenir inyección SQL
         const result = await AppDataSource.query(`
@@ -139,7 +139,7 @@ exports.InventarioV2 = async (req, res) => {
 
 exports.InventarioV2det = async (req, res) => {
     const { idArticulo } = req.query;
-    if(!idArticulo || isNaN(idArticulo)){
+    if (!idArticulo || isNaN(idArticulo)) {
         return res.status(400).json({ error: "Parámetros inválidos: idArticulo no proporcionado correctamente." });
     }
     try {
@@ -155,7 +155,7 @@ exports.InventarioV2det = async (req, res) => {
 };
 
 exports.ListaCombos = async (req, res) => {
-     const { Bodega, Articulo, PaginaNumero = 1, RegistrosPorPagina = 10, Tipo  } = req.query;
+    const { Bodega, Articulo, PaginaNumero = 1, RegistrosPorPagina = 10, Tipo } = req.query;
     // Validamos los parámetros de entrada para asegurar que no sean valores maliciosos o incorrectos
     if (!Bodega || isNaN(Bodega)) {
         return res.status(400).json({ error: "Parámetros inválidos: bodega o artículo no proporcionados correctamente." });
@@ -200,7 +200,7 @@ exports.ListaCombos = async (req, res) => {
 
 exports.ListaCombosDet = async (req, res) => {
     const { idPromocion, Bodega } = req.query;
-    if(!idPromocion || isNaN(idPromocion)){
+    if (!idPromocion || isNaN(idPromocion)) {
         return res.status(400).json({ error: "Parámetros inválidos: idPromocion no proporcionado correctamente." });
     }
     try {
@@ -263,13 +263,15 @@ exports.insert = [
     body('FechaPago').isISO8601().withMessage('FechaPago debe ser una fecha válida en formato ISO'),
     body('Valor').isDecimal().withMessage('Valor debe ser un número decimal'),
     body('Usuario').isString().isLength({ max: 50 }).withMessage('Usuario debe ser una cadena de texto con un máximo de 50 caracteres'),
-
+    body('Tipo').isInt().withMessage('Tipo debe ser un entero'),
     // Controlador
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
+        const now = new Date();
+        const formattedDateTime = now.toISOString().slice(0, 19).replace("T", " "); // Convierte en formato yyyy-mm-dd hh:mm:ss
 
         const {
             idCbo_GestorDeCobranzas,
@@ -293,7 +295,7 @@ exports.insert = [
                 @idCbo_GestorDeCobranzas = ${idCbo_GestorDeCobranzas},
                 @idCompra = ${idCompra},
                 @idPersonal = ${idPersonal},
-                @Fecha = '${Fecha}',
+                @Fecha = '${formattedDateTime}',
                 @idCbo_EstadoGestion = ${idCbo_EstadoGestion},
                 @idCbo_EstadosTipocontacto = ${idCbo_EstadosTipocontacto},
                 @idCbo_ResultadoGestion = ${idCbo_ResultadoGestion},
@@ -301,7 +303,7 @@ exports.insert = [
                 @Telefono = '${Telefono}',
                 @FechaPago = '${FechaPago}',
                 @Valor = ${Valor},
-                @Usuario = '${Usuario}'`,                
+                @Usuario = '${Usuario}'`,
             );
 
             res.status(200).json({ message: 'Datos insertados correctamente', result });
@@ -324,7 +326,7 @@ exports.insertDeposito = [
     body('IdCompra').isInt().withMessage('IdCompra debe ser un entero'),
     body('NumeroDeposito').isString().isLength({ max: 20 }).withMessage('NumeroDeposito debe ser una cadena de texto con un máximo de 20 caracteres'),
     body('Usuario').isString().isLength({ max: 50 }).withMessage('Usuario debe ser una cadena de texto con un máximo de 50 caracteres'),
-   // controller
+    // controller
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -364,45 +366,45 @@ exports.insertDeposito = [
 ];
 
 exports.insertRecojo = [
-        // Validaciones de entrada
-        body('idCbo_GestionesDeCobranzas').isInt().withMessage('idCbo_GestionesDeCobranzas debe ser un entero'),
-        body('idCompra').isInt().withMessage('idCompra debe ser un entero'),
-        body('idDetCompra').isInt().withMessage('idDetCompra debe ser un entero'),
-        body('Nota').isString().isLength({ max: 500 }).withMessage('Nota debe ser una cadena de texto con un máximo de 50 caracteres'),
-        body('Imagenes').isArray().withMessage('Imagenes debe ser un arreglo de imágenes'),
-      
-        // Controlador
-        async (req, res) => {
-            const errors = validationResult(req);
-            if (!errors.isEmpty()) {
-                return res.status(400).json({ errors: errors.array() });
-            }
-      
-            const {
-                idCbo_GestionesDeCobranzas,
-                idCompra,
-                idDetCompra,
-                Nota,
-                Imagenes
-            } = req.body;
-      
-            try {
-                const result = await AppDataSource.query(
-                    `EXEC GrabaRecojoAPP 
+    // Validaciones de entrada
+    body('idCbo_GestionesDeCobranzas').isInt().withMessage('idCbo_GestionesDeCobranzas debe ser un entero'),
+    body('idCompra').isInt().withMessage('idCompra debe ser un entero'),
+    body('idDetCompra').isInt().withMessage('idDetCompra debe ser un entero'),
+    body('Nota').isString().isLength({ max: 500 }).withMessage('Nota debe ser una cadena de texto con un máximo de 50 caracteres'),
+    body('Imagenes').isArray().withMessage('Imagenes debe ser un arreglo de imágenes'),
+
+    // Controlador
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+
+        const {
+            idCbo_GestionesDeCobranzas,
+            idCompra,
+            idDetCompra,
+            Nota,
+            Imagenes
+        } = req.body;
+
+        try {
+            const result = await AppDataSource.query(
+                `EXEC GrabaRecojoAPP 
                     @idCbo_GestionesDeCobranzas = ${idCbo_GestionesDeCobranzas},
                     @idCompra = ${idCompra},
                     @idDetCompra = ${idDetCompra},
                     @Nota = '${Nota}',
                     @Imagenes = '${Imagenes}'`
-                );
-      
-                res.status(200).json({ message: 'Datos insertados correctamente', result });
-            } catch (err) {
-                console.error("Error al ejecutar el procedimiento almacenado:", err);
-                res.status(500).send("Error al ejecutar el procedimiento almacenado.");
-            }
+            );
+
+            res.status(200).json({ message: 'Datos insertados correctamente', result });
+        } catch (err) {
+            console.error("Error al ejecutar el procedimiento almacenado:", err);
+            res.status(500).send("Error al ejecutar el procedimiento almacenado.");
         }
-    ];
+    }
+];
 
 exports.insertAnticipos = [
     // Validaciones de entrada
@@ -435,7 +437,7 @@ exports.insertAnticipos = [
         } catch (err) {
             console.error("Error al ejecutar el procedimiento almacenado:", err);
             res.status(500).send("Error al ejecutar el procedimiento almacenado.");
-     
+
         }
     }
 ];

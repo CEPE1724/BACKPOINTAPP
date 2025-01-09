@@ -1,9 +1,10 @@
 const { where } = require('sequelize');
+
 const { AppDataSource } = require("../config/database");
 const GestionDiaria = require('./model');
 const cbo_GestordeCobranza = require('../Cbo_GestorDeCobranzas/model');
 const { parse, isDate, format } = require('date-fns'); // Import date-fns functions
-const { Like, Repository, Brackets } = require('typeorm'); // Asegúrate de que `Brackets` esté importado
+const { Like, Repository, Brackets, Between } = require('typeorm'); // Asegúrate de que `Brackets` esté importado
 
 exports.addNew = async (req, res) => {
     const { clientes, Users, Compromiso, Usuario, idCobrador } = req.body;
@@ -13,7 +14,7 @@ exports.addNew = async (req, res) => {
         if (!Array.isArray(clientes) || clientes.length === 0) {
             return res.status(400).json({ message: "El campo 'clientes' es obligatorio y debe contener al menos un cliente." });
         }
-        if(!idCobrador){
+        if (!idCobrador) {
             return res.status(400).json({ message: "El campo 'idCobrador' es obligatorio." });
         }
 
@@ -22,12 +23,12 @@ exports.addNew = async (req, res) => {
         let registrosSinIdCompra = 0;
 
         for (const cliente of clientes) {
-            const {  Dia, Cedula } = cliente;
+            const { Dia, Cedula } = cliente;
 
             // Validaciones
-            if ( !Cedula || !Dia) {
+            if (!Cedula || !Dia) {
                 errores.push({ Cedula, message: "Faltan campos obligatorios" });
-                continue; 
+                continue;
             }
 
             // Validar fecha
@@ -119,9 +120,23 @@ exports.allGestionId = async (req, res) => {
     const { id } = req.params;
     try {
         const repository = AppDataSource.getRepository(GestionDiaria);
-        
-        // Find all records for the specified idCobrador
-        const results = await repository.find({ where: { idCobrador: id } });
+
+        // Obtener la fecha actual
+        const currentDate = new Date();
+
+        // Definir el primer día del mes actual
+        const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+
+        // Definir el último día del mes actual
+        const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+
+        // Find all records for the specified idCobrador and that are in the current month
+        const results = await repository.find({
+            where: {
+                idCobrador: id,
+                Dia: Between(firstDayOfMonth, lastDayOfMonth) // Filtrar por fecha dentro del mes actual
+            }
+        });
 
         // Process results to count and group by 'Dia'
         const groupedResults = results.reduce((acc, record) => {
@@ -155,6 +170,7 @@ exports.allGestionId = async (req, res) => {
 };
 
 
+
 exports.allGestion = async (req, res) => {
     const { idcobrador, fullDate, filtro } = req.query;
     const page = parseInt(req.query.page) || 1; // Current page
@@ -169,26 +185,26 @@ exports.allGestion = async (req, res) => {
 
     // Validate and format fullDate
     const parsedDate = parse(fullDate, 'yyyy-MM-dd', new Date());
-    
+
     if (!isDate(parsedDate) || isNaN(parsedDate)) {
         return res.status(400).json({ message: 'Invalid date format. Use yyyy-MM-dd.' });
     }
 
     // Format date to the desired format
     const formattedDate = format(parsedDate, 'yyyy-MM-dd');
-
     try {
         const repository = AppDataSource.getRepository(GestionDiaria);
-        
+
         // Fetch only the idCompra field
-        const results = await repository.find({
-            where: { idCobrador: idcobrador, Dia: formattedDate },
-            select: ['idCompra'],
-        });
+        const results = await repository
+            .createQueryBuilder('gestion')
+            .select('gestion.idCompra')
+            .where('gestion.idCobrador = :idCobrador', { idCobrador: idcobrador })
+            .andWhere('CONVERT(date, gestion.Dia) = CONVERT(date, :formattedDate)', { formattedDate })
+            .getMany();
 
         // Extract idCompra values
         const idCompras = results.map(result => result.idCompra);
-
         // Check if results are found
         if (idCompras.length > 0) {
             // Now query Cbo_GestorDeCobranzas using the idCompras
@@ -209,7 +225,7 @@ const allCbo_Gestor = async (idCobrador, filtro, page, limit, idCompras) => {
         const offset = (page - 1) * limit; // Calculate offset
 
         const queryBuilder = AppDataSource.getRepository(cbo_GestordeCobranza).createQueryBuilder('c');
-    
+
         // Build the query
         queryBuilder
             .where('c.idcobrador = :idCobrador', { idCobrador })
@@ -217,8 +233,8 @@ const allCbo_Gestor = async (idCobrador, filtro, page, limit, idCompras) => {
             .andWhere(
                 new Brackets(qb => {
                     qb.where('c.Cliente LIKE :filtro')
-                      .orWhere('c.Cedula LIKE :filtro')
-                      .orWhere('c.Numero_Documento LIKE :filtro');
+                        .orWhere('c.Cedula LIKE :filtro')
+                        .orWhere('c.Numero_Documento LIKE :filtro');
                 })
             )
             .setParameters({ filtro: `%${filtro}%` });
@@ -232,7 +248,7 @@ const allCbo_Gestor = async (idCobrador, filtro, page, limit, idCompras) => {
 
         // Execute the query
         const [registros, total] = await queryBuilder.getManyAndCount();
-        
+
         return { registros, total }; // Return the results
     } catch (error) {
         console.error("Error al realizar la consulta:", error);

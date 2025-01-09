@@ -93,6 +93,10 @@ const publicRoutesEquifax = [
     { path: '/v1/equifax/', route: require('./SoapEquifax/wsExpertoPointTech/router') },
 ];
 
+//
+const publicRoutesCuadricula = [
+    { path: '/api/v1/point/', route: require('./CuadriculaHabitacion/Cuadricula/router') },
+];
 // Aplica las rutas sin protección
 publicRoutes.forEach(route => {
     app.use(route.path, route.route);
@@ -108,11 +112,15 @@ publicRoutesEquifax.forEach(route => {
     app.use(route.path, route.route);
 });
 
+publicRoutesCuadricula.forEach(route => {
+    app.use(route.path, route.route);
+});
 // Inicializa la conexión a la base de datos
+
+
 initializeDatabase()
     .then(() => {
         console.log('Conexión a la base de datos establecida');
-
         // Manejar rutas no encontradas y errores
         app.use((req, res) => res.status(404).json({ message: "Route not found" }));
         app.use((err, req, res) => {
@@ -121,7 +129,7 @@ initializeDatabase()
         });
 
         // Iniciar el servidor
-        const port = process.env.PORT || 3025;
+        const port = process.env.PORT || 3015;
         server.listen(port, '0.0.0.0', () => {
             console.log(`Server is running on port ${port}`);
         });
