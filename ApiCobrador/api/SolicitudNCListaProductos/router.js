@@ -18,4 +18,6 @@ router.get('/Inventario/V1/Productos', controller.InventarioV2); /* ruta para in
 router.get('/Inventario/V1/Productos/Det', controller.InventarioV2det); /* ruta para insertar un recojo detalle*/
 router.get('/Inventario/V1/ListaCombos', controller.ListaCombos); /* ruta para insertar un recojo detalle*/
 router.get('/Inventario/V1/ListaCombos/Det', controller.ListaCombosDet); /* ruta para insertar un recojo detalle*/
+router.get('/Inventario/V1/ListaPagos', controller.ListaPagos); /* ruta para insertar un recojo detalle*/
+router.get('/Inventario/V1/ValidaComprobante', controller.ValidaComprobante); /* ruta para insertar un recojo detalle*/
 module.exports = router;

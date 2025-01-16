@@ -11,6 +11,8 @@ const DispositivosAPP = require("../DispositivosAPP/model");
 const Nomina = require("../Nomina/model");
 const Com_AsignacionDeVendedores = require("../Com_AsignacionDeVendedores/model");
 const Bodega = require("../Bodega/model");
+const Com_Rango = require("../Com_Rango/model");
+const Com_CargosDeVentas = require("../Com_CargosDeVentas/model");
 const JWT_SECRET = process.env.JWT_SECRET;
 const { LessThanOrEqual, MoreThanOrEqual } = require('typeorm');
 
@@ -182,7 +184,8 @@ exports.getVaEmPassUnikeV1 = async (req, res) => {
 
 exports.getVaEmPassV1 = async (req, res) => {
   const { KeyPinPass, KeyDispositivo } = req.body;
-  console.log("KeyPinPass:", KeyPinPass);
+  console.log("KeyPinPass:", KeyDispositivo);
+  console.log("KeyDispositivo:", KeyDispositivo);
   try {
     const usuarioRepository = AppDataSource.getRepository(UsuarioSchema);
     const DispositivosAPPRepository = AppDataSource.getRepository(DispositivosAPP);
@@ -192,6 +195,8 @@ exports.getVaEmPassV1 = async (req, res) => {
     const ingresoCobradorRepository = AppDataSource.getRepository(IngresoCobradorSchema);
     const BodegaRepository = AppDataSource.getRepository(Bodega);
     const Com_AsignacionDeVendedoresRepository = AppDataSource.getRepository(Com_AsignacionDeVendedores);
+    const Com_CargosDeVentasRepository = AppDataSource.getRepository(Com_CargosDeVentas);
+    const Com_RangoRepository = AppDataSource.getRepository(Com_Rango);
 
     // Función para obtener el dispositivo
     const getDispositivo = async () => {
@@ -218,11 +223,15 @@ exports.getVaEmPassV1 = async (req, res) => {
     // Función para obtener los datos del cobrador
     const getIngresoCobradorData = async (idNomina, Empresa, idTipoPersonal) => {
       let ingresoCobradorData = { nombre: "", cedula: "", idIngresoCobrador: 0, Codigo: "" };
+      let Com_CargosDeVentas = { Cargo: "" };
+      let Com_Rango = { Rango: "" };
 
       if (parseInt(idTipoPersonal, 10) === 1) { // Administrativo
         let Nomina;
         if (parseInt(Empresa, 10) === 1) {
           Nomina = await NominaRepository.findOne({ where: { idNomina } });
+          Com_CargosDeVentas = await Com_CargosDeVentasRepository.findOne({ where: { idCargo: Nomina.idCargo } });
+          Com_Rango = await Com_RangoRepository.findOne({ where: { idCom_Rango: Nomina.idCom_Rango } });
           ingresoCobradorData = {
             nombre: `${Nomina.PrimerNombre} ${Nomina.SegundoNombre} ${Nomina.ApellidoPaterno} ${Nomina.ApellidoMaterno}`,
             cedula: Nomina.NIdentificacion,
@@ -259,18 +268,26 @@ exports.getVaEmPassV1 = async (req, res) => {
       return await BodegaRepository.findOne({ where: { Bodega } });
     };
 
-    const dispositivo = await getDispositivo();
+    //funcion para obetenr el cargo 
+    const getCom_CargosDeVentas = async (idCargo) => {
+      return await Com_CargosDeVentasRepository.findOne({ where: { idCargo } });
+    };
 
+    // Funcion para obtener el rango
+    const getCom_Rango = async (idRango) => {
+      console.log("idRango:", idRango);
+      return await Com_RangoRepository.findOne({ where: { idCom_Rango: idRango } });
+    };
+
+    const dispositivo = await getDispositivo();
+    console.log("dispositivo:", dispositivo);
     if (!dispositivo) {
       return res.status(200).json({ estado: "fail", message: "Credenciales incorrectas" });
     }
-
     const { idNomina, idCom_Estado, Empresa, idTipoPersonal } = dispositivo;
-
     let sNombre = '';
     let sCodigo = '';
     let ingresoCobradorData = { nombre: "", cedula: "", idIngresoCobrador: 0, Codigo: "" };
-
     // Si es administrativo
     if (parseInt(idTipoPersonal, 10) === 1) {
       ingresoCobradorData = await getIngresoCobradorData(idNomina, Empresa, idTipoPersonal);
@@ -297,8 +314,13 @@ exports.getVaEmPassV1 = async (req, res) => {
           Activo: usuario.Activo,
           iTipoPersonal: idTipoPersonal,
           ingresoCobrador: ingresoCobradorData,
+          Empresa : Empresa,
           bodegas: UsuariosBodegas.map((ub) => ub.Bodega),
           permisosMenu: PermisosMenus.map((pm) => pm.idMenu),
+          Com_CargosDeVentas: " ",
+          Com_Rango: " ",
+          NombreApellido : "",
+
         },
       });
     }
@@ -310,6 +332,7 @@ exports.getVaEmPassV1 = async (req, res) => {
 
       const AsignacionDeVendedores = await checkAsignacionDeVendedores(idPersonal);
 
+     
       if (!AsignacionDeVendedores) {
         return res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H/Desarrollo.3" });
       }
@@ -317,7 +340,8 @@ exports.getVaEmPassV1 = async (req, res) => {
       if (AsignacionDeVendedores.length > 1) {
         return res.status(200).json({ estado: "fail", message: "Usuario tiene múltiples asignaciones, comuniquese con R.R.H.H/Desarrollo.4" });
       }
-
+      const getCom_CargosDeVentasA = await getCom_CargosDeVentas(AsignacionDeVendedores.idCargo);
+      const getCom_RangoA = await getCom_Rango(AsignacionDeVendedores.idCom_Rango);
       const Bodega = AsignacionDeVendedores.Bodega;
       const CdoigoBodega = await getBodegaData(Bodega);
 
@@ -334,8 +358,11 @@ exports.getVaEmPassV1 = async (req, res) => {
       }
 
       const IngresoCobrador = await ingresoCobradorRepository.findOne({ where: { Codigo: CodigoBodega } });
-      const ingresoCobradorData = IngresoCobrador || { nombre: "", cedula: "", idIngresoCobrador: 0 };
-
+      const NominaVentas = await NominaRepository.findOne({ where: { idNomina: idNomina } });
+      console.log("NominaVentas:", NominaVentas);
+      const Nombres = `${NominaVentas.PrimerNombre} ${NominaVentas.SegundoNombre} ${NominaVentas.ApellidoPaterno} ${NominaVentas.ApellidoMaterno}`;
+      const ingresoCobradorData = IngresoCobrador || { nombre: Nombres || "", cedula: "", idIngresoCobrador: 0 };
+      console.log ("ingresoCobradorData:", ingresoCobradorData);
       const UsuariosBodegas = await UsuariosBodegasRepository.find({ where: { idUsuario: usuario.idUsuario } });
       const PermisosMenus = await getPermisosMenus(usuario.idGrupo);
 
@@ -350,8 +377,12 @@ exports.getVaEmPassV1 = async (req, res) => {
           Activo: usuario.Activo,
           iTipoPersonal: idTipoPersonal,
           ingresoCobrador: ingresoCobradorData,
+          Empresa : Empresa,
           bodegas: UsuariosBodegas.map((ub) => ub.Bodega),
           permisosMenu: PermisosMenus.map((pm) => pm.idMenu),
+          Com_CargosDeVentas: getCom_CargosDeVentasA.Cargo,
+          Com_Rango: getCom_RangoA.Rango,
+          NombreApellido : "",
         },
       });
     }

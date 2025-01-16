@@ -12,6 +12,8 @@ const Com_AsignacionDeVendedoresSchema = new EntitySchema({
             this.Desde = new Date();
             this.Hasta = new Date();
             this.idCom_Estado = 0;
+            this.idCargo = 0;
+            this.idCom_Rango = 0;
         }
     },
     columns: {
@@ -33,6 +35,12 @@ const Com_AsignacionDeVendedoresSchema = new EntitySchema({
             type: 'datetime'
         },
         idCom_Estado: {
+            type: 'int'
+        },
+        idCargo: {
+            type: 'int'
+        },
+        idCom_Rango: {
             type: 'int'
         }
     }

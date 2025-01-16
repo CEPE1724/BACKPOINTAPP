@@ -20,7 +20,10 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
             this.Dias_Mora_Proyectado = 0,
             this.Banco = " ",
             this.Direccion = " ",
-            this.Barrio = " "
+            this.Barrio = " ",
+            this.Telefono = " ",
+            this.Celular = " ",
+            this.Fecha_Factura = new Date();
         }
     },
     columns: {
@@ -73,6 +76,18 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
         Barrio: {
             type: 'varchar',
             length: 255
+        },
+        Telefono: {
+            type: 'varchar',
+            length: 255
+        },
+        Celular: {
+            type: 'varchar',
+            length: 255
+
+        },
+        Fecha_Factura: {
+            type: 'datetime'
         }
     }
 });

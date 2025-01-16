@@ -31,16 +31,17 @@ exports.save = async (req, res) => {
         }
 
         console.log('Usuario:', Usuario);
+        let UserNuevo = '';
         if (!Usuario) {
             // Traemos solo el campo 'codigo' de la tabla 'IngresoCobrador' usando select
-            Usuario = await AppDataSource.getRepository(IngresoCobrador)
+            UserNuevo = await AppDataSource.getRepository(IngresoCobrador)
                 .findOne({ 
                     select: ["Codigo"],  // Solo seleccionamos el campo 'codigo'
                     where: { idIngresoCobrador: idCobrador }
                 });
         
             // Si el código es encontrado, puedes usarlo de la siguiente manera:
-            if (!Usuario) {
+            if (!UserNuevo) {
                 return res.status(400).json({ message: "El Cobrador no fue encontrado" });
             }
         }
@@ -64,7 +65,7 @@ exports.save = async (req, res) => {
             idCobrador,
             Valor,
             Imagen: imagenString, // Usar la cadena convertida
-            Usuario,
+            Usuario: Usuario ? Usuario : UserNuevo.Codigo, // Usar el código del cobrador si no se proporciona el campo Usuario
             Voucher
         };
 

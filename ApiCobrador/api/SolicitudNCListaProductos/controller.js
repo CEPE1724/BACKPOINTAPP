@@ -286,9 +286,10 @@ exports.insert = [
             Telefono,
             FechaPago,
             Valor,
-            Usuario
+            Usuario,
+            Tipo
         } = req.body;
-
+         console.log("tIPO",req.body);
         try {
             const result = await AppDataSource.query(
                 `EXEC GuardaCbo_GestionesDeCobranzasAPP 
@@ -303,7 +304,8 @@ exports.insert = [
                 @Telefono = '${Telefono}',
                 @FechaPago = '${FechaPago}',
                 @Valor = ${Valor},
-                @Usuario = '${Usuario}'`,
+                @Usuario = '${Usuario}',
+                @Tipo = ${Tipo}`
             );
 
             res.status(200).json({ message: 'Datos insertados correctamente', result });
@@ -441,3 +443,33 @@ exports.insertAnticipos = [
         }
     }
 ];
+
+
+exports.ListaPagos = async (req, res) => {
+    try {
+        const { idCre_TablaDeAmortizacion } = req.query;
+
+        const result = await AppDataSource.query(
+            `EXEC ResumenPagoCrediPoint_APP @idCre_TablaDeAmortizacion = ${idCre_TablaDeAmortizacion}`
+        );
+
+        res.json(result); // Envía los resultados al cliente
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).send("Error al ejecutar el procedimiento almacenado.");
+    }
+};
+
+exports.ValidaComprobante = async (req, res) => {
+    try {
+        const { Numero, Banco,  tipo } = req.query;
+
+        const result = await AppDataSource.query(
+            `EXEC ValidaCobrosAPP @Numero = '${Numero}', @Banco = ${Banco}, @tipo = ${tipo}`
+        );
+        res.json(result); // Envía los resultados al cliente
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).send("Error al ejecutar el procedimiento almacenado.");
+    }
+}

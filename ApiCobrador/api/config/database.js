@@ -24,6 +24,10 @@ const entities = [
     require('../Com_AsignacionDeVendedores/model'),
     require('../Cob_APPCobrosEfectivo/model'),
     require('../Cre_GCTelefono/model'),
+    require('../Com_CargosDeVentas/model'),
+    require('../Com_Rango/model'),
+
+
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
     require('../../../Equifax/api/EQFX_ResultadoPoliticas/model'),

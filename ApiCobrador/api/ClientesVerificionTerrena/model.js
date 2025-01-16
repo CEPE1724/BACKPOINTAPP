@@ -29,7 +29,10 @@ const ClientesVerificionTerrena = new EntitySchema({
             this.bTrabajoVerifica = 0,
             this.idTerrenaGestionDomicilio = 0,
             this.idTerrenaGestionTrabajo = 0,
-            this.UrlGoogle= ''
+            this.UrlGoogle= '',
+            this.Latitud = 0,
+            this.Longitud = 0,
+            this.UrlPhoto = ''
         }
     },
     columns: {
@@ -116,6 +119,16 @@ const ClientesVerificionTerrena = new EntitySchema({
         UrlGoogle: {
             type: 'varchar',
             length: 600
+        },
+        Latitud: {
+            type: 'float'
+        },
+        Longitud: {
+            type: 'float'
+        },
+        UrlPhoto: {
+            type: 'varchar',
+            length: 500
         }
     }
 });
