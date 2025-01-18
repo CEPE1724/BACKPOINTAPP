@@ -11,6 +11,7 @@ router.post('/AppSave/Recojo', controller.insertRecojo); /* ruta para insertar u
 router.post('/AppSave/Anticipos', controller.insertAnticipos); /* ruta para insertar un recojo detalle*/
 router.get('/AppSave/ViewGestionesDeCobranzas', controller.ViewGestionesDeCobranzas); /* ruta para insertar un recojo detalle*/
 router.get('/AppSave/TablaAmrtizacion', controller.TablaAmortizacion); /* ruta para insertar un recojo detalle*/
+router.get('/AppSave/Referencias', controller.Cre_ConsultaReferenciasAPP); /* ruta para insertar un recojo detalle*/
 //router.get('/AppSave/TablaAmrtizacion', controller.TablaAmortizacion); /* ruta para insertar un recojo detalle*/
 router.get('/AppSave/TablaValoresPendientes', controller.TablaAmortizacionValores); /* ruta para insertar un recojo detalle*/
 router.get('/Inventario/Productos', controller.Inventario); /* ruta para insertar un recojo detalle*/

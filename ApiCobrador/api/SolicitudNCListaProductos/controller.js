@@ -473,3 +473,17 @@ exports.ValidaComprobante = async (req, res) => {
         res.status(500).send("Error al ejecutar el procedimiento almacenado.");
     }
 }
+
+exports.Cre_ConsultaReferenciasAPP = async (req, res) => {
+    try {
+        const { idCre_DatosGenerales, Referencia } = req.query;
+        const result = await AppDataSource.query(
+            `EXEC Cre_ConsultaReferenciasAPP  @idCre_DatosGenerales = ${idCre_DatosGenerales}, @Referencia = ${Referencia}`
+        );
+        res.json(result); 
+    } catch (err) {
+        console.error("Error al ejecutar el procedimiento almacenado:", err);
+        res.status(500).send("Error al ejecutar el procedimiento almacenado.");
+    }
+}
+

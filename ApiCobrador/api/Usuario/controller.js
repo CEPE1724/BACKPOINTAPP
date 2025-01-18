@@ -16,7 +16,7 @@ const Com_CargosDeVentas = require("../Com_CargosDeVentas/model");
 const JWT_SECRET = process.env.JWT_SECRET;
 const { LessThanOrEqual, MoreThanOrEqual } = require('typeorm');
 
-const { Not } = require("typeorm");  // Importar el operador Not
+const { Not, In } = require("typeorm");  // Importar el operador Not
 exports.getVaEmPass = async (req, res) => {
   const { nombre, clave } = req.body;
 
@@ -43,6 +43,9 @@ exports.getVaEmPass = async (req, res) => {
       const UsuariosBodegas = await UsuariosBodegasRepository.find({
         where: { idUsuario: usuario.idUsuario },
       });
+
+      const BodegaUsuario = await Bodega.findOne({ where: { Bodega: UsuariosBodegas[0].Bodega } });
+      console.log("BodegaUsuario:", BodegaUsuario);
 
       const PermisosMenus = await PermisosMenusRepository.find({
         where: { idRol: usuario.idGrupo },
@@ -147,6 +150,10 @@ exports.getVaEmPassUnikeV1 = async (req, res) => {
       const UsuariosBodegas = await UsuariosBodegasRepository.find({
         where: { idUsuario: usuario.idUsuario },
       });
+
+      const BodegaUsuario = await Bodega.findOne({ where: { Bodega: UsuariosBodegas[0].Bodega } });
+      console.log("BodegaUsuario:", BodegaUsuario);
+
 
       const PermisosMenus = await PermisosMenusRepository.find({
         where: { idRol: usuario.idGrupo },
@@ -301,6 +308,12 @@ exports.getVaEmPassV1 = async (req, res) => {
       }
 
       const UsuariosBodegas = await UsuariosBodegasRepository.find({ where: { idUsuario: usuario.idUsuario } });
+      const bodegasIds = UsuariosBodegas.map((usuarioBodega) => usuarioBodega.Bodega);
+
+     const BodegaUsuario = await BodegaRepository.find({
+        where: { idBodega: In(bodegasIds) }, // Utilizamos In para filtrar por múltiples IDs
+      });
+      
       const PermisosMenus = await getPermisosMenus(usuario.idGrupo);
 
       const token = generateUserToken(usuario);
@@ -315,7 +328,7 @@ exports.getVaEmPassV1 = async (req, res) => {
           iTipoPersonal: idTipoPersonal,
           ingresoCobrador: ingresoCobradorData,
           Empresa : Empresa,
-          bodegas: UsuariosBodegas.map((ub) => ub.Bodega),
+          bodegas: BodegaUsuario,
           permisosMenu: PermisosMenus.map((pm) => pm.idMenu),
           Com_CargosDeVentas: " ",
           Com_Rango: " ",
