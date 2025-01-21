@@ -1,0 +1,43 @@
+Conexión a la base de datos establecida
+Conexión a la base de datos establecida
+Server is running on port \\.\pipe\58adb9fe-fad9-46c0-8cba-2bdf51706ce5
+KeyPinPass: 6D53A6AA-E749-46F1-A331-81C5AECD0792
+KeyDispositivo: 6D53A6AA-E749-46F1-A331-81C5AECD0792
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 2,
+  idNomina: 3343,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '0943406058',
+  KeyDispositivo: '6D53A6AA-E749-46F1-A331-81C5AECD0792',
+  iTipoPersonal: 0,
+  Pin: '369136',
+  PinSeguridad: '369136',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 891,
+  Nombre: 'M2CAJA',
+  Clave: '1985',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: M2CAJA
+NominaVentas: Nomina {
+  idNomina: 3343,
+  NIdentificacion: '0943406058',
+  ApellidoPaterno: 'BUSTAMANTE',
+  ApellidoMaterno: 'ICAZA',
+  PrimerNombre: 'DARLA',
+  SegundoNombre: 'LORELAYNE',
+  Codigo: 'DBUSTAMANTE',
+  idPersonal: 3753
+}
+ingresoCobradorData: {
+  nombre: 'DARLA LORELAYNE BUSTAMANTE ICAZA',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 119.160 ms - 10812[0m

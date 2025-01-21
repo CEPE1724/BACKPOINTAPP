@@ -1,0 +1,5 @@
+(node:23696) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:23696) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+Application has thrown an uncaught exception and is terminated:
+Error: EPERM: operation not permitted, open 'C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\logs\2025-01-21.log'

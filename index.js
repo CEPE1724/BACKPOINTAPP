@@ -42,19 +42,19 @@ app.use(helmet());
 // app.use('/cobranza/api/v1/point/', apiLimiter);
 
 // Obtener la fecha actual en formato yyyy-MM-dd
-const currentDate = format(new Date(), 'yyyy-MM-dd');
-const logFilePath = path.join(__dirname, 'logs', `${currentDate}.log`);
+//const currentDate = format(new Date(), 'yyyy-MM-dd');
+//const logFilePath = path.join(__dirname, 'logs', `${currentDate}.log`);
 
 // Asegurarnos de que el directorio de logs exista
-if (!fs.existsSync(path.dirname(logFilePath))) {
-    fs.mkdirSync(path.dirname(logFilePath), { recursive: true });
-}
+//if (!fs.existsSync(path.dirname(logFilePath))) {
+ //   fs.mkdirSync(path.dirname(logFilePath), { recursive: true });
+//}
 
 // Crear un flujo de escritura para almacenar los logs en el archivo de log del día
-const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+////const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
 
 // Configura morgan para escribir en un archivo de log por día
-app.use(morgan('combined', { stream: logStream }));
+///app.use(morgan('combined', { stream: logStream }));
 
 // Rutas sin autenticación (sin middleware)
 const publicRoutes = [
@@ -129,7 +129,7 @@ initializeDatabase()
         });
 
         // Iniciar el servidor
-        const port = process.env.PORT || 3015;
+        const port = process.env.PORT 
         server.listen(port, '0.0.0.0', () => {
             console.log(`Server is running on port ${port}`);
         });
