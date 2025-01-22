@@ -1,0 +1,2168 @@
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1521217 [36m304[0m 649.071 ms - -[0m
+Cliente desconectado: mVgSP_eWtCMf7QQVAACJ
+Cliente conectado: -V68yolIqzUF7piWAACN
+KeyPinPass: AE39FA32-15A3-4E77-9F8E-D182E866A223
+KeyDispositivo: AE39FA32-15A3-4E77-9F8E-D182E866A223
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 50.389 ms - 56[0m
+[0mGET /cobranza/api/v1/point/ClientesVerificionTerrena/list?idVerificador=253&filtro=&page=1 [32m200[0m 12.821 ms - 23573[0m
+[0mGET /cobranza/api/v1/point/ClientesVerificionTerrena/countEstado?idVerificador=253 [32m200[0m 19.910 ms - 66[0m
+[0mGET /cobranza/api/v1/point/GestionDiaria/allGestionId [32m200[0m 8.444 ms - 111[0m
+[0mGET /cobranza/api/v1/point/GestionDiaria/allGestionId [32m200[0m 8.738 ms - 111[0m
+KeyPinPass: AE39FA32-15A3-4E77-9F8E-D182E866A223
+KeyDispositivo: AE39FA32-15A3-4E77-9F8E-D182E866A223
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 8.577 ms - 56[0m
+[0mGET /cobranza/api/v1/point/GestionDiaria/allGestionId [32m200[0m 3.089 ms - 111[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=518292 [36m304[0m 2.559 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=518292 [36m304[0m 3.184 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1694270 [32m200[0m 69.510 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1694270 [32m200[0m 16.270 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1694270 [32m200[0m 246.510 ms - 7723[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1694270 [32m200[0m 247.009 ms - 7723[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1694270 [32m200[0m 220.920 ms - 7723[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1694270 [32m200[0m 675.090 ms - 7723[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.941 ms - 295[0m
+Cliente desconectado: 2rxcmzCEgNDK7UWNAACL
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.357 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.872 ms - 294[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Lup&page=1&limit=10 [32m200[0m 56.744 ms - 2813[0m
+Cliente conectado: IC_GB6OnH2g-1AWdAACP
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.597 ms - 294[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.368 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.100 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.099 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.870 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.959 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.604 ms - 294[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.215 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.706 ms - 294[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 24.969 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.200 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.751 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.234 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Lupe&page=1&limit=10 [32m200[0m 18.026 ms - 2344[0m
+Cliente conectado: fp1TXg2pmm1Cvu9JAACR
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=537401 [32m200[0m 7.600 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=537401 [32m200[0m 9.980 ms - 2[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 20.776 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=L&page=1&limit=10 [36m304[0m 9.377 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Leon&page=1&limit=10 [32m200[0m 13.807 ms - 4539[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=560793 [32m200[0m 7.047 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=560793 [32m200[0m 9.965 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1613747 [32m200[0m 39.327 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1613747 [32m200[0m 214.937 ms - 7791[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1613747 [32m200[0m 214.281 ms - 7791[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.360 ms - 295[0m
+Cliente desconectado: 4uKdS2QZgz0Nq8TSAAA4
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.216 ms - 295[0m
+Cliente conectado: iFEjQdPhR3V0QVMlAACT
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=1&page=1&limit=10 [32m200[0m 30.517 ms - 4575[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=17&page=1&limit=10 [32m200[0m 12.526 ms - 4624[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=172&page=1&limit=10 [32m200[0m 26.433 ms - 4649[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=1727&page=1&limit=10 [32m200[0m 34.078 ms - 4682[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=17275&page=1&limit=10 [32m200[0m 16.342 ms - 1875[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=172753&page=1&limit=10 [32m200[0m 16.455 ms - 1875[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=561842 [32m200[0m 3.801 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=561842 [36m304[0m 2.819 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.700 ms - 306[0m
+Cliente desconectado: 4FW_ZtIHpQ4_MSF-AACF
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.872 ms - 306[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.122 ms - 306[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.689 ms - 306[0m
+Cliente conectado: BSkLu9oy8bdLRMkAAACV
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1617536 [32m200[0m 1172.523 ms - 1210[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1617536 [32m200[0m 1133.140 ms - 1210[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=S&page=1&limit=10 [36m304[0m 8.969 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Sa&page=1&limit=10 [32m200[0m 10.610 ms - 4636[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=San&page=1&limit=10 [32m200[0m 14.366 ms - 4737[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Sant&page=1&limit=10 [32m200[0m 12.440 ms - 1408[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Santa&page=1&limit=10 [32m200[0m 12.540 ms - 1408[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Santan&page=1&limit=10 [32m200[0m 12.075 ms - 937[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Santana&page=1&limit=10 [32m200[0m 14.388 ms - 937[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571624 [32m200[0m 3.345 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571624 [32m200[0m 3.347 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1657707 [32m200[0m 58.417 ms - 135[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1657707 [32m200[0m 343.817 ms - 5175[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1657707 [32m200[0m 342.992 ms - 5175[0m
+Cliente conectado: HeA_RPNBJ2W34XBCAACX
+Cliente desconectado: 9RQRAO18qqOPpruhAAB9
+Cliente desconectado: b5V1FcBjEfZma8VqAACH
+[0mGET /cobranza/api/v1/point/Inventario/V1/ValidaComprobante?Numero=79277&Banco=0&tipo=1 [32m200[0m 157.205 ms - 16[0m
+Cliente desconectado: JRk0S7D_P3sIiq7IAAB_
+tIPO {
+  idCbo_GestorDeCobranzas: 8815269,
+  idCompra: 1506919,
+  idPersonal: 215,
+  Fecha: '2025-01-22T19:21:28.302Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 61,
+  Notas: 'ABONA 50',
+  Telefono: '',
+  Valor: 50,
+  FechaPago: '2000-01-01',
+  Usuario: 'FPINCAY',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 192.423 ms - 94[0m
+1737573689400.jpg guardado en el servidor local.
+Cliente conectado: WMeIlnbER0sAvUd0AACZ
+1737573689400.jpg subido a sparta_bucket.
+1737573689400.jpg eliminado del servidor local.
+[0mPUT /cobranza/api/v1/point/googleApi/google [32m200[0m 7991.517 ms - 201[0m
+idCompra: 1506919
+idCobrador: 215
+Valor: 50
+Imagen: [
+  'https://storage.googleapis.com/sparta_bucket/VerificacionTerrena/VOUCHER/1506919/1737573689400.jpg'
+]
+Usuario: FPINCAY
+Voucher: 79277
+[0mPOST /cobranza/api/v1/point/AppSave/Cob_AppCobrosEfectivo [32m200[0m 16.605 ms - 74[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=&page=1&limit=10 [36m304[0m 10.318 ms - -[0m
+Cliente desconectado: BSkLu9oy8bdLRMkAAACV
+Cliente conectado: -Uu_k2nQIoSKRGEyAACb
+Cedula: 1721938965
+edison: DispositivosAPP {
+  idDispositivosAPP: 477,
+  idNomina: 239,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 0,
+  Cedula: '1721938965',
+  KeyDispositivo: 'C09273BF-6F68-4D71-A769-2FF176B60D29',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '040724',
+  idTipoPersonal: 1
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1721938965 [32m200[0m 3.776 ms - 514[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=C&page=1&limit=10 [32m200[0m 11.427 ms - 4526[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.913 ms - 297[0m
+Cliente desconectado: WMeIlnbER0sAvUd0AACZ
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Ca&page=1&limit=10 [32m200[0m 11.577 ms - 4530[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Cade&page=1&limit=10 [32m200[0m 17.828 ms - 940[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Caden&page=1&limit=10 [32m200[0m 18.380 ms - 940[0m
+Cliente conectado: XE08A9rh1IqxRIAwAACd
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Cadena&page=1&limit=10 [32m200[0m 14.886 ms - 940[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.764 ms - 296[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=545319 [32m200[0m 3.894 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=545319 [32m200[0m 3.090 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.766 ms - 298[0m
+Cliente conectado: _1kv82nW-SbPPijJAACf
+Cliente conectado: Sa58QgEWg_ub6YTrAACh
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.695 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Guaman&page=1&limit=10 [36m304[0m 14.536 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Guama&page=1&limit=10 [32m200[0m 14.353 ms - 4606[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Gu&page=1&limit=10 [36m304[0m 10.591 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=P&page=1&limit=10 [32m200[0m 12.644 ms - 4606[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Pa&page=1&limit=10 [32m200[0m 13.966 ms - 4604[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Pan&page=1&limit=10 [32m200[0m 18.673 ms - 2770[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Pana&page=1&limit=10 [32m200[0m 12.702 ms - 1388[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Panat&page=1&limit=10 [32m200[0m 12.383 ms - 487[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.016 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=539679 [32m200[0m 2.449 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=539679 [32m200[0m 2.707 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1516179 [32m200[0m 266.959 ms - 7792[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1516179 [32m200[0m 208.305 ms - 135[0m
+[0mGET / [33m404[0m 0.286 ms - 29[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1516179 [32m200[0m 475.874 ms - 7792[0m
+[0mGET /favicon.ico [33m404[0m 0.219 ms - 29[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 75.302 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.494 ms - 306[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.023 ms - 306[0m
+Cliente conectado: _N7V6_pEiR8Gu-KxAACj
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3589091 [32m200[0m 39.333 ms - 315[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.143 ms - 296[0m
+Cedula: 1721938965
+KeyDispositivo: C09273BF-6F68-4D71-A769-2FF176B60D29
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 81.240 ms - 88[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ValidaComprobante?Numero=79276&Banco=0&tipo=1 [32m200[0m 12.194 ms - 16[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.493 ms - 298[0m
+Cedula: 1204544116
+edison: DispositivosAPP {
+  idDispositivosAPP: 277,
+  idNomina: 299,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1204544116',
+  KeyDispositivo: '31D1A69C-0DDE-4581-A9CA-C559C244F108',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '197915',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1204544116 [32m200[0m 3.818 ms - 511[0m
+KeyPinPass: C09273BF-6F68-4D71-A769-2FF176B60D29
+KeyDispositivo: C09273BF-6F68-4D71-A769-2FF176B60D29
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 477,
+  idNomina: 239,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 1,
+  Cedula: '1721938965',
+  KeyDispositivo: 'C09273BF-6F68-4D71-A769-2FF176B60D29',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '040724',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 54.736 ms - 20319[0m
+Cliente conectado: 11-_yE3Rin1xp3LTAACl
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1428429 [36m304[0m 7223.063 ms - -[0m
+Cliente desconectado: HeA_RPNBJ2W34XBCAACX
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.964 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 8.226 ms - 65[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8835444,
+  idCompra: 1697932,
+  idPersonal: 215,
+  Fecha: '2025-01-22T19:22:31.253Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 61,
+  Notas: 'ABONA 50',
+  Telefono: '',
+  Valor: 50,
+  FechaPago: '2000-01-01',
+  Usuario: 'FPINCAY',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 153.801 ms - 94[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.821 ms - 298[0m
+Cliente desconectado: -V68yolIqzUF7piWAACN
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=&page=1&limit=10 [32m200[0m 8.743 ms - 4547[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1428429 [31m500[0m 15062.778 ms - 46[0m
+1737573752285.jpg guardado en el servidor local.
+1737573752285.jpg subido a sparta_bucket.
+1737573752285.jpg eliminado del servidor local.
+[0mPUT /cobranza/api/v1/point/googleApi/google [32m200[0m 8014.152 ms - 201[0m
+idCompra: 1697932
+idCobrador: 215
+Valor: 50
+Imagen: [
+  'https://storage.googleapis.com/sparta_bucket/VerificacionTerrena/VOUCHER/1697932/1737573752285.jpg'
+]
+Usuario: FPINCAY
+Voucher: 79276
+[0mPOST /cobranza/api/v1/point/AppSave/Cob_AppCobrosEfectivo [32m200[0m 32.264 ms - 74[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=&page=1&limit=10 [36m304[0m 8.347 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.516 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=M&page=1&limit=10 [32m200[0m 11.231 ms - 4545[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Mo&page=1&limit=10 [32m200[0m 13.200 ms - 4577[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Mora&page=1&limit=10 [32m200[0m 14.206 ms - 4558[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Moral&page=1&limit=10 [32m200[0m 13.733 ms - 4549[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Morales&page=1&limit=10 [32m200[0m 15.482 ms - 4549[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Morales+R&page=1&limit=10 [32m200[0m 14.205 ms - 898[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.994 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Morales+&page=1&limit=10 [32m200[0m 15.561 ms - 4549[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Morales+r&page=1&limit=10 [32m200[0m 16.258 ms - 898[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.729 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=P&page=1&limit=10 [32m200[0m 12.625 ms - 4638[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Po&page=1&limit=10 [32m200[0m 19.169 ms - 1842[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Pon&page=1&limit=10 [32m200[0m 15.389 ms - 1391[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Ponce&page=1&limit=10 [32m200[0m 16.862 ms - 1391[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Ponce+&page=1&limit=10 [32m200[0m 15.651 ms - 1391[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Ponce+c&page=1&limit=10 [32m200[0m 17.220 ms - 935[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Ponce+ce&page=1&limit=10 [32m200[0m 15.270 ms - 469[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=527352 [32m200[0m 2.438 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=527352 [32m200[0m 2.807 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.170 ms - 298[0m
+Cedula: 1205313503
+edison: DispositivosAPP {
+  idDispositivosAPP: 278,
+  idNomina: 2892,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1205313503',
+  KeyDispositivo: 'E3AC20B6-BAB2-4554-A535-2DFD848A4503',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '201945',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1205313503 [32m200[0m 3.921 ms - 514[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.449 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.259 ms - 298[0m
+Cliente desconectado: _N7V6_pEiR8Gu-KxAACj
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=540092 [32m200[0m 4.474 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=540092 [32m200[0m 3.476 ms - 2[0m
+KeyPinPass: 86A01676-5334-4FFA-87FA-E036132C8ED1
+KeyDispositivo: 86A01676-5334-4FFA-87FA-E036132C8ED1
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 4.268 ms - 56[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.612 ms - 298[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1526104 [32m200[0m 63.792 ms - 133[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1526104 [32m200[0m 220.834 ms - 5195[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1526104 [32m200[0m 215.221 ms - 5195[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 18.621 ms - 298[0m
+Cliente conectado: 2nyLS7b_YtN680aQAACn
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.817 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ValidaComprobante?Numero=83174&Banco=0&tipo=1 [32m200[0m 11.482 ms - 16[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3222689 [32m200[0m 60.376 ms - 2169[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 6.933 ms - 65[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 7.525 ms - 65[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8858675,
+  idCompra: 1428429,
+  idPersonal: 126,
+  Fecha: '2025-01-22T19:23:22.666Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 68,
+  Notas: 'NO EXISTE ESA NUMERACIÓN Y LA NUBE NO SIRVE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LQUIMBITA ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 140.672 ms - 94[0m
+KeyPinPass: 86A01676-5334-4FFA-87FA-E036132C8ED1
+KeyDispositivo: 86A01676-5334-4FFA-87FA-E036132C8ED1
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 3.715 ms - 56[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=&page=1&limit=10 [36m304[0m 7.661 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Morales+&page=1&limit=10 [36m304[0m 12.998 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Mor&page=1&limit=10 [32m200[0m 14.220 ms - 4559[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=&page=1&limit=10 [36m304[0m 7.987 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.274 ms - 298[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8838198,
+  idCompra: 1772409,
+  idPersonal: 239,
+  Fecha: '2025-01-22T19:23:30.633Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 61,
+  Notas: 'TT REALIZA ABONO DE 80$',
+  Telefono: '',
+  Valor: 80,
+  FechaPago: '2000-01-01',
+  Usuario: 'JPAILLACHO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 91.977 ms - 94[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.571 ms - 298[0m
+1737573811555.jpg guardado en el servidor local.
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=N&page=1&limit=10 [32m200[0m 10.294 ms - 4552[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Ni&page=1&limit=10 [32m200[0m 12.925 ms - 4668[0m
+1737573811555.jpg subido a sparta_bucket.
+1737573811555.jpg eliminado del servidor local.
+[0mPUT /cobranza/api/v1/point/googleApi/google [32m200[0m 3443.405 ms - 201[0m
+idCompra: 1772409
+idCobrador: 239
+Valor: 80
+Imagen: [
+  'https://storage.googleapis.com/sparta_bucket/VerificacionTerrena/VOUCHER/1772409/1737573811555.jpg'
+]
+Usuario: JPAILLACHO
+Voucher: 83174
+[0mPOST /cobranza/api/v1/point/AppSave/Cob_AppCobrosEfectivo [32m200[0m 14.174 ms - 74[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Nixo&page=1&limit=10 [32m200[0m 36.134 ms - 472[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=&page=1&limit=10 [36m304[0m 8.518 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Nixom&page=1&limit=10 [32m200[0m 16.495 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Nixo&page=1&limit=10 [36m304[0m 15.856 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=556194 [32m200[0m 2.397 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=556194 [32m200[0m 3.143 ms - 2[0m
+Cedula: 1205313503
+KeyDispositivo: E3AC20B6-BAB2-4554-A535-2DFD848A4503
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 23.842 ms - 88[0m
+Cedula: 1204544116
+KeyDispositivo: 31D1A69C-0DDE-4581-A9CA-C559C244F108
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 35.460 ms - 88[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1584292 [32m200[0m 2022.250 ms - 1284[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1584292 [32m200[0m 3108.521 ms - 1284[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.759 ms - 298[0m
+Cliente desconectado: _1kv82nW-SbPPijJAACf
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.905 ms - 306[0m
+Cliente conectado: 7wfVqX-FZ-TrgYk8AACp
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.509 ms - 306[0m
+KeyPinPass: 31D1A69C-0DDE-4581-A9CA-C559C244F108
+KeyDispositivo: 31D1A69C-0DDE-4581-A9CA-C559C244F108
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 277,
+  idNomina: 299,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1204544116',
+  KeyDispositivo: '31D1A69C-0DDE-4581-A9CA-C559C244F108',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '151979',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 204,
+  Nombre: 'QSCAJA',
+  Clave: '2024',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: QSCAJA
+NominaVentas: Nomina {
+  idNomina: 299,
+  NIdentificacion: '1204544116',
+  ApellidoPaterno: 'MERA',
+  ApellidoMaterno: 'MANZABA',
+  PrimerNombre: 'OVIDIO',
+  SegundoNombre: 'IVAN',
+  Codigo: 'OMERA',
+  idPersonal: 742
+}
+ingresoCobradorData: {
+  nombre: 'OVIDIO IVAN MERA MANZABA',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 30.046 ms - 10823[0m
+Cliente conectado: UYnTDiX4rHCGjknmAACr
+KeyPinPass: AE39FA32-15A3-4E77-9F8E-D182E866A223
+KeyDispositivo: AE39FA32-15A3-4E77-9F8E-D182E866A223
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 6.445 ms - 56[0m
+KeyPinPass: E3AC20B6-BAB2-4554-A535-2DFD848A4503
+KeyDispositivo: E3AC20B6-BAB2-4554-A535-2DFD848A4503
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 5.217 ms - 56[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 6.938 ms - 65[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 6.439 ms - 65[0m
+Cliente desconectado: Sa58QgEWg_ub6YTrAACh
+Cliente desconectado: 7wfVqX-FZ-TrgYk8AACp
+KeyPinPass: E3AC20B6-BAB2-4554-A535-2DFD848A4503
+KeyDispositivo: E3AC20B6-BAB2-4554-A535-2DFD848A4503
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 278,
+  idNomina: 2892,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1205313503',
+  KeyDispositivo: 'E3AC20B6-BAB2-4554-A535-2DFD848A4503',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '201943',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 466,
+  Nombre: 'QVCAJA',
+  Clave: '2020',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: QVCAJA
+Cliente desconectado: UYnTDiX4rHCGjknmAACr
+NominaVentas: Nomina {
+  idNomina: 2892,
+  NIdentificacion: '1205313503',
+  ApellidoPaterno: 'INTRIAGO',
+  ApellidoMaterno: 'PINCAI',
+  PrimerNombre: 'LUIS',
+  SegundoNombre: 'ALBERTO',
+  Codigo: 'LINTRIAGO',
+  idPersonal: 3303
+}
+ingresoCobradorData: {
+  nombre: 'LUIS ALBERTO INTRIAGO PINCAI',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 23.748 ms - 10812[0m
+Cliente conectado: wo4EsFE9re8FLzqbAACt
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.024 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=518292 [36m304[0m 4.018 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=518292 [36m304[0m 4.121 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.782 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 235.154 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 241.720 ms - 2220[0m
+Cedula: 092114634
+edison: null
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=092114634 [32m200[0m 28.304 ms - 83[0m
+Cliente desconectado: XE08A9rh1IqxRIAwAACd
+Cedula: 0942056623
+edison: DispositivosAPP {
+  idDispositivosAPP: 241,
+  idNomina: 3239,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '0942056623',
+  KeyDispositivo: '6419DA34-F268-443F-95C7-CD5EF6681295',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '654321',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=0942056623 [32m200[0m 4.431 ms - 514[0m
+Cliente conectado: sxWzcz4SmHaD66DQAACv
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.623 ms - 298[0m
+Cliente desconectado: wo4EsFE9re8FLzqbAACt
+Cliente conectado: 9jiy4KGfIlA-j5adAACx
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.351 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.641 ms - 298[0m
+Cedula: 0942056623
+KeyDispositivo: 6419DA34-F268-443F-95C7-CD5EF6681295
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 38.620 ms - 88[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.995 ms - 298[0m
+Cliente conectado: gBYYew87kVuX2rp1AACz
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.395 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 16.274 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.946 ms - 298[0m
+Cliente desconectado: fp1TXg2pmm1Cvu9JAACR
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=M&page=1&limit=10 [32m200[0m 14.421 ms - 4594[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mamz&page=1&limit=10 [32m200[0m 19.413 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mamza&page=1&limit=10 [32m200[0m 19.025 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mamzab&page=1&limit=10 [32m200[0m 19.438 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mamzaba&page=1&limit=10 [32m200[0m 17.551 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mamzab&page=1&limit=10 [36m304[0m 19.979 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mamza&page=1&limit=10 [36m304[0m 19.693 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mamz&page=1&limit=10 [36m304[0m 18.304 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Mam&page=1&limit=10 [32m200[0m 26.083 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Ma&page=1&limit=10 [32m200[0m 22.153 ms - 4640[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=M&page=1&limit=10 [36m304[0m 11.989 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.019 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.813 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Ma&page=1&limit=10 [36m304[0m 22.619 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Manz&page=1&limit=10 [32m200[0m 45.026 ms - 476[0m
+KeyPinPass: 6419DA34-F268-443F-95C7-CD5EF6681295
+KeyDispositivo: 6419DA34-F268-443F-95C7-CD5EF6681295
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 241,
+  idNomina: 3239,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '0942056623',
+  KeyDispositivo: '6419DA34-F268-443F-95C7-CD5EF6681295',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '654321',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 510,
+  Nombre: 'MLCAJA',
+  Clave: 'POINT2025',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: MLCAJA
+NominaVentas: Nomina {
+  idNomina: 3239,
+  NIdentificacion: '0942056623',
+  ApellidoPaterno: 'FUENTES',
+  ApellidoMaterno: 'MARTINEZ',
+  PrimerNombre: 'MARJORIE',
+  SegundoNombre: 'DIANA',
+  Codigo: 'MFUENTES',
+  idPersonal: 3649
+}
+ingresoCobradorData: {
+  nombre: 'MARJORIE DIANA FUENTES MARTINEZ',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 105.498 ms - 10821[0m
+Cliente conectado: v04IUtHFq4wBbCTeAAC1
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548775 [32m200[0m 3.186 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548775 [36m304[0m 2.727 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.533 ms - 298[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1554015 [32m200[0m 88.111 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1554015 [32m200[0m 219.892 ms - 7771[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1554015 [32m200[0m 331.750 ms - 7771[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 14.891 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.489 ms - 292[0m
+Cliente conectado: pTONjJqhX63U_xjkAAC3
+Cedula: 1756044317
+edison: DispositivosAPP {
+  idDispositivosAPP: 362,
+  idNomina: 3016,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1756044317',
+  KeyDispositivo: '87FF3FDF-9410-4D38-9EE0-A738890C2305',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '120602',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1756044317 [32m200[0m 3.783 ms - 514[0m
+Cedula: 1756044317
+Cedula: 1756044317
+edison: DispositivosAPP {
+  idDispositivosAPP: 362,
+  idNomina: 3016,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1756044317',
+  KeyDispositivo: '87FF3FDF-9410-4D38-9EE0-A738890C2305',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '120602',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1756044317 [32m200[0m 3.924 ms - 514[0m
+edison: DispositivosAPP {
+  idDispositivosAPP: 362,
+  idNomina: 3016,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1756044317',
+  KeyDispositivo: '87FF3FDF-9410-4D38-9EE0-A738890C2305',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '120602',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1756044317 [32m200[0m 25.821 ms - 514[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.842 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=&page=1&limit=10 [36m304[0m 18.223 ms - -[0m
+Cliente conectado: zvzxC_Ujirl095e4AAC5
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=N&page=1&limit=10 [32m200[0m 11.748 ms - 4664[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.020 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Na&page=1&limit=10 [32m200[0m 13.208 ms - 4609[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.128 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Naye&page=1&limit=10 [32m200[0m 19.327 ms - 1375[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Nayeli&page=1&limit=10 [32m200[0m 63.468 ms - 457[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 239.910 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 247.729 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=&page=1&limit=10 [36m304[0m 51.736 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 46.718 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Nayel&page=1&limit=10 [32m200[0m 37.665 ms - 1375[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=S&page=1&limit=10 [32m200[0m 10.640 ms - 4535[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Simb&page=1&limit=10 [32m200[0m 21.307 ms - 1875[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.181 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.874 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Simba%C3%B1&page=1&limit=10 [32m200[0m 22.290 ms - 463[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ValidaComprobante?Numero=83820&Banco=0&tipo=1 [32m200[0m 11.661 ms - 16[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=508327 [32m200[0m 3.139 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=508327 [32m200[0m 3.358 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.695 ms - 297[0m
+Cliente desconectado: sxWzcz4SmHaD66DQAACv
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Simba%C3%B1&page=1&limit=10 [36m304[0m 17.432 ms - -[0m
+Cliente conectado: 8govOzBPkuWwQm3XAAC7
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1386086 [32m200[0m 234.247 ms - 7802[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1386086 [32m200[0m 145.848 ms - 133[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1386086 [32m200[0m 201.296 ms - 7802[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.136 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.465 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.744 ms - 298[0m
+Cedula: 1756044317
+KeyDispositivo: 87FF3FDF-9410-4D38-9EE0-A738890C2305
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 9.877 ms - 88[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=559860 [32m200[0m 3.029 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=559860 [32m200[0m 4.439 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.500 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.100 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 51.410 ms - 298[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1609233 [32m200[0m 1228.972 ms - 1274[0m
+Cliente conectado: 12Mx1draqmPV3TyeAAC9
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571872 [32m200[0m 2.356 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571872 [36m304[0m 3.739 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1609233 [32m200[0m 1662.017 ms - 1274[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1659078 [32m200[0m 85.978 ms - 136[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1659078 [32m200[0m 280.350 ms - 7756[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1659078 [32m200[0m 235.082 ms - 7756[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.932 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=184&filtro=&page=1&limit=10 [36m304[0m 9.365 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.467 ms - 292[0m
+Cliente desconectado: 2nyLS7b_YtN680aQAACn
+[0mGET /cobranza/api/v1/point/registro?idCobrador=184&filtro=S&page=1&limit=10 [32m200[0m 11.764 ms - 4573[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.194 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=184&filtro=Sim&page=1&limit=10 [32m200[0m 17.971 ms - 1383[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=184&filtro=Simb&page=1&limit=10 [32m200[0m 19.381 ms - 942[0m
+KeyPinPass: 87FF3FDF-9410-4D38-9EE0-A738890C2305
+KeyDispositivo: 87FF3FDF-9410-4D38-9EE0-A738890C2305
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 362,
+  idNomina: 3016,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1756044317',
+  KeyDispositivo: '87FF3FDF-9410-4D38-9EE0-A738890C2305',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '120602',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 347,
+  Nombre: 'QCCAJA',
+  Clave: 'CAJA2',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: QCCAJA
+NominaVentas: Nomina {
+  idNomina: 3016,
+  NIdentificacion: '1756044317',
+  ApellidoPaterno: 'GORDON',
+  ApellidoMaterno: 'SANDOVAL',
+  PrimerNombre: 'TANIA',
+  SegundoNombre: 'CAROLINA',
+  Codigo: 'TGORDON',
+  idPersonal: 3426
+}
+ingresoCobradorData: {
+  nombre: 'TANIA CAROLINA GORDON SANDOVAL',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 38.531 ms - 10948[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=184&filtro=Simba&page=1&limit=10 [32m200[0m 16.278 ms - 942[0m
+Cedula: 180426878
+edison: null
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=180426878 [32m200[0m 2.117 ms - 83[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=184&filtro=Simba%C3%B1a&page=1&limit=10 [32m200[0m 16.035 ms - 489[0m
+Cliente conectado: mx_Zukjkq2wJeG-gAAC_
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=558585 [32m200[0m 3.291 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=558585 [32m200[0m 3.477 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.359 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.144 ms - 292[0m
+KeyPinPass: B541E3DF-AF08-48F0-A308-D4789B4D64FC
+KeyDispositivo: B541E3DF-AF08-48F0-A308-D4789B4D64FC
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 514,
+  idNomina: 3429,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1804624094',
+  KeyDispositivo: 'B541E3DF-AF08-48F0-A308-D4789B4D64FC',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '587482',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 210,
+  Nombre: 'AMCAJA',
+  Clave: 'AMBATO123',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: AMCAJA
+NominaVentas: Nomina {
+  idNomina: 3429,
+  NIdentificacion: '1804624094',
+  ApellidoPaterno: 'SOLIS',
+  ApellidoMaterno: 'SILVA',
+  PrimerNombre: 'JOSE',
+  SegundoNombre: 'CARLOS',
+  Codigo: 'JCSOLIS',
+  idPersonal: 3839
+}
+ingresoCobradorData: { nombre: 'JOSE CARLOS SOLIS SILVA', cedula: '', idIngresoCobrador: 0 }
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 99.065 ms - 10809[0m
+Cliente conectado: rB6dTERHug_KNS3QAADB
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3592898 [32m200[0m 83.828 ms - 620[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1603775&idMotivo=0 [32m200[0m 66.099 ms - 2257[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1603775&idMotivo=0 [32m200[0m 4.986 ms - 2257[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.354 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 200.010 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 196.008 ms - 2220[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.947 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.293 ms - 292[0m
+Cedula: 180426878
+edison: null
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=180426878 [36m304[0m 2.602 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.929 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.328 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.934 ms - 291[0m
+Cedula: 0604345884
+edison: DispositivosAPP {
+  idDispositivosAPP: 180,
+  idNomina: 3053,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '0604345884',
+  KeyDispositivo: '3CDA8DBB-CE50-49A8-AF31-792EA92A7048',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '250616',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=0604345884 [32m200[0m 4.046 ms - 514[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1603775 [32m200[0m 70.373 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1603775 [32m200[0m 215.627 ms - 7777[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1603775 [32m200[0m 201.403 ms - 7777[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.912 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 17.864 ms - 2977[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 33.772 ms - 2977[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 229.818 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 254.924 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8801618,
+  idCompra: 1694270,
+  idPersonal: 272,
+  Fecha: '2025-01-22T19:26:27.405Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 61,
+  Notas: 'RECIBO 83820 $30 PROXIMO ABKNO EL.LUNES 27',
+  Telefono: '',
+  Valor: 30,
+  FechaPago: '2000-01-01',
+  Usuario: 'RCARPIO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 75.288 ms - 94[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.859 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.400 ms - 292[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1659078 [36m304[0m 16.919 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1659078 [36m304[0m 204.566 ms - -[0m
+1737573989161.jpg guardado en el servidor local.
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1659078 [36m304[0m 265.740 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.160 ms - 298[0m
+1737573989161.jpg subido a sparta_bucket.
+1737573989161.jpg eliminado del servidor local.
+[0mPUT /cobranza/api/v1/point/googleApi/google [32m200[0m 2831.803 ms - 201[0m
+idCompra: 1694270
+idCobrador: 272
+Valor: 30
+Imagen: [
+  'https://storage.googleapis.com/sparta_bucket/VerificacionTerrena/VOUCHER/1694270/1737573989161.jpg'
+]
+Usuario: RCARPIO
+Voucher: 83820
+[0mPOST /cobranza/api/v1/point/AppSave/Cob_AppCobrosEfectivo [32m200[0m 13.291 ms - 74[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=272&filtro=&page=1&limit=10 [36m304[0m 6.578 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8772775,
+  idCompra: 1554015,
+  idPersonal: 141,
+  Fecha: '2025-01-22T19:26:33.842Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'SE GESTIONA C/P ',
+  Telefono: '',
+  Valor: 28,
+  FechaPago: '2025-01-28T19:25:00.000Z',
+  Usuario: 'GLEON',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 66.892 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=&page=1&limit=10 [36m304[0m 8.941 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.428 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.492 ms - 292[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos/Det?Bodega=107&idPromocion=1791 [32m200[0m 5.452 ms - 492[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.386 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.186 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=272&filtro=0&page=1&limit=10 [36m304[0m 9.423 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=272&filtro=091&page=1&limit=10 [36m304[0m 11.722 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=272&filtro=0913&page=1&limit=10 [36m304[0m 10.743 ms - -[0m
+Cliente conectado: gLQ4TJXsuiKrgd2gAADD
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.334 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=272&filtro=09138&page=1&limit=10 [36m304[0m 21.929 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=272&filtro=091384&page=1&limit=10 [36m304[0m 10.212 ms - -[0m
+[0mGET /cobranza/api/v1/point/GestionDiaria/allGestionId [32m200[0m 4.038 ms - 111[0m
+[0mGET /cobranza/api/v1/point/GestionDiaria/allGestionId [32m200[0m 3.862 ms - 111[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.653 ms - 297[0m
+Cliente desconectado: pTONjJqhX63U_xjkAAC3
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=518292 [36m304[0m 3.117 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=518292 [36m304[0m 3.629 ms - -[0m
+Cedula: 0401642400
+edison: DispositivosAPP {
+  idDispositivosAPP: 37,
+  idNomina: 509,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '0401642400',
+  KeyDispositivo: '3227F809-0073-4371-B704-B67B9C261F22',
+  iTipoPersonal: 0,
+  Pin: '40164 ',
+  PinSeguridad: '040164',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=0401642400 [32m200[0m 3.986 ms - 511[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=224630 [32m200[0m 3.957 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=224630 [36m304[0m 3.052 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.388 ms - 298[0m
+Cliente desconectado: 11-_yE3Rin1xp3LTAACl
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.836 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.083 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=110947 [32m200[0m 2.995 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=110947 [32m200[0m 3.065 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.202 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.820 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 40.788 ms - 298[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1634498 [32m200[0m 478.350 ms - 7827[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1634498 [32m200[0m 557.948 ms - 7827[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1634498 [32m200[0m 533.486 ms - 139[0m
+Cedula: 0401642400
+KeyDispositivo: 3227F809-0073-4371-B704-B67B9C261F22
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 32.656 ms - 88[0m
+Cliente conectado: XLyQIsoWwG419vqBAADF
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.025 ms - 298[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8801618,
+  idCompra: 1694270,
+  idPersonal: 272,
+  Fecha: '2025-01-22T19:27:20.992Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'REGRESAR X ABONO ',
+  Telefono: '',
+  Valor: 110,
+  FechaPago: '2025-01-27T19:26:00.000Z',
+  Usuario: 'RCARPIO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 49.212 ms - 94[0m
+KeyPinPass: 3227F809-0073-4371-B704-B67B9C261F22
+KeyDispositivo: 3227F809-0073-4371-B704-B67B9C261F22
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 37,
+  idNomina: 509,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '0401642400',
+  KeyDispositivo: '3227F809-0073-4371-B704-B67B9C261F22',
+  iTipoPersonal: 0,
+  Pin: '40164 ',
+  PinSeguridad: '040164',
+  idTipoPersonal: 2
+}
+idRango: 1
+usuario: Usuario {
+  idUsuario: 353,
+  Nombre: 'CYCAJA',
+  Clave: '2025',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: CYCAJA
+NominaVentas: Nomina {
+  idNomina: 509,
+  NIdentificacion: '0401642400',
+  ApellidoPaterno: 'ENRIQUEZ',
+  ApellidoMaterno: 'MERA',
+  PrimerNombre: 'ANIBAL',
+  SegundoNombre: 'ERNESTO',
+  Codigo: 'AENRIQUEZ',
+  idPersonal: 947
+}
+ingresoCobradorData: {
+  nombre: 'ANIBAL ERNESTO ENRIQUEZ MERA',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 24.187 ms - 10823[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=272&filtro=&page=1&limit=10 [36m304[0m 5.947 ms - -[0m
+Cliente conectado: hZyvBR1lMr6rMB7aAADH
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.874 ms - 297[0m
+Cliente conectado: dJFPXG0-o-pKKmwQAADJ
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 190.356 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 187.846 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=P&page=1&limit=10 [32m200[0m 10.783 ms - 4493[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Pa&page=1&limit=10 [32m200[0m 11.907 ms - 4549[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Pal&page=1&limit=10 [32m200[0m 19.575 ms - 2415[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Palla&page=1&limit=10 [32m200[0m 13.615 ms - 481[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Pallas&page=1&limit=10 [32m200[0m 15.397 ms - 481[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=282250 [32m200[0m 9.357 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=282250 [32m200[0m 7.232 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1429038 [32m200[0m 1769.164 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1429038 [32m200[0m 1924.582 ms - 2[0m
+Cedula: 0604345884
+KeyDispositivo: 3CDA8DBB-CE50-49A8-AF31-792EA92A7048
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 42.204 ms - 88[0m
+Cedula: 1804268728
+edison: DispositivosAPP {
+  idDispositivosAPP: 375,
+  idNomina: 1610,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1804268728',
+  KeyDispositivo: '23906709-C3E6-4655-B443-9046E3CE2E8D',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '180426',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1804268728 [32m200[0m 9.572 ms - 514[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1429038&idMotivo=0 [32m200[0m 3702.292 ms - 582[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1429038&idMotivo=0 [32m200[0m 3640.890 ms - 582[0m
+Cliente desconectado: hZyvBR1lMr6rMB7aAADH
+KeyPinPass: 3227F809-0073-4371-B704-B67B9C261F22
+KeyDispositivo: 3227F809-0073-4371-B704-B67B9C261F22
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 37,
+  idNomina: 509,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '0401642400',
+  KeyDispositivo: '3227F809-0073-4371-B704-B67B9C261F22',
+  iTipoPersonal: 0,
+  Pin: '40164 ',
+  PinSeguridad: '040164',
+  idTipoPersonal: 2
+}
+idRango: 1
+usuario: Usuario {
+  idUsuario: 353,
+  Nombre: 'CYCAJA',
+  Clave: '2025',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: CYCAJA
+NominaVentas: Nomina {
+  idNomina: 509,
+  NIdentificacion: '0401642400',
+  ApellidoPaterno: 'ENRIQUEZ',
+  ApellidoMaterno: 'MERA',
+  PrimerNombre: 'ANIBAL',
+  SegundoNombre: 'ERNESTO',
+  Codigo: 'AENRIQUEZ',
+  idPersonal: 947
+}
+ingresoCobradorData: {
+  nombre: 'ANIBAL ERNESTO ENRIQUEZ MERA',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 30.372 ms - 10823[0m
+Cliente conectado: jshKmkwqYXnPPFW2AADL
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 264.234 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 248.984 ms - -[0m
+Cliente desconectado: XLyQIsoWwG419vqBAADF
+Cedula: 1712434990
+edison: DispositivosAPP {
+  idDispositivosAPP: 70,
+  idNomina: 202,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 0,
+  Cedula: '1712434990',
+  KeyDispositivo: '54B1C268-E1AB-401F-A380-548DB93BFB16',
+  iTipoPersonal: 0,
+  Pin: '197981',
+  PinSeguridad: '197981',
+  idTipoPersonal: 1
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1712434990 [32m200[0m 3.575 ms - 514[0m
+Cliente desconectado: v04IUtHFq4wBbCTeAAC1
+Cliente desconectado: 9jiy4KGfIlA-j5adAACx
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 10.206 ms - 2977[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 10.980 ms - 2977[0m
+Cedula: 1712434990
+KeyDispositivo: 54B1C268-E1AB-401F-A380-548DB93BFB16
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 36.602 ms - 88[0m
+Cedula: 1804268728
+KeyDispositivo: 23906709-C3E6-4655-B443-9046E3CE2E8D
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 59.285 ms - 88[0m
+Cliente desconectado: dJFPXG0-o-pKKmwQAADJ
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 212.770 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 205.894 ms - -[0m
+KeyPinPass: 54B1C268-E1AB-401F-A380-548DB93BFB16
+KeyDispositivo: 54B1C268-E1AB-401F-A380-548DB93BFB16
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 70,
+  idNomina: 202,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 1,
+  Cedula: '1712434990',
+  KeyDispositivo: '54B1C268-E1AB-401F-A380-548DB93BFB16',
+  iTipoPersonal: 0,
+  Pin: '197981',
+  PinSeguridad: '197981',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 21.290 ms - 10582[0m
+Cliente conectado: NyFUaUcQ_F24zeWcAADN
+KeyPinPass: 23906709-C3E6-4655-B443-9046E3CE2E8D
+KeyDispositivo: 23906709-C3E6-4655-B443-9046E3CE2E8D
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 375,
+  idNomina: 1610,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1804268728',
+  KeyDispositivo: '23906709-C3E6-4655-B443-9046E3CE2E8D',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '202501',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 210,
+  Nombre: 'AMCAJA',
+  Clave: 'AMBATO123',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: AMCAJA
+NominaVentas: Nomina {
+  idNomina: 1610,
+  NIdentificacion: '1804268728',
+  ApellidoPaterno: 'VARGAS',
+  ApellidoMaterno: 'LOPEZ',
+  PrimerNombre: 'JAIME',
+  SegundoNombre: 'ANDRES',
+  Codigo: 'JVARGAS',
+  idPersonal: 2025
+}
+ingresoCobradorData: {
+  nombre: 'JAIME ANDRES VARGAS LOPEZ',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 91.716 ms - 10811[0m
+Cliente conectado: jE9YalLC8VQBWB4RAADP
+Cedula: 1726285529
+edison: DispositivosAPP {
+  idDispositivosAPP: 347,
+  idNomina: 584,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1726285529',
+  KeyDispositivo: '40DA5DA7-B65E-43A9-B3BC-F662B1187252',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '172628',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1726285529 [32m200[0m 6.927 ms - 511[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 44.813 ms - 65[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=V&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.182 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=V&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.181 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=V&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.182 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=V&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.198 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.177 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.176 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.183 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.200 ms - 87[0m
+Cliente conectado: yUwxRmc7SNSX-KTbAADR
+Cedula: 1726285529
+KeyDispositivo: 40DA5DA7-B65E-43A9-B3BC-F662B1187252
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 6.640 ms - 88[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.170 ms - 87[0m
+KeyPinPass: 5D5BE139-3645-4808-95C5-D7E0418012A0
+KeyDispositivo: 5D5BE139-3645-4808-95C5-D7E0418012A0
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 9.329 ms - 56[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.174 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.174 ms - 87[0m
+Cedula: 1714890538
+edison: DispositivosAPP {
+  idDispositivosAPP: 316,
+  idNomina: 1172,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '1714890538',
+  KeyDispositivo: 'B9887F00-10EC-4147-8A1F-4DC58E88D55A',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '180519',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=1714890538 [32m200[0m 40.458 ms - 514[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Venta&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.174 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=&page=1&limit=10 [32m200[0m 14.704 ms - 4570[0m
+KeyPinPass: 40DA5DA7-B65E-43A9-B3BC-F662B1187252
+KeyDispositivo: 40DA5DA7-B65E-43A9-B3BC-F662B1187252
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 347,
+  idNomina: 584,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1726285529',
+  KeyDispositivo: '40DA5DA7-B65E-43A9-B3BC-F662B1187252',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '172628',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 347,
+  Nombre: 'QCCAJA',
+  Clave: 'CAJA2',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: QCCAJA
+NominaVentas: Nomina {
+  idNomina: 584,
+  NIdentificacion: '1726285529',
+  ApellidoPaterno: 'ROSERO',
+  ApellidoMaterno: 'MONTERO',
+  PrimerNombre: 'JOSE',
+  SegundoNombre: 'RICHARD',
+  Codigo: 'JRROSERO',
+  idPersonal: 1021
+}
+ingresoCobradorData: {
+  nombre: 'JOSE RICHARD ROSERO MONTERO',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 35.077 ms - 10957[0m
+Cliente conectado: LFvcqAlDQTZPhzlLAADT
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=R&page=1&limit=10 [32m200[0m 21.474 ms - 4580[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Ro&page=1&limit=10 [32m200[0m 26.766 ms - 4642[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Rom&page=1&limit=10 [32m200[0m 36.607 ms - 1403[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Rome&page=1&limit=10 [32m200[0m 33.276 ms - 485[0m
+Cliente desconectado: 8govOzBPkuWwQm3XAAC7
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 227.238 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Romer&page=1&limit=10 [32m200[0m 97.894 ms - 6[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 243.807 ms - 2220[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.376 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Romero&page=1&limit=10 [32m200[0m 36.760 ms - 6[0m
+Cliente conectado: uoyrBgtp3IbD207hAADV
+KeyPinPass: 5D5BE139-3645-4808-95C5-D7E0418012A0
+KeyDispositivo: 5D5BE139-3645-4808-95C5-D7E0418012A0
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 5.203 ms - 56[0m
+Cliente conectado: BKTj8Fb4KFegg-SyAADX
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 5.763 ms - 63[0m
+Cliente desconectado: -Uu_k2nQIoSKRGEyAACb
+Cliente conectado: iwpwd0ONksqYjUVlAADZ
+Cliente desconectado: LFvcqAlDQTZPhzlLAADT
+KeyPinPass: 32CFDA47-9C10-4641-9845-4638306B67FA
+KeyDispositivo: 32CFDA47-9C10-4641-9845-4638306B67FA
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 244,
+  idNomina: 2416,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '0942551995',
+  KeyDispositivo: '32CFDA47-9C10-4641-9845-4638306B67FA',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '205320',
+  idTipoPersonal: 2
+}
+idRango: 1
+usuario: Usuario {
+  idUsuario: 617,
+  Nombre: 'CUCAJA',
+  Clave: 'LOCAL1',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: CUCAJA
+NominaVentas: Nomina {
+  idNomina: 2416,
+  NIdentificacion: '0942551995',
+  ApellidoPaterno: 'ALMEIDA',
+  ApellidoMaterno: 'BRAVO',
+  PrimerNombre: 'ALEXI',
+  SegundoNombre: 'ALEJANDRINA',
+  Codigo: 'AALMEIDA',
+  idPersonal: 2827
+}
+ingresoCobradorData: {
+  nombre: 'ALEXI ALEJANDRINA ALMEIDA BRAVO',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 39.703 ms - 10814[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Romer&page=1&limit=10 [36m304[0m 38.207 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Rome&page=1&limit=10 [36m304[0m 35.601 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=R&page=1&limit=10 [36m304[0m 21.687 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=0705638880&page=1&limit=10 [32m200[0m 34.976 ms - 468[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574899 [32m200[0m 7.137 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574899 [32m200[0m 10.962 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1673023 [32m200[0m 135.834 ms - 135[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1673023 [32m200[0m 223.781 ms - 7745[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1673023 [32m200[0m 435.288 ms - 7745[0m
+Cedula: 1714890538
+KeyDispositivo: B9887F00-10EC-4147-8A1F-4DC58E88D55A
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 36.822 ms - 88[0m
+Cliente desconectado: jshKmkwqYXnPPFW2AADL
+Cliente desconectado: uoyrBgtp3IbD207hAADV
+Cliente conectado: uwGWos0HwtuDrcwrAADb
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 11.264 ms - 2977[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 12.437 ms - 2977[0m
+Cliente desconectado: jE9YalLC8VQBWB4RAADP
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos/Det?Bodega=75&idPromocion=1442 [32m200[0m 4.912 ms - 347[0m
+KeyPinPass: B9887F00-10EC-4147-8A1F-4DC58E88D55A
+KeyDispositivo: B9887F00-10EC-4147-8A1F-4DC58E88D55A
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 316,
+  idNomina: 1172,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1714890538',
+  KeyDispositivo: 'B9887F00-10EC-4147-8A1F-4DC58E88D55A',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '180519',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 350,
+  Nombre: 'MCCAJA',
+  Clave: 'MABE',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: MCCAJA
+NominaVentas: Nomina {
+  idNomina: 1172,
+  NIdentificacion: '1714890538',
+  ApellidoPaterno: 'CALI',
+  ApellidoMaterno: 'ANASI',
+  PrimerNombre: 'EDISON',
+  SegundoNombre: 'GEOVANNY',
+  Codigo: 'ECALI',
+  idPersonal: 1596
+}
+ingresoCobradorData: {
+  nombre: 'EDISON GEOVANNY CALI ANASI',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 26.153 ms - 10810[0m
+Cliente conectado: qXLafmKdpEW3VQIgAADd
+Cliente desconectado: gLQ4TJXsuiKrgd2gAADD
+Cliente desconectado: BKTj8Fb4KFegg-SyAADX
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 210.363 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 195.473 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=P&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.273 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=P&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.180 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=P&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.184 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=P&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.180 ms - 87[0m
+Cliente desconectado: rB6dTERHug_KNS3QAADB
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Co&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.186 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Co&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.187 ms - 87[0m
+Cliente desconectado: zvzxC_Ujirl095e4AAC5
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Co&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.185 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 67.611 ms - 302[0m
+Cliente desconectado: yUwxRmc7SNSX-KTbAADR
+Cliente conectado: TAz1Aa7ibEXTCktMAADf
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Co&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.183 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.357 ms - 302[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Cocip&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.178 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Cocip&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.187 ms - 87[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8783218,
+  idCompra: 1609233,
+  idPersonal: 93,
+  Fecha: '2025-01-22T19:30:02.136Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 67,
+  Notas: 'CLIENTE YA NO VIVE EN EL DOMICILIO INDICADO',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'PTIBANLOMBO',
+  Tipo: 0
+}
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Cocip&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.167 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 142.856 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=&page=1&limit=10 [36m304[0m 30.522 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Cocip&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.185 ms - 87[0m
+Cliente desconectado: qXLafmKdpEW3VQIgAADd
+Cliente conectado: _41VQ1gEKp_oneOUAADh
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos/Det?Bodega=75&idPromocion=1798 [32m200[0m 3.990 ms - 343[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.917 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.817 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.964 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.929 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 14.167 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 21.866 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.773 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.267 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.700 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.773 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.579 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.054 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.037 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.567 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=S&page=1&limit=10 [32m200[0m 8.855 ms - 4608[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.301 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=Sa&page=1&limit=10 [32m200[0m 9.364 ms - 4573[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=Sal&page=1&limit=10 [32m200[0m 12.644 ms - 4607[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=Salt&page=1&limit=10 [32m200[0m 10.145 ms - 466[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=Salto&page=1&limit=10 [32m200[0m 10.396 ms - 466[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=Saltos&page=1&limit=10 [32m200[0m 20.303 ms - 466[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=Saltos+&page=1&limit=10 [32m200[0m 9.877 ms - 466[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=0&page=1&limit=10 [32m200[0m 32.622 ms - 4571[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.723 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.215 ms - 295[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=549258 [32m200[0m 6.928 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=549258 [36m304[0m 2.958 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=092&page=1&limit=10 [32m200[0m 14.831 ms - 4542[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=0920&page=1&limit=10 [32m200[0m 17.972 ms - 4722[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.680 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.766 ms - 291[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1556268 [32m200[0m 45.502 ms - 142[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1556268 [32m200[0m 235.676 ms - 7845[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1556268 [32m200[0m 248.746 ms - 7845[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=09208&page=1&limit=10 [32m200[0m 21.535 ms - 1387[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.538 ms - 295[0m
+Cliente desconectado: iwpwd0ONksqYjUVlAADZ
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.164 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=1716557044&page=1&limit=10 [32m200[0m 16.629 ms - 434[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.763 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.417 ms - 292[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548812 [32m200[0m 2.760 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548812 [32m200[0m 3.552 ms - 2[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=09208&page=1&limit=10 [36m304[0m 28.549 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1554254 [32m200[0m 49.462 ms - 139[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1554254 [32m200[0m 242.771 ms - 7840[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=0920&page=1&limit=10 [36m304[0m 18.799 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=092&page=1&limit=10 [36m304[0m 14.038 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1554254 [32m200[0m 232.848 ms - 7840[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=09&page=1&limit=10 [32m200[0m 34.329 ms - 4572[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=&page=1&limit=10 [36m304[0m 42.438 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1556268 [32m200[0m 1526.632 ms - 1233[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.607 ms - 295[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1556268 [32m200[0m 1786.896 ms - 1233[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.578 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.987 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 38.904 ms - 292[0m
+Cliente conectado: ikIolIzQJRsAl-8KAADj
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=B&page=1&limit=10 [32m200[0m 12.797 ms - 4562[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baq&page=1&limit=10 [32m200[0m 16.156 ms - 4568[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque&page=1&limit=10 [32m200[0m 17.296 ms - 4568[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque&page=1&limit=10 [36m304[0m 18.177 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.122 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.843 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 9.808 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 5.522 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.432 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.101 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+&page=1&limit=10 [32m200[0m 16.135 ms - 4568[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 7.246 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+h&page=1&limit=10 [32m200[0m 20.685 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+her&page=1&limit=10 [32m200[0m 18.438 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+herre&page=1&limit=10 [32m200[0m 21.599 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=B&page=1&limit=10 [32m200[0m 10.596 ms - 4670[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ba&page=1&limit=10 [32m200[0m 12.335 ms - 4712[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 14.928 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+herr&page=1&limit=10 [32m200[0m 18.741 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.462 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+her&page=1&limit=10 [36m304[0m 17.026 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Baro&page=1&limit=10 [32m200[0m 11.984 ms - 480[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Baron&page=1&limit=10 [32m200[0m 29.917 ms - 480[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Barona&page=1&limit=10 [32m200[0m 13.008 ms - 480[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+he&page=1&limit=10 [32m200[0m 39.871 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque+&page=1&limit=10 [36m304[0m 19.354 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baque&page=1&limit=10 [36m304[0m 16.498 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.813 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Baqu&page=1&limit=10 [32m200[0m 26.561 ms - 4568[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Barona&page=1&limit=10 [36m304[0m 16.622 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 21.731 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Ba&page=1&limit=10 [32m200[0m 21.251 ms - 4636[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=&page=1&limit=10 [36m304[0m 9.788 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=B&page=1&limit=10 [36m304[0m 12.625 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Ba&page=1&limit=10 [36m304[0m 13.589 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=B&page=1&limit=10 [36m304[0m 14.303 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=529755 [32m200[0m 3.688 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=529755 [32m200[0m 5.649 ms - 2[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=&page=1&limit=10 [36m304[0m 16.280 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.175 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.779 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 15.353 ms - 295[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1699713 [32m200[0m 75.987 ms - 131[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1699713 [32m200[0m 222.911 ms - 4771[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 36.177 ms - 295[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1699713 [32m200[0m 220.492 ms - 4771[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3698011 [32m200[0m 33.386 ms - 633[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.780 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.045 ms - 295[0m
+Cliente conectado: ywOmB8HGzPlwdF58AADl
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 20.966 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.239 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.091 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 14.149 ms - 295[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8853257,
+  idCompra: 1755307,
+  idPersonal: 146,
+  Fecha: '2025-01-22T19:31:26.306Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'COMPROMISO DE PAGO PARA LA FECHA',
+  Telefono: '',
+  Valor: 300,
+  FechaPago: '2025-01-31T18:51:00.000Z',
+  Usuario: 'TROVELLO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 101.537 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=&page=1&limit=10 [36m304[0m 7.916 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.811 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.702 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.587 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.519 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.141 ms - 298[0m
+Cliente conectado: gJamWS5oIR8tcsbPAADn
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.383 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Palla&page=1&limit=10 [36m304[0m 18.649 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=J&page=1&limit=10 [32m200[0m 11.986 ms - 4693[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Pa&page=1&limit=10 [36m304[0m 11.675 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=&page=1&limit=10 [36m304[0m 8.886 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.003 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jo&page=1&limit=10 [32m200[0m 12.188 ms - 4711[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.194 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.284 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=L&page=1&limit=10 [32m200[0m 12.730 ms - 4513[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jon&page=1&limit=10 [32m200[0m 15.091 ms - 1432[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=La&page=1&limit=10 [32m200[0m 39.131 ms - 4613[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jo&page=1&limit=10 [36m304[0m 29.281 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=J&page=1&limit=10 [36m304[0m 12.082 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Lar&page=1&limit=10 [32m200[0m 13.954 ms - 4710[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.532 ms - 293[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1603775 [32m200[0m 1132.615 ms - 1230[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1603775 [32m200[0m 1154.926 ms - 1230[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.848 ms - 293[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Larr&page=1&limit=10 [32m200[0m 15.024 ms - 985[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jh&page=1&limit=10 [32m200[0m 15.836 ms - 2409[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jho&page=1&limit=10 [32m200[0m 14.274 ms - 2409[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jhon&page=1&limit=10 [32m200[0m 15.624 ms - 1427[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=538174 [32m200[0m 2.456 ms - 2[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jhond&page=1&limit=10 [32m200[0m 14.146 ms - 501[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=538174 [36m304[0m 2.558 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Jhonde&page=1&limit=10 [32m200[0m 12.853 ms - 501[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.696 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.130 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=222&filtro=16001&page=1&limit=10 [36m304[0m 21.281 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=585631 [32m200[0m 4.027 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=585631 [32m200[0m 2.786 ms - 2[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=222&filtro=16&page=1&limit=10 [36m304[0m 10.690 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1510185 [32m200[0m 99.805 ms - 138[0m
+Cliente conectado: eskqMOLfKS2tf-d9AADp
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1510185 [32m200[0m 363.052 ms - 7817[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1510185 [32m200[0m 341.511 ms - 7817[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=222&filtro=H&page=1&limit=10 [32m200[0m 10.416 ms - 4617[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.254 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.543 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=222&filtro=He&page=1&limit=10 [32m200[0m 10.509 ms - 4589[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=222&filtro=Her&page=1&limit=10 [32m200[0m 12.152 ms - 2326[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=222&filtro=Herr&page=1&limit=10 [32m200[0m 10.037 ms - 466[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=492798 [32m200[0m 3.300 ms - 2[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1603775&idMotivo=0 [36m304[0m 6.193 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1603775&idMotivo=0 [36m304[0m 4.907 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=492798 [36m304[0m 3.173 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1556268 [36m304[0m 3.650 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.856 ms - 298[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1556268 [36m304[0m 452.033 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1556268 [36m304[0m 455.539 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 21.131 ms - 292[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1333507 [32m200[0m 221.582 ms - 7794[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1333507 [32m200[0m 148.454 ms - 133[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1333507 [32m200[0m 202.710 ms - 7794[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.873 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Nix&page=1&limit=10 [32m200[0m 22.448 ms - 472[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.042 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.312 ms - 295[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1726761&idMotivo=0 [32m200[0m 81.328 ms - 1134[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1726761&idMotivo=0 [32m200[0m 81.477 ms - 1134[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Q&page=1&limit=10 [32m200[0m 13.873 ms - 4611[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Qu&page=1&limit=10 [32m200[0m 13.907 ms - 4611[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.495 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.333 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.446 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Qu&page=1&limit=10 [36m304[0m 14.557 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Q&page=1&limit=10 [36m304[0m 11.135 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.392 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=C&page=1&limit=10 [36m304[0m 9.582 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.641 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Ca&page=1&limit=10 [36m304[0m 25.794 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=529755 [36m304[0m 12.594 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=529755 [36m304[0m 2.241 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Cala&page=1&limit=10 [32m200[0m 22.518 ms - 935[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Calapi&page=1&limit=10 [32m200[0m 14.345 ms - 474[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1699713 [36m304[0m 3.809 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1699713 [36m304[0m 222.289 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574058 [32m200[0m 2.362 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574058 [32m200[0m 2.554 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1699713 [36m304[0m 569.407 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 41.357 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 44.822 ms - 292[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1510185&idMotivo=0 [32m200[0m 478.546 ms - 1013[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1510185&idMotivo=0 [32m200[0m 410.565 ms - 1013[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.598 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.817 ms - 295[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3698011 [36m304[0m 2.927 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.914 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.988 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.701 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.789 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 26.706 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.352 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.499 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 46.761 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.041 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.050 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.985 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.905 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.703 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.099 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.384 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.884 ms - 298[0m
+Cedula: 0957231863
+Cedula: 0957231863
+edison: DispositivosAPP {
+  idDispositivosAPP: 83,
+  idNomina: 227,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 0,
+  Cedula: '0957231863',
+  KeyDispositivo: '332C8DAB-3F37-4E3C-BF1A-6D1B388D600A',
+  iTipoPersonal: 0,
+  Pin: '95723 ',
+  PinSeguridad: '095723',
+  idTipoPersonal: 1
+}
+edison: DispositivosAPP {
+  idDispositivosAPP: 83,
+  idNomina: 227,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 0,
+  Cedula: '0957231863',
+  KeyDispositivo: '332C8DAB-3F37-4E3C-BF1A-6D1B388D600A',
+  iTipoPersonal: 0,
+  Pin: '95723 ',
+  PinSeguridad: '095723',
+  idTipoPersonal: 1
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=0957231863 [32m200[0m 4.421 ms - 514[0m
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=0957231863 [32m200[0m 4.175 ms - 514[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3698012 [32m200[0m 6.101 ms - 308[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.753 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.828 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.511 ms - 292[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8777754,
+  idCompra: 1668878,
+  idPersonal: 215,
+  Fecha: '2025-01-22T19:32:13.251Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'HOY CANCELA CUOTA',
+  Telefono: '',
+  Valor: 125,
+  FechaPago: '2025-01-22T19:31:51.921Z',
+  Usuario: 'FPINCAY',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 135.763 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=&page=1&limit=10 [36m304[0m 19.575 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.897 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.795 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 13.427 ms - 298[0m
+Cliente conectado: E6K6eBx933KguhIqAADr
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 243.968 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 245.969 ms - 2220[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.700 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 14.875 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.157 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.004 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=C&page=1&limit=10 [36m304[0m 39.942 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 47.913 ms - 295[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Ca&page=1&limit=10 [36m304[0m 50.969 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Cala&page=1&limit=10 [36m304[0m 40.157 ms - -[0m
+Cedula: 0957231863
+KeyDispositivo: 332C8DAB-3F37-4E3C-BF1A-6D1B388D600A
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 9.074 ms - 88[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.050 ms - 298[0m
+Cliente desconectado: gJamWS5oIR8tcsbPAADn
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.438 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.215 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.898 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.053 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.318 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 8.200 ms - 2977[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [32m200[0m 129.624 ms - 2977[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 4.597 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 4.646 ms - 64[0m
+KeyPinPass: 332C8DAB-3F37-4E3C-BF1A-6D1B388D600A
+KeyDispositivo: 332C8DAB-3F37-4E3C-BF1A-6D1B388D600A
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 83,
+  idNomina: 227,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 1,
+  Cedula: '0957231863',
+  KeyDispositivo: '332C8DAB-3F37-4E3C-BF1A-6D1B388D600A',
+  iTipoPersonal: 0,
+  Pin: '95723 ',
+  PinSeguridad: '095723',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 26.936 ms - 10584[0m
+Cliente conectado: EM2jXXDXjLku-wjhAADt
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Baron&page=1&limit=10 [36m304[0m 13.248 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Bar&page=1&limit=10 [32m200[0m 18.148 ms - 2826[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 7.926 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=R&page=1&limit=10 [32m200[0m 10.109 ms - 4639[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ru&page=1&limit=10 [32m200[0m 14.074 ms - 1879[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ruiz&page=1&limit=10 [32m200[0m 12.106 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=V&page=1&limit=10 [32m200[0m 16.642 ms - 4619[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.791 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Va&page=1&limit=10 [32m200[0m 18.620 ms - 4649[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.350 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=Vaq&page=1&limit=10 [32m200[0m 22.241 ms - 975[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 79.142 ms - 65[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=553373 [32m200[0m 2.955 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=553373 [32m200[0m 3.618 ms - 2[0m
+Cliente conectado: Aa4u_5q5is3Al3qjAADv
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1573093 [32m200[0m 282.648 ms - 7789[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1573093 [32m200[0m 223.743 ms - 7789[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1573093 [32m200[0m 235.919 ms - 136[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.169 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.796 ms - 292[0m
+Cliente conectado: NulFk2b2PLmNZLaJAADx
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=&page=1&limit=10 [36m304[0m 24.729 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=g&page=1&limit=10 [32m200[0m 15.713 ms - 4554[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=gl&page=1&limit=10 [32m200[0m 17.962 ms - 1844[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=glor&page=1&limit=10 [32m200[0m 23.578 ms - 913[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.895 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.814 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=glori&page=1&limit=10 [32m200[0m 28.394 ms - 913[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548981 [32m200[0m 2.604 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548981 [32m200[0m 2.536 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.677 ms - 291[0m
+Cliente desconectado: NulFk2b2PLmNZLaJAADx
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.798 ms - 291[0m
+Cliente desconectado: _41VQ1gEKp_oneOUAADh
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.451 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 102.757 ms - 291[0m
+Cliente desconectado: ikIolIzQJRsAl-8KAADj
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 133.582 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.550 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.297 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 100.032 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.860 ms - 292[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1603775 [36m304[0m 118.180 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1603775 [36m304[0m 249.199 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1603775 [36m304[0m 358.084 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1603775 [36m304[0m 3340.890 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1603775 [36m304[0m 3336.143 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 18.124 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.775 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.095 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.615 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.553 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.004 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.797 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.510 ms - 292[0m
+KeyPinPass: AE39FA32-15A3-4E77-9F8E-D182E866A223
+KeyDispositivo: AE39FA32-15A3-4E77-9F8E-D182E866A223
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 4.691 ms - 56[0m
+Cliente conectado: BVk65PrIYL-X9_TFAADz
+Cliente desconectado: uwGWos0HwtuDrcwrAADb
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.747 ms - 294[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.725 ms - 294[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.814 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.815 ms - 292[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=G&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.182 ms - 87[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8831219,
+  idCompra: 1556268,
+  idPersonal: 62,
+  Fecha: '2025-01-22T19:33:16.263Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NO SALE NADIE SE DEJA NTF BAJO PUERTA ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'PMUÑOZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 114.781 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=&page=1&limit=10 [36m304[0m 32.462 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=G&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.178 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=G&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.179 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.358 ms - 295[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=G&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.185 ms - 87[0m
+KeyPinPass: AE39FA32-15A3-4E77-9F8E-D182E866A223
+KeyDispositivo: AE39FA32-15A3-4E77-9F8E-D182E866A223
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 4.089 ms - 56[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Gal&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.182 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.182 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.829 ms - 292[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Gal&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.177 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Gal&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.171 ms - 87[0m
+Cliente conectado: wQCsrK_Z8VgFa0k4AAD1
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Gal&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.173 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galoc&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.183 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galoc&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.189 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galoc&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.195 ms - 87[0m
+KeyPinPass: AE39FA32-15A3-4E77-9F8E-D182E866A223
+KeyDispositivo: AE39FA32-15A3-4E77-9F8E-D182E866A223
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 3.896 ms - 56[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.466 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.512 ms - 292[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galoc&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.174 ms - 87[0m
+Cliente conectado: 2Gq6MNJ3k0CFYZvkAAD3
+tIPO {
+  idCbo_GestorDeCobranzas: 8771498,
+  idCompra: 1556341,
+  idPersonal: 150,
+  Fecha: '2025-01-22T19:33:28.776Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 58,
+  Notas: 'cliente vino cumple pagó se exige pagar ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'FSORNOZA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 124.761 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=R&page=1&limit=10 [32m200[0m 10.305 ms - 4707[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=&page=1&limit=10 [36m304[0m 9.725 ms - -[0m
+Cliente conectado: Eqy1iKOXUVy2fc4sAAD5
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Ro&page=1&limit=10 [32m200[0m 11.040 ms - 4767[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.047 ms - 292[0m
+Cliente desconectado: eskqMOLfKS2tf-d9AADp
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.003 ms - 292[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galicia&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.164 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Rod&page=1&limit=10 [32m200[0m 14.021 ms - 4696[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galicia&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.180 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Rodr&page=1&limit=10 [32m200[0m 11.824 ms - 4709[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Rodri&page=1&limit=10 [32m200[0m 10.829 ms - 4709[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galicia&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.185 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Rodrig&page=1&limit=10 [32m200[0m 9.564 ms - 4709[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galicia&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.176 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Leo&page=1&limit=10 [32m200[0m 13.224 ms - 4532[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Rodrigu&page=1&limit=10 [32m200[0m 9.927 ms - 4709[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=L&page=1&limit=10 [36m304[0m 8.875 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Rui&page=1&limit=10 [32m200[0m 11.508 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Rodrigue&page=1&limit=10 [32m200[0m 19.543 ms - 4709[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ru&page=1&limit=10 [36m304[0m 25.513 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=R&page=1&limit=10 [36m304[0m 17.351 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 16.590 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 5.947 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Rodriguez&page=1&limit=10 [32m200[0m 23.850 ms - 4709[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.279 ms - 292[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=O&page=1&limit=10 [36m304[0m 23.561 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Ort&page=1&limit=10 [32m200[0m 35.567 ms - 3261[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Orteg&page=1&limit=10 [32m200[0m 34.221 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.380 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Orteg&page=1&limit=10 [36m304[0m 20.424 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Orte&page=1&limit=10 [32m200[0m 29.658 ms - 450[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Orte%C3%B1&page=1&limit=10 [32m200[0m 15.311 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Orte&page=1&limit=10 [36m304[0m 14.804 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Or&page=1&limit=10 [36m304[0m 12.451 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 8.829 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galici&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.179 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=M&page=1&limit=10 [32m200[0m 11.152 ms - 4611[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Ma&page=1&limit=10 [32m200[0m 28.691 ms - 4657[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galici&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.193 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Mari&page=1&limit=10 [32m200[0m 14.502 ms - 4613[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Maria&page=1&limit=10 [32m200[0m 16.071 ms - 3663[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galici&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.186 ms - 87[0m
+Cliente desconectado: NyFUaUcQ_F24zeWcAADN
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Mari&page=1&limit=10 [36m304[0m 15.241 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 7.821 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Galici&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.182 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=60&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.189 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=60&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.175 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=60&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.178 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=60&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.176 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=C&page=1&limit=10 [36m304[0m 9.508 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.313 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571349 [32m200[0m 3.439 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571349 [36m304[0m 3.114 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ca&page=1&limit=10 [36m304[0m 8.795 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Cas&page=1&limit=10 [32m200[0m 11.035 ms - 4820[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Casti&page=1&limit=10 [32m200[0m 17.596 ms - 2411[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=v&page=1&limit=10 [32m200[0m 13.255 ms - 4597[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Castil&page=1&limit=10 [32m200[0m 14.241 ms - 2411[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=vi&page=1&limit=10 [32m200[0m 16.273 ms - 4584[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Castill&page=1&limit=10 [32m200[0m 13.975 ms - 2411[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.979 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=vii&page=1&limit=10 [32m200[0m 18.087 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Castillo&page=1&limit=10 [32m200[0m 10.671 ms - 2411[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.401 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=vi&page=1&limit=10 [36m304[0m 12.411 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.351 ms - 297[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=vil&page=1&limit=10 [32m200[0m 16.787 ms - 4623[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=villa&page=1&limit=10 [32m200[0m 17.327 ms - 3743[0m
+Cedula: 0921146346
+edison: DispositivosAPP {
+  idDispositivosAPP: 194,
+  idNomina: 1982,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '0921146346',
+  KeyDispositivo: 'D33D1715-DA50-4698-91E7-875C3DBD4F7D',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '121212',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=0921146346 [32m200[0m 10.430 ms - 514[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=63&Articulo=6020&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [32m200[0m 442.852 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=villam&page=1&limit=10 [32m200[0m 18.179 ms - 2809[0m
+Cliente conectado: PFj8wsKx1L5mYLnMAAD7
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=villamar&page=1&limit=10 [32m200[0m 18.005 ms - 2809[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.489 ms - 298[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1656485 [32m200[0m 228.794 ms - 7763[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1656485 [32m200[0m 150.220 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1656485 [32m200[0m 206.317 ms - 7763[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.158 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.248 ms - 292[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.711 ms - 292[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571827 [32m200[0m 2.906 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=571827 [32m200[0m 2.923 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.145 ms - 296[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8774220,
+  idCompra: 1573093,
+  idPersonal: 141,
+  Fecha: '2025-01-22T19:34:05.951Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'SE GESTIONA C/P',
+  Telefono: '',
+  Valor: 50,
+  FechaPago: '2025-01-30T19:32:00.000Z',
+  Usuario: 'GLEON',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 109.235 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=141&filtro=&page=1&limit=10 [36m304[0m 9.591 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1658863&idMotivo=0 [32m200[0m 77.385 ms - 1344[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1658863&idMotivo=0 [32m200[0m 17.638 ms - 1344[0m
+Cedula: 0921146346
+KeyDispositivo: D33D1715-DA50-4698-91E7-875C3DBD4F7D
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 37.214 ms - 88[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548087 [32m200[0m 9.007 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548087 [32m200[0m 11.749 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos/Det?idArticulo=9274 [32m200[0m 33.709 ms - 2132[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1551794 [32m200[0m 217.917 ms - 7777[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1551794 [32m200[0m 163.590 ms - 136[0m
+Cliente conectado: 3DemTc25AlEZZVMZAAD9
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1551794 [32m200[0m 222.436 ms - 7777[0m
+Cliente desconectado: IC_GB6OnH2g-1AWdAACP
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 68.056 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.262 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.004 ms - 297[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1551794 [36m304[0m 3.168 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1551794 [36m304[0m 208.581 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1551794 [36m304[0m 631.987 ms - -[0m
+Cedula: 106983486
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.008 ms - 297[0m
+edison: null
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=106983486 [32m200[0m 18.622 ms - 83[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.764 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 46.351 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.213 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 39.294 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.376 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 40.927 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 46.470 ms - 298[0m
+Cliente conectado: yRvxNqXtJxybCtZJAAD_
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=63&Articulo=602&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [32m200[0m 428.952 ms - 506[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=63&Articulo=606&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [32m200[0m 410.099 ms - 991[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=63&Articulo=6060&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [32m200[0m 438.045 ms - 313[0m
+KeyPinPass: D33D1715-DA50-4698-91E7-875C3DBD4F7D
+KeyDispositivo: D33D1715-DA50-4698-91E7-875C3DBD4F7D
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 194,
+  idNomina: 1982,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '0921146346',
+  KeyDispositivo: 'D33D1715-DA50-4698-91E7-875C3DBD4F7D',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '121212',
+  idTipoPersonal: 2
+}
+idRango: 1
+usuario: Usuario {
+  idUsuario: 510,
+  Nombre: 'MLCAJA',
+  Clave: 'POINT2025',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: MLCAJA
+NominaVentas: Nomina {
+  idNomina: 1982,
+  NIdentificacion: '0921146346',
+  ApellidoPaterno: 'JIMENEZ',
+  ApellidoMaterno: 'BARREIRO',
+  PrimerNombre: 'LUIS',
+  SegundoNombre: 'ALBERTO',
+  Codigo: 'LAJIMENEZ',
+  idPersonal: 2396
+}
+ingresoCobradorData: {
+  nombre: 'LUIS ALBERTO JIMENEZ BARREIRO',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 34.648 ms - 10826[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.142 ms - 298[0m
+Cliente conectado: v4wN2eG9Kutg4zIZAAEB
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 253.241 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 206.375 ms - 2220[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.733 ms - 297[0m
+Cliente desconectado: 2Gq6MNJ3k0CFYZvkAAD3
+Cliente desconectado: E6K6eBx933KguhIqAADr
+Cliente conectado: wta6QQqx378ax9oqAAED
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos/Det?idArticulo=10754 [32m200[0m 11.694 ms - 2378[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8817660,
+  idCompra: 1551794,
+  idPersonal: 150,
+  Fecha: '2025-01-22T19:34:53.980Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'cliente cancela el 27/01 dos letras ',
+  Telefono: '',
+  Valor: 160,
+  FechaPago: '2025-01-27T19:34:00.000Z',
+  Usuario: 'FSORNOZA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 101.284 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=150&filtro=&page=1&limit=10 [36m304[0m 9.985 ms - -[0m
+Cedula: 0603342692
+edison: DispositivosAPP {
+  idDispositivosAPP: 134,
+  idNomina: 3393,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 0,
+  Cedula: '0603342692',
+  KeyDispositivo: 'E34FBDC8-7D49-4850-AB17-E1E6A9C66167',
+  iTipoPersonal: 0,
+  Pin: '0     ',
+  PinSeguridad: '654321',
+  idTipoPersonal: 2
+}
+[0mGET /cobranza/api/v1/point/DispositivosAPP/Val?Cedula=0603342692 [32m200[0m 16.291 ms - 514[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Castill&page=1&limit=10 [36m304[0m 11.275 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Casti&page=1&limit=10 [36m304[0m 10.629 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ca&page=1&limit=10 [36m304[0m 8.694 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=C&page=1&limit=10 [36m304[0m 8.436 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Cr&page=1&limit=10 [32m200[0m 11.375 ms - 4777[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Cre&page=1&limit=10 [32m200[0m 12.809 ms - 1930[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Cres&page=1&limit=10 [32m200[0m 12.391 ms - 1930[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Cresp&page=1&limit=10 [32m200[0m 13.417 ms - 964[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Crespo&page=1&limit=10 [32m200[0m 13.433 ms - 486[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=566236 [32m200[0m 2.659 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=566236 [32m200[0m 2.553 ms - 2[0m
+Cedula: 0603342692
+KeyDispositivo: E34FBDC8-7D49-4850-AB17-E1E6A9C66167
+[0mPOST /cobranza/api/v1/point/DispositivosAPP/ValEmai [32m200[0m 39.585 ms - 88[0m
+KeyPinPass: E34FBDC8-7D49-4850-AB17-E1E6A9C66167
+KeyDispositivo: E34FBDC8-7D49-4850-AB17-E1E6A9C66167
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 134,
+  idNomina: 3393,
+  idCom_Estado: 3,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '0603342692',
+  KeyDispositivo: 'E34FBDC8-7D49-4850-AB17-E1E6A9C66167',
+  iTipoPersonal: 0,
+  Pin: '0     ',
+  PinSeguridad: '654321',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 304,
+  Nombre: 'RBCAJA',
+  Clave: '1801RIOBA',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: RBCAJA
+NominaVentas: Nomina {
+  idNomina: 3393,
+  NIdentificacion: '0603342692',
+  ApellidoPaterno: 'FLORES',
+  ApellidoMaterno: 'ADRIANO',
+  PrimerNombre: 'DARIO',
+  SegundoNombre: 'JAVIER',
+  Codigo: 'DJFLORES',
+  idPersonal: 3803
+}
+ingresoCobradorData: {
+  nombre: 'DARIO JAVIER FLORES ADRIANO',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 31.039 ms - 10817[0m
+Cliente conectado: yRkX7-GLD7PckeAVAAEF
+tIPO {
+  idCbo_GestorDeCobranzas: 8828651,
+  idCompra: 1726761,
+  idPersonal: 146,
+  Fecha: '2025-01-22T19:35:28.666Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 60,
+  Notas: 'SE RETIRA ARTEFACTO',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'TROVELLO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 100.193 ms - 94[0m
+Cliente desconectado: Aa4u_5q5is3Al3qjAADv
+Cliente desconectado: BVk65PrIYL-X9_TFAADz
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 239.289 ms - 2220[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [32m200[0m 250.126 ms - 2220[0m
+Cliente desconectado: wQCsrK_Z8VgFa0k4AAD1
+Cliente desconectado: m1yGcAyzvEbXtW9uAACD
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=L&page=1&limit=10 [36m304[0m 9.120 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Le%C3%B3n+&page=1&limit=10 [32m200[0m 13.068 ms - 6[0m
+Cliente desconectado: wta6QQqx378ax9oqAAED
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Le%C3%B3n+v&page=1&limit=10 [32m200[0m 33.453 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Le%C3%B3n+ve&page=1&limit=10 [32m200[0m 12.961 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Le%C3%B3n+v&page=1&limit=10 [36m304[0m 35.708 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Le%C3%B3n+&page=1&limit=10 [36m304[0m 33.814 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Le%C3%B3n&page=1&limit=10 [32m200[0m 14.474 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Le&page=1&limit=10 [32m200[0m 11.568 ms - 4579[0m

@@ -1,0 +1,13 @@
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1550742 [36m304[0m 8.298 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1550742 [36m304[0m 227.798 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1550742 [36m304[0m 309.416 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.233 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.758 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.852 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 20.556 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.907 ms - 289[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.306 ms - 289[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.808 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.177 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=O&page=1&limit=10 [36m304[0m 12.400 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=Ome&page=1&limit=10 [32m200[0m 17.529 ms - 3816[0m

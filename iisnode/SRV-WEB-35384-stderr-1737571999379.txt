@@ -1,0 +1,51 @@
+(node:35384) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:35384) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+Error al ejecutar el procedimiento almacenado: QueryFailedError: Error: Timeout: Request failed to complete in 15000ms
+    at C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\typeorm\driver\sqlserver\SqlServerQueryRunner.js:200:30
+    at C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\mssql\lib\base\request.js:440:25
+    at Request.userCallback (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\mssql\lib\tedious\request.js:492:15)
+    at Request.callback (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\request.js:239:14)
+    at C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\connection.js:2692:24
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  query: 'EXEC ConsultaCbo_GestionesDeCobranzas_APP @idCompra = 1428429',
+  parameters: undefined,
+  driverError: RequestError: Timeout: Request failed to complete in 15000ms
+      at C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\mssql\lib\tedious\request.js:449:19
+      at Array.forEach (<anonymous>)
+      at Request.userCallback (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\mssql\lib\tedious\request.js:446:46)
+      at Request.callback (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\request.js:239:14)
+      at C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\connection.js:2692:24
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+    code: 'ETIMEOUT',
+    originalError: RequestError: Timeout: Request failed to complete in 15000ms
+        at Connection.requestTimeout (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\connection.js:1245:21)
+        at Timeout._onTimeout (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\connection.js:1194:14)
+        at listOnTimeout (node:internal/timers:594:17)
+        at process.processTimers (node:internal/timers:529:7) {
+      code: 'ETIMEOUT'
+    },
+    number: 'ETIMEOUT',
+    lineNumber: undefined,
+    state: undefined,
+    class: undefined,
+    serverName: undefined,
+    procName: undefined,
+    precedingErrors: []
+  },
+  code: 'ETIMEOUT',
+  originalError: RequestError: Timeout: Request failed to complete in 15000ms
+      at Connection.requestTimeout (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\connection.js:1245:21)
+      at Timeout._onTimeout (C:\ProyectoNode\app\BACKPOINTAPP\BACKPOINTAPP\node_modules\tedious\lib\connection.js:1194:14)
+      at listOnTimeout (node:internal/timers:594:17)
+      at process.processTimers (node:internal/timers:529:7) {
+    code: 'ETIMEOUT'
+  },
+  number: 'ETIMEOUT',
+  lineNumber: undefined,
+  state: undefined,
+  class: undefined,
+  serverName: undefined,
+  procName: undefined,
+  precedingErrors: []
+}

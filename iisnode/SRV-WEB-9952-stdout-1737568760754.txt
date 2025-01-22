@@ -1,0 +1,43 @@
+Conexión a la base de datos establecida
+Conexión a la base de datos establecida
+Server is running on port \\.\pipe\59be274c-7b7a-4fb5-b5ee-6ba68e49bb84
+KeyPinPass: 4EC7C744-A614-40A5-8517-9EB40FF609FC
+KeyDispositivo: 4EC7C744-A614-40A5-8517-9EB40FF609FC
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 244,
+  idNomina: 2416,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '0942551995',
+  KeyDispositivo: '4EC7C744-A614-40A5-8517-9EB40FF609FC',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '205320',
+  idTipoPersonal: 2
+}
+idRango: 1
+usuario: Usuario {
+  idUsuario: 617,
+  Nombre: 'CUCAJA',
+  Clave: 'LOCAL1',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: CUCAJA
+NominaVentas: Nomina {
+  idNomina: 2416,
+  NIdentificacion: '0942551995',
+  ApellidoPaterno: 'ALMEIDA',
+  ApellidoMaterno: 'BRAVO',
+  PrimerNombre: 'ALEXI',
+  SegundoNombre: 'ALEJANDRINA',
+  Codigo: 'AALMEIDA',
+  idPersonal: 2827
+}
+ingresoCobradorData: {
+  nombre: 'ALEXI ALEJANDRINA ALMEIDA BRAVO',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 107.957 ms - 10824[0m

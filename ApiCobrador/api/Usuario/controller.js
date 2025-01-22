@@ -212,7 +212,7 @@ exports.getVaEmPassV1 = async (req, res) => {
       const usuario = await getUsuarioByCodigo(sCodigo);
 
       if (!usuario) {
-        return res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H .." });
+        return res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H" });
       }
 
       const UsuariosBodegas = await UsuariosBodegasRepository.find({ where: { idUsuario: usuario.idUsuario } });
@@ -293,10 +293,10 @@ exports.getVaEmPassV1 = async (req, res) => {
       const bodegasIds = UsuariosBodegas.map((usuarioBodega) => usuarioBodega.Bodega);
 
      const BodegaUsuario = await BodegaRepository.find({
-        where: { idBodega: In(bodegasIds) }, // Utilizamos In para filtrar por múltiples IDs
+        where: { Bodega: In(bodegasIds) }, // Utilizamos In para filtrar por múltiples IDs
       });
       const PermisosMenus = await getPermisosMenus(usuario.idGrupo);
-
+     
       const token = generateUserToken(usuario);
       return res.json({
         estado: "success",
@@ -471,10 +471,10 @@ exports.getVaEmPassUnikeV1 = async (req, res) => {
       const UsuariosBodegas = await UsuariosBodegasRepository.find({ where: { idUsuario: usuario.idUsuario } });
       const bodegasIds = UsuariosBodegas.map((usuarioBodega) => usuarioBodega.Bodega);
 
-     const BodegaUsuario = await BodegaRepository.find({
-        where: { idBodega: In(bodegasIds) }, // Utilizamos In para filtrar por múltiples IDs
+      const BodegaUsuario = await BodegaRepository.find({
+        where: { Bodega: In(bodegasIds) }, // Utilizamos In para filtrar por múltiples IDs
       });
-      
+
       const PermisosMenus = await getPermisosMenus(usuario.idGrupo);
 
       const token = generateUserToken(usuario);
@@ -546,7 +546,7 @@ exports.getVaEmPassUnikeV1 = async (req, res) => {
       const bodegasIds = UsuariosBodegas.map((usuarioBodega) => usuarioBodega.Bodega);
 
      const BodegaUsuario = await BodegaRepository.find({
-        where: { idBodega: In(bodegasIds) }, // Utilizamos In para filtrar por múltiples IDs
+        where: { Bodega: In(bodegasIds) }, // Utilizamos In para filtrar por múltiples IDs
       });
       const PermisosMenus = await getPermisosMenus(usuario.idGrupo);
 

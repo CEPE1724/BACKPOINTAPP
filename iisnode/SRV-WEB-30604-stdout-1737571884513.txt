@@ -1,0 +1,173 @@
+Conexión a la base de datos establecida
+Conexión a la base de datos establecida
+Server is running on port \\.\pipe\201f0c77-37ab-4e58-b229-5f80ec671a8e
+KeyPinPass: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+KeyDispositivo: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 271,
+  idNomina: 3052,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1150017620',
+  KeyDispositivo: '5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '932709',
+  idTipoPersonal: 2
+}
+idRango: 1
+[0mPOST /cobranza/api/v1/point/v1/loginPin [31m500[0m 164.363 ms - 40[0m
+KeyPinPass: A02C82C7-1666-4E14-B89C-A415A5A3E615
+KeyDispositivo: A02C82C7-1666-4E14-B89C-A415A5A3E615
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 13,
+  idNomina: 271,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 0,
+  Cedula: '1724741283',
+  KeyDispositivo: 'A02C82C7-1666-4E14-B89C-A415A5A3E615',
+  iTipoPersonal: 0,
+  Pin: '36910 ',
+  PinSeguridad: '369136',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [31m500[0m 22.117 ms - 40[0m
+Cliente conectado: z8-Z1yM5Z7tY9Vm3AAAC
+Cliente conectado: dEH8b_Ad2AxcYKoAAAAE
+Cliente conectado: to_OdKIeNXpvm68cAAAF
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 15.160 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.218 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.807 ms - 305[0m
+KeyPinPass: A02C82C7-1666-4E14-B89C-A415A5A3E615
+KeyDispositivo: A02C82C7-1666-4E14-B89C-A415A5A3E615
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 13,
+  idNomina: 271,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 0,
+  Cedula: '1724741283',
+  KeyDispositivo: 'A02C82C7-1666-4E14-B89C-A415A5A3E615',
+  iTipoPersonal: 0,
+  Pin: '36910 ',
+  PinSeguridad: '369136',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [31m500[0m 41.762 ms - 40[0m
+Cliente conectado: URGnzVLGnzy5-p26AAAH
+Cliente desconectado: URGnzVLGnzy5-p26AAAH
+Cliente conectado: 3agnPVW50-LEzKT-AAAJ
+KeyPinPass: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+KeyDispositivo: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 271,
+  idNomina: 3052,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1150017620',
+  KeyDispositivo: '5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '932709',
+  idTipoPersonal: 2
+}
+idRango: 1
+[0mPOST /cobranza/api/v1/point/v1/loginPin [31m500[0m 26.244 ms - 40[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 185.610 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 241.895 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [36m304[0m 8.187 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaCombos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Tipo=2 [36m304[0m 34.832 ms - -[0m
+Cliente conectado: W_OTkAkvzTEifFuMAAAL
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.215 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.268 ms - 295[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1701489 [36m304[0m 6.379 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1701489 [36m304[0m 221.047 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1701489 [36m304[0m 221.692 ms - -[0m
+KeyPinPass: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+KeyDispositivo: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 271,
+  idNomina: 3052,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1150017620',
+  KeyDispositivo: '5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '932709',
+  idTipoPersonal: 2
+}
+idRango: 1
+[0mPOST /cobranza/api/v1/point/v1/loginPin [31m500[0m 23.668 ms - 40[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.445 ms - 295[0m
+Cliente desconectado: to_OdKIeNXpvm68cAAAF
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.431 ms - 295[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8763730,
+  idCompra: 1639659,
+  idPersonal: 238,
+  Fecha: '2025-01-22T18:53:08.540Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NO HAY NADIE SE DEJA NT EN LA PUERTA ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'BLEON',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 105.538 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=&page=1&limit=10 [36m304[0m 14.229 ms - -[0m
+KeyPinPass: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+KeyDispositivo: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 271,
+  idNomina: 3052,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1150017620',
+  KeyDispositivo: '5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '932709',
+  idTipoPersonal: 2
+}
+idRango: 1
+[0mPOST /cobranza/api/v1/point/v1/loginPin [31m500[0m 28.657 ms - 40[0m
+Cliente conectado: _GX-2C3-5OlehVP9AAAN
+[0mGET /cobranza/api/v1/point/registro?idCobrador=256&filtro=LECARO&page=1&limit=10 [36m304[0m 11.281 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=256&filtro=LECAR&page=1&limit=10 [36m304[0m 24.250 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=256&filtro=LEC&page=1&limit=10 [36m304[0m 11.882 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=256&filtro=&page=1&limit=10 [36m304[0m 12.241 ms - -[0m
+KeyPinPass: EE5D76E6-CD72-4EC9-82AE-EFEBDB06D878
+KeyDispositivo: EE5D76E6-CD72-4EC9-82AE-EFEBDB06D878
+dispositivo: null
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 27.735 ms - 56[0m
+KeyPinPass: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+KeyDispositivo: 5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 271,
+  idNomina: 3052,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '1150017620',
+  KeyDispositivo: '5AD5A5BE-1B0F-48F4-BCBC-A3E3DB3E210A',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '932709',
+  idTipoPersonal: 2
+}
+idRango: 1
+[0mPOST /cobranza/api/v1/point/v1/loginPin [31m500[0m 23.055 ms - 40[0m
+[0mPOST /cobranza/api/v1/point/v1/login [31m500[0m 75.251 ms - 40[0m
+[0mPOST /cobranza/api/v1/point/v1/login [31m500[0m 12.795 ms - 40[0m
+Cliente desconectado: _GX-2C3-5OlehVP9AAAN
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.809 ms - 295[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.593 ms - 295[0m
