@@ -49,8 +49,8 @@ exports.alllist = async (req, res) => {
       });
 
     } else {
-      // Si no se encuentra al usuario
-      res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H/Desarrollo" });
+      // Si no se encuentra al      
+      res.status(200).json({ estado: "fail", message: "Comuniquese con Recursos Humanos para su activación." });
     }
   } catch (error) {
     console.error("Error al buscar usuario:", error);

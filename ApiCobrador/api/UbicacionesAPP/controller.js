@@ -3,7 +3,7 @@ const UbicacionesAPP = require('./model');
 const { handleNewLocation } = require('../../sockets/eventHandlers');
 
 exports.location = async (req, res) => {
-    const { idUser, latitude, longitude } = req.body;
+    const { idUser, latitude, longitude, ICidIngresoCobrador, ICCodigo, Nombre, iTipoPersonal, idUsuario, Empresa, timestamp } = req.body;
     // Validar idUser
     if (!idUser) {
         return res.status(400).json({ message: "idUser es requerido" });
@@ -19,12 +19,21 @@ exports.location = async (req, res) => {
         return res.status(400).json({ message: "longitude debe ser un número" });
     }
 
+
     try {
         // Crear una nueva entidad usando el método create
         const ubicacion = AppDataSource.getRepository(UbicacionesAPP).create({
             idUser,
             latitude,
             longitude,
+            ICidIngresoCobrador,
+            ICCodigo,
+            Nombre,
+            iTipoPersonal,
+            idUsuario,
+            Empresa,
+            timestamp
+
         });
 
         // Guardar la ubicación en la base de datos

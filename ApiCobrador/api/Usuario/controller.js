@@ -194,7 +194,7 @@ exports.getVaEmPassV1 = async (req, res) => {
     const dispositivo = await getDispositivo();
     console.log("dispositivo:", dispositivo);
     if (!dispositivo) {
-      return res.status(200).json({ estado: "fail", message: "Credenciales incorrectas" });
+      return res.status(200).json({ estado: "fail", message: "Configuración Reiniciada." });
     }
     const { idNomina, idCom_Estado, Empresa, idTipoPersonal } = dispositivo;
     let sNombre = '';
@@ -212,7 +212,7 @@ exports.getVaEmPassV1 = async (req, res) => {
       const usuario = await getUsuarioByCodigo(sCodigo);
 
       if (!usuario) {
-        return res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H/Desarrollo.2" });
+        return res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H .." });
       }
 
       const UsuariosBodegas = await UsuariosBodegasRepository.find({ where: { idUsuario: usuario.idUsuario } });
@@ -450,7 +450,7 @@ exports.getVaEmPassUnikeV1 = async (req, res) => {
     const dispositivo = await getDispositivo();
     console.log("dispositivo:", dispositivo);
     if (!dispositivo) {
-      return res.status(200).json({ estado: "fail", message: "Credenciales incorrectas" });
+      return res.status(200).json({ estado: "fail", message: "Configuración Reiniciada." });
     }
     const { idNomina, idCom_Estado, Empresa, idTipoPersonal } = dispositivo;
     let sNombre = '';
@@ -465,7 +465,7 @@ exports.getVaEmPassUnikeV1 = async (req, res) => {
       const usuario = await getUsuarioByCodigo(sCodigo);
 
       if (!usuario) {
-        return res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H/Desarrollo.2" });
+        return res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H para su activación." });
       }
 
       const UsuariosBodegas = await UsuariosBodegasRepository.find({ where: { idUsuario: usuario.idUsuario } });

@@ -1,0 +1,20 @@
+Conexión a la base de datos establecida
+Conexión a la base de datos establecida
+Server is running on port \\.\pipe\a2a285be-d72a-4c91-b596-77782b77cd9b
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 41.372 ms - 293[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.990 ms - 293[0m
+Cliente conectado: 4TkbERaZzZzeiaPgAAAB
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=M&page=1&limit=10 [36m304[0m 29.552 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Mu&page=1&limit=10 [32m200[0m 15.965 ms - 4153[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Mug&page=1&limit=10 [32m200[0m 15.050 ms - 939[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Mugl&page=1&limit=10 [32m200[0m 13.146 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Mugli&page=1&limit=10 [32m200[0m 15.773 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Muglis&page=1&limit=10 [32m200[0m 14.642 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=204&filtro=Muglisa&page=1&limit=10 [32m200[0m 29.327 ms - 459[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.104 ms - 293[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.217 ms - 293[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=570900 [32m200[0m 16.426 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=570900 [32m200[0m 18.521 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1654505 [32m200[0m 68.284 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1654505 [32m200[0m 240.580 ms - 7775[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1654505 [32m200[0m 343.836 ms - 7775[0m
