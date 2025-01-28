@@ -26,6 +26,7 @@ const entities = [
     require('../Cre_GCTelefono/model'),
     require('../Com_CargosDeVentas/model'),
     require('../Com_Rango/model'),
+    require('../AccionesUbicaciones/model'),
 
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),

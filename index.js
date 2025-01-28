@@ -72,6 +72,7 @@ const publicRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionDomicilio/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionTrabajo/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/GestionDiaria/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/AccionesUbicaciones/router') },
 
 ];
 

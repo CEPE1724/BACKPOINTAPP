@@ -6,6 +6,8 @@ const Docxtemplater = require('docxtemplater');
 const fs = require('fs');
 const path = require('path');
 const { uploadFileToCloud } = require("./uploadFileToCloud");
+const { Like, Between } = require('typeorm');  // Asegúrate de importar Like y Between
+
 exports.addNew = async (req, res) => {
     const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, UrlImagen } = req.body;
     console.log("ENTRO AQUI");
@@ -211,3 +213,52 @@ exports.generatePdf = async (req, res) => {
         }
     }
 ];
+
+
+exports.getAll = async (req, res) => {
+  try {
+    const { page = 1, pageSize = 10, cedula, nombre, fechaInicio, fechaFin } = req.query;
+
+    // Convertir page y pageSize a enteros
+    const pageNumber = parseInt(page, 10);
+    const pageSizeNumber = parseInt(pageSize, 10);
+
+    const DatosProteccionRepository = AppDataSource.getRepository(DatosProteccion);
+
+    // Construir filtros
+    let where = {};
+
+    if (cedula) {
+      where.Cedula = cedula;
+    }
+
+    if (nombre) {
+      where.Nombre = Like(`%${nombre}%`);  // Usamos LIKE para que busque coincidencias parciales en el nombre
+    }
+
+    if (fechaInicio && fechaFin) {
+      where.Fecha = Between(new Date(fechaInicio), new Date(fechaFin));
+    }
+
+    // Obtener los datos con paginación
+    const [allDatosProteccion, total] = await DatosProteccionRepository.findAndCount({
+      where,
+      skip: (pageNumber - 1) * pageSizeNumber, // Calcular el skip según la página solicitada
+      take: pageSizeNumber,                   // Limitar la cantidad de registros según pageSize
+    });
+
+    // Calcular la cantidad total de páginas
+    const totalPages = Math.ceil(total / pageSizeNumber);
+
+    res.json({
+      data: allDatosProteccion,
+      currentPage: pageNumber,
+      totalPages: totalPages,
+      totalRecords: total,
+    });
+    
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: "Error al obtener los datos de protección", error: error.message });
+  }
+};
