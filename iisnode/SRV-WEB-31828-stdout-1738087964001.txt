@@ -1,0 +1,1821 @@
+Conexión a la base de datos establecida
+Conexión a la base de datos establecida
+Server is running on port \\.\pipe\644589aa-3548-4861-a875-d82d15037bb1
+Cliente conectado: K416ffBUs7g-73F0AAAB
+Cliente conectado: uYaj7t_qvsXj89ALAAAE
+Cliente conectado: neFI701YX-K7FonoAAAF
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1429032 [32m200[0m 1972.505 ms - 470[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1429032 [32m200[0m 1882.155 ms - 470[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1429032 [36m304[0m 16.762 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1429032 [36m304[0m 203.355 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1429032 [36m304[0m 199.178 ms - -[0m
+Cliente desconectado: neFI701YX-K7FonoAAAF
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1303914 [36m304[0m 4.827 ms - -[0m
+Cliente conectado: uqh-sSQtbzA43sxPAAAH
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1303914 [36m304[0m 211.384 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1303914 [36m304[0m 224.857 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1303914 [36m304[0m 1293.622 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1303914 [36m304[0m 3817.544 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 55.146 ms - 299[0m
+Cliente desconectado: uqh-sSQtbzA43sxPAAAH
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.076 ms - 299[0m
+Cliente conectado: 6ol1YBPigdI3CnCiAAAJ
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.403 ms - 300[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.696 ms - 300[0m
+Cliente conectado: d6B0SnhZv7lOk5w7AAAL
+Cliente conectado: CNLnLkbdw0HakOs8AAAN
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1733877 [36m304[0m 5.144 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1733877 [36m304[0m 238.467 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1733877 [36m304[0m 239.373 ms - -[0m
+Cliente conectado: mU18WjuGk3War44iAAAP
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 23.105 ms - 299[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.273 ms - 299[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ValidaComprobante?Numero=75887&Banco=0&tipo=1 [32m200[0m 11.565 ms - 16[0m
+[0mGET /cobranza/api/v1/point/data/all?page=1&pageSize=10 [36m304[0m 8.400 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8830530,
+  idCompra: 1561171,
+  idPersonal: 62,
+  Fecha: '2025-01-28T18:15:32.268Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 61,
+  Notas: 'ABONO CUOTA ',
+  Telefono: '',
+  Valor: 112,
+  FechaPago: '2000-01-01',
+  Usuario: 'PMUÑOZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 70.184 ms - 94[0m
+1738088133298.jpg guardado en el servidor local.
+1738088133298.jpg subido a sparta_bucket.
+1738088133298.jpg eliminado del servidor local.
+[0mPUT /cobranza/api/v1/point/googleApi/google [32m200[0m 6365.257 ms - 201[0m
+idCompra: 1561171
+idCobrador: 62
+Valor: 112
+Imagen: [
+  'https://storage.googleapis.com/sparta_bucket/VerificacionTerrena/VOUCHER/1561171/1738088133298.jpg'
+]
+Usuario: PMUÑOZ
+Voucher: 75887
+[0mPOST /cobranza/api/v1/point/AppSave/Cob_AppCobrosEfectivo [32m200[0m 19.699 ms - 74[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=62&filtro=&page=1&limit=10 [36m304[0m 9.977 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8807945,
+  idCompra: 1732711,
+  idPersonal: 245,
+  Fecha: '2025-01-28T18:15:44.814Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 57,
+  Notas: 'INDICA QUE PAGO MEDIANTE TRASFERENCIA EN HORAS DE LA MAÑANA PARA PONERSE AL DIA ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'JALVAREZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 121.202 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 21.790 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.808 ms - 301[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.425 ms - 301[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=504331 [36m304[0m 3.184 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=504331 [36m304[0m 3.039 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.433 ms - 301[0m
+Cliente desconectado: mU18WjuGk3War44iAAAP
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.930 ms - 301[0m
+ENTRO AQUI
+ENTRO AQUI
+Archivo subido exitosamente: https://storage.googleapis.com/sparta_bucket/ProteccionDeDatos/0602248163/contrato_0602248163_1738088093070.docx
+[0mPOST /cobranza/api/v1/point/Protecion-datos [32m201[0m 831.999 ms - 187[0m
+[0mGET /cobranza/api/v1/point/data/all?page=1&pageSize=10 [32m200[0m 4.991 ms - 2927[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.286 ms - 301[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.054 ms - 301[0m
+Cliente conectado: OZhWWe-NMb43MdqEAAAR
+tIPO {
+  idCbo_GestorDeCobranzas: 8762343,
+  idCompra: 1572381,
+  idPersonal: 245,
+  Fecha: '2025-01-28T18:16:31.108Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'SE LO BUELVE A BUSCAR POR EL COMPROMISO DE PAGO QUE INDICO EN LIQUIDAR Y FAMILIAR INDICA QUE ANDA EN CAMPAÑA POR OTRA CIUDAD ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'JALVAREZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 99.984 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 9.401 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 15.432 ms - 301[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 23.189 ms - 301[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=J&page=1&limit=10 [36m304[0m 28.614 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1303914 [36m304[0m 4.416 ms - -[0m
+Cliente conectado: za0eYaW8JR34ohX9AAAV
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1303914 [36m304[0m 430.587 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1303914 [36m304[0m 434.574 ms - -[0m
+Cliente conectado: 2qrra-BVoCoCeP--AAAW
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 23.339 ms - 301[0m
+Cliente conectado: yp4_FcdayOGViUgxAAAY
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=&page=1&limit=10 [36m304[0m 21.385 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Pil&page=1&limit=10 [36m304[0m 31.262 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Q&page=1&limit=10 [36m304[0m 13.499 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Qu&page=1&limit=10 [36m304[0m 13.765 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=L&page=1&limit=10 [36m304[0m 17.619 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Qui&page=1&limit=10 [36m304[0m 12.553 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Lem&page=1&limit=10 [36m304[0m 19.482 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Quij&page=1&limit=10 [32m200[0m 14.056 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Quiji&page=1&limit=10 [32m200[0m 37.220 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Lema+&page=1&limit=10 [36m304[0m 54.959 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Quijij&page=1&limit=10 [32m200[0m 14.557 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Quijije&page=1&limit=10 [32m200[0m 14.047 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Quijij&page=1&limit=10 [36m304[0m 36.622 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Quiji&page=1&limit=10 [36m304[0m 14.594 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Quij&page=1&limit=10 [36m304[0m 13.697 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Qui&page=1&limit=10 [36m304[0m 12.591 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Qu&page=1&limit=10 [36m304[0m 11.742 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Q&page=1&limit=10 [36m304[0m 12.635 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=&page=1&limit=10 [36m304[0m 12.826 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.169 ms - 296[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.911 ms - 296[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=A&page=1&limit=10 [36m304[0m 35.529 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Au&page=1&limit=10 [32m200[0m 13.012 ms - 4584[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Aur&page=1&limit=10 [32m200[0m 14.788 ms - 2303[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Aure&page=1&limit=10 [32m200[0m 16.147 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=Aurea&page=1&limit=10 [32m200[0m 17.773 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=243&filtro=&page=1&limit=10 [36m304[0m 13.039 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=539477 [36m304[0m 4.165 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=539477 [36m304[0m 6.293 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1515471 [36m304[0m 3.906 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1515471 [36m304[0m 213.355 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1515471 [36m304[0m 486.542 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3221241 [36m304[0m 3.287 ms - -[0m
+Cliente desconectado: yp4_FcdayOGViUgxAAAY
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Jama+jam&page=1&limit=10 [32m200[0m 168.570 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=202&filtro=Jama+j&page=1&limit=10 [32m200[0m 85.424 ms - 6[0m
+Cliente conectado: uzuc0LKAp8W74cztAAAa
+Cliente desconectado: CNLnLkbdw0HakOs8AAAN
+Cliente desconectado: za0eYaW8JR34ohX9AAAV
+[0mGET /cobranza/api/v1/point/data/all?page=1&pageSize=10 [32m200[0m 30.663 ms - 999[0m
+Cliente conectado: FVsUFQDYQPgGT7YQAAAc
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=N&page=1&limit=10 [36m304[0m 9.164 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Na&page=1&limit=10 [36m304[0m 10.791 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Nar&page=1&limit=10 [32m200[0m 13.154 ms - 4828[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Nara&page=1&limit=10 [32m200[0m 12.393 ms - 2409[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Naran&page=1&limit=10 [32m200[0m 29.778 ms - 1453[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Naranj&page=1&limit=10 [32m200[0m 11.995 ms - 1453[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=193&filtro=Naranjo&page=1&limit=10 [32m200[0m 11.370 ms - 1453[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=579020 [32m200[0m 7.554 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=579020 [32m200[0m 8.884 ms - 2[0m
+Cliente desconectado: uzuc0LKAp8W74cztAAAa
+Cliente conectado: YKm4wKmNzbYnZVpoAAAe
+Cliente conectado: kw1KFbWOMrmBNf6fAAAg
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=&page=1&limit=10 [36m304[0m 14.613 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=B&page=1&limit=10 [32m200[0m 13.252 ms - 4575[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Ba&page=1&limit=10 [32m200[0m 14.270 ms - 4555[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Bau&page=1&limit=10 [32m200[0m 27.204 ms - 952[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Baut&page=1&limit=10 [32m200[0m 17.508 ms - 952[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Bauti&page=1&limit=10 [32m200[0m 26.245 ms - 952[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Bautis&page=1&limit=10 [32m200[0m 22.628 ms - 952[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Bautist&page=1&limit=10 [32m200[0m 21.091 ms - 952[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Bautista&page=1&limit=10 [32m200[0m 17.483 ms - 952[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=Bautista+&page=1&limit=10 [32m200[0m 19.507 ms - 952[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.047 ms - 305[0m
+Cliente desconectado: K416ffBUs7g-73F0AAAB
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1733877 [36m304[0m 14.790 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 19.997 ms - 305[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1733877 [36m304[0m 223.478 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1733877 [36m304[0m 237.830 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.055 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.895 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.014 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.775 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.675 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.238 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.256 ms - 304[0m
+Cliente conectado: bbxRV3tyYAgCqCPjAAAi
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.499 ms - 304[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=535051 [36m304[0m 3.285 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=535051 [36m304[0m 3.476 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.533 ms - 304[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.482 ms - 304[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.588 ms - 303[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.032 ms - 303[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.120 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.310 ms - 305[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8841343,
+  idCompra: 1497152,
+  idPersonal: 238,
+  Fecha: '2025-01-28T18:19:37.025Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'SE DEJA NT A LA FAMILIAR LAURA',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'BLEON',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 78.522 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=&page=1&limit=10 [36m304[0m 8.683 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8814724,
+  idCompra: 1497075,
+  idPersonal: 93,
+  Fecha: '2025-01-28T18:19:38.922Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NO SE PUEDE LOCALIZAR AL CLIENTE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'PTIBANLOMBO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 83.175 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=93&filtro=&page=1&limit=10 [36m304[0m 13.037 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1529704 [32m200[0m 1323.782 ms - 1363[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1529704 [32m200[0m 1473.068 ms - 1363[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=464576 [36m304[0m 7.388 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=464576 [36m304[0m 7.734 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=P&page=1&limit=10 [36m304[0m 11.570 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=Pe&page=1&limit=10 [32m200[0m 14.049 ms - 4569[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=Ped&page=1&limit=10 [32m200[0m 13.406 ms - 1824[0m
+Cliente desconectado: FVsUFQDYQPgGT7YQAAAc
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=434916 [32m200[0m 3.274 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=434916 [36m304[0m 5.013 ms - -[0m
+Cliente conectado: 6zSgFdTGJ0UGrIy9AAAk
+Cliente desconectado: 2qrra-BVoCoCeP--AAAW
+tIPO {
+  idCbo_GestorDeCobranzas: 8752803,
+  idCompra: 1529704,
+  idPersonal: 215,
+  Fecha: '2025-01-28T18:20:16.584Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: '245 FEBRERO EMBARAZO DE ALTO RIESGO NO PODIA TRABAJAR',
+  Telefono: '',
+  Valor: 245,
+  FechaPago: '2025-02-28T18:19:00.000Z',
+  Usuario: 'FPINCAY',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 152.267 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=&page=1&limit=10 [36m304[0m 25.889 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8822188,
+  idCompra: 1160886,
+  idPersonal: 273,
+  Fecha: '2025-01-28T18:20:20.009Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NOTIFICACIÓN ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'DBENAVIDES',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 161.707 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=&page=1&limit=10 [36m304[0m 7.477 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Y&page=1&limit=10 [36m304[0m 10.721 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Ya&page=1&limit=10 [36m304[0m 10.157 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yag&page=1&limit=10 [32m200[0m 13.532 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yaga&page=1&limit=10 [32m200[0m 10.972 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yagal&page=1&limit=10 [32m200[0m 11.398 ms - 6[0m
+Cliente conectado: W9jWE8ef9hjDFHE4AAAm
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yaga&page=1&limit=10 [36m304[0m 12.271 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yag&page=1&limit=10 [36m304[0m 11.270 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Ya&page=1&limit=10 [36m304[0m 9.023 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Y&page=1&limit=10 [36m304[0m 9.818 ms - -[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 7.748 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 7.152 ms - 64[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Robert&page=1&limit=10 [36m304[0m 11.924 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Rob&page=1&limit=10 [36m304[0m 11.990 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 8.148 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=K&page=1&limit=10 [32m200[0m 9.678 ms - 4753[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ke&page=1&limit=10 [36m304[0m 24.151 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kev&page=1&limit=10 [36m304[0m 11.561 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kevi&page=1&limit=10 [36m304[0m 23.802 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8829065,
+  idCompra: 1733877,
+  idPersonal: 253,
+  Fecha: '2025-01-28T18:20:30.578Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'HIJO COMENTA QUE TT SE ACERCARA A CANCELAR HOY',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'JPLACENCIO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 64.463 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kevin&page=1&limit=10 [36m304[0m 40.637 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=&page=1&limit=10 [36m304[0m 6.748 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kevin+&page=1&limit=10 [32m200[0m 11.524 ms - 2872[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kevin+a&page=1&limit=10 [32m200[0m 11.363 ms - 1933[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kevin+at&page=1&limit=10 [32m200[0m 11.264 ms - 6[0m
+Cliente conectado: mRR_Epj9PsG7CRjbAAAo
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kevin+a&page=1&limit=10 [36m304[0m 11.770 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Kevin+&page=1&limit=10 [36m304[0m 13.127 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yy&page=1&limit=10 [32m200[0m 11.722 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yya&page=1&limit=10 [32m200[0m 11.701 ms - 6[0m
+Cliente desconectado: YKm4wKmNzbYnZVpoAAAe
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yy&page=1&limit=10 [36m304[0m 10.723 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Y&page=1&limit=10 [36m304[0m 8.352 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Ya&page=1&limit=10 [36m304[0m 9.855 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yag&page=1&limit=10 [36m304[0m 11.181 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yagu&page=1&limit=10 [32m200[0m 9.604 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yagua&page=1&limit=10 [32m200[0m 10.320 ms - 459[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=Yagual&page=1&limit=10 [32m200[0m 11.903 ms - 459[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=526045 [36m304[0m 2.610 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=526045 [36m304[0m 2.677 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1768379 [32m200[0m 30.182 ms - 131[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1768379 [32m200[0m 206.721 ms - 3918[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1768379 [32m200[0m 204.577 ms - 3918[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=529420 [32m200[0m 2.626 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=529420 [36m304[0m 3.558 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1476655 [32m200[0m 1973.748 ms - 1287[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1476655 [32m200[0m 2028.896 ms - 1287[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1476655 [32m200[0m 235.432 ms - 7669[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1476655 [32m200[0m 44.551 ms - 121[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1476655 [32m200[0m 334.777 ms - 7669[0m
+Cliente desconectado: mRR_Epj9PsG7CRjbAAAo
+Cliente desconectado: uYaj7t_qvsXj89ALAAAE
+Cliente desconectado: OZhWWe-NMb43MdqEAAAR
+Cliente desconectado: W9jWE8ef9hjDFHE4AAAm
+Cliente desconectado: bbxRV3tyYAgCqCPjAAAi
+Cliente conectado: sLyEwJWvXWsrgI_mAAAq
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=&page=1&limit=10 [36m304[0m 52.023 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=P&page=1&limit=10 [36m304[0m 11.883 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Pa&page=1&limit=10 [36m304[0m 12.698 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Paz&page=1&limit=10 [32m200[0m 16.134 ms - 2314[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Pa&page=1&limit=10 [36m304[0m 49.618 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=P&page=1&limit=10 [36m304[0m 48.952 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=&page=1&limit=10 [36m304[0m 45.895 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=L&page=1&limit=10 [32m200[0m 19.777 ms - 4544[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Le&page=1&limit=10 [32m200[0m 27.527 ms - 4545[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Leo&page=1&limit=10 [32m200[0m 59.382 ms - 3256[0m
+Cliente desconectado: d6B0SnhZv7lOk5w7AAAL
+Cliente conectado: 9Qf0AhTu5ZbZwpp_AAAs
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=386337 [36m304[0m 3.205 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=386337 [36m304[0m 2.818 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1429032 [36m304[0m 1318.126 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1429032 [36m304[0m 1260.101 ms - -[0m
+Cliente conectado: qU0Ks8q4yPhWWeTgAAAu
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=Chap&page=1&limit=10 [36m304[0m 52.952 ms - -[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 15.943 ms - 65[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [32m200[0m 10.898 ms - 4670[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=1&page=1&limit=10 [36m304[0m 10.044 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=17&page=1&limit=10 [36m304[0m 9.201 ms - -[0m
+Cliente conectado: meWVSRT7NsAcbd0DAAAw
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=171&page=1&limit=10 [36m304[0m 10.843 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=C&page=1&limit=10 [36m304[0m 9.801 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=1714&page=1&limit=10 [32m200[0m 15.323 ms - 4280[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=Co&page=1&limit=10 [32m200[0m 11.317 ms - 4576[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=Conch&page=1&limit=10 [32m200[0m 14.599 ms - 457[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=Concha&page=1&limit=10 [32m200[0m 14.314 ms - 457[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=M&page=1&limit=10 [32m200[0m 11.442 ms - 4668[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mai&page=1&limit=10 [32m200[0m 14.449 ms - 1869[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Maig&page=1&limit=10 [32m200[0m 15.642 ms - 1396[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=17147&page=1&limit=10 [32m200[0m 14.520 ms - 506[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Maigu&page=1&limit=10 [32m200[0m 14.063 ms - 1396[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=171478&page=1&limit=10 [32m200[0m 14.475 ms - 506[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=1714783&page=1&limit=10 [32m200[0m 14.122 ms - 506[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=123772 [32m200[0m 4.164 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=123772 [32m200[0m 4.605 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=565934 [36m304[0m 3.668 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=565934 [36m304[0m 4.440 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1428672 [32m200[0m 103.143 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1428672 [32m200[0m 216.522 ms - 6998[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1428672 [32m200[0m 269.897 ms - 6998[0m
+Cliente conectado: EiK04RWBOYtFA1USAAAy
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=572221 [32m200[0m 2.758 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=572221 [32m200[0m 2.701 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1428672 [32m200[0m 1077.047 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1428672 [32m200[0m 1182.345 ms - 2[0m
+Cliente conectado: F9OcyYj6up_09BRjAAA0
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 5.335 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 6.298 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 5.764 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 5.525 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.979 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.665 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.785 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.346 ms - 291[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1732957 [36m304[0m 4.153 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1732957 [36m304[0m 208.778 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1732957 [36m304[0m 210.660 ms - -[0m
+Cliente desconectado: EiK04RWBOYtFA1USAAAy
+tIPO {
+  idCbo_GestorDeCobranzas: 8783904,
+  idCompra: 1661687,
+  idPersonal: 78,
+  Fecha: '2025-01-28T18:24:54.225Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'EN EL DOMICILIO SE DEJA NOTA DE PAGO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LPURUNCAJAS',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 126.107 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [36m304[0m 47.363 ms - -[0m
+Cliente desconectado: F9OcyYj6up_09BRjAAA0
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=L&page=1&limit=10 [32m200[0m 11.992 ms - 4670[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Lem&page=1&limit=10 [32m200[0m 33.300 ms - 4722[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Lema+&page=1&limit=10 [32m200[0m 16.818 ms - 4261[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=534550 [36m304[0m 6.732 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=534550 [36m304[0m 10.121 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8770938,
+  idCompra: 1691716,
+  idPersonal: 78,
+  Fecha: '2025-01-28T18:25:46.246Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'ABUELA DARA NOTA SE PAGO A LA CLIENTE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LPURUNCAJAS',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 67.941 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [36m304[0m 8.874 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.022 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=T&page=1&limit=10 [32m200[0m 9.696 ms - 4668[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Tac&page=1&limit=10 [32m200[0m 15.125 ms - 2352[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Taco&page=1&limit=10 [32m200[0m 14.267 ms - 2352[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Taco+&page=1&limit=10 [32m200[0m 13.285 ms - 2352[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Taco+d&page=1&limit=10 [32m200[0m 13.757 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Taco+do&page=1&limit=10 [32m200[0m 12.855 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Taco+d&page=1&limit=10 [36m304[0m 13.338 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Taco+&page=1&limit=10 [36m304[0m 13.507 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=432383 [36m304[0m 3.759 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=432383 [36m304[0m 8.603 ms - -[0m
+Cliente desconectado: sLyEwJWvXWsrgI_mAAAq
+tIPO {
+  idCbo_GestorDeCobranzas: 8744391,
+  idCompra: 1417882,
+  idPersonal: 78,
+  Fecha: '2025-01-28T18:26:51.916Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'HERMANA RECIÉN NOTA DE PAGO QUE YA ENTREGARA A LA CLIENTE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LPURUNCAJAS',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 114.659 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [36m304[0m 12.018 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1428672 [36m304[0m 16.487 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1428672 [36m304[0m 218.076 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1428672 [36m304[0m 533.216 ms - -[0m
+Cliente desconectado: 6zSgFdTGJ0UGrIy9AAAk
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=C&page=1&limit=10 [36m304[0m 11.961 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Ceg&page=1&limit=10 [32m200[0m 14.141 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Cega&page=1&limit=10 [32m200[0m 14.709 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Cega+&page=1&limit=10 [32m200[0m 13.171 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Cega&page=1&limit=10 [36m304[0m 14.457 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Ceg&page=1&limit=10 [36m304[0m 14.929 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [36m304[0m 9.324 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=V&page=1&limit=10 [32m200[0m 11.599 ms - 4665[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Veg&page=1&limit=10 [32m200[0m 14.169 ms - 2378[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Vega+&page=1&limit=10 [32m200[0m 14.742 ms - 2378[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574659 [32m200[0m 2.637 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574659 [36m304[0m 2.886 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574659 [36m304[0m 3.749 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574659 [36m304[0m 3.407 ms - -[0m
+Cliente conectado: uemoA0N_jh7PeQWMAAA2
+Cliente conectado: O9uz5yp1HlCnRSexAAA4
+tIPO {
+  idCbo_GestorDeCobranzas: 8821643,
+  idCompra: 1672107,
+  idPersonal: 78,
+  Fecha: '2025-01-28T18:28:07.426Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'HERMANA QUE CLIENTE ESTA POR GUAYAQUIL TRABAJANDO YA DARA MENSAJE DE PAGO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LPURUNCAJAS',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 116.698 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [36m304[0m 10.856 ms - -[0m
+Cliente desconectado: uemoA0N_jh7PeQWMAAA2
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=A&page=1&limit=10 [32m200[0m 17.528 ms - 4670[0m
+Cliente desconectado: O9uz5yp1HlCnRSexAAA4
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Az&page=1&limit=10 [32m200[0m 14.384 ms - 4710[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Azog&page=1&limit=10 [32m200[0m 16.936 ms - 954[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Azogu&page=1&limit=10 [32m200[0m 14.211 ms - 954[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Azogue&page=1&limit=10 [32m200[0m 15.622 ms - 954[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=558723 [32m200[0m 3.713 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=558723 [32m200[0m 3.737 ms - 2[0m
+Cliente conectado: JoPQ8VsXqo5SrVOxAAA6
+Cliente conectado: XxynG-SiVsD8DsGfAAA8
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=M&page=1&limit=10 [36m304[0m 7.366 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mi&page=1&limit=10 [32m200[0m 7.585 ms - 4572[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mil&page=1&limit=10 [32m200[0m 8.977 ms - 2364[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mi&page=1&limit=10 [36m304[0m 9.495 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=M&page=1&limit=10 [36m304[0m 9.668 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=M9&page=1&limit=10 [32m200[0m 9.983 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=M9l&page=1&limit=10 [32m200[0m 11.783 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=M9&page=1&limit=10 [36m304[0m 10.650 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=M&page=1&limit=10 [36m304[0m 7.238 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mi&page=1&limit=10 [36m304[0m 14.634 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mil&page=1&limit=10 [36m304[0m 11.032 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mili&page=1&limit=10 [32m200[0m 11.388 ms - 487[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Milin&page=1&limit=10 [32m200[0m 11.220 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mili&page=1&limit=10 [36m304[0m 11.870 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mil&page=1&limit=10 [36m304[0m 10.108 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mi&page=1&limit=10 [36m304[0m 7.531 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=M&page=1&limit=10 [36m304[0m 8.728 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mo&page=1&limit=10 [36m304[0m 8.799 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mol&page=1&limit=10 [36m304[0m 10.598 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Moli&page=1&limit=10 [32m200[0m 10.622 ms - 1363[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8775689,
+  idCompra: 1604713,
+  idPersonal: 78,
+  Fecha: '2025-01-28T18:29:22.569Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'NEGOCIO ESTA CERRADO SE DEJA NOTA DE PAGO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LPURUNCAJAS',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 59.231 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [36m304[0m 10.740 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.187 ms - 304[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.771 ms - 304[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.999 ms - 304[0m
+Cliente conectado: rWvmC2jj2mlNAOT1AAA-
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=&page=1&limit=10 [36m304[0m 11.091 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=A&page=1&limit=10 [36m304[0m 13.051 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=A%C3%B1&page=1&limit=10 [32m200[0m 13.287 ms - 4607[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=A%C3%B1ap&page=1&limit=10 [32m200[0m 18.173 ms - 922[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=A%C3%B1apa&page=1&limit=10 [32m200[0m 14.059 ms - 922[0m
+Cliente desconectado: meWVSRT7NsAcbd0DAAAw
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=538725 [32m200[0m 3.079 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=538725 [32m200[0m 2.931 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1512361 [32m200[0m 202.894 ms - 7780[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1512361 [32m200[0m 68.393 ms - 135[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1512361 [32m200[0m 199.632 ms - 7780[0m
+Cliente conectado: Hi-sGv3m86Qfii7jAABA
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 17.876 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 10.623 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 10.053 ms - 64[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=&page=1&limit=10 [36m304[0m 11.016 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=S&page=1&limit=10 [36m304[0m 10.438 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Si&page=1&limit=10 [32m200[0m 14.546 ms - 4759[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Silv&page=1&limit=10 [32m200[0m 17.042 ms - 927[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Silvia&page=1&limit=10 [32m200[0m 15.463 ms - 6[0m
+Cliente conectado: I6IU3s_igkTA6fO-AABC
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=M&page=1&limit=10 [36m304[0m 11.757 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Ma&page=1&limit=10 [32m200[0m 10.731 ms - 4628[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mal&page=1&limit=10 [32m200[0m 14.315 ms - 3835[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mall&page=1&limit=10 [32m200[0m 13.362 ms - 1913[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Malliq&page=1&limit=10 [32m200[0m 13.122 ms - 490[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Malliqu&page=1&limit=10 [32m200[0m 13.448 ms - 490[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Silvi&page=1&limit=10 [32m200[0m 21.116 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Silv&page=1&limit=10 [36m304[0m 16.629 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Sil&page=1&limit=10 [32m200[0m 15.776 ms - 927[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Si&page=1&limit=10 [36m304[0m 15.131 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Malliq&page=1&limit=10 [36m304[0m 12.412 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=&page=1&limit=10 [32m200[0m 9.973 ms - 4689[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=S&page=1&limit=10 [36m304[0m 9.963 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=&page=1&limit=10 [36m304[0m 9.973 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=A&page=1&limit=10 [36m304[0m 9.905 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ami&page=1&limit=10 [32m200[0m 16.277 ms - 3317[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Malli&page=1&limit=10 [32m200[0m 13.181 ms - 1913[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Am&page=1&limit=10 [32m200[0m 12.882 ms - 4725[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=A&page=1&limit=10 [36m304[0m 28.108 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=R&page=1&limit=10 [36m304[0m 9.640 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ra&page=1&limit=10 [36m304[0m 24.129 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ram&page=1&limit=10 [32m200[0m 16.694 ms - 1902[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Rami&page=1&limit=10 [36m304[0m 16.706 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ramir&page=1&limit=10 [36m304[0m 16.206 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ramire&page=1&limit=10 [36m304[0m 15.543 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=H&page=1&limit=10 [32m200[0m 11.980 ms - 4857[0m
+Cliente desconectado: JoPQ8VsXqo5SrVOxAAA6
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Harc&page=1&limit=10 [32m200[0m 16.073 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garc%C3%ADa+&page=1&limit=10 [32m200[0m 18.747 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garc%C3%ADa+s&page=1&limit=10 [32m200[0m 64.375 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garc%C3%ADa+su&page=1&limit=10 [32m200[0m 19.161 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garc%C3%ADa+s&page=1&limit=10 [36m304[0m 21.300 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garc%C3%AD&page=1&limit=10 [32m200[0m 20.304 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garc&page=1&limit=10 [32m200[0m 20.081 ms - 3300[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garci&page=1&limit=10 [32m200[0m 17.603 ms - 3300[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garcia+&page=1&limit=10 [32m200[0m 18.169 ms - 3300[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garcia+s&page=1&limit=10 [32m200[0m 17.219 ms - 465[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=156&filtro=Garcia+su&page=1&limit=10 [32m200[0m 17.436 ms - 465[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=552151 [32m200[0m 2.724 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=552151 [36m304[0m 3.588 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mall&page=1&limit=10 [36m304[0m 14.532 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mal&page=1&limit=10 [36m304[0m 15.026 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Ma&page=1&limit=10 [36m304[0m 10.858 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=M&page=1&limit=10 [36m304[0m 10.994 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1567198 [32m200[0m 224.678 ms - 7761[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1567198 [32m200[0m 41.307 ms - 135[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mi&page=1&limit=10 [32m200[0m 11.749 ms - 4725[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1567198 [32m200[0m 210.939 ms - 7761[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mil&page=1&limit=10 [32m200[0m 29.483 ms - 4717[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Mill&page=1&limit=10 [32m200[0m 13.128 ms - 950[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=Millin&page=1&limit=10 [32m200[0m 58.068 ms - 497[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3360279 [32m200[0m 43.683 ms - 940[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=382591 [32m200[0m 2.492 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=382591 [36m304[0m 3.815 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1595588 [32m200[0m 1168.440 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1595588 [32m200[0m 1194.145 ms - 2[0m
+Cliente conectado: uHsHdsGHL3auD21VAABE
+Cliente desconectado: Hi-sGv3m86Qfii7jAABA
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 110.179 ms - 297[0m
+Cliente conectado: 0FA1jH8jvcRPJZIRAABG
+Cliente desconectado: 6ol1YBPigdI3CnCiAAAJ
+tIPO {
+  idCbo_GestorDeCobranzas: 8862093,
+  idCompra: 1595588,
+  idPersonal: 78,
+  Fecha: '2025-01-28T18:31:04.223Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 67,
+  Notas: 'EN DIRECCIÓN NO SE LE PUEDE UBICAR A LA CLIENTE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LPURUNCAJAS',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 105.585 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=78&filtro=&page=1&limit=10 [36m304[0m 10.087 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.196 ms - 297[0m
+Cliente conectado: HG7xu5KA-FFWq_3SAABJ
+Cliente conectado: LPtNS8jfOFnYQt-OAABK
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=&page=1&limit=10 [36m304[0m 9.681 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=A&page=1&limit=10 [36m304[0m 12.037 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Ag&page=1&limit=10 [36m304[0m 14.209 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Agu&page=1&limit=10 [36m304[0m 15.804 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8745993,
+  idCompra: 1122491,
+  idPersonal: 238,
+  Fecha: '2025-01-28T18:31:10.590Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'SE DEJA NT A LA FAMILIAR LAURA',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'BLEON',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 156.636 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Aguil&page=1&limit=10 [36m304[0m 36.708 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=&page=1&limit=10 [36m304[0m 77.202 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Aguila&page=1&limit=10 [36m304[0m 14.198 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Aguilar&page=1&limit=10 [36m304[0m 16.315 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548779 [36m304[0m 2.531 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=548779 [36m304[0m 3.393 ms - -[0m
+Cliente desconectado: 0FA1jH8jvcRPJZIRAABG
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1567198 [36m304[0m 10.720 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1567198 [36m304[0m 242.263 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1567198 [36m304[0m 250.285 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=2987450 [32m200[0m 59.512 ms - 2[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8831150,
+  idCompra: 1554476,
+  idPersonal: 126,
+  Fecha: '2025-01-28T18:31:47.146Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'CANCELARÁ MÁS TARDE ',
+  Telefono: '',
+  Valor: 130,
+  FechaPago: '2025-01-28T18:31:18.513Z',
+  Usuario: 'LQUIMBITA ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 98.283 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=&page=1&limit=10 [36m304[0m 7.873 ms - -[0m
+Cliente desconectado: uHsHdsGHL3auD21VAABE
+Cliente desconectado: HG7xu5KA-FFWq_3SAABJ
+Cliente conectado: na3yKdWhfz-hgSI4AABM
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ramir&page=1&limit=10 [36m304[0m 54.605 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=R&page=1&limit=10 [36m304[0m 10.787 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=&page=1&limit=10 [36m304[0m 10.188 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=V&page=1&limit=10 [36m304[0m 10.976 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Val&page=1&limit=10 [36m304[0m 20.500 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+&page=1&limit=10 [32m200[0m 18.959 ms - 1404[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+vi&page=1&limit=10 [32m200[0m 18.773 ms - 929[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+vin&page=1&limit=10 [32m200[0m 17.676 ms - 929[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+vinc&page=1&limit=10 [32m200[0m 17.526 ms - 929[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+vince&page=1&limit=10 [32m200[0m 18.114 ms - 929[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+vinces&page=1&limit=10 [32m200[0m 20.553 ms - 929[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+vinces+&page=1&limit=10 [32m200[0m 16.417 ms - 929[0m
+Cliente desconectado: kw1KFbWOMrmBNf6fAAAg
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=460750 [32m200[0m 3.551 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=460750 [36m304[0m 3.405 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1501127 [32m200[0m 76.530 ms - 130[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1501127 [32m200[0m 213.050 ms - 7812[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1501127 [32m200[0m 207.816 ms - 7812[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1501127&idMotivo=0 [32m200[0m 36.819 ms - 1296[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1501127&idMotivo=0 [32m200[0m 71.357 ms - 1296[0m
+Cliente conectado: kAm54V3R7o-lUQlGAABO
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=0504335183&page=1&limit=10 [32m200[0m 35.156 ms - 484[0m
+Cliente desconectado: na3yKdWhfz-hgSI4AABM
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=554119 [36m304[0m 3.075 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=554119 [36m304[0m 3.688 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1576828 [32m200[0m 217.197 ms - 7760[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1576828 [32m200[0m 125.850 ms - 136[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1576828 [32m200[0m 196.152 ms - 7760[0m
+Cliente conectado: i-aePzRMUC8TEHAZAABQ
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=460750 [36m304[0m 2.804 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=460750 [36m304[0m 3.296 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1616652 [32m200[0m 45.979 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1616652 [32m200[0m 255.328 ms - 7770[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1616652 [32m200[0m 258.326 ms - 7770[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1616652&idMotivo=0 [32m200[0m 76.524 ms - 1508[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1616652&idMotivo=0 [32m200[0m 72.561 ms - 1508[0m
+Cliente desconectado: rWvmC2jj2mlNAOT1AAA-
+Cliente conectado: FMDiLavAX3wUit7VAABS
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 6.230 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 5.985 ms - 64[0m
+Cliente desconectado: kAm54V3R7o-lUQlGAABO
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 12.805 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=R&page=1&limit=10 [36m304[0m 7.896 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Rom&page=1&limit=10 [36m304[0m 11.466 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Rome&page=1&limit=10 [36m304[0m 21.047 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Romer&page=1&limit=10 [36m304[0m 12.616 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8858787,
+  idCompra: 1428672,
+  idPersonal: 196,
+  Fecha: '2025-01-28T18:34:45.787Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'SE DEJA NOTIFICACIÓN PRELEGAL ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'NCUESTA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 66.455 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=196&filtro=&page=1&limit=10 [36m304[0m 8.173 ms - -[0m
+Cliente desconectado: i-aePzRMUC8TEHAZAABQ
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Romer&page=1&limit=10 [36m304[0m 11.744 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Ro&page=1&limit=10 [36m304[0m 7.871 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=T&page=1&limit=10 [36m304[0m 9.075 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=To&page=1&limit=10 [36m304[0m 11.079 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Tom&page=1&limit=10 [36m304[0m 12.556 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Tomal&page=1&limit=10 [36m304[0m 13.027 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Tomala&page=1&limit=10 [36m304[0m 24.376 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Tomala+&page=1&limit=10 [36m304[0m 12.279 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=543042 [36m304[0m 18.077 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=543042 [36m304[0m 16.732 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 24.732 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 34.270 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.165 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 58.582 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 58.630 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.144 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.957 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.088 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.347 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.918 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.444 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.799 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.736 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.504 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.821 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.815 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.627 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.455 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.759 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.810 ms - 297[0m
+Cliente conectado: jSkjkm5oKbs1bzCnAABU
+tIPO {
+  idCbo_GestorDeCobranzas: 8771045,
+  idCompra: 1529171,
+  idPersonal: 188,
+  Fecha: '2025-01-28T18:35:32.510Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 58,
+  Notas: 'HIJA RECIBE NTF CRÉDITO PRESTADO SE PRESIONA EL PAGO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'AMAGALLANES',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 67.449 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 8.528 ms - -[0m
+Cliente conectado: Oy_IJGPpqtzHzyy5AABW
+Cliente conectado: K0_A0gHceSRnaGjqAABY
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.133 ms - 297[0m
+Cliente desconectado: K0_A0gHceSRnaGjqAABY
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.926 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.598 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.480 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.787 ms - 297[0m
+Cliente desconectado: Oy_IJGPpqtzHzyy5AABW
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.675 ms - 297[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8782561,
+  idCompra: 1566573,
+  idPersonal: 173,
+  Fecha: '2025-01-28T18:35:59.824Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NO SALE NADIE , SE DEJA NT EN LA PUERTA',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'EJIMENEZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 73.785 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=&page=1&limit=10 [36m304[0m 8.510 ms - -[0m
+Cliente desconectado: FMDiLavAX3wUit7VAABS
+[0mGET /cobranza/api/v1/point/Inventario/V1/ValidaComprobante?Numero=31327058&Banco=12&tipo=2 [32m200[0m 18.363 ms - 16[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=C&page=1&limit=10 [36m304[0m 10.728 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Ca&page=1&limit=10 [32m200[0m 10.689 ms - 4634[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Carl&page=1&limit=10 [32m200[0m 15.175 ms - 2309[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Carlo&page=1&limit=10 [32m200[0m 29.644 ms - 1858[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574123 [36m304[0m 2.889 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574123 [36m304[0m 3.174 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1669211 [36m304[0m 45.336 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1669211 [36m304[0m 210.635 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1669211 [36m304[0m 208.748 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8769815,
+  idCompra: 1512361,
+  idPersonal: 239,
+  Fecha: '2025-01-28T18:36:32.397Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 61,
+  Notas: 'TIA DE LA TT REALIZA PAGO DE VALOR ADEUDADO ',
+  Telefono: '',
+  Valor: 92,
+  FechaPago: '2000-01-01',
+  Usuario: 'JPAILLACHO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 92.414 ms - 94[0m
+1738089393327.jpg guardado en el servidor local.
+1738089393327.jpg subido a sparta_bucket.
+1738089393327.jpg eliminado del servidor local.
+[0mPUT /cobranza/api/v1/point/googleApi/google [32m200[0m 1080.998 ms - 201[0m
+[0mPOST /cobranza/api/v1/point/AppSave/Deposito [32m200[0m 39.560 ms - 83[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=&page=1&limit=10 [36m304[0m 11.095 ms - -[0m
+Cliente conectado: D0f1jnudMPVZlTJhAABa
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 45.402 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=M&page=1&limit=10 [36m304[0m 10.080 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Melen&page=1&limit=10 [32m200[0m 29.929 ms - 944[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Melend&page=1&limit=10 [32m200[0m 14.029 ms - 944[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Melendr&page=1&limit=10 [32m200[0m 12.553 ms - 478[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Melendre&page=1&limit=10 [32m200[0m 13.153 ms - 478[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=567744 [32m200[0m 2.605 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=567744 [36m304[0m 2.535 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1640743 [32m200[0m 37.046 ms - 139[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1640743 [32m200[0m 210.898 ms - 7836[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1640743 [32m200[0m 294.135 ms - 7836[0m
+Cliente conectado: Um4_62HwG07EFGoUAABd
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Macia&page=1&limit=10 [36m304[0m 34.848 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Mac&page=1&limit=10 [36m304[0m 12.070 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=M&page=1&limit=10 [36m304[0m 9.010 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=&page=1&limit=10 [36m304[0m 8.261 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=N&page=1&limit=10 [36m304[0m 9.828 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Naz&page=1&limit=10 [36m304[0m 11.364 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Naz&page=1&limit=10 [36m304[0m 12.700 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Naza&page=1&limit=10 [36m304[0m 13.347 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=539121 [36m304[0m 3.314 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=539121 [36m304[0m 9.575 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1579166 [32m200[0m 104.000 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [32m200[0m 223.535 ms - 7758[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [32m200[0m 432.077 ms - 7758[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1579166 [36m304[0m 6.708 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [36m304[0m 206.776 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [36m304[0m 201.440 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 36.015 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 4.841 ms - -[0m
+Cliente conectado: 2qWh4KEfSRMVSCNTAABf
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 23.569 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 5.478 ms - -[0m
+Cliente desconectado: XxynG-SiVsD8DsGfAAA8
+[0mGET /cobranza/api/v1/point/registro?idCobrador=203&filtro=1&page=1&limit=10 [36m304[0m 32.013 ms - -[0m
+Cliente desconectado: 9Qf0AhTu5ZbZwpp_AAAs
+Cliente conectado: ZsZ2NG8EAeWGQlosAABh
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1579166 [36m304[0m 15.586 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [36m304[0m 228.156 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [36m304[0m 218.821 ms - -[0m
+Cliente desconectado: jSkjkm5oKbs1bzCnAABU
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 6.230 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 5.205 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1579166 [36m304[0m 2.986 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [36m304[0m 228.052 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1579166 [36m304[0m 201.632 ms - -[0m
+Cliente conectado: 3JQoTjFAH1Rq9QvSAABk
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3389649 [32m200[0m 26.880 ms - 633[0m
+Cliente desconectado: 3JQoTjFAH1Rq9QvSAABk
+Cliente desconectado: qU0Ks8q4yPhWWeTgAAAu
+Cliente conectado: hMfXGbTbdB9mmvFRAABm
+Cliente conectado: QjiOCqzOgVmgjcH3AABo
+Cliente conectado: uXe9ohW1I3-mi8C0AABq
+Cliente conectado: ZDQB-FLn1ms7Q2wSAABs
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 53.407 ms - -[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 6.485 ms - 64[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=G&page=1&limit=10 [32m200[0m 12.210 ms - 4710[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=270&filtro=&page=1&limit=10 [36m304[0m 8.265 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Go&page=1&limit=10 [32m200[0m 12.352 ms - 4649[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Gom&page=1&limit=10 [32m200[0m 13.678 ms - 1866[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Gome&page=1&limit=10 [32m200[0m 11.865 ms - 1866[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Gomez&page=1&limit=10 [32m200[0m 12.580 ms - 1866[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=579674 [32m200[0m 8.976 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=579674 [32m200[0m 7.630 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1697475 [32m200[0m 48.692 ms - 136[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1697475 [32m200[0m 229.686 ms - 7753[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1697475 [32m200[0m 461.322 ms - 7753[0m
+Cliente desconectado: QjiOCqzOgVmgjcH3AABo
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.648 ms - 305[0m
+Cliente desconectado: uXe9ohW1I3-mi8C0AABq
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.493 ms - 305[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.261 ms - 305[0m
+Cliente conectado: P6fupG8DeSsoBxd5AABu
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mol&page=1&limit=10 [36m304[0m 13.762 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Mo&page=1&limit=10 [36m304[0m 10.273 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=&page=1&limit=10 [36m304[0m 7.186 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=C&page=1&limit=10 [36m304[0m 20.695 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Ca&page=1&limit=10 [36m304[0m 8.656 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Cas&page=1&limit=10 [36m304[0m 10.624 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Cast&page=1&limit=10 [36m304[0m 10.989 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=Castr&page=1&limit=10 [32m200[0m 22.575 ms - 1402[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=551288 [36m304[0m 3.490 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=551288 [36m304[0m 3.850 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1564222 [36m304[0m 61.063 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1564222 [36m304[0m 224.717 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1564222 [36m304[0m 219.240 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8778027,
+  idCompra: 1697475,
+  idPersonal: 229,
+  Fecha: '2025-01-28T18:43:46.592Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'SE DEJA NOTIFICACIÓN BAJO PUERTA A DOMICILIO CERRADO',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'FMERCHAN',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 80.436 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 9.851 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1564222&idMotivo=0 [32m200[0m 63.256 ms - 1694[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1564222&idMotivo=0 [32m200[0m 6.620 ms - 1694[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1564222 [32m200[0m 1197.014 ms - 1410[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1564222 [32m200[0m 1597.727 ms - 1410[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=I&page=1&limit=10 [36m304[0m 9.743 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=In&page=1&limit=10 [32m200[0m 8.950 ms - 4659[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Inf&page=1&limit=10 [32m200[0m 12.351 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Infa&page=1&limit=10 [32m200[0m 13.354 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Infa%C3%B1&page=1&limit=10 [32m200[0m 13.412 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Infa&page=1&limit=10 [36m304[0m 13.402 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Inf&page=1&limit=10 [36m304[0m 22.714 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=In&page=1&limit=10 [36m304[0m 9.076 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Ind&page=1&limit=10 [32m200[0m 26.358 ms - 1843[0m
+KeyPinPass: 44FE730F-457C-4454-9E4D-DC27C3D9F396
+KeyDispositivo: 44FE730F-457C-4454-9E4D-DC27C3D9F396
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 112,
+  idNomina: 185,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 1,
+  Cedula: '0705033439',
+  KeyDispositivo: '44FE730F-457C-4454-9E4D-DC27C3D9F396',
+  iTipoPersonal: 0,
+  Pin: '198702',
+  PinSeguridad: '198702',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 27.404 ms - 10720[0m
+Cliente conectado: MDBU_AbXKXaWAWq_AABw
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=470550 [32m200[0m 3.953 ms - 2[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=185&filtro=&page=1&limit=10 [36m304[0m 12.599 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=470550 [32m200[0m 2.899 ms - 2[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=185&filtro=N&page=1&limit=10 [32m200[0m 11.639 ms - 4592[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=185&filtro=Ni&page=1&limit=10 [32m200[0m 13.055 ms - 4636[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=185&filtro=Nic&page=1&limit=10 [32m200[0m 16.017 ms - 4673[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=185&filtro=Nicol&page=1&limit=10 [32m200[0m 14.004 ms - 1368[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=459072 [36m304[0m 3.002 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=459072 [36m304[0m 2.619 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1626058 [36m304[0m 26.187 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1626058 [36m304[0m 208.583 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1626058 [36m304[0m 215.313 ms - -[0m
+Cliente desconectado: MDBU_AbXKXaWAWq_AABw
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 19.859 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 19.922 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8782495,
+  idCompra: 1564222,
+  idPersonal: 253,
+  Fecha: '2025-01-28T18:45:05.196Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NO HAY NADIE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'JPLACENCIO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 93.465 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=253&filtro=&page=1&limit=10 [36m304[0m 20.761 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8830162,
+  idCompra: 1552136,
+  idPersonal: 229,
+  Fecha: '2025-01-28T18:45:17.663Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'SE DEJA NOTIFICACIÓN BAJO PUERTA DOMICILIO CERRADO',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'FMERCHAN',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 94.044 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 9.325 ms - -[0m
+Cliente desconectado: ZsZ2NG8EAeWGQlosAABh
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.035 ms - 291[0m
+Cliente conectado: tWw0h8m0NDWwyMJ7AABy
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.828 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.643 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.205 ms - 291[0m
+Cliente conectado: pgqCPzD5d75mcVDrAAB0
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.336 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.061 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.417 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.241 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=B&page=1&limit=10 [36m304[0m 9.140 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.385 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Bi&page=1&limit=10 [32m200[0m 12.711 ms - 4852[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Bil&page=1&limit=10 [32m200[0m 12.693 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.987 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Bilo&page=1&limit=10 [32m200[0m 11.636 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.679 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Bilon&page=1&limit=10 [32m200[0m 12.787 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 8.690 ms - 65[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Bilo&page=1&limit=10 [36m304[0m 13.077 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Bil&page=1&limit=10 [36m304[0m 23.267 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Bi&page=1&limit=10 [36m304[0m 26.315 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 9.197 ms - -[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 11.009 ms - 65[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=V&page=1&limit=10 [36m304[0m 9.200 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vi&page=1&limit=10 [32m200[0m 20.809 ms - 4689[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.594 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vil&page=1&limit=10 [32m200[0m 14.363 ms - 4764[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 21.577 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vilo&page=1&limit=10 [32m200[0m 11.988 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.821 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vilon&page=1&limit=10 [32m200[0m 11.544 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.851 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 6.253 ms - 65[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vilo&page=1&limit=10 [36m304[0m 11.224 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vil&page=1&limit=10 [36m304[0m 9.880 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vill&page=1&limit=10 [32m200[0m 41.433 ms - 4736[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Villo&page=1&limit=10 [32m200[0m 41.836 ms - 1442[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Villon&page=1&limit=10 [32m200[0m 41.954 ms - 957[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=Conch&page=1&limit=10 [36m304[0m 33.641 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=&page=1&limit=10 [36m304[0m 8.777 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=0401341052&page=1&limit=10 [32m200[0m 13.477 ms - 482[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=0401341052+&page=1&limit=10 [32m200[0m 17.371 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=0401341052&page=1&limit=10 [36m304[0m 13.338 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=515153 [32m200[0m 4.561 ms - 165[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=515153 [32m200[0m 3.506 ms - 165[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.359 ms - 290[0m
+Cliente desconectado: tWw0h8m0NDWwyMJ7AABy
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.575 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.483 ms - 290[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Villo&page=1&limit=10 [36m304[0m 13.512 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.626 ms - 309[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vill&page=1&limit=10 [36m304[0m 15.215 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vil&page=1&limit=10 [36m304[0m 11.025 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=V&page=1&limit=10 [36m304[0m 9.616 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 9.883 ms - -[0m
+Cliente conectado: LsznVi8rDDh5QrwNAAB2
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.571 ms - 290[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.392 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.066 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=N&page=1&limit=10 [32m200[0m 8.034 ms - 4624[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=No&page=1&limit=10 [32m200[0m 9.075 ms - 4681[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Nov&page=1&limit=10 [32m200[0m 11.522 ms - 490[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Novi&page=1&limit=10 [32m200[0m 12.009 ms - 490[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Novil&page=1&limit=10 [32m200[0m 11.953 ms - 490[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Novill&page=1&limit=10 [32m200[0m 11.622 ms - 490[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Novillo&page=1&limit=10 [32m200[0m 13.632 ms - 490[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=&page=1&limit=10 [36m304[0m 9.902 ms - -[0m
+Cliente conectado: 8D6NNfV7mXGoiC17AAB4
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.125 ms - 291[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=559698 [32m200[0m 3.187 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=559698 [32m200[0m 6.139 ms - 2[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.341 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=1250194741&page=1&limit=10 [36m304[0m 30.183 ms - -[0m
+Cliente conectado: 5-daQwLyrh2Hp6LwAAB6
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=578351 [36m304[0m 2.621 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=578351 [36m304[0m 2.649 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8801111,
+  idCompra: 1411970,
+  idPersonal: 206,
+  Fecha: '2025-01-28T18:45:57.164Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'CLIENTE NO SE ENCONTRÓ EN DOMICILIO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'JIZA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 146.077 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 351.602 ms - 94[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 180.271 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.896 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=206&filtro=&page=1&limit=10 [36m304[0m 110.471 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.107 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 279.523 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.315 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.650 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.986 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 47.729 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.606 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.939 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.217 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.515 ms - 291[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1692093 [32m200[0m 3068.040 ms - 1216[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1692093 [32m200[0m 3281.979 ms - 1216[0m
+Cliente conectado: K2BnA8sG4v9OUqZEAAB8
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=&page=1&limit=10 [36m304[0m 11.369 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=050349772&page=1&limit=10 [32m200[0m 15.951 ms - 468[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=S&page=1&limit=10 [32m200[0m 8.646 ms - 4524[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=S&page=1&limit=10 [36m304[0m 13.346 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Sal&page=1&limit=10 [32m200[0m 13.878 ms - 1875[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Sim&page=1&limit=10 [32m200[0m 16.377 ms - 964[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Simo&page=1&limit=10 [32m200[0m 15.638 ms - 470[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Simon&page=1&limit=10 [32m200[0m 36.518 ms - 470[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=541854 [36m304[0m 2.959 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=541854 [36m304[0m 2.365 ms - -[0m
+Cliente desconectado: pgqCPzD5d75mcVDrAAB0
+tIPO {
+  idCbo_GestorDeCobranzas: 8776247,
+  idCompra: 1608919,
+  idPersonal: 229,
+  Fecha: '2025-01-28T18:46:18.575Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'SE DEJA NOTIFICACIÓN BAJO PUERTA A DOMICILIO CERRADO',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'FMERCHAN',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 125.771 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 9.992 ms - -[0m
+Cliente desconectado: 5-daQwLyrh2Hp6LwAAB6
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=125019474&page=1&limit=10 [32m200[0m 20.392 ms - 463[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=1250&page=1&limit=10 [36m304[0m 13.922 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 5.528 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1579166&idMotivo=0 [36m304[0m 4.776 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=&page=1&limit=10 [36m304[0m 11.309 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=1208868164&page=1&limit=10 [36m304[0m 20.513 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=585683 [36m304[0m 2.468 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=585683 [36m304[0m 2.611 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1726421 [36m304[0m 30.671 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1726421 [36m304[0m 207.603 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1726421 [36m304[0m 219.527 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Sala&page=1&limit=10 [32m200[0m 12.953 ms - 1414[0m
+Cliente conectado: jhwY_oQy5nF81z5iAAB-
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=515286 [32m200[0m 2.670 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=515286 [36m304[0m 2.625 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1715744 [32m200[0m 21.654 ms - 136[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1715744 [32m200[0m 213.842 ms - 6967[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1715744 [32m200[0m 221.738 ms - 6967[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=C&page=1&limit=10 [36m304[0m 10.781 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Co&page=1&limit=10 [32m200[0m 13.252 ms - 4709[0m
+Cliente desconectado: 8D6NNfV7mXGoiC17AAB4
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coe&page=1&limit=10 [32m200[0m 12.447 ms - 961[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coel&page=1&limit=10 [32m200[0m 11.643 ms - 961[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coelo&page=1&limit=10 [32m200[0m 10.661 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coel&page=1&limit=10 [36m304[0m 11.606 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coe&page=1&limit=10 [36m304[0m 11.121 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coel&page=1&limit=10 [36m304[0m 14.792 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coell&page=1&limit=10 [32m200[0m 12.529 ms - 961[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coello&page=1&limit=10 [32m200[0m 12.198 ms - 961[0m
+Cliente conectado: XwzfDYdcwOpKldQlAACA
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=544736 [32m200[0m 10.104 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=544736 [32m200[0m 26.183 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1726421 [32m200[0m 1213.007 ms - 1273[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1726421 [32m200[0m 1351.641 ms - 1273[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=120886816&page=1&limit=10 [32m200[0m 62.304 ms - 475[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=12088&page=1&limit=10 [32m200[0m 42.523 ms - 1492[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=12&page=1&limit=10 [36m304[0m 14.729 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8817085,
+  idCompra: 1536996,
+  idPersonal: 229,
+  Fecha: '2025-01-28T18:46:58.212Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'HERMANO DE CLIENTE RECIBE NOTIFICACIÓN INDICA QUE YA VAN A CANCELAR',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'FMERCHAN',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 83.390 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 7.458 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=1250609359&page=1&limit=10 [32m200[0m 20.224 ms - 477[0m
+Cliente desconectado: LPtNS8jfOFnYQt-OAABK
+Cliente desconectado: LsznVi8rDDh5QrwNAAB2
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=575879 [32m200[0m 2.606 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=575879 [32m200[0m 3.377 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1680307 [32m200[0m 1243.633 ms - 1239[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1680307 [32m200[0m 1391.769 ms - 1239[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1680307 [32m200[0m 24.710 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1680307 [32m200[0m 230.729 ms - 7750[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1680307 [32m200[0m 236.835 ms - 7750[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1535722 [32m200[0m 1200.622 ms - 1184[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1535722&idMotivo=0 [32m200[0m 65.691 ms - 586[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1535722&idMotivo=0 [32m200[0m 4.376 ms - 586[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1535722 [32m200[0m 4932.888 ms - 1184[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=V&page=1&limit=10 [36m304[0m 26.748 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vo&page=1&limit=10 [32m200[0m 12.397 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Voe&page=1&limit=10 [32m200[0m 11.285 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Voel&page=1&limit=10 [32m200[0m 12.209 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Voelo&page=1&limit=10 [32m200[0m 13.446 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Voel&page=1&limit=10 [36m304[0m 14.070 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Voe&page=1&limit=10 [36m304[0m 11.518 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Vo&page=1&limit=10 [36m304[0m 12.729 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=V&page=1&limit=10 [36m304[0m 10.363 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 7.919 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=C&page=1&limit=10 [36m304[0m 8.531 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Co&page=1&limit=10 [36m304[0m 13.573 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coe&page=1&limit=10 [36m304[0m 15.710 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coel&page=1&limit=10 [36m304[0m 12.470 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coell&page=1&limit=10 [36m304[0m 12.358 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Coello&page=1&limit=10 [36m304[0m 12.926 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=573331 [32m200[0m 2.249 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=573331 [32m200[0m 3.678 ms - 2[0m
+Cliente conectado: w9S_d5rKPYHix0htAACC
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1665930 [32m200[0m 1294.426 ms - 1225[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1665930 [32m200[0m 1388.090 ms - 1225[0m
+Cliente desconectado: XwzfDYdcwOpKldQlAACA
+tIPO {
+  idCbo_GestorDeCobranzas: 8815797,
+  idCompra: 1535722,
+  idPersonal: 187,
+  Fecha: '2025-01-28T18:48:09.298Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'COMPROMISO DE PAGO LUNES 3 DE FEBRERO ',
+  Telefono: '',
+  Valor: 200,
+  FechaPago: '2025-02-03T18:46:00.000Z',
+  Usuario: 'WLOPEZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 145.725 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=&page=1&limit=10 [36m304[0m 11.028 ms - -[0m
+Cliente desconectado: jhwY_oQy5nF81z5iAAB-
+Cliente conectado: f5A0aM-Os42quY6tAACE
+tIPO {
+  idCbo_GestorDeCobranzas: 8817936,
+  idCompra: 1576828,
+  idPersonal: 238,
+  Fecha: '2025-01-28T18:48:23.756Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'YA NO TIENE EL LOCAL AQUI SE CONTACTA POR WHATSAPP ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'BLEON',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 94.032 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=238&filtro=&page=1&limit=10 [36m304[0m 11.314 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8776824,
+  idCompra: 1665930,
+  idPersonal: 229,
+  Fecha: '2025-01-28T18:48:33.036Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'CLIENTE INDICA QUE CANCELA PARA EL 31 DE ENERO SE PRESIONA PARA QUE CANCELE',
+  Telefono: '',
+  Valor: 100,
+  FechaPago: '2025-01-31T18:47:00.000Z',
+  Usuario: 'FMERCHAN',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 69.609 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 8.730 ms - -[0m
+Cliente desconectado: hMfXGbTbdB9mmvFRAABm
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=D&page=1&limit=10 [32m200[0m 9.982 ms - 4629[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=De&page=1&limit=10 [32m200[0m 9.448 ms - 4664[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Delg&page=1&limit=10 [32m200[0m 12.295 ms - 2338[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Delga&page=1&limit=10 [32m200[0m 11.313 ms - 2338[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Delgad&page=1&limit=10 [32m200[0m 24.065 ms - 2338[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=Delgado+&page=1&limit=10 [32m200[0m 13.402 ms - 2338[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574217 [32m200[0m 2.576 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=574217 [32m200[0m 3.109 ms - 2[0m
+Cliente desconectado: K2BnA8sG4v9OUqZEAAB8
+Cliente desconectado: w9S_d5rKPYHix0htAACC
+tIPO {
+  idCbo_GestorDeCobranzas: 8806607,
+  idCompra: 1670065,
+  idPersonal: 229,
+  Fecha: '2025-01-28T18:49:12.623Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'SE DEJA NOTIFICACIÓN BAJO PUERTA A DOMICILIO CERRADO',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'FMERCHAN',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 84.715 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=229&filtro=&page=1&limit=10 [36m304[0m 7.454 ms - -[0m
+Cliente conectado: ZUUX7EryHEAydLjzAACG
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle+vinces&page=1&limit=10 [36m304[0m 18.181 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Valle&page=1&limit=10 [32m200[0m 16.367 ms - 2391[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Va&page=1&limit=10 [32m200[0m 11.184 ms - 4697[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=&page=1&limit=10 [36m304[0m 10.192 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=C&page=1&limit=10 [36m304[0m 11.833 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ca&page=1&limit=10 [36m304[0m 12.883 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Carr&page=1&limit=10 [32m200[0m 37.879 ms - 2346[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Carre%C3%B1&page=1&limit=10 [32m200[0m 48.424 ms - 969[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Carre%C3%B1o&page=1&limit=10 [32m200[0m 32.220 ms - 969[0m
+Cliente conectado: 41Ek4KVoEPbyfPGqAACI
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=582471 [32m200[0m 3.548 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=582471 [36m304[0m 3.912 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1476655 [36m304[0m 4.229 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1476655 [36m304[0m 222.397 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1476655 [36m304[0m 226.280 ms - -[0m
+Cliente desconectado: ZDQB-FLn1ms7Q2wSAABs
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1712696 [32m200[0m 14.087 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712696 [32m200[0m 375.971 ms - 7740[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712696 [32m200[0m 635.420 ms - 7740[0m
+Cliente desconectado: f5A0aM-Os42quY6tAACE
+Cliente conectado: LnaI0XjykfMhtAStAACK
+tIPO {
+  idCbo_GestorDeCobranzas: 8770216,
+  idCompra: 1476655,
+  idPersonal: 273,
+  Fecha: '2025-01-28T18:50:37.997Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 57,
+  Notas: 'CLIENTE INFORMA Q YA CANCELO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'DBENAVIDES',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 126.037 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=273&filtro=&page=1&limit=10 [36m304[0m 7.217 ms - -[0m
+Cliente desconectado: LnaI0XjykfMhtAStAACK
+Cliente desconectado: ZUUX7EryHEAydLjzAACG
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1712696 [36m304[0m 31.689 ms - -[0m
+Cliente conectado: F-_JrECsN_nyVGfPAACM
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712696 [36m304[0m 399.480 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712696 [36m304[0m 385.715 ms - -[0m
+Cliente conectado: nV_Qi2E73G2ZTXWDAACO
+Cliente conectado: 57DbczbQkRhZP6Q3AACQ
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=J&page=1&limit=10 [36m304[0m 40.047 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Ju&page=1&limit=10 [32m200[0m 16.783 ms - 4670[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Juan&page=1&limit=10 [32m200[0m 15.344 ms - 3765[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=C&page=1&limit=10 [36m304[0m 11.194 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Juanw&page=1&limit=10 [32m200[0m 15.851 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Cor&page=1&limit=10 [36m304[0m 13.955 ms - -[0m
+Cliente desconectado: 2qWh4KEfSRMVSCNTAABf
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Corn&page=1&limit=10 [36m304[0m 32.523 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Corne&page=1&limit=10 [36m304[0m 13.250 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Cornej&page=1&limit=10 [36m304[0m 15.488 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Juana&page=1&limit=10 [32m200[0m 15.874 ms - 470[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Juan&page=1&limit=10 [36m304[0m 16.700 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Corne&page=1&limit=10 [36m304[0m 13.931 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Corn&page=1&limit=10 [36m304[0m 13.213 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Juan+&page=1&limit=10 [32m200[0m 14.995 ms - 3300[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Cor&page=1&limit=10 [36m304[0m 13.778 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Co&page=1&limit=10 [36m304[0m 26.785 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=C&page=1&limit=10 [36m304[0m 10.050 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=Juan+g&page=1&limit=10 [32m200[0m 16.652 ms - 482[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Co&page=1&limit=10 [36m304[0m 15.217 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Cor&page=1&limit=10 [36m304[0m 14.955 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Cord&page=1&limit=10 [36m304[0m 13.687 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Corde&page=1&limit=10 [36m304[0m 13.364 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=146&filtro=Corder&page=1&limit=10 [36m304[0m 12.488 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=553917 [32m200[0m 3.156 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=553917 [32m200[0m 2.692 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=562848 [36m304[0m 3.034 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=562848 [36m304[0m 2.772 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1621741 [32m200[0m 39.735 ms - 134[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1576041 [32m200[0m 52.372 ms - 135[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1576041 [32m200[0m 219.363 ms - 6899[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1621741 [32m200[0m 231.590 ms - 7749[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1621741 [32m200[0m 229.090 ms - 7749[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1576041 [32m200[0m 240.780 ms - 6899[0m
+Cliente conectado: OTlxyUP7g6oVvPq3AACS
+Cliente desconectado: 57DbczbQkRhZP6Q3AACQ
+Cliente desconectado: F-_JrECsN_nyVGfPAACM
+tIPO {
+  idCbo_GestorDeCobranzas: 8772789,
+  idCompra: 1576041,
+  idPersonal: 187,
+  Fecha: '2025-01-28T18:53:34.693Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'SE DEJA NOT CON CUÑADA DE TT',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'WLOPEZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 90.855 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=&page=1&limit=10 [36m304[0m 11.283 ms - -[0m
+Cliente conectado: zDAdPIFEBSfyL7zBAACU
+Cliente conectado: _4qAkZrO44pjQ5W8AACW
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=&page=1&limit=10 [36m304[0m 26.197 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=S&page=1&limit=10 [36m304[0m 25.589 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Sa&page=1&limit=10 [36m304[0m 11.198 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=Sandra&page=1&limit=10 [32m200[0m 14.839 ms - 446[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=483874 [32m200[0m 3.095 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=483874 [32m200[0m 22.750 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1297936 [32m200[0m 59.013 ms - 133[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1297936 [32m200[0m 443.054 ms - 7873[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1297936 [32m200[0m 459.128 ms - 7873[0m
+Cliente desconectado: nV_Qi2E73G2ZTXWDAACO
+Cliente conectado: AUM6r3qWnlAtcUZSAACY
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 19.639 ms - 66[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 17.578 ms - 66[0m
+Cliente desconectado: zDAdPIFEBSfyL7zBAACU
+Cliente desconectado: 41Ek4KVoEPbyfPGqAACI
+Cliente conectado: naHcoALcXFfTFMdJAACa
+Cliente desconectado: D0f1jnudMPVZlTJhAABa
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1680307 [36m304[0m 1194.135 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1680307 [36m304[0m 1598.737 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1680307 [36m304[0m 1117.498 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1680307 [36m304[0m 1487.900 ms - -[0m
+Cliente desconectado: naHcoALcXFfTFMdJAACa
+Cliente conectado: 1kH76xoEYe6rtpHOAACc
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=&page=1&limit=10 [36m304[0m 35.868 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8823523,
+  idCompra: 1680307,
+  idPersonal: 122,
+  Fecha: '2025-01-28T18:56:50.124Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'HERMANA KATERINE //TT SIGUE CON GASTOS MEDICOS DEL HIJO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'WMORA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 104.133 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=&page=1&limit=10 [36m304[0m 12.868 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=M&page=1&limit=10 [36m304[0m 10.745 ms - -[0m
+Cliente conectado: AopniqCZlF39P9JYAACe
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Melendre&page=1&limit=10 [36m304[0m 13.174 ms - -[0m
+Cliente desconectado: P6fupG8DeSsoBxd5AABu
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=567744 [36m304[0m 3.951 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=567744 [36m304[0m 3.801 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=&page=1&limit=10 [36m304[0m 10.987 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1640743 [36m304[0m 16.058 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1640743 [36m304[0m 206.373 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1640743 [36m304[0m 213.018 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=S&page=1&limit=10 [36m304[0m 36.271 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Sal&page=1&limit=10 [36m304[0m 16.306 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Salz&page=1&limit=10 [32m200[0m 14.195 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Salza&page=1&limit=10 [32m200[0m 14.762 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Salzar&page=1&limit=10 [32m200[0m 16.145 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Salza&page=1&limit=10 [36m304[0m 16.109 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Sal&page=1&limit=10 [36m304[0m 30.829 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Sala&page=1&limit=10 [36m304[0m 13.984 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Salaz&page=1&limit=10 [32m200[0m 14.068 ms - 1414[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Salaza&page=1&limit=10 [32m200[0m 14.147 ms - 1414[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Salazar&page=1&limit=10 [32m200[0m 12.991 ms - 1414[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=515286 [36m304[0m 2.278 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=515286 [36m304[0m 2.782 ms - -[0m
+Cliente desconectado: OTlxyUP7g6oVvPq3AACS
+tIPO {
+  idCbo_GestorDeCobranzas: 8848208,
+  idCompra: 1715744,
+  idPersonal: 126,
+  Fecha: '2025-01-28T18:57:28.523Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'HERMANA GÉNESIS SALAZAR ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'LQUIMBITA ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 85.840 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=&page=1&limit=10 [36m304[0m 8.171 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.326 ms - 309[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.940 ms - 309[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=G&page=1&limit=10 [36m304[0m 18.048 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 51.571 ms - 309[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Gr&page=1&limit=10 [32m200[0m 16.533 ms - 2859[0m
+Cliente conectado: kdqN8Fy-38opU56aAACg
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Gran&page=1&limit=10 [32m200[0m 15.532 ms - 469[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Grand&page=1&limit=10 [32m200[0m 15.058 ms - 469[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=0802748111&page=1&limit=10 [32m200[0m 19.284 ms - 477[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=239&filtro=Granda&page=1&limit=10 [32m200[0m 15.387 ms - 469[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=565125 [32m200[0m 5.914 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=565125 [32m200[0m 9.383 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=585434 [32m200[0m 3.006 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=585434 [32m200[0m 2.687 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1630699 [32m200[0m 9.198 ms - 139[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1630699 [32m200[0m 205.388 ms - 7849[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1630699 [32m200[0m 349.436 ms - 7849[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1725862 [32m200[0m 60.621 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1725862 [32m200[0m 214.220 ms - 7742[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1725862 [32m200[0m 216.592 ms - 7742[0m
+Cliente desconectado: AopniqCZlF39P9JYAACe
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3522768 [32m200[0m 2.428 ms - 327[0m
+Cliente desconectado: kdqN8Fy-38opU56aAACg
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 38.998 ms - 296[0m
+Cliente conectado: jaJRRDFqqvkSbaHwAACi
+Cliente conectado: ntj21YgXObFqwzBUAACk
+Cliente desconectado: Um4_62HwG07EFGoUAABd
+Cliente conectado: Y5cbLiuQcsn_3zpeAACm
+Cliente conectado: Rc6uOK3SOuyC3Pc0AACo
+Cliente conectado: t1-dWb_xtQMuvFCuAACq
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 34.496 ms - 65[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=&page=1&limit=10 [36m304[0m 31.058 ms - -[0m
+Cliente desconectado: Y5cbLiuQcsn_3zpeAACm
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 7.542 ms - 65[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=C&page=1&limit=10 [36m304[0m 13.628 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ca&page=1&limit=10 [36m304[0m 11.837 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Car&page=1&limit=10 [36m304[0m 31.013 ms - -[0m
+[0mGET /cobranza/api/v1/point/data/all?page=1&pageSize=10 [32m200[0m 16.647 ms - 999[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Carre&page=1&limit=10 [32m200[0m 43.643 ms - 1432[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Carre%C3%B1&page=1&limit=10 [36m304[0m 36.722 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Carre%C3%B1o&page=1&limit=10 [36m304[0m 37.550 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=582471 [36m304[0m 6.950 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=582471 [36m304[0m 9.309 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1712696 [36m304[0m 16.653 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712696 [32m200[0m 242.105 ms - 7738[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712696 [32m200[0m 218.691 ms - 7738[0m
+Cliente desconectado: _4qAkZrO44pjQ5W8AACW
+Cliente conectado: a05WazTdqzopeOejAACs
+KeyPinPass: A47765A9-A9BB-47F6-9F21-EA45916C72C5
+KeyDispositivo: A47765A9-A9BB-47F6-9F21-EA45916C72C5
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 118,
+  idNomina: 249,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 1,
+  Cedula: '1205620378',
+  KeyDispositivo: 'A47765A9-A9BB-47F6-9F21-EA45916C72C5',
+  iTipoPersonal: 0,
+  Pin: '985632',
+  PinSeguridad: '985632',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 65.732 ms - 10580[0m
+Cliente conectado: xbxoKa3VC3F5xZZVAACu
+Cliente desconectado: jaJRRDFqqvkSbaHwAACi
+[0mGET /cobranza/api/v1/point/registro?idCobrador=249&filtro=&page=1&limit=10 [36m304[0m 47.606 ms - -[0m
+Cliente conectado: rHq3rBRA2p7SpVFIAACx
+Cliente conectado: mkLiLxsx9vHvjcl0AACz
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 37.103 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=P&page=1&limit=10 [36m304[0m 8.297 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Pi&page=1&limit=10 [36m304[0m 9.102 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Pig&page=1&limit=10 [36m304[0m 10.509 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Pigu&page=1&limit=10 [36m304[0m 11.264 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=Pigua&page=1&limit=10 [36m304[0m 10.703 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=546862 [36m304[0m 2.415 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=546862 [36m304[0m 3.066 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1545897 [36m304[0m 51.805 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1545897 [36m304[0m 240.695 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1545897 [36m304[0m 468.111 ms - -[0m
+Cliente desconectado: 1kH76xoEYe6rtpHOAACc
+Cliente desconectado: t1-dWb_xtQMuvFCuAACq
+tIPO {
+  idCbo_GestorDeCobranzas: 8772011,
+  idCompra: 1545897,
+  idPersonal: 188,
+  Fecha: '2025-01-28T19:01:23.761Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'FAMILIAR RECIBE NTF SE PRESIONA EL PAGO CC DE VIAJE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'AMAGALLANES',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 72.192 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 6.900 ms - -[0m
+Cliente conectado: Prua_LWDaicaMvGpAAC1
+Cliente desconectado: mkLiLxsx9vHvjcl0AACz
+Cliente desconectado: AUM6r3qWnlAtcUZSAACY
+Cliente conectado: Ue1rMIwyzzOD6L1yAAC3
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=D&page=1&limit=10 [36m304[0m 11.835 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De&page=1&limit=10 [32m200[0m 12.056 ms - 4713[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+l&page=1&limit=10 [32m200[0m 14.043 ms - 4740[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+la+&page=1&limit=10 [32m200[0m 34.091 ms - 4755[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+la+cr&page=1&limit=10 [32m200[0m 36.692 ms - 2848[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+la+cr&page=1&limit=10 [36m304[0m 17.546 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+la+cru&page=1&limit=10 [32m200[0m 14.569 ms - 2848[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+la+cruz&page=1&limit=10 [32m200[0m 16.879 ms - 2848[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+la+cruz+&page=1&limit=10 [32m200[0m 16.045 ms - 2848[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=De+la+cruz+s&page=1&limit=10 [32m200[0m 16.480 ms - 938[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=414430 [32m200[0m 2.651 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=414430 [32m200[0m 2.446 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1440281 [32m200[0m 38.450 ms - 132[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1440281 [32m200[0m 238.182 ms - 7859[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1440281 [32m200[0m 224.648 ms - 7859[0m
+Cliente conectado: V5FAkg41MKfK29qqAAC5
+[0mGET /cobranza/api/v1/point/Inventario/V1/ListaPagos?idCre_TablaDeAmortizacion=3031936 [32m200[0m 25.965 ms - 1559[0m
+Cliente desconectado: Prua_LWDaicaMvGpAAC1
+Cliente desconectado: V5FAkg41MKfK29qqAAC5
+Cliente conectado: Ic1XOx7VcQZP5GFgAAC7
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=C&page=1&limit=10 [36m304[0m 47.333 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Co&page=1&limit=10 [36m304[0m 12.639 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Comi&page=1&limit=10 [36m304[0m 13.927 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=126&filtro=Comin&page=1&limit=10 [36m304[0m 14.527 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=356637 [36m304[0m 3.366 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=356637 [36m304[0m 2.679 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=834034 [32m200[0m 2344.075 ms - 1202[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=834034 [32m200[0m 2460.506 ms - 1202[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8779580,
+  idCompra: 1725862,
+  idPersonal: 122,
+  Fecha: '2025-01-28T19:03:08.271Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'TT INDICA Q ESTA REALIZANDO TRANFERENCIA Q PARA ESA FECHA REALIZA OTRA TRANFERENCIA HASTA PONERSE AL DIA ',
+  Telefono: '',
+  Valor: 50,
+  FechaPago: '2025-02-01T18:57:00.000Z',
+  Usuario: 'WMORA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 73.694 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=&page=1&limit=10 [36m304[0m 10.399 ms - -[0m
+Cliente desconectado: a05WazTdqzopeOejAACs
+Cliente desconectado: ntj21YgXObFqwzBUAACk
+Cliente desconectado: rHq3rBRA2p7SpVFIAACx
+Cliente conectado: Dy1fTF7-h_6EFG1YAAC9
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=1207468420&page=1&limit=10 [36m304[0m 58.369 ms - -[0m
+Cliente desconectado: Ic1XOx7VcQZP5GFgAAC7
+Cliente conectado: 6pgDb75NX_seULaUAAC_
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=573294 [36m304[0m 3.236 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=573294 [36m304[0m 2.574 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1665805 [32m200[0m 40.927 ms - 134[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1665805 [32m200[0m 197.369 ms - 7715[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1665805 [32m200[0m 209.125 ms - 7715[0m
+Cliente conectado: KDujEJ-KUm7Xl19AAADB
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Melendre&page=1&limit=10 [36m304[0m 26.273 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Mele&page=1&limit=10 [32m200[0m 13.013 ms - 944[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=M&page=1&limit=10 [36m304[0m 9.508 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=C&page=1&limit=10 [36m304[0m 10.384 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Ce&page=1&limit=10 [36m304[0m 11.278 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=245&filtro=Cervant&page=1&limit=10 [32m200[0m 14.527 ms - 916[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.356 ms - 300[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.407 ms - 300[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=551439 [36m304[0m 2.960 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=551439 [36m304[0m 4.140 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1564734 [36m304[0m 22.032 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1564734 [36m304[0m 320.034 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1564734 [36m304[0m 315.152 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.988 ms - 299[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.183 ms - 299[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.188 ms - 301[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.733 ms - 301[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8757477,
+  idCompra: 1297936,
+  idPersonal: 215,
+  Fecha: '2025-01-28T19:04:33.931Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 53,
+  Notas: 'SIN TRABAJO INDICA QUE ESPOSO NO ENVIA DINERO DE USA ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'FPINCAY',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 199.836 ms - 301[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 21.636 ms - 301[0m
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 547.322 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=215&filtro=&page=1&limit=10 [36m304[0m 9.532 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8776327,
+  idCompra: 1665805,
+  idPersonal: 122,
+  Fecha: '2025-01-28T19:05:02.782Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'SOBRINA MARIA // C INDICA Q TT TIENE SALDOS PENDIENTE ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'WMORA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 91.721 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=&page=1&limit=10 [36m304[0m 13.961 ms - -[0m
+Cliente conectado: 7GaxWElGpbakklTBAADD
+Cliente desconectado: xbxoKa3VC3F5xZZVAACu
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=1203258858&page=1&limit=10 [32m200[0m 22.628 ms - 481[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8803490,
+  idCompra: 1440281,
+  idPersonal: 187,
+  Fecha: '2025-01-28T19:05:15.302Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'COMPROMISO DE PAGO 8 DE FEBRERO ',
+  Telefono: '',
+  Valor: 30,
+  FechaPago: '2025-02-08T19:01:00.000Z',
+  Usuario: 'WLOPEZ',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 81.346 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=187&filtro=&page=1&limit=10 [36m304[0m 10.820 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=561032 [32m200[0m 3.663 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=561032 [32m200[0m 2.487 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1614126 [32m200[0m 1169.094 ms - 1263[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1614126 [32m200[0m 1268.352 ms - 1263[0m

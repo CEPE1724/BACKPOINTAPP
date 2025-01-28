@@ -6,11 +6,13 @@ const Docxtemplater = require('docxtemplater');
 const fs = require('fs');
 const path = require('path');
 const { uploadFileToCloud } = require("./uploadFileToCloud");
+const { Like, Between } = require('typeorm');  // Asegúrate de importar Like y Between
+
 exports.addNew = async (req, res) => {
-    const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, UrlImagen } = req.body;
+    const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, UrlImagen, Celular } = req.body;
     console.log("ENTRO AQUI");
     // Validación de datos (puedes agregar más validaciones según tus necesidades)
-    if (!Cedula || !Nombre || !Apellido || !IpWeb || !CodigoDactilar, !UrlImagen) {
+    if (!Cedula || !Nombre || !Apellido || !IpWeb || !CodigoDactilar, !UrlImagen, !Celular) {
         console.log("ENTRO AQUI", Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, UrlImagen);
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
@@ -45,6 +47,8 @@ exports.addNew = async (req, res) => {
         IpWeb,
         Fecha: FechaActual,
         Hora,
+        Celular: Celular,
+        UrlImagen: UrlImagen
       };
   
       // Aplicar las sustituciones
@@ -71,7 +75,8 @@ exports.addNew = async (req, res) => {
         IpWeb,
         Fecha: new Date(),
         UrlContrato: publicUrl , // Guardamos la URL del contrato subido
-        UrlImage: UrlImagen
+        UrlImage: UrlImagen,
+        Celular: Celular
       });
   
       // Guardar en la base de datos dentro de la transacción
@@ -104,7 +109,7 @@ exports.addNew = async (req, res) => {
 
 exports.generatePdf = async (req, res) => {
     try {
-      const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar } = req.body;
+      const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, Celular } = req.body;
   
       const inputPath = path.join(__dirname, 'Contrato.docx');
       const content = fs.readFileSync(inputPath, 'binary');
@@ -113,7 +118,7 @@ exports.generatePdf = async (req, res) => {
       const zip = new PizZip(content);
       const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
       const Nombres = Nombre + ' ' + Apellido;
-  
+      
       // Formatear fecha en formato yyyy-MM-dd
       const FechaActual = new Date().toISOString().split('T')[0];
   
@@ -128,6 +133,7 @@ exports.generatePdf = async (req, res) => {
         IpWeb,
         Fecha: FechaActual,
         Hora,
+        Celular: Celular
       };
   
       // Aplicar las sustituciones
@@ -211,3 +217,52 @@ exports.generatePdf = async (req, res) => {
         }
     }
 ];
+
+
+exports.getAll = async (req, res) => {
+  try {
+    const { page = 1, pageSize = 10, cedula, nombre, fechaInicio, fechaFin } = req.query;
+
+    // Convertir page y pageSize a enteros
+    const pageNumber = parseInt(page, 10);
+    const pageSizeNumber = parseInt(pageSize, 10);
+
+    const DatosProteccionRepository = AppDataSource.getRepository(DatosProteccion);
+
+    // Construir filtros
+    let where = {};
+
+    if (cedula) {
+      where.Cedula = cedula;
+    }
+
+    if (nombre) {
+      where.Nombre = Like(`%${nombre}%`);  // Usamos LIKE para que busque coincidencias parciales en el nombre
+    }
+
+    if (fechaInicio && fechaFin) {
+      where.Fecha = Between(new Date(fechaInicio), new Date(fechaFin));
+    }
+
+    // Obtener los datos con paginación
+    const [allDatosProteccion, total] = await DatosProteccionRepository.findAndCount({
+      where,
+      skip: (pageNumber - 1) * pageSizeNumber, // Calcular el skip según la página solicitada
+      take: pageSizeNumber,                   // Limitar la cantidad de registros según pageSize
+    });
+
+    // Calcular la cantidad total de páginas
+    const totalPages = Math.ceil(total / pageSizeNumber);
+
+    res.json({
+      data: allDatosProteccion,
+      currentPage: pageNumber,
+      totalPages: totalPages,
+      totalRecords: total,
+    });
+    
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: "Error al obtener los datos de protección", error: error.message });
+  }
+};

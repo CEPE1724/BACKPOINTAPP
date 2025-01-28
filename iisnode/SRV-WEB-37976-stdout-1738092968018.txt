@@ -1,0 +1,1525 @@
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.870 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.271 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.822 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.943 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.362 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.942 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.507 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.184 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.061 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.301 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.645 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.588 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.218 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.969 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.960 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.661 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.630 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.724 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.894 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.002 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.979 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.517 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.427 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.678 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.493 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.305 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.862 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.881 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.888 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.409 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.818 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.763 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.315 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.359 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.888 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.659 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.419 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.379 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.773 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.026 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.317 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.806 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.331 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.891 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.458 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.082 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.563 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.356 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.569 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.198 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.650 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.979 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 26.093 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.716 ms - 297[0m
+Cliente conectado: eJIl7Kw801BKtBgYAAAt
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.510 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.427 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.720 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.882 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.776 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.797 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.635 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.851 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.363 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.079 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.550 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.760 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.795 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.304 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.155 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.553 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.320 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.223 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 34.734 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 35.608 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.990 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.284 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.685 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.934 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.144 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.971 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.292 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.648 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.190 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.872 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.912 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.559 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.119 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.174 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.446 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.599 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.000 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.104 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.907 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.940 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.923 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.323 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.072 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.061 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.681 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.134 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.524 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.041 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.247 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.055 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.983 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.920 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.832 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.103 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.318 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.985 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.104 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.375 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.044 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.884 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.235 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.465 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.367 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.934 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.701 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.507 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.780 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.475 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.773 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.587 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.375 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.272 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.932 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.895 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 24.239 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.611 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.282 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.841 ms - 297[0m
+Cliente desconectado: eJIl7Kw801BKtBgYAAAt
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.902 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.462 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.429 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.415 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.691 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.952 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.439 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.068 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.717 ms - 297[0m
+Cliente desconectado: o3iburxWfGdcX-QAAAAL
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.792 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.686 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.268 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.058 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.126 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.722 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 26.145 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.760 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.739 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.898 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.413 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.800 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.046 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.905 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.287 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.777 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.594 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.041 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.220 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.695 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.200 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.017 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.634 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.428 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.210 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.574 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.698 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.723 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.426 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.334 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.384 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.347 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.333 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.575 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.907 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.853 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.519 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.499 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.993 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.305 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.730 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 27.611 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.422 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.240 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.527 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.032 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.610 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.339 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.941 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.596 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.663 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.167 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.081 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.197 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.776 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.761 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.109 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.733 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.626 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.592 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.969 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.439 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.832 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.068 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.468 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.884 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.358 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.980 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.969 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.708 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.847 ms - 298[0m
+Cliente desconectado: v3FyEo2GdAYvKodGAAAp
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.445 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.404 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.693 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.577 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.128 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.906 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.584 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.633 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.321 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.343 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.793 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.372 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.604 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.132 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.245 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.720 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.688 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.251 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.040 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.453 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.281 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.128 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.213 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.703 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.405 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.208 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.450 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.069 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 19.740 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.974 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.647 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.410 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.228 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.123 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.955 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.106 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.064 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.514 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.766 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.573 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.567 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.859 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.884 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.366 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.503 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.433 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.784 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.688 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.470 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.364 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.345 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.639 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.069 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.021 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.059 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 13.837 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.370 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.423 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.681 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.616 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.940 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.892 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.507 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.229 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.571 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.407 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.301 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 168.875 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.860 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.762 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.404 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.174 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.350 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.902 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Naz&page=1&limit=10 [36m304[0m 17.703 ms - -[0m
+Cliente conectado: ZLyGhi9LVzSQeRI9AAAv
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Na&page=1&limit=10 [32m200[0m 9.484 ms - 4672[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=M&page=1&limit=10 [36m304[0m 7.556 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.772 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.463 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.791 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.289 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.164 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.196 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.690 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.597 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.998 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.755 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.865 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.835 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.456 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.152 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.471 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.545 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.073 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.948 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.081 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.097 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.922 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.079 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.694 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.357 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.089 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.074 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.117 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.037 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.461 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.991 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.596 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.525 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.091 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.929 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.896 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.103 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.765 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.533 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.959 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.103 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.459 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.866 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.589 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.005 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.631 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.327 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.086 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.749 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.663 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.232 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.647 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.478 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.622 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Ma&page=1&limit=10 [36m304[0m 7.779 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.255 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.311 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.007 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.035 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.737 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.707 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.734 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.889 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.729 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.569 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.451 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.253 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.870 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.674 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.322 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.308 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.040 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.117 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.737 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.677 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.708 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.623 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.333 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.246 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.070 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Mar&page=1&limit=10 [36m304[0m 7.920 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.435 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.278 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Marmo&page=1&limit=10 [32m200[0m 12.536 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Marmol&page=1&limit=10 [32m200[0m 11.634 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Marmo&page=1&limit=10 [36m304[0m 10.651 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Marm&page=1&limit=10 [32m200[0m 9.892 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Mar&page=1&limit=10 [36m304[0m 8.202 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.897 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.312 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.790 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.129 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.714 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.652 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.732 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 27.004 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.524 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.616 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.825 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 23.941 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 40.696 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 34.204 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.270 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.261 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.501 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.534 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.902 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.909 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.504 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.455 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.429 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.104 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.951 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.360 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.787 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.049 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.184 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.247 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.231 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.425 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.677 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.977 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.984 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.634 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.596 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.257 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.938 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Ma&page=1&limit=10 [36m304[0m 19.275 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.945 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=M&page=1&limit=10 [36m304[0m 7.356 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.699 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.492 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.494 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.717 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.536 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.405 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 15.965 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 16.701 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.149 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.176 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.105 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.075 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.557 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.519 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.897 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.822 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.083 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.196 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.858 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.821 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.833 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.040 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.228 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.560 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.567 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.156 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.852 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.255 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.770 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.065 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.587 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.863 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.501 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.497 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.061 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.090 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.568 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.084 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.692 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.929 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.046 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.399 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.900 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.271 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.089 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.158 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.164 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.250 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.466 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.760 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.338 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.010 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.234 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.189 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.758 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.160 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.210 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.611 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.053 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.016 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.944 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.858 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.329 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.097 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.862 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.129 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.421 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.014 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.387 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.168 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.159 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.071 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.806 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.591 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.028 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.997 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.580 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=5&page=1&limit=10 [32m200[0m 8.601 ms - 4692[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=&page=1&limit=10 [36m304[0m 7.860 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.846 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.739 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.394 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.442 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.231 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.254 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.027 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.553 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.512 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.837 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.407 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.332 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.359 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.216 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.408 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.899 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.611 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.357 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.425 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.965 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.706 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.472 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.566 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.339 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.347 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.468 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.919 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.784 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.860 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.725 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.304 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.556 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.473 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.316 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.335 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.863 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Emili&page=1&limit=10 [36m304[0m 20.252 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.060 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.710 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.332 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.608 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Emil&page=1&limit=10 [36m304[0m 37.308 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=H&page=1&limit=10 [32m200[0m 26.788 ms - 4561[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Hug&page=1&limit=10 [32m200[0m 14.317 ms - 936[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=0954559951&page=1&limit=10 [32m200[0m 10.841 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Hugo&page=1&limit=10 [32m200[0m 12.804 ms - 936[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.052 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.282 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.063 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.712 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.290 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.981 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.246 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.194 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.097 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.839 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.795 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.741 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.755 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 16.778 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.423 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.175 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 17.124 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.355 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.048 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.567 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.465 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.103 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.217 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.213 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.662 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.004 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.002 ms - 297[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Hug&page=1&limit=10 [36m304[0m 13.077 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.583 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.363 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.401 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 17.285 ms - 297[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Hu&page=1&limit=10 [32m200[0m 37.530 ms - 4667[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.353 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.023 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.634 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.858 ms - 297[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=H&page=1&limit=10 [36m304[0m 9.106 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=&page=1&limit=10 [36m304[0m 8.671 ms - -[0m
+Cliente desconectado: TgbVCD5uN-Ag5RD4AAAn
+Cliente desconectado: FQeLTHzPeAnapIUpAAAh
+KeyPinPass: C6B42855-EAF4-4F0A-B3D7-801191D85861
+KeyDispositivo: C6B42855-EAF4-4F0A-B3D7-801191D85861
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 96,
+  idNomina: 189,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 1,
+  Cedula: '1500718059',
+  KeyDispositivo: 'C6B42855-EAF4-4F0A-B3D7-801191D85861',
+  iTipoPersonal: 0,
+  Pin: '147258',
+  PinSeguridad: '147258',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 61.342 ms - 10575[0m
+Cliente conectado: 0X-fF0lVTHSJI3ZNAAAx
+[0mGET /cobranza/api/v1/point/registro?idCobrador=189&filtro=&page=1&limit=10 [36m304[0m 17.139 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=189&filtro=V&page=1&limit=10 [32m200[0m 11.686 ms - 4583[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=189&filtro=Ve&page=1&limit=10 [32m200[0m 30.740 ms - 4660[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=189&filtro=Velo&page=1&limit=10 [32m200[0m 14.152 ms - 484[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=534443 [32m200[0m 9.854 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=534443 [36m304[0m 2.975 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1494156 [32m200[0m 85.566 ms - 132[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1494156 [32m200[0m 216.598 ms - 7799[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1494156 [32m200[0m 242.744 ms - 7799[0m
+Cliente conectado: qhQqI5mLCkOplaiQAAAz
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 10.226 ms - 65[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 10.312 ms - 65[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 9.250 ms - 65[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 8.640 ms - 65[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 10.217 ms - 65[0m
+Cliente conectado: jzUxisjKsds7G8UgAAA1
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Tib&page=1&limit=10 [36m304[0m 27.907 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Ti&page=1&limit=10 [36m304[0m 8.076 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=&page=1&limit=10 [36m304[0m 8.205 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Z&page=1&limit=10 [36m304[0m 10.685 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Zur&page=1&limit=10 [36m304[0m 13.817 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Zurtia&page=1&limit=10 [36m304[0m 12.394 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Zurti&page=1&limit=10 [36m304[0m 13.247 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Zurt&page=1&limit=10 [36m304[0m 13.104 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Zur&page=1&limit=10 [36m304[0m 17.323 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.595 ms - 296[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=244&filtro=Zuri&page=1&limit=10 [36m304[0m 13.379 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.574 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.824 ms - 297[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=568851 [36m304[0m 10.052 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=568851 [36m304[0m 9.898 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1646459 [32m200[0m 18.471 ms - 139[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1646459 [32m200[0m 315.213 ms - 7833[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1646459 [32m200[0m 317.869 ms - 7833[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.240 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.619 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 9.443 ms - 65[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=&page=1&limit=10 [36m304[0m 11.800 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.505 ms - 297[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.173 ms - 297[0m
+Cliente conectado: ifLVM_gnuD9vbOmaAAA3
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Lema&page=1&limit=10 [36m304[0m 32.104 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=S&page=1&limit=10 [36m304[0m 11.055 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Sa&page=1&limit=10 [36m304[0m 12.276 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D&page=1&limit=10 [36m304[0m 12.834 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Sal&page=1&limit=10 [32m200[0m 16.706 ms - 3761[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Sali&page=1&limit=10 [36m304[0m 17.196 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Da&page=1&limit=10 [36m304[0m 12.945 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Salin&page=1&limit=10 [36m304[0m 17.766 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Daval&page=1&limit=10 [36m304[0m 19.306 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Davalos&page=1&limit=10 [36m304[0m 22.028 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D%C3%A1valos+&page=1&limit=10 [32m200[0m 19.721 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D%C3%A1valos&page=1&limit=10 [36m304[0m 21.163 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D%C3%A1valo&page=1&limit=10 [36m304[0m 21.453 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D%C3%A1val&page=1&limit=10 [36m304[0m 20.393 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D%C3%A1va&page=1&limit=10 [36m304[0m 23.238 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D%C3%A1v&page=1&limit=10 [36m304[0m 27.946 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D%C3%A1&page=1&limit=10 [36m304[0m 28.662 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D&page=1&limit=10 [36m304[0m 14.696 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=&page=1&limit=10 [36m304[0m 14.458 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D&page=1&limit=10 [36m304[0m 36.270 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Da&page=1&limit=10 [36m304[0m 15.151 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.560 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 3.154 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Dav&page=1&limit=10 [32m200[0m 18.411 ms - 4555[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1267526 [36m304[0m 111.250 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1267526 [36m304[0m 228.310 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1267526 [36m304[0m 270.443 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=484720 [36m304[0m 2.760 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=484720 [36m304[0m 2.521 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8814561,
+  idCompra: 1494156,
+  idPersonal: 189,
+  Fecha: '2025-01-28T19:40:20.458Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 54,
+  Notas: 'CANCELA 1 LETRA EL 31 DE ENERO 2025',
+  Telefono: '',
+  Valor: 100,
+  FechaPago: '2025-01-31T19:39:00.000Z',
+  Usuario: 'JMERINO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 97.695 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=189&filtro=&page=1&limit=10 [36m304[0m 8.848 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1652043 [32m200[0m 60.834 ms - 139[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1652043 [32m200[0m 247.111 ms - 7828[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1652043 [32m200[0m 495.226 ms - 7828[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.958 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.458 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1332212 [32m200[0m 104.594 ms - 136[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1332212 [32m200[0m 506.450 ms - 7858[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1332212 [32m200[0m 482.698 ms - 7858[0m
+Cliente conectado: EYwSQlj1rJCe_xd4AAA5
+Cliente desconectado: ifLVM_gnuD9vbOmaAAA3
+Cliente conectado: k8GdaGXG4Hh5cWXgAAA7
+Cliente desconectado: EYwSQlj1rJCe_xd4AAA5
+Cliente desconectado: k8GdaGXG4Hh5cWXgAAA7
+Cliente desconectado: qhQqI5mLCkOplaiQAAAz
+Cliente conectado: ZbA4F4QV0qmJPQuDAAA9
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1332212 [36m304[0m 15.459 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1332212 [36m304[0m 259.705 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1332212 [36m304[0m 248.050 ms - -[0m
+Cliente conectado: EZ0SBgB0CViK1wYgAAA_
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.708 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.538 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1267526 [36m304[0m 7.979 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1267526 [36m304[0m 271.255 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1267526 [36m304[0m 941.416 ms - -[0m
+Cliente conectado: tyqY6R04keY-XGj7AABB
+Cliente desconectado: 7zH6Wli3SgDZQOY4AAAX
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 71.410 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 8.286 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1267526 [36m304[0m 15.550 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1267526 [36m304[0m 236.552 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1267526 [36m304[0m 650.576 ms - -[0m
+Cliente desconectado: jzUxisjKsds7G8UgAAA1
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 6.792 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 7.879 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1332212 [36m304[0m 61.763 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1332212 [36m304[0m 323.279 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1332212 [36m304[0m 440.469 ms - -[0m
+Cliente desconectado: EZ0SBgB0CViK1wYgAAA_
+Cliente desconectado: 0X-fF0lVTHSJI3ZNAAAx
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 15.800 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.462 ms - -[0m
+Cliente conectado: aGQ0pGEAB6nXPkt8AABD
+tIPO {
+  idCbo_GestorDeCobranzas: 8753476,
+  idCompra: 1267526,
+  idPersonal: 169,
+  Fecha: '2025-01-28T19:44:15.370Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NOTIFICACIÓN EN BUZON DE CONJUNTO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'JELIZONDO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 150.622 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=&page=1&limit=10 [36m304[0m 15.135 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=S&page=1&limit=10 [36m304[0m 13.485 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Sal&page=1&limit=10 [36m304[0m 24.789 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Sali&page=1&limit=10 [36m304[0m 43.672 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Salin&page=1&limit=10 [36m304[0m 17.024 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=Salinas&page=1&limit=10 [36m304[0m 17.314 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.536 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=476196 [36m304[0m 2.514 ms - -[0m
+tIPO {
+  idCbo_GestorDeCobranzas: 8796886,
+  idCompra: 1332212,
+  idPersonal: 169,
+  Fecha: '2025-01-28T19:44:38.458Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 6,
+  idCbo_ResultadoGestion: 66,
+  Notas: 'NOTIFICACIÓN EN BUZON DE CONJUNTO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'JELIZONDO',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 102.610 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=169&filtro=&page=1&limit=10 [36m304[0m 12.314 ms - -[0m
+Cliente conectado: CG6vZ64O2cyRyvaOAABF
+Cliente conectado: T4Y0-W7GSg_G_OEpAABH
+Cliente desconectado: ZbA4F4QV0qmJPQuDAAA9
+tIPO {
+  idCbo_GestorDeCobranzas: 8772009,
+  idCompra: 1558346,
+  idPersonal: 188,
+  Fecha: '2025-01-28T19:45:54.074Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 4,
+  idCbo_ResultadoGestion: 58,
+  Notas: 'NO CUMPLE PP SE PRESIONA EL PAGO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'AMAGALLANES',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 147.787 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=188&filtro=&page=1&limit=10 [36m304[0m 18.647 ms - -[0m
+Cliente desconectado: CG6vZ64O2cyRyvaOAABF
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Pae&page=1&limit=10 [36m304[0m 46.292 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=&page=1&limit=10 [36m304[0m 11.867 ms - -[0m
+Cliente conectado: iIXWOo6PRoEkPoWUAABJ
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=095455995&page=1&limit=10 [32m200[0m 18.216 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=09545599&page=1&limit=10 [32m200[0m 45.429 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=M&page=1&limit=10 [36m304[0m 240.315 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=095455&page=1&limit=10 [32m200[0m 26.659 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=0954&page=1&limit=10 [36m304[0m 12.688 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=0&page=1&limit=10 [36m304[0m 9.015 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Mue&page=1&limit=10 [36m304[0m 14.981 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=M&page=1&limit=10 [36m304[0m 21.724 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Muen&page=1&limit=10 [32m200[0m 14.537 ms - 1931[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Mo&page=1&limit=10 [32m200[0m 8.562 ms - 4673[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Mor&page=1&limit=10 [36m304[0m 8.840 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Mora&page=1&limit=10 [36m304[0m 10.559 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=230&filtro=Muena&page=1&limit=10 [32m200[0m 13.795 ms - 1931[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Moral&page=1&limit=10 [36m304[0m 12.457 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=227&filtro=&page=1&limit=10 [36m304[0m 28.385 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=227&filtro=U&page=1&limit=10 [32m200[0m 10.560 ms - 4669[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=568897 [36m304[0m 2.308 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=568897 [36m304[0m 2.867 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=227&filtro=Uj&page=1&limit=10 [32m200[0m 16.138 ms - 897[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=227&filtro=&page=1&limit=10 [36m304[0m 10.019 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=227&filtro=C&page=1&limit=10 [36m304[0m 10.173 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=227&filtro=Cuji&page=1&limit=10 [36m304[0m 133.176 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1645975 [32m200[0m 1152.259 ms - 1262[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1645975 [32m200[0m 1438.259 ms - 1262[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=547433 [36m304[0m 2.305 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=547433 [36m304[0m 3.453 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1548505 [32m200[0m 105.897 ms - 137[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1548505 [32m200[0m 217.815 ms - 7773[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1548505 [32m200[0m 374.142 ms - 7773[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1645975 [36m304[0m 1361.072 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1645975 [36m304[0m 1399.061 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1645975 [32m200[0m 64.636 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1645975 [32m200[0m 215.202 ms - 7764[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1645975 [32m200[0m 227.850 ms - 7764[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1645975&idMotivo=0 [36m304[0m 54.607 ms - -[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1645975&idMotivo=0 [36m304[0m 51.347 ms - -[0m
+Cliente conectado: JmkZkfPzM4DAVwrOAABL
+Cliente desconectado: JmkZkfPzM4DAVwrOAABL
+KeyPinPass: 543A0A0D-8441-4B0D-A86B-EE6454606F0B
+KeyDispositivo: 543A0A0D-8441-4B0D-A86B-EE6454606F0B
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 127,
+  idNomina: 223,
+  idCom_Estado: 1,
+  Empresa: 33,
+  Activo: 1,
+  Cedula: '0930609896',
+  KeyDispositivo: '543A0A0D-8441-4B0D-A86B-EE6454606F0B',
+  iTipoPersonal: 0,
+  Pin: '85213 ',
+  PinSeguridad: '085213',
+  idTipoPersonal: 1
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 82.628 ms - 20182[0m
+Cliente conectado: wvsf2n72f5rQ2egTAABN
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 10.934 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 8.845 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 8.738 ms - 64[0m
+[0mPOST /cobranza/api/v1/point/all [32m200[0m 8.209 ms - 64[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=&page=1&limit=10 [36m304[0m 10.290 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=P&page=1&limit=10 [36m304[0m 15.495 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Por&page=1&limit=10 [32m200[0m 16.807 ms - 488[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Port&page=1&limit=10 [32m200[0m 38.351 ms - 488[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.370 ms - 309[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.893 ms - 309[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Port&page=1&limit=10 [36m304[0m 17.162 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Por&page=1&limit=10 [36m304[0m 16.408 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=P&page=1&limit=10 [36m304[0m 10.050 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=&page=1&limit=10 [36m304[0m 11.456 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=V&page=1&limit=10 [36m304[0m 12.380 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Ver&page=1&limit=10 [36m304[0m 15.148 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Vera+&page=1&limit=10 [36m304[0m 15.168 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=223&filtro=Vera+g&page=1&limit=10 [36m304[0m 18.114 ms - -[0m
+Cliente conectado: 3YqY321UKN1CFUd2AABP
+Cliente conectado: pEcB1bkWi1Kt7gm_AABR
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=J&page=1&limit=10 [32m200[0m 13.756 ms - 4598[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Jar&page=1&limit=10 [32m200[0m 19.708 ms - 2907[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Jara+&page=1&limit=10 [32m200[0m 17.859 ms - 475[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Jara+p&page=1&limit=10 [32m200[0m 19.649 ms - 475[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Jara+pi&page=1&limit=10 [32m200[0m 17.939 ms - 475[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Jara+pin&page=1&limit=10 [32m200[0m 17.737 ms - 475[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=&page=1&limit=10 [36m304[0m 47.789 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=589833 [36m304[0m 3.623 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=589833 [36m304[0m 2.958 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=0&page=1&limit=10 [36m304[0m 33.858 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1741904 [32m200[0m 1245.565 ms - 1165[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1741904 [32m200[0m 1482.865 ms - 1165[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=09&page=1&limit=10 [36m304[0m 9.908 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=094&page=1&limit=10 [36m304[0m 9.540 ms - -[0m
+Cliente conectado: Ln6KgdjpIzADHkZYAABT
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=09447&page=1&limit=10 [36m304[0m 22.839 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=0944&page=1&limit=10 [36m304[0m 23.650 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=09442&page=1&limit=10 [36m304[0m 11.271 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=241&filtro=094427&page=1&limit=10 [36m304[0m 11.565 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Dava%C3%B1&page=1&limit=10 [32m200[0m 20.640 ms - 6[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=584009 [36m304[0m 7.314 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=584009 [36m304[0m 6.866 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1719506 [32m200[0m 40.058 ms - 135[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1719506 [32m200[0m 228.409 ms - 7736[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1719506 [32m200[0m 636.432 ms - 7736[0m
+Cliente desconectado: wvsf2n72f5rQ2egTAABN
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Jara+pi&page=1&limit=10 [36m304[0m 25.755 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Jara+&page=1&limit=10 [36m304[0m 28.862 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=Ja&page=1&limit=10 [32m200[0m 19.744 ms - 4692[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=&page=1&limit=10 [36m304[0m 27.444 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=1201072277&page=1&limit=10 [32m200[0m 56.560 ms - 470[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=564460 [32m200[0m 2.590 ms - 169[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=564460 [32m200[0m 2.607 ms - 169[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Dava&page=1&limit=10 [36m304[0m 39.451 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=D&page=1&limit=10 [36m304[0m 13.537 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=O&page=1&limit=10 [36m304[0m 28.383 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Or&page=1&limit=10 [32m200[0m 55.837 ms - 4557[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Ord&page=1&limit=10 [32m200[0m 79.039 ms - 2298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=128&filtro=Ordo&page=1&limit=10 [32m200[0m 72.589 ms - 1377[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1628056 [32m200[0m 7667.024 ms - 1272[0m
+[0mGET /cobranza/api/v1/point/AppSave/ViewGestionesDeCobranzas?idCompra=1628056 [32m200[0m 8885.177 ms - 1272[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=582416 [32m200[0m 7.225 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=582416 [36m304[0m 7.460 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1712455 [32m200[0m 33.590 ms - 138[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712455 [32m200[0m 235.491 ms - 7815[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1712455 [32m200[0m 226.519 ms - 7815[0m
+Cliente desconectado: 3YqY321UKN1CFUd2AABP
+Cliente desconectado: Ln6KgdjpIzADHkZYAABT
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 46.340 ms - 298[0m
+Cliente desconectado: T4Y0-W7GSg_G_OEpAABH
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.219 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 49.186 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.534 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.025 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.256 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.718 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.446 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 23.252 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.777 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.074 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.530 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.749 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.479 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.425 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.935 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.930 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.463 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.127 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.403 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.130 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.656 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.753 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 17.352 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.066 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.835 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.992 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.006 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.240 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.875 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.732 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.637 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.416 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.585 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.415 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.707 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.696 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.015 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.657 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.483 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.480 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.010 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.780 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.029 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.052 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.507 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.348 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A&page=1&limit=10 [36m304[0m 10.075 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.381 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.919 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.505 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.109 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.939 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1a&page=1&limit=10 [32m200[0m 18.450 ms - 4647[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.038 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.870 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.515 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.248 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.537 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa&page=1&limit=10 [32m200[0m 14.113 ms - 4650[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.666 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.076 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.986 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.508 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.031 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+&page=1&limit=10 [32m200[0m 13.623 ms - 4650[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.506 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.517 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.543 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 37.631 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.317 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.910 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.791 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.283 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.558 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.064 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.623 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.400 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.345 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.570 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.428 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.228 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.563 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.105 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.973 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 41.240 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 22.062 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 137.199 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 18.648 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.380 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 27.252 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 27.538 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.921 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.495 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 26.791 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.345 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.370 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.657 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 75.608 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 77.614 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.802 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 100.643 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 19.929 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 19.754 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 59.670 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 60.943 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 66.690 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.023 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.925 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.497 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.515 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 49.609 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 43.994 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.489 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.818 ms - 298[0m
+Cliente conectado: rHqLS7wPKQ0MSwLJAABV
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.325 ms - 298[0m
+Cliente desconectado: rHqLS7wPKQ0MSwLJAABV
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.774 ms - 298[0m
+Cliente desconectado: pEcB1bkWi1Kt7gm_AABR
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.979 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.917 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.493 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.697 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.759 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.069 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.221 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.642 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.905 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.886 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.327 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.998 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.194 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.042 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.173 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.877 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.402 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.452 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.190 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.986 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.474 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.003 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.382 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.390 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.668 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.082 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.407 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.634 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.627 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.846 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.768 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.186 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.749 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.025 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.350 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.562 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.242 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.518 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.729 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.671 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.652 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.788 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.950 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.924 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.153 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.137 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.507 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.470 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.955 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.622 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.615 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.593 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.445 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.131 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.334 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.550 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.288 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.107 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.136 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.423 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.505 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.222 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 34.501 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.372 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+s&page=1&limit=10 [32m200[0m 14.060 ms - 1433[0m
+KeyPinPass: 77D7B79C-21DB-4FC4-9A12-24FDB1371565
+KeyDispositivo: 77D7B79C-21DB-4FC4-9A12-24FDB1371565
+dispositivo: DispositivosAPP {
+  idDispositivosAPP: 221,
+  idNomina: 2268,
+  idCom_Estado: 1,
+  Empresa: 1,
+  Activo: 1,
+  Cedula: '0927592311',
+  KeyDispositivo: '77D7B79C-21DB-4FC4-9A12-24FDB1371565',
+  iTipoPersonal: 0,
+  Pin: null,
+  PinSeguridad: '140520',
+  idTipoPersonal: 2
+}
+idRango: 2
+usuario: Usuario {
+  idUsuario: 824,
+  Nombre: 'PVCAJA',
+  Clave: 'ALMACEN2025',
+  idGrupo: 25,
+  Activo: true
+}
+CodigoBodega: PVCAJA
+NominaVentas: Nomina {
+  idNomina: 2268,
+  NIdentificacion: '0927592311',
+  ApellidoPaterno: 'MIRABA',
+  ApellidoMaterno: 'BRIONES',
+  PrimerNombre: 'MIGUEL',
+  SegundoNombre: 'ANGEL',
+  Codigo: 'MMIRABA',
+  idPersonal: 2680
+}
+ingresoCobradorData: {
+  nombre: 'MIGUEL ANGEL MIRABA BRIONES',
+  cedula: '',
+  idIngresoCobrador: 0
+}
+[0mPOST /cobranza/api/v1/point/v1/loginPin [32m200[0m 33.326 ms - 10830[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+st&page=1&limit=10 [32m200[0m 24.618 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+sta&page=1&limit=10 [32m200[0m 13.644 ms - 6[0m
+Cliente conectado: MaaH0CoVLdINtuPuAABX
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+st&page=1&limit=10 [36m304[0m 14.759 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+s&page=1&limit=10 [36m304[0m 15.686 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+&page=1&limit=10 [36m304[0m 13.368 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+e&page=1&limit=10 [32m200[0m 21.660 ms - 1411[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+es&page=1&limit=10 [32m200[0m 15.839 ms - 6[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 1130.656 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Bodega=31&Articulo=&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [36m304[0m 1132.070 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+est&page=1&limit=10 [32m200[0m 14.250 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.503 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.015 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.972 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.197 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.768 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.908 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.859 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.310 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.123 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 15.425 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+esta&page=1&limit=10 [32m200[0m 15.110 ms - 6[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.503 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.786 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.646 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.712 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.703 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.209 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.200 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.794 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.475 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 37.733 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.411 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.044 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.373 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.878 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.002 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.565 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.259 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.959 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.362 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 26.893 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 13.986 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.784 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.384 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.455 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.516 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.388 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 20.023 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.598 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.976 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.389 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.498 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.319 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.146 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.212 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.430 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 15.557 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 18.097 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.907 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.495 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.878 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.960 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.913 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.217 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.386 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.111 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.538 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 18.378 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 18.621 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 35.217 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.297 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.124 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.578 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.095 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 34.435 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.202 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=H&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.125 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+esta)&page=1&limit=10 [32m200[0m 12.274 ms - 6[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+esta&page=1&limit=10 [36m304[0m 12.627 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+est&page=1&limit=10 [36m304[0m 12.495 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa+e&page=1&limit=10 [36m304[0m 12.654 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=H&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.127 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=A%C3%B1apa&page=1&limit=10 [36m304[0m 12.377 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=&page=1&limit=10 [36m304[0m 8.797 ms - -[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=H&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.165 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=E&page=1&limit=10 [36m304[0m 21.967 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Es&page=1&limit=10 [32m200[0m 24.698 ms - 4592[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Esta&page=1&limit=10 [32m200[0m 36.235 ms - 915[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.810 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=H&PaginaNumero=1&RegistrosPorPagina=10&Inventario=1 [33m400[0m 0.137 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.231 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.578 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.225 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.155 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.224 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.204 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.829 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.654 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.075 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.653 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.116 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.656 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.366 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 12.756 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.070 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.397 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.957 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.436 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.543 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.491 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.865 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.378 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.354 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.902 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.290 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.019 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.926 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.769 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.807 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.245 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.343 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.299 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.753 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.283 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.256 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.240 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.698 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.847 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.087 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.071 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.091 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.583 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.149 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.356 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.887 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.340 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.241 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.105 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.733 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.045 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.396 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.357 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.499 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.380 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.217 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.523 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.998 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.476 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.240 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.271 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.338 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.993 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.743 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.314 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Honor&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.172 ms - 87[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Honor&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.173 ms - 87[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Est&page=1&limit=10 [32m200[0m 15.614 ms - 1844[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.840 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.307 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.654 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.020 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.644 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Es&page=1&limit=10 [36m304[0m 12.951 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.874 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.786 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.407 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.291 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Honor&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.128 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.483 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.719 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.129 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.900 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.943 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 24.935 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.029 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.216 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.091 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.897 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.230 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.061 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.352 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.544 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.131 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.245 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.812 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.127 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.590 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.421 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=S&page=1&limit=10 [36m304[0m 9.413 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.714 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.636 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.713 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.670 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.770 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.718 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.263 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.668 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.392 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.499 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=St&page=1&limit=10 [32m200[0m 13.864 ms - 4642[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.671 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.516 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.217 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.042 ms - 298[0m
+[0mGET /cobranza/api/v1/point/Inventario/V1/Productos?Articulo=Honor&PaginaNumero=1&RegistrosPorPagina=10&Inventario=0 [33m400[0m 0.165 ms - 87[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.353 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Sta&page=1&limit=10 [32m200[0m 12.563 ms - 4616[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.533 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.509 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.377 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.221 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.574 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 4.670 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.887 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.341 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.891 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Stal&page=1&limit=10 [32m200[0m 14.698 ms - 3217[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.123 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.441 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.352 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.778 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.402 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.593 ms - 298[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=173&filtro=Staly&page=1&limit=10 [32m200[0m 16.277 ms - 1389[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1628056 [32m200[0m 98.052 ms - 138[0m
+Cliente conectado: uj_xMyQfmXk9mJvCAABZ
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1628056 [32m200[0m 227.634 ms - 7851[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1628056 [32m200[0m 304.604 ms - 7851[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Moral&page=1&limit=10 [36m304[0m 25.632 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=M&page=1&limit=10 [36m304[0m 7.322 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=P&page=1&limit=10 [36m304[0m 7.330 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Pa&page=1&limit=10 [36m304[0m 7.941 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Paz&page=1&limit=10 [32m200[0m 11.030 ms - 1436[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=149&filtro=Paz+&page=1&limit=10 [32m200[0m 10.192 ms - 452[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=567796 [36m304[0m 3.828 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=567796 [36m304[0m 3.258 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1640852 [32m200[0m 66.643 ms - 135[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1640852 [32m200[0m 208.090 ms - 6456[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1640852 [32m200[0m 203.411 ms - 6456[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1628056&idMotivo=0 [32m200[0m 59.891 ms - 1879[0m
+[0mGET /cobranza/api/v1/point/SolicitudNCListaProductos/all?idCompra=1628056&idMotivo=0 [32m200[0m 4.273 ms - 1879[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1628056 [36m304[0m 50.191 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1628056 [36m304[0m 223.690 ms - -[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1628056 [36m304[0m 224.747 ms - -[0m
+Cliente desconectado: iIXWOo6PRoEkPoWUAABJ
+Cliente conectado: 8YXo6dAoqi47Y85IAABb
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=&page=1&limit=10 [36m304[0m 36.218 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=T&page=1&limit=10 [36m304[0m 11.184 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=Ti&page=1&limit=10 [32m200[0m 11.916 ms - 4552[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=Tipa&page=1&limit=10 [32m200[0m 14.386 ms - 2755[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=Tipan&page=1&limit=10 [32m200[0m 14.910 ms - 2755[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=209&filtro=Tipan+&page=1&limit=10 [32m200[0m 14.240 ms - 2295[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=562659 [32m200[0m 7.950 ms - 2[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=562659 [32m200[0m 2.271 ms - 2[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaValoresPendientes?idCompra=1620773 [32m200[0m 60.008 ms - 139[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1620773 [32m200[0m 203.974 ms - 7823[0m
+[0mGET /cobranza/api/v1/point/AppSave/TablaAmrtizacion?idCompra=1620773 [32m200[0m 218.584 ms - 7823[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.022 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 16.971 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.092 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.588 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.144 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.148 ms - 291[0m
+Cliente conectado: sJKjhTdr_zyHPzK7AABd
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.571 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.215 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.336 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.052 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 27.475 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.036 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.172 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.454 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.532 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.339 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 45.124 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 44.975 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 49.373 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 34.771 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 46.367 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.285 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.962 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 31.137 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 30.687 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 27.502 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.375 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.509 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.177 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.308 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.968 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.914 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.393 ms - 291[0m
+Cliente conectado: uTYi6-UFF0UdVWAxAABf
+tIPO {
+  idCbo_GestorDeCobranzas: 8819983,
+  idCompra: 1628056,
+  idPersonal: 122,
+  Fecha: '2025-01-28T19:55:09.058Z',
+  idCbo_EstadoGestion: 9,
+  idCbo_EstadosTipocontacto: 5,
+  idCbo_ResultadoGestion: 64,
+  Notas: 'VECINA ANDREA NADIE EN DOMICILIO ',
+  Telefono: '',
+  Valor: 0,
+  FechaPago: '2000-01-01',
+  Usuario: 'WMORA',
+  Tipo: 0
+}
+[0mPOST /cobranza/api/v1/point/AppSave/insert [32m200[0m 89.449 ms - 94[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=122&filtro=&page=1&limit=10 [36m304[0m 11.847 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 38.855 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.958 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 38.966 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 48.181 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 29.705 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.700 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=55&filtro=&page=1&limit=10 [36m304[0m 32.263 ms - -[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.511 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.505 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.048 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.963 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.855 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.212 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.176 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.813 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 28.228 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.604 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.085 ms - 291[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.009 ms - 291[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=55&filtro=M&page=1&limit=10 [36m304[0m 10.738 ms - -[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=55&filtro=Ma&page=1&limit=10 [32m200[0m 7.983 ms - 4541[0m
+[0mGET /cobranza/api/v1/point/registro?idCobrador=55&filtro=Mam&page=1&limit=10 [36m304[0m 13.297 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=543383 [36m304[0m 3.053 ms - -[0m
+[0mGET /cobranza/api/v1/point/Cre_GCTelefono/all?idCliente=543383 [36m304[0m 2.940 ms - -[0m
+Cliente conectado: 11zvIHZsXa09w4V2AABh
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.956 ms - 298[0m
+Cliente desconectado: uj_xMyQfmXk9mJvCAABZ
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.639 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 15.181 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.149 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 25.839 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.552 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.739 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 14.727 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 35.282 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 35.317 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.331 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.947 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 32.148 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.856 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 33.775 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.122 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.672 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.350 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 26.544 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 26.553 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.881 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.291 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 10.787 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 11.711 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.087 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.260 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.596 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.582 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.393 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.139 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.582 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 219.094 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.937 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.895 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.010 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 5.861 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 8.480 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 9.055 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 6.584 ms - 298[0m
+[0mPOST /cobranza/api/v1/point/UbicacionesAPP/location [32m201[0m 7.412 ms - 298[0m
