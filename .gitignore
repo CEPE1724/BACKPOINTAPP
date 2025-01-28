@@ -36,5 +36,6 @@ Thumbs.db
 
 ApiCobrador/api/key/credentials.json
 ApiCobrador/api/ProteccionDatos/Key.json
+iisnode/*.txt
 # Excluir la carpeta logs y su contenido
 logs/  
