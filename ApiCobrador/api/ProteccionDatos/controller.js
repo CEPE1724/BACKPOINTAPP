@@ -9,10 +9,10 @@ const { uploadFileToCloud } = require("./uploadFileToCloud");
 const { Like, Between } = require('typeorm');  // Asegúrate de importar Like y Between
 
 exports.addNew = async (req, res) => {
-    const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, UrlImagen } = req.body;
+    const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, UrlImagen, Celular } = req.body;
     console.log("ENTRO AQUI");
     // Validación de datos (puedes agregar más validaciones según tus necesidades)
-    if (!Cedula || !Nombre || !Apellido || !IpWeb || !CodigoDactilar, !UrlImagen) {
+    if (!Cedula || !Nombre || !Apellido || !IpWeb || !CodigoDactilar, !UrlImagen, !Celular) {
         console.log("ENTRO AQUI", Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, UrlImagen);
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
@@ -47,6 +47,8 @@ exports.addNew = async (req, res) => {
         IpWeb,
         Fecha: FechaActual,
         Hora,
+        Celular: Celular,
+        UrlImagen: UrlImagen
       };
   
       // Aplicar las sustituciones
@@ -73,7 +75,8 @@ exports.addNew = async (req, res) => {
         IpWeb,
         Fecha: new Date(),
         UrlContrato: publicUrl , // Guardamos la URL del contrato subido
-        UrlImage: UrlImagen
+        UrlImage: UrlImagen,
+        Celular: Celular
       });
   
       // Guardar en la base de datos dentro de la transacción
@@ -106,7 +109,7 @@ exports.addNew = async (req, res) => {
 
 exports.generatePdf = async (req, res) => {
     try {
-      const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar } = req.body;
+      const { Cedula, Nombre, Apellido, IpWeb, CodigoDactilar, Celular } = req.body;
   
       const inputPath = path.join(__dirname, 'Contrato.docx');
       const content = fs.readFileSync(inputPath, 'binary');
@@ -115,7 +118,7 @@ exports.generatePdf = async (req, res) => {
       const zip = new PizZip(content);
       const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
       const Nombres = Nombre + ' ' + Apellido;
-  
+      
       // Formatear fecha en formato yyyy-MM-dd
       const FechaActual = new Date().toISOString().split('T')[0];
   
@@ -130,6 +133,7 @@ exports.generatePdf = async (req, res) => {
         IpWeb,
         Fecha: FechaActual,
         Hora,
+        Celular: Celular
       };
   
       // Aplicar las sustituciones

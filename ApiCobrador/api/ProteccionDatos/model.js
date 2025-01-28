@@ -19,7 +19,8 @@ const ProtecionDatosWeb = new EntitySchema({
             this.UrlImage = "",
             this.Fecha = new Date(),
             this.Estacion = "",
-            this.Usuario = ""
+            this.Usuario = "",
+            this.Celular = ""
         }
     },
     columns: {
@@ -66,6 +67,10 @@ const ProtecionDatosWeb = new EntitySchema({
         Usuario: {
             type: 'varchar',
             length: 50
+        },
+        Celular: {
+            type: 'varchar',
+            length: 15
         }
     }
 });
