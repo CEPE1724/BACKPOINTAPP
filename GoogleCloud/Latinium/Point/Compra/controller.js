@@ -9,6 +9,10 @@ const carpetaDestino = 'C:/Doc';  // Cambia esta ruta a la carpeta donde deseas 
 
 exports.getAll = async (req, res) => {
     try {
+        // Verificar si la carpeta de destino existe, si no, crearla
+        if (!fs.existsSync(carpetaDestino)) {
+            fs.mkdirSync(carpetaDestino, { recursive: true });
+        }
         const registros = await AppDataSource.getRepository(CompraCloud)
             .createQueryBuilder("compra")
             .where("compra.iEstadoGoogle = :iEstadoGoogle", { iEstadoGoogle: 0 })
@@ -82,7 +86,7 @@ const updateEstado = async (idCompra, iEstadoGoogle, url) => {
         const registro = await AppDataSource.getRepository(CompraCloud)
             .createQueryBuilder("compra")
             .update()
-            .set({ 
+            .set({
                 iEstadoGoogle: iEstadoGoogle,
                 UrlNube: url // Actualiza ambos campos en un solo set
             })
@@ -104,7 +108,7 @@ const enviar = async (rutaarchivo, cedula, tipo, directorio) => {
     }
     try {
         console.log('Enviando archivo:', cedula);
-        
+
         // Comprobamos que el archivo existe antes de continuar
         if (!fs.existsSync(rutaarchivo)) {
             console.error(`El archivo no existe en la ruta proporcionada: ${rutaarchivo}`);
@@ -137,7 +141,7 @@ const enviar = async (rutaarchivo, cedula, tipo, directorio) => {
         console.log('Formulario listo para enviar');
 
         // Realizar la solicitud POST a la API
-        const response = await axios.put('http://192.168.2.167:3025/cobranza/api/v1/point/googleApi/google/Latinium', form, {
+        const response = await axios.put('https://appservices.com.ec/cobranza/api/v1/point/googleApi/google/Latinium', form, {
             headers: {
                 ...form.getHeaders(), // Necesario para incluir los encabezados de FormData
             }
