@@ -69,6 +69,8 @@ const entities = [
     //soap Equifax
     // ruta massend
     require('../../../Massend/api/NotifiacionCuotaPagos/model'),
+    //gloogle cloud latinium
+    require('../../../GoogleCloud/Latinium/Point/Compra/model'),
 
 ];
 

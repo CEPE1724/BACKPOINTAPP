@@ -100,6 +100,11 @@ const publicRoutesEquifax = [
 const publicRoutesCuadricula = [
     { path: '/api/v1/point/', route: require('./CuadriculaHabitacion/Cuadricula/router') },
 ];
+
+// rutas google cloud
+const publicRoutesGoogleCloud = [
+    { path: '/v1/googlecloud/', route: require('./GoogleCloud/Latinium/Point/Compra/router') },
+];
 // Aplica las rutas sin protección
 publicRoutes.forEach(route => {
     app.use(route.path, route.route);
@@ -122,6 +127,11 @@ publicRoutesmassend.forEach(route => {
 
 // Aplica las rutas de Cuadricula
 publicRoutesCuadricula.forEach(route => {
+    app.use(route.path, route.route);
+});
+
+// Aplica las rutas de Google Cloud
+publicRoutesGoogleCloud.forEach(route => {
     app.use(route.path, route.route);
 });
 // Inicializa la conexión a la base de datos
