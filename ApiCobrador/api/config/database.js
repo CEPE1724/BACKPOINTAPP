@@ -67,6 +67,8 @@ const entities = [
     require('../../../Equifax/api/EQFX_GarantiasPersonalesCodeudoresOperacionesNoVigentes/model'),
     require('../../../WebProductos/api/Productos/model'),
     //soap Equifax
+    // ruta massend
+    require('../../../Massend/api/NotifiacionCuotaPagos/model'),
 
 ];
 
