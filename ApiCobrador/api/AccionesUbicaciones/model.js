@@ -21,6 +21,14 @@ const AccionesUbicacionesSchema = new EntitySchema({
             this.idCombo2 = 0;
             this.idCombo3 = 0;
             this.TipoPago = 0;
+            this.FechaPago = new Date();
+            this.IdBanco = 0;
+            this.NumeroDeposito = '';
+            this.Url = '';
+            this.Valor = 0;
+            this.Offline = 0;
+            this.Notas = '';
+
         }
     },
     columns: {
@@ -67,7 +75,31 @@ const AccionesUbicacionesSchema = new EntitySchema({
         },
         TipoPago: {
             type: 'int'
+        },
+        FechaPago: {
+            type: 'datetime'
+        },
+        IdBanco: {
+            type: 'int'
+        },
+        NumeroDeposito: {
+            type: 'varchar'
+        },
+        Url: {
+            type: 'varchar',
+            length: 'Max'
+        },
+        Valor: {
+            type: 'int'
+        },
+        Offline: {
+            type: 'int'
+        },
+        Notas: {
+            type: 'varchar',
+            length: 'Max'
         }
+
     }
 });
 

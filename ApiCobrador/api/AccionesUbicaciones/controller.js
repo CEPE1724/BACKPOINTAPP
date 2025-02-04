@@ -13,9 +13,18 @@ exports.postInsertUbi = async (req, res) => {
         idCombo1, 
         idCombo2, 
         idCombo3, 
-        TipoPago 
+        TipoPago,
+        FechaPago,
+        IdBanco,
+        NumeroDeposito,
+        Url,
+        Valor ,
+        Offline,
+        timestamp,
+        Notas
     } = req.body;
 
+    console.log("Datos recibidos:", req.body);
     // Verifica que los parámetros esenciales estén presentes
     if (!tipoAccion || !latitude || !longitude || !ICidIngresoCobrador || !Empresa) {
         return res.status(400).json({ message: "Faltan parámetros" });
@@ -37,7 +46,15 @@ exports.postInsertUbi = async (req, res) => {
             idCombo1: idCombo1 || 0,
             idCombo2: idCombo2 || 0,
             idCombo3: idCombo3 || 0,
-            TipoPago: TipoPago || 0
+            TipoPago: TipoPago || 0,
+            FechaPago: FechaPago || new Date(),
+            IdBanco: IdBanco || 0,
+            NumeroDeposito: NumeroDeposito || '',
+            Url: Url || '',
+            Valor: Valor || 0,
+            Offline: Offline || 0,
+            timestamp: timestamp ,
+            Notas: Notas || ''
         });
 
         // Guarda el registro en la base de datos
