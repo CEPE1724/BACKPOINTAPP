@@ -374,6 +374,7 @@ exports.insertRecojo = [
     body('idDetCompra').isInt().withMessage('idDetCompra debe ser un entero'),
     body('Nota').isString().isLength({ max: 500 }).withMessage('Nota debe ser una cadena de texto con un máximo de 50 caracteres'),
     body('Imagenes').isArray().withMessage('Imagenes debe ser un arreglo de imágenes'),
+    body('Comprobante').isString().isLength({ max: 15 }).withMessage('Comprobante debe ser una cadena de texto con un máximo de 50 caracteres'),
 
     // Controlador
     async (req, res) => {
@@ -387,7 +388,8 @@ exports.insertRecojo = [
             idCompra,
             idDetCompra,
             Nota,
-            Imagenes
+            Imagenes,
+            Comprobante
         } = req.body;
 
         try {
@@ -397,7 +399,8 @@ exports.insertRecojo = [
                     @idCompra = ${idCompra},
                     @idDetCompra = ${idDetCompra},
                     @Nota = '${Nota}',
-                    @Imagenes = '${Imagenes}'`
+                    @Imagenes = '${Imagenes}',
+                    @Comprobante = '${Comprobante}'`
             );
 
             res.status(200).json({ message: 'Datos insertados correctamente', result });

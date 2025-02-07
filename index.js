@@ -73,6 +73,9 @@ const publicRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionTrabajo/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/GestionDiaria/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/AccionesUbicaciones/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Seteo/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/NotificationUser/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/RecojoAPP/router') },
 
 ];
 

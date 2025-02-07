@@ -27,6 +27,11 @@ const entities = [
     require('../Com_CargosDeVentas/model'),
     require('../Com_Rango/model'),
     require('../AccionesUbicaciones/model'),
+    require('../Seteo/model'),
+    require('../NotificationGroup/model'),
+    require('../NotificationUser/model'),
+    require('../Notifications/model'),
+    require('../RecojoAPP/model'),
 
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),

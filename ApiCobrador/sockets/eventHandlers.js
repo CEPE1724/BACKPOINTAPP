@@ -15,9 +15,14 @@ const handleNewVT = (registros) => {
 const handleNewVTCount = (estadosCount) => {
     getIO().emit('listadoVTCount', estadosCount);
 }
+// **Nueva función para emitir la nueva notificación**
+const handleNewNotification = (notification) => {
+    getIO().emit('newNotification', notification); // Emitir la nueva notificación a los clientes
+};
 module.exports = {
     handleNewList,
     handleNewLocation,
     handleNewVT,
-    handleNewVTCount
+    handleNewVTCount,
+    handleNewNotification  
 };

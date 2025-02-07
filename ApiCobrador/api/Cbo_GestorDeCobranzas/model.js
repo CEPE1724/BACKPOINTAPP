@@ -24,6 +24,7 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
             this.Telefono = " ",
             this.Celular = " ",
             this.Fecha_Factura = new Date();
+            this.Laboral =" ";
         }
     },
     columns: {
@@ -88,7 +89,13 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
         },
         Fecha_Factura: {
             type: 'datetime'
-        }
+        },
+
+         Laboral: {
+            type: 'varchar',
+            length: 'MAX'
+
+        },
     }
 });
 
