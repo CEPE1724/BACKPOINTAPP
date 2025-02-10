@@ -76,7 +76,6 @@ const publicRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Seteo/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/NotificationUser/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/RecojoAPP/router') },
-
 ];
 
 // Rutas protegidas (con middleware)
@@ -90,6 +89,10 @@ const protectedRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router') },
  
    
+];
+
+const publicRoutesWhatsApp = [
+    { path: '/v1/whatsapp/point/', route: require('./WhatsApp/CBO_GestorVirtualCobranzas/router') }
 ];
 
 const publicRoutesmassend = [
@@ -139,7 +142,10 @@ publicRoutesGoogleCloud.forEach(route => {
 });
 // Inicializa la conexión a la base de datos
 
-
+// aplica rutas de whatsapp
+publicRoutesWhatsApp.forEach(route => {
+    app.use(route.path, route.route);
+});
 initializeDatabase()
     .then(() => {
         console.log('Conexión a la base de datos establecida');
