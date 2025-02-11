@@ -25,6 +25,8 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
             this.Celular = " ",
             this.Fecha_Factura = new Date();
             this.Laboral =" ";
+            this.latitudEquifax = 0;
+            this.longitudEquifax = 0;
         }
     },
     columns: {
@@ -96,6 +98,12 @@ const Cbo_GestorDeCobranzasSchema = new EntitySchema({
             length: 'MAX'
 
         },
+        latitudEquifax: {
+            type: 'float'
+        },
+        longitudEquifax: {
+            type: 'float'
+        }
     }
 });
 

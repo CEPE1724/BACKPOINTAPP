@@ -479,14 +479,46 @@ exports.ValidaComprobante = async (req, res) => {
 
 exports.Cre_ConsultaReferenciasAPP = async (req, res) => {
     try {
-        const { idCre_DatosGenerales, Referencia } = req.query;
+        const { NumeroIdentificacion } = req.query;
+
+        // Validación de parámetros
+        if (!NumeroIdentificacion) {
+            return res.status(400).json({
+                success: false,
+                message: "El parámetro 'NumeroIdentificacion' es requerido."
+            });
+        }
+
+        console.log("Número de Identificación recibido:", NumeroIdentificacion);
+
+        // Ejecutar el procedimiento almacenado
         const result = await AppDataSource.query(
-            `EXEC Cre_ConsultaReferenciasAPP  @idCre_DatosGenerales = ${idCre_DatosGenerales}, @Referencia = ${Referencia}`
+            `EXEC Cre_ConsultaReferenciasAPP  @NumeroIdentificacion = '${NumeroIdentificacion}'`
         );
-        res.json(result); 
+
+        // Verificar si el resultado está vacío
+        if (result.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "No se encontraron resultados para el número de identificación proporcionado."
+            });
+        }
+
+        // Respuesta exitosa
+        return res.status(200).json({
+            success: true,
+            message: "Consulta realizada con éxito.",
+            data: result
+        });
+
     } catch (err) {
+        // Manejo de errores
         console.error("Error al ejecutar el procedimiento almacenado:", err);
-        res.status(500).send("Error al ejecutar el procedimiento almacenado.");
+        return res.status(500).json({
+            success: false,
+            message: "Error interno en el servidor. Por favor, intente nuevamente más tarde.",
+            error: err.message
+        });
     }
 }
 

@@ -21,4 +21,5 @@ router.get('/Inventario/V1/ListaCombos', controller.ListaCombos); /* ruta para i
 router.get('/Inventario/V1/ListaCombos/Det', controller.ListaCombosDet); /* ruta para insertar un recojo detalle*/
 router.get('/Inventario/V1/ListaPagos', controller.ListaPagos); /* ruta para insertar un recojo detalle*/
 router.get('/Inventario/V1/ValidaComprobante', controller.ValidaComprobante); /* ruta para insertar un recojo detalle*/
+router.get('/referencia/V1/all', controller.Cre_ConsultaReferenciasAPP); /* ruta para insertar un recojo detalle*/
 module.exports = router;
