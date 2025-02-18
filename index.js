@@ -94,6 +94,11 @@ const protectedRoutes = [
 const publicRoutesWhatsApp = [
     { path: '/v1/whatsapp/point/', route: require('./WhatsApp/CBO_GestorVirtualCobranzas/router') }
 ];
+// rutas de Cognoware
+
+const publicRoutesCognoware = [
+    { path: '/v1/cognoware/', route: require('./CognoWare/TransaccionesCognoware/router') },
+];
 
 const publicRoutesmassend = [
     {path: '/v1/massend/', route: require('./Massend/api/NotifiacionCuotaPagos/router')},
@@ -146,6 +151,13 @@ publicRoutesGoogleCloud.forEach(route => {
 publicRoutesWhatsApp.forEach(route => {
     app.use(route.path, route.route);
 });
+
+// aplica rutas de Cognoware
+
+publicRoutesCognoware.forEach(route => {
+    app.use(route.path, route.route);
+});
+
 initializeDatabase()
     .then(() => {
         console.log('Conexión a la base de datos establecida');

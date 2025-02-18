@@ -76,6 +76,9 @@ const entities = [
     require('../../../Massend/api/NotifiacionCuotaPagos/model'),
     //gloogle cloud latinium
     require('../../../GoogleCloud/Latinium/Point/Compra/model'),
+    //ruta cognoscorring
+    require('../../../CognoWare/TransaccionesCognoware/model'),
+    require('../../../CognoWare/TarjetasCognoware/model'),
 
 ];
 
