@@ -13,6 +13,7 @@ const EQFX_IdentificacionConsultada = new EntitySchema({
             this.idReportePadre = 0;
             this.Estacion = "";
             this.Usuario = "";
+            this.FechaSistema = "";
         }
     },
     columns: {
@@ -46,6 +47,9 @@ const EQFX_IdentificacionConsultada = new EntitySchema({
         idReportePadre: {
             type: 'int',
             default: 0
+        },
+        FechaSistema: {
+            type: 'datetime',
         }
     }
 });

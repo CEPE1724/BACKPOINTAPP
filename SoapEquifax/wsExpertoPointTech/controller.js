@@ -1,5 +1,7 @@
 // controllers/equifaxController.js
 const equifaxService = require('./services');
+const { AppDataSource } = require("../../ApiCobrador/api/config/database");
+const EQFX_IdentificacionConsultada = require('../../Equifax/api/EQFX_IdentificacionConsultada/model');
 const consultarDireccionesYTelefonos = require('./ObtenerNivelDireccionesyTelefonos');
 const consultarOperacionesDeudaHistorica = require('./ObtenerNivelOperacionesYEntidades');
 const consultarNivelDetalleDeLaOperacion = require('./NivelDetalleDLOperacion');
@@ -10,6 +12,39 @@ exports.consultarEquifax = async (req, res) => {
         // Validar parámetros requeridos
         if (!tipoDocumento || !numeroDocumento) {
             return res.status(400).send('Faltan parámetros: tipoDocumento y numeroDocumento son requeridos.');
+        }
+
+        const identificacionConsultada = await AppDataSource.getRepository(EQFX_IdentificacionConsultada).findOne({
+            where: {
+                NumeroDocumento: numeroDocumento
+            },
+            order: {
+                FechaSistema: "DESC" // Suponiendo que el campo de fecha se llama 'fechaRegistro'
+            }
+        });
+        // Verificar si existe al menos un registro
+        if (identificacionConsultada) {
+            const FechaSistema = identificacionConsultada.FechaSistema;
+            const fechaActual = new Date();
+            const diferenciaEnMilisegundos = fechaActual - FechaSistema;
+            const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
+            console.log('Fecha de la última consulta:', FechaSistema);
+            console.log('Fecha actual:', identificacionConsultada);
+            console.log('Diferencia en días:', diferenciaEnDias);
+            if (diferenciaEnDias <= 60) {
+                return res.status(200).json({
+                    success: true,
+                    message: 'El número de documento ya fue consultado recientemente.',
+                    data: {
+                        idEQFX_IdentificacionConsultada: identificacionConsultada.idEQFX_IdentificacionConsultada,
+                        codigoConsulta: identificacionConsultada.idReportePadre,
+                        mensajeError: "",
+                        'Total Tablas':  0, // Asegurarnos de que countdata no sea undefined
+                        'Tablas Guardadas':  0 // Asegurarnos de que countarraydata no sea undefined
+                    },
+                    details: `El documento fue consultado hace ${diferenciaEnDias} días.`,
+                });
+            }
         }
 
         // Llamar al servicio que hace la solicitud SOAP
