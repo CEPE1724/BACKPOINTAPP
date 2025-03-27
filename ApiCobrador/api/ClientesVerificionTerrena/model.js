@@ -127,8 +127,7 @@ const ClientesVerificionTerrena = new EntitySchema({
             type: 'float'
         },
         UrlPhoto: {
-            type: 'varchar',
-            length: 500
+            type: 'text'  // Cambié de 'varchar' a 'text'
         }
     }
 });
