@@ -3,8 +3,8 @@ const { AppDataSource } = require("../../ApiCobrador/api/config/database");
 const EQFX_DobleInfo = require('../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DobleInfo/model');
 const EQFX_DetalleDirecciones = require('../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleDirecciones/model');
 const EQFX_DetalleTelefonos = require('../../Equifax/api/NivelDireccionesyTelefonos/EQFX_DetalleTelefonos/model');
-const url = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
-
+const urlPrueba = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
+const url = 'https://www.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
 const consultarDireccionesYTelefonos = (idEQFX_IdentificacionConsultada, idReportePadre, tipoDocumento, numeroDocumento) => {
     return new Promise((resolve, reject) => {
         const args = {
@@ -15,8 +15,8 @@ const consultarDireccionesYTelefonos = (idEQFX_IdentificacionConsultada, idRepor
 
         console.log('args:', args);
 
-        const usuario = 'wspointtech';
-        const clave = 'burocr';
+        const usuario = 'wsCOMPUBUSSINES';
+        const clave = 'Point593_2';
 
         if (!usuario || !clave) {
             return reject('Faltan las credenciales en las variables de entorno');

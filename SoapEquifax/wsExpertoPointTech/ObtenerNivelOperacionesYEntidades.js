@@ -1,5 +1,7 @@
 const soap = require('soap');
-const url = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
+
+const urlPrueba = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
+const url = 'https://www.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
 const EQFX_RecursivoAnalisisOperacionesDeudaHistorica = require('../../Equifax/api/NivelDetalleOperacionesYEntidades/EQFX_RecursivoAnalisisOperacionesDeudaHistorica/model');
 
 const consultarOperacionesDeudaHistorica = (idEQFX_IdentificacionConsultada, idReportePadre, tipoDocumento, numeroDocumento) => {
@@ -13,8 +15,8 @@ const consultarOperacionesDeudaHistorica = (idEQFX_IdentificacionConsultada, idR
 
         console.log('args:', args);
 
-        const usuario = 'wspointtech';
-        const clave = 'burocr';
+        const usuario = 'wsCOMPUBUSSINES';
+        const clave = 'Point593_2';
 
         if (!usuario || !clave) {
             return reject('Faltan las credenciales en las variables de entorno');

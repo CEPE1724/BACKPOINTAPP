@@ -1,8 +1,8 @@
 const soap = require('soap');
 const { AppDataSource } = require("../../ApiCobrador/api/config/database");
 const EQFX_DetalleOperacion = require('../../Equifax/api/NivelDetalleDeLaOperacion/EQFX_DetalleOperacion/model');
-const url = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
-
+const urlPrueba = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
+const url = 'https://www.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
 const consultarNivelDetalleDeLaOperacion = (idEQFX_IdentificacionConsultada, idReportePadre, tipoDocumento, numeroDocumento) => {
     return new Promise((resolve, reject) => {
         const args = {
@@ -20,8 +20,8 @@ const consultarNivelDetalleDeLaOperacion = (idEQFX_IdentificacionConsultada, idR
 
         console.log('args:', args);
 
-        const usuario = 'wspointtech';
-        const clave = 'burocr';
+        const usuario = 'wsCOMPUBUSSINES';
+        const clave = 'Point593_2';
 
         if (!usuario || !clave) {
             return reject('Faltan las credenciales en las variables de entorno');

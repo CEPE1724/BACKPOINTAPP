@@ -36,14 +36,14 @@ exports.consultarEquifax = async (req, res) => {
         // Verificar si la consulta fue exitosa y si tenemos el código de consulta
         if (codigoConsulta) {
             try {
-
-                resultDireccionesTelefonos = await consultarDireccionesYTelefonos.consultarDireccionesYTelefonos(
+    
+               resultDireccionesTelefonos = await consultarDireccionesYTelefonos.consultarDireccionesYTelefonos(
                     idEQFX_IdentificacionConsultada,
                     codigoConsulta,
                     tipoDocumento,
                     numeroDocumento
                 );
-                
+            
                 resultOperacionesDeudaHistorica = await consultarOperacionesDeudaHistorica.consultarOperacionesDeudaHistorica(
                     idEQFX_IdentificacionConsultada,
                     codigoConsulta,
