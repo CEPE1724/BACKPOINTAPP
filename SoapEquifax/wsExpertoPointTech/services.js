@@ -33,7 +33,8 @@ const EQFX_RecursivoGarantiasPersonalesCodeudoresOperacionesVigentes = require('
 const EQFX_SujetoAlDiaInfocom = require('../../Equifax/api/EQFX_SujetoAlDiaInfocom/model');
 const EQFX_GarantiasPersonalesCodeudoresOperacionesNoVigentes = require('../../Equifax/api/EQFX_GarantiasPersonalesCodeudoresOperacionesNoVigentes/model');
 // URL del servicio SOAP
-const url = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
+const urlPrueba = 'https://test.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
+const url = 'https://www.equifax.com.ec/wsExpertoPointTech/wsExpertoPointTech.asmx?wsdl';
 
 const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
     return new Promise((resolve, reject) => {
@@ -67,8 +68,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
             zona: ''
         };
 
-        const usuario = 'wspointtech';
-        const clave = 'burocr';
+        const usuario = 'wsCOMPUBUSSINES';
+        const clave = 'Point593_2';
 
         if (!usuario || !clave) {
             return reject('Faltan las credenciales en las variables de entorno');
