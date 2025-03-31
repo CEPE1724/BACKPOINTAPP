@@ -3,8 +3,8 @@ const router = express.Router();
 const controller = require('./controller');
 //authenticateToken,
 
-router.get('Notifications/allID', controller.allID);
-router.get('/Notifications/count', controller.countUser);
+
 router.post('/Notifications/create', controller.create);
+router.get('/Notifications/getAllNot', controller.getAll);
 
 module.exports = router;

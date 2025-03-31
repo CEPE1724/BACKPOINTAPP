@@ -76,6 +76,7 @@ const publicRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Seteo/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/NotificationUser/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/RecojoAPP/router') },
+    { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Notifications/router') },
 ];
 
 // Rutas protegidas (con middleware)
@@ -87,6 +88,7 @@ const protectedRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_GestionesDeCobranzas/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/ClientesVerificionTerrena/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router') },
+  
  
    
 ];
