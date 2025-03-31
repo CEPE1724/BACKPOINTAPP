@@ -12,7 +12,6 @@ const NotificationsSchema = new EntitySchema({
             this.Message = '';
             this.CreatedAt = new Date();
             this.Type = '';
-            this.Status = '';
             this.URL = '';
             this.ImageURL = '';
             this.IsActive = true;
@@ -36,10 +35,6 @@ const NotificationsSchema = new EntitySchema({
             type: 'datetime'
         },
         Type: {
-            type: 'nvarchar',
-            length: 50
-        },
-        Status: {
             type: 'nvarchar',
             length: 50
         },
