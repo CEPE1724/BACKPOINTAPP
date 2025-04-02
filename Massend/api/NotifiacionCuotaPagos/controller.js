@@ -272,6 +272,12 @@ exports.generateOtp = async (req, res) => {
         return res.status(400).json({ message: "Número de teléfono es requerido." });
       }
   
+      // Validar que el número empiece con 09 y tenga 10 dígitos
+      const phoneRegex = /^09\d{8}$/;
+      if (!phoneRegex.test(phoneNumber)) {
+        return res.status(400).json({ message: "El número de teléfono debe empezar con 09 y tener 10 dígitos." });
+      }
+      
       // Generamos el OTP (código de 5 dígitos)
       const otpCode = Math.floor(10000 + Math.random() * 90000).toString(); // OTP de 5 dígitos
   
