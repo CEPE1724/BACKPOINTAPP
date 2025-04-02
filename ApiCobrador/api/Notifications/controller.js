@@ -7,18 +7,18 @@ exports.create = async (req, res) => {
     try {
         const { Title, Message, CreatedAt, Type, URL, ImageURL, IsActive, Empresa } = req.body; // Asegúrate de que estos campos estén en el cuerpo de la solicitud
         console.log("body", req.body);
-        // validar que title tenga minimo 3 caracteres y maximo 255
-        if (Title.length < 3 || Title.length > 255) {
+        // validar que title tenga minimo 5 caracteres y maximo 255
+        if (Title.length < 5 || Title.length > 255) {
             return res.status(400).json({
                 success: false,
-                message: "El título debe tener entre 3 y 255 caracteres"
+                message: "El título debe tener entre 5 y 255 caracteres"
             });
         }
-        // validar que message tenga minimo 3 caracteres y maximo 255
-        if (Message.length < 3 || Message.length > 255) {
+        // validar que message tenga minimo 10 caracteres y maximo 255
+        if (Message.length < 10 || Message.length > 255) {
             return res.status(400).json({
                 success: false,
-                message: "El mensaje debe tener entre 3 y 255 caracteres"
+                message: "El mensaje debe tener entre 10 y 255 caracteres"
             });
         }
         // validar createdAt sea una fecha valida
@@ -95,5 +95,5 @@ exports.getAll = async (req, res) => {
         });
     }
 }
-
+       
 
