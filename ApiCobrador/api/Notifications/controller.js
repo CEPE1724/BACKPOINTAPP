@@ -96,4 +96,97 @@ exports.getAll = async (req, res) => {
     }
 }
        
+//Obtener notificaciones por idNotifications de usuario
+exports.getId = async (req, res) => {
+    try {
+        const { idNotifications } = req.params;
+        console.log("idNotifications", idNotifications);
+        const notifications = await AppDataSource.getRepository(NotificationsSchema).find({
+            where: {
+                idNotifications: In(idNotifications.split(',')),
+            },
+            order: {
+                CreatedAt: 'DESC'
+            }
+        });
+        return res.status(200).json({
+            success: true,
+            data: notifications
+        });
+    } catch (error) {
+        console.error("Error al obtener las notificaciones:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Error interno del servidor",
+            error: error.message
+        });
+    }
+}
 
+//obtener notificaciones por (Title, Message, CreatedAt, Status, Type, URL, ImageURL, IsActive)
+exports.getBy = async (req, res) => {
+    try {
+        const { Title, Message, CreatedAt, Status, Type, URL, ImageURL, IsActive } = req.query; 
+        console.log("query params", req.query);
+
+        // consulta dinámica
+        const queryBuilder = AppDataSource.getRepository(NotificationsSchema)
+            .createQueryBuilder("notification");
+
+        // condiciones 
+        if (Title) {
+            const titles = Title.split(',');
+            queryBuilder.andWhere("notification.Title IN (:...titles)", { titles });
+        }
+        if (Message) {
+            const messages = Message.split(',');
+            queryBuilder.andWhere("notification.Message IN (:...messages)", { messages });
+        } 
+        if (CreatedAt) {
+            const dates = CreatedAt.split(',');
+            queryBuilder.andWhere("notification.CreatedAt IN (:...dates)", { dates });
+        }  
+        if (Status) {
+            const statuses = Status.split(',');
+            queryBuilder.andWhere("notification.Status IN (:...statuses)", { statuses });
+        }
+        if (Type) {
+            const types = Type.split(',');
+            queryBuilder.andWhere("notification.Type IN (:...types)", { types });
+        }
+        if (URL) {
+            const urls = URL.split(',');
+            queryBuilder.andWhere("notification.URL IN (:...urls)", { urls });
+        }
+        if (ImageURL) {
+            const imageUrls = ImageURL.split(',');
+            queryBuilder.andWhere("notification.ImageURL IN (:...imageUrls)", { imageUrls });
+        }
+        if (IsActive !== undefined) {
+            // Convertir a booleano
+            const isActiveValues = IsActive.split(',').map(val => 
+                val.toLowerCase() === 'true' ? true : 
+                val.toLowerCase() === 'false' ? false : val
+            );
+            queryBuilder.andWhere("notification.IsActive IN (:...isActiveValues)", { isActiveValues });
+        }
+
+        // Ordenar por fecha de creación descendente
+        queryBuilder.orderBy("notification.CreatedAt", "DESC");
+
+        // Ejecutar la consulta
+        const notifications = await queryBuilder.getMany();
+
+        return res.status(200).json({
+            success: true,
+            data: notifications
+        });
+    } catch (error) {
+        console.error("Error al obtener las notificaciones:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Error interno del servidor",
+            error: error.message
+        });
+    }
+}
