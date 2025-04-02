@@ -2,12 +2,12 @@
 const express = require('express');
 const router = express.Router();
 const Controller = require('./controller');
-const validateToken = require('./auth'); // Middleware para validar el token
+const validateToken = require('./auth');
 
 
 router.get('/sms', Controller.getNotifiacionCuotaPagosPorEstado);
 
-router.get('/sms/authorization', validateToken,Controller.getNotifiacionCuotaPagosPorEstado);
+router.post('/sms/authorization', Controller.generateOtp);
 
 
 module.exports = router;

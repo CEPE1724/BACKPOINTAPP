@@ -13,7 +13,7 @@ const cliente = {
 
 
 // Leer la clave secreta desde las variables de entorno
-const secretKey = process.env.FIXED_TOKEN_LIA_MASSEND;  // Cambié SECRET_KEY por FIXED_TOKEN_WHATSAPP
+const secretKey = 'What_%_/\Sapp_$*%_2000';  // Cambié SECRET_KEY por FIXED_TOKEN_WHATSAPP
 
 if (!secretKey) {
     console.error('Error: La clave secreta no está definida en el archivo .env');

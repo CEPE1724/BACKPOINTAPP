@@ -111,7 +111,6 @@ exports.getNotifiacionCuotaPagosPorEstado = async (req, res) => {
     }
 };
 
-
  const getDataNotificacion = async (idAnticipo) => {
     try {
 
@@ -261,4 +260,64 @@ const formatDate = (date) => {
     return `${year}-${month}-${day}`;
 };
 
+
+/* lia y messend*/
+// controller.js
+exports.generateOtp = async (req, res) => {
+    try {
+      const { phoneNumber } = req.body; // Obtenemos el número de teléfono del cuerpo de la solicitud
+      
+      // Verificamos si el número de teléfono está presente
+      if (!phoneNumber) {
+        return res.status(400).json({ message: "Número de teléfono es requerido." });
+      }
+  
+      // Generamos el OTP (código de 5 dígitos)
+      const otpCode = Math.floor(10000 + Math.random() * 90000).toString(); // OTP de 5 dígitos
+  
+      // Llamamos a la función para enviar el OTP por mensaje
+      const messageStatus = await sendOtpMessage(phoneNumber, otpCode);
+      
+      // Si el OTP fue enviado correctamente, devolvemos el mensaje de éxito
+      console.log("OTP generado y enviado correctamente.");
+      
+      // Se puede retornar el código OTP (aunque normalmente no se devuelve por razones de seguridad)
+      return res.status(200).json({ message: "OTP generado y enviado correctamente", otpCode });
+  
+    } catch (error) {
+      // Si ocurre un error en cualquier parte del proceso, lo atrapamos y respondemos con un error adecuado
+      console.error("Error al generar o enviar el OTP:", error);
+      return res.status(500).json({ message: "Error al generar o enviar el OTP", error: error.message });
+    }
+  };
+  
+
+
+  
+const sendOtpMessage = async (phoneNumber, otpCode) => {
+    const postData = {
+      user: "Point@massend.com",
+      pass: "CompuPoint$2023",
+      mensajeid: "42629",
+      campana: "nombre de campana",
+      telefono: phoneNumber,
+      tipo: "1",
+      ruta: "0",
+      datos: `${otpCode}`,
+    };
+  
+    try {
+      const response = await axios.post('https://api.massend.com/api/sms', postData, {
+        headers: { 'Content-Type': 'application/json' }
+      });
+  
+      return {
+        cod_error: response.data.cod_error,
+        errorinfo: response.data.errorinfo || '',
+      };
+    } catch (error) {
+      console.error("Error al enviar mensaje:", error);
+      return { cod_error: 500, errorinfo: "Error al enviar el mensaje." };
+    }
+  };
 
