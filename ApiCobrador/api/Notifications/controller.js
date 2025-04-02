@@ -1,11 +1,11 @@
 const { AppDataSource } = require("../config/database");
 const { In } = require('typeorm');
 
-const  NotificationsSchema = require('./model'); // Ensure you are destructuring the correct export
+const NotificationsSchema = require('./model'); // Ensure you are destructuring the correct export
 
 exports.create = async (req, res) => {
     try {
-        const {  Title, Message, CreatedAt, Type, URL,ImageURL, IsActive } = req.body; // Asegúrate de que estos campos estén en el cuerpo de la solicitud
+        const { Title, Message, CreatedAt, Type, URL, ImageURL, IsActive, Empresa } = req.body; // Asegúrate de que estos campos estén en el cuerpo de la solicitud
         console.log("body", req.body);
         // validar que title tenga minimo 3 caracteres y maximo 255
         if (Title.length < 3 || Title.length > 255) {
@@ -37,6 +37,14 @@ exports.create = async (req, res) => {
                 message: "El tipo de notificación no es válido"
             });
         }
+        // vlaida qu ese asolo 1 y 36  la empresa
+        // validar empresa
+        if (Empresa < 0) {
+            return res.status(400).json({
+                success: false,
+                message: "La empresa no es válida"
+            });
+        }
         // crear una notificacion
         const newNotification = AppDataSource.getRepository(NotificationsSchema).create();
         newNotification.Title = Title;
@@ -46,7 +54,8 @@ exports.create = async (req, res) => {
         newNotification.URL = URL;
         newNotification.ImageURL = ImageURL;
         newNotification.IsActive = IsActive;
-        
+        newNotification.Empresa = Empresa;
+
         await AppDataSource.getRepository(NotificationsSchema).save(newNotification);
 
         return res.status(201).json({
@@ -86,5 +95,5 @@ exports.getAll = async (req, res) => {
         });
     }
 }
-       
+
 

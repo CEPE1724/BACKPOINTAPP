@@ -14,7 +14,8 @@ const NotificationsSchema = new EntitySchema({
         ImageURL = '';
         IsActive = true;
         Status = 'unread'; // Agregar el campo Status
-     },
+        Empresa = 0; // Agregar el campo Empresa si es relevante
+    },
     columns: {
         idNotifications: {
             primary: true,
@@ -52,6 +53,10 @@ const NotificationsSchema = new EntitySchema({
         IsActive: {
             type: 'bit',
             default: true
+        },
+        Empresa: {
+            type: 'int',
+            default: 0 // Cambiar según sea necesario
         }
     }
 });
