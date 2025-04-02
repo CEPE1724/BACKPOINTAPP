@@ -8,8 +8,8 @@ exports.getNotifiacionCuotaPagosPorEstado = async (req, res) => {
     try {
         // Obtener el parámetro 'estado' desde la URL
         const { estado } = req.query; // Recibimos el parámetro como cadena
-        
-        if( estado == undefined || estado == null || estado == '' ){
+
+        if (estado == undefined || estado == null || estado == '') {
             return res.status(400).json({ message: "Parámetros de estado no válidos." });
         }
 
@@ -24,7 +24,7 @@ exports.getNotifiacionCuotaPagosPorEstado = async (req, res) => {
         if (registros.length === 0) {
             return res.status(404).json({ message: "No se encontraron registros" });
         }
-        
+
         const notificaciones = await Promise.all(
             registros.map(async (registro) => {
                 try {
@@ -42,53 +42,53 @@ exports.getNotifiacionCuotaPagosPorEstado = async (req, res) => {
                                 // Enviamos el mensaje de texto
                                 const ProximoPagoFormatted = formatDate(ProximoPago); // Formateamos la fecha
                                 if (!ProximoPagoFormatted) {
-                                    await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                                    await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                                     return { ...registro, error: "Error al formatear la fecha" };
                                 }
                                 if (Celular.length < 10) {
-                                    await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                                    await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                                     return { ...registro, error: "Número de celular inválido" };
                                 }
                                 if (Nombre.length === 0) {
-                                    await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                                    await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                                     return { ...registro, error: "Nombre vacío" };
                                 }
                                 if (Valor <= 0) {
-                                    await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                                    await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                                     return { ...registro, error: "Valor inválido" };
                                 }
                                 const response = await enviar_mensaje_variable_fecha(Celular, Nombre, Valor, ProximoPagoFormatted);
-                                const status = response.errorinfo ;
+                                const status = response.errorinfo;
                                 const cod_error = response.cod_error;
-                                await updateEstadoId(registro.idNotifiacionCuotaPagos,  cod_error);
-                                console.log("mensaje envio",status, cod_error);
+                                await updateEstadoId(registro.idNotifiacionCuotaPagos, cod_error);
+                                console.log("mensaje envio", status, cod_error);
                             }
                             if (Tipo === 2) {
                                 // Enviamos el mensaje de texto
-                                console.log("mensaje envio ....2",Celular, Nombre, Valor);
+                                console.log("mensaje envio ....2", Celular, Nombre, Valor);
                                 if (Celular.length < 10) {
-                                    await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                                    await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                                     return { ...registro, error: "Número de celular inválido" };
                                 }
                                 if (Nombre.length === 0) {
-                                    await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                                    await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                                     return { ...registro, error: "Nombre vacío" };
                                 }
                                 if (Valor <= 0) {
-                                    await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                                    await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                                     return { ...registro, error: "Valor inválido" };
                                 }
                                 const response = await enviar_mensaje_variables(Celular, Nombre, Valor);
-                                const status = response.errorinfo ;
+                                const status = response.errorinfo;
                                 const cod_error = response.cod_error;
-                                await updateEstadoId(registro.idNotifiacionCuotaPagos,  cod_error);
-                                console.log("mensaje envio",status, cod_error);
+                                await updateEstadoId(registro.idNotifiacionCuotaPagos, cod_error);
+                                console.log("mensaje envio", status, cod_error);
                             }
                         }
 
                         return { ...registro, dataNotificacion: dataNotificacion[0] };
                     } else {
-                        await updateEstadoId(registro.idNotifiacionCuotaPagos,  'SN');
+                        await updateEstadoId(registro.idNotifiacionCuotaPagos, 'SN');
                         console.error("No se encontró la notificación o datos vacíos");
                         return { ...registro, error: "No se encontró la notificación" };
                     }
@@ -101,9 +101,9 @@ exports.getNotifiacionCuotaPagosPorEstado = async (req, res) => {
         );
 
         res.status(200).json(notificaciones);
-        
+
         // recorrer resgitrso y traer el mensaje de notificacion
-        
+
     }
     catch (error) {
         console.error("Error al realizar la consulta:", error);
@@ -111,7 +111,7 @@ exports.getNotifiacionCuotaPagosPorEstado = async (req, res) => {
     }
 };
 
- const getDataNotificacion = async (idAnticipo) => {
+const getDataNotificacion = async (idAnticipo) => {
     try {
 
         const result = await AppDataSource.query(
@@ -237,7 +237,7 @@ const updateEstadoId = async (idNotifiacionCuotaPagos, cod_error) => {
 
         // Formatear la fecha actual
         const FechaActual = formatDate(new Date());
-        
+
         // Asignar los valores correctamente al objeto
         notificacion.errorinfo = status;
         notificacion.cod_error = codErrorValue; // Asegurarse de que se trata como string
@@ -265,65 +265,71 @@ const formatDate = (date) => {
 // controller.js
 exports.generateOtp = async (req, res) => {
     try {
-      const { phoneNumber } = req.body; // Obtenemos el número de teléfono del cuerpo de la solicitud
-      
-      // Verificamos si el número de teléfono está presente
-      if (!phoneNumber) {
-        return res.status(400).json({ message: "Número de teléfono es requerido." });
-      }
-  
-      // Validar que el número empiece con 09 y tenga 10 dígitos
-      const phoneRegex = /^09\d{8}$/;
-      if (!phoneRegex.test(phoneNumber)) {
-        return res.status(400).json({ message: "El número de teléfono debe empezar con 09 y tener 10 dígitos." });
-      }
-      
-      // Generamos el OTP (código de 5 dígitos)
-      const otpCode = Math.floor(10000 + Math.random() * 90000).toString(); // OTP de 5 dígitos
-  
-      // Llamamos a la función para enviar el OTP por mensaje
-      const messageStatus = await sendOtpMessage(phoneNumber, otpCode);
-      
-      // Si el OTP fue enviado correctamente, devolvemos el mensaje de éxito
-      console.log("OTP generado y enviado correctamente.");
-      
-      // Se puede retornar el código OTP (aunque normalmente no se devuelve por razones de seguridad)
-      return res.status(200).json({ message: "OTP generado y enviado correctamente", otpCode });
-  
+        const { phoneNumber } = req.body; // Obtenemos el número de teléfono del cuerpo de la solicitud
+
+        // Verificamos si el número de teléfono está presente
+        if (!phoneNumber) {
+            return res.status(400).json({ message: "Número de teléfono es requerido." });
+        }
+
+        // Validamos que el número de teléfono tenga exactamente 10 dígitos
+        if (phoneNumber.length !== 10) {
+            return res.status(400).json({ message: "El número de teléfono debe tener 10 dígitos." });
+        }
+
+        // Validamos que el número solo contenga dígitos numéricos y comience con "09"
+        const phoneRegex = /^09\d{8}$/;
+        if (!phoneRegex.test(phoneNumber)) {
+            return res.status(400).json({ message: "El número de teléfono debe empezar con 09 y tener 10 dígitos numéricos." });
+        }
+
+        // Generamos el OTP (código de 5 dígitos)
+        const otpCode = Math.floor(10000 + Math.random() * 90000).toString(); // OTP de 5 dígitos
+
+        // Llamamos a la función para enviar el OTP por mensaje
+        const messageStatus = await sendOtpMessage(phoneNumber, otpCode);
+
+        // Si el OTP fue enviado correctamente, devolvemos el mensaje de éxito
+        console.log("OTP generado y enviado correctamente.");
+
+        // Se puede retornar el código OTP (aunque normalmente no se devuelve por razones de seguridad)
+        return res.status(200).json({ message: "OTP generado y enviado correctamente", otpCode });
+
     } catch (error) {
-      // Si ocurre un error en cualquier parte del proceso, lo atrapamos y respondemos con un error adecuado
-      console.error("Error al generar o enviar el OTP:", error);
-      return res.status(500).json({ message: "Error al generar o enviar el OTP", error: error.message });
+        // Si ocurre un error en cualquier parte del proceso, lo atrapamos y respondemos con un error adecuado
+        console.error("Error al generar o enviar el OTP:", error);
+        return res.status(500).json({ message: "Error al generar o enviar el OTP", error: error.message });
     }
-  };
-  
+};
 
 
-  
+
+
+
 const sendOtpMessage = async (phoneNumber, otpCode) => {
     const postData = {
-      user: "Point@massend.com",
-      pass: "CompuPoint$2023",
-      mensajeid: "42629",
-      campana: "nombre de campana",
-      telefono: phoneNumber,
-      tipo: "1",
-      ruta: "0",
-      datos: `${otpCode}`,
+        user: "Point@massend.com",
+        pass: "CompuPoint$2023",
+        mensajeid: "42629",
+        campana: "nombre de campana",
+        telefono: phoneNumber,
+        tipo: "1",
+        ruta: "0",
+        datos: `${otpCode}`,
     };
-  
+
     try {
-      const response = await axios.post('https://api.massend.com/api/sms', postData, {
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      return {
-        cod_error: response.data.cod_error,
-        errorinfo: response.data.errorinfo || '',
-      };
+        const response = await axios.post('https://api.massend.com/api/sms', postData, {
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        return {
+            cod_error: response.data.cod_error,
+            errorinfo: response.data.errorinfo || '',
+        };
     } catch (error) {
-      console.error("Error al enviar mensaje:", error);
-      return { cod_error: 500, errorinfo: "Error al enviar el mensaje." };
+        console.error("Error al enviar mensaje:", error);
+        return { cod_error: 500, errorinfo: "Error al enviar el mensaje." };
     }
-  };
+};
 
