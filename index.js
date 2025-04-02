@@ -105,6 +105,10 @@ const publicRoutesCognoware = [
 const publicRoutesmassend = [
     {path: '/v1/massend/', route: require('./Massend/api/NotifiacionCuotaPagos/router')},
 ];
+
+const publicRoutesmassendToken = [
+    {path: '/v1/massend/lia/', route: require('./Massend/api/NotifiacionCuotaPagos/router')},
+];
 // rutas de Equifax
 const publicRoutesEquifax = [
     { path: '/v1/equifax/', route: require('./SoapEquifax/wsExpertoPointTech/router') },
@@ -135,6 +139,11 @@ publicRoutesEquifax.forEach(route => {
 
 // Aplica las rutas de Massend
 publicRoutesmassend.forEach(route => {
+    app.use(route.path, route.route);
+});
+
+// Aplica las rutas de Massend Token
+publicRoutesmassendToken.forEach(route => {
     app.use(route.path, route.route);
 });
 

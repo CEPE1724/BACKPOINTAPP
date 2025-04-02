@@ -253,8 +253,6 @@ const updateEstadoId = async (idNotifiacionCuotaPagos, cod_error) => {
     }
 };
 
-
-
 const formatDate = (date) => {
     const d = new Date(date);
     const year = d.getFullYear();
