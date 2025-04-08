@@ -61,3 +61,28 @@ exports.countEstado = async (req, res) => {
         res.status(500).json({ message: "Error interno del servidor" });
     }
 }
+
+
+exports.update = async (req, res) => {
+    const { idVerificador, idCliente, iEstado } = req.body; // Obtener los parámetros del cuerpo de la solicitud
+
+    try {
+        // Actualizar el registro correspondiente
+        const result = await AppDataSource.getRepository(ClientesVerificionTerrena).update(
+            { idVerificador: idVerificador, idCliente: idCliente }, // Condición de búsqueda
+            { iEstado: iEstado } // Nuevo valor para iEstado
+        );
+
+        if (result.affected > 0) {
+            // Emitir la actualización a través de un manejador de eventos
+            socketIO.emit('updateVT', { idVerificador, idCliente, iEstado });
+            res.status(200).json({ message: "Registro actualizado correctamente" });
+        } else {
+            res.status(404).json({ message: "Registro no encontrado" });
+        }
+    } catch (error) {
+        console.error("Error al actualizar el registro:", error);
+        res.status(500).json({ message: "Error interno del servidor" });
+    }
+}
+
