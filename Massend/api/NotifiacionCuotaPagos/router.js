@@ -1,13 +1,13 @@
 // router.js
 const express = require('express');
 const router = express.Router();
-const Controller = require('./controller');
+const controller = require('./controller');
 const validateToken = require('../auth');
 
 
-router.get('/sms', Controller.getNotifiacionCuotaPagosPorEstado);
+router.get('/sms', controller.getNotifiacionCuotaPagosPorEstado);
 
-router.post('/sms/authorization',validateToken, Controller.generateOtp);
+router.post('/lia/sms/authorization',validateToken, controller.generateOtp);
 
 
 module.exports = router;
