@@ -293,12 +293,19 @@ exports.generateOtp = async (req, res) => {
         console.log("OTP generado y enviado correctamente.");
 
         // Se puede retornar el código OTP (aunque normalmente no se devuelve por razones de seguridad)
-        return res.status(200).json({ message: "OTP generado y enviado correctamente", otpCode });
+        return res.status(200).json(
+            { message: "OTP generado y enviado correctamente", 
+                otpCode });
 
     } catch (error) {
         // Si ocurre un error en cualquier parte del proceso, lo atrapamos y respondemos con un error adecuado
-        console.error("Error al generar o enviar el OTP:", error);
-        return res.status(500).json({ message: "Error al generar o enviar el OTP", error: error.message });
+       // console.error("Error al generar o enviar el OTP:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Error interno del servidor",
+            error: error.message
+        });
+
     }
 };
 
