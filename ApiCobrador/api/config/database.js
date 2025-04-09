@@ -80,6 +80,9 @@ const entities = [
     require('../../../CognoWare/TransaccionesCognoware/model'),
     require('../../../CognoWare/TarjetasCognoware/model'),
 
+    // ruta pagados
+    require('../../../Pagados/Pagados/model'),
+
 ];
 
 const AppDataSource = new DataSource({

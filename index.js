@@ -77,6 +77,7 @@ const publicRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/NotificationUser/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/RecojoAPP/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Notifications/router') },
+    
 ];
 
 // Rutas protegidas (con middleware)
@@ -118,6 +119,11 @@ const publicRoutesCuadricula = [
 // rutas google cloud
 const publicRoutesGoogleCloud = [
     { path: '/v1/googlecloud/', route: require('./GoogleCloud/Latinium/Point/Compra/router') },
+];
+
+// rutas de pagados
+const publicRoutesPagados = [
+    { path: '/v1/pagados/', route: require('./Pagados/Pagados/router') },
 ];
 // Aplica las rutas sin protección
 publicRoutes.forEach(route => {
@@ -161,6 +167,11 @@ publicRoutesWhatsApp.forEach(route => {
 // aplica rutas de Cognoware
 
 publicRoutesCognoware.forEach(route => {
+    app.use(route.path, route.route);
+});
+
+// aplñica rutas de pagados
+publicRoutesPagados.forEach(route => {
     app.use(route.path, route.route);
 });
 
