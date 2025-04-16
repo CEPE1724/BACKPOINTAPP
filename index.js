@@ -125,6 +125,11 @@ const publicRoutesGoogleCloud = [
 const publicRoutesPagados = [
     { path: '/v1/pagados/', route: require('./Pagados/Pagados/router') },
 ];
+
+// rutas lia
+const publicRoutesLia = [
+    { path: '/api/v1/', route: require('./Lia/productos/router') },
+];
 // Aplica las rutas sin protección
 publicRoutes.forEach(route => {
     app.use(route.path, route.route);
@@ -174,7 +179,10 @@ publicRoutesCognoware.forEach(route => {
 publicRoutesPagados.forEach(route => {
     app.use(route.path, route.route);
 });
-
+// aplica rutas de lia
+publicRoutesLia.forEach(route => {
+    app.use(route.path, route.route);
+});
 initializeDatabase()
     .then(() => {
         console.log('Conexión a la base de datos establecida');
