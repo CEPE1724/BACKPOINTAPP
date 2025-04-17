@@ -43,6 +43,10 @@
     "typeorm": "^0.3.6"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.2",
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
