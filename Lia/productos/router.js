@@ -10,5 +10,6 @@ router.get('/productos/Productos-WEB-WEP', validateToken ,liaController.producto
 router.get('/baratazos/Baratazos-WEB-WEP', liaController.Baratazos_WEB_WP)
 router.get('/ofertas/Ofertas-WEB-WEP', liaController.Ofertas_WEB_WP)
 router.get('/productos/Productos-WEB-WEP', liaController.productosWEB_WP)
+router.post('/carrito/crear-carrito-WEB-WP', liaController.crearCarrito)
 
 module.exports = router
