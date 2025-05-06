@@ -4,6 +4,7 @@ const { In } = require('typeorm');
 const NotificationUser = require('./model');
 const Notifications = require('../Notifications/model');
 const { getIO } = require('../../sockets/socketio');  // IMPORTAR getIO desde socketio
+const { sendPushNotifications } = require('./expoPushService');
 
 const { handleNewNotification } = require('../../sockets/eventHandlers'); // Asegúrate de importar el manejador
 
@@ -85,9 +86,10 @@ exports.allIDNotification = async (req, res) => {
 
         // Verifica si no se encontraron registros del usuario
         if (registros.length === 0) {
-            return res.status(404).json({
+            return res.status(200).json({
                 success: false,
-                message: "No tienes notificaciones pendientes"
+                message: "No tienes notificaciones pendientes",
+                
             });
         }
 
@@ -191,14 +193,16 @@ exports.countUserNotificacion = async (req, res) => {
 
         // Realiza la consulta para obtener todos los registros del usuario
         const registros = await AppDataSource.getRepository(NotificationUser).find({
-            where: { UserID: UserID }
+            where: { 
+                UserID: UserID }
         });
 
         // Verifica si no se encontraron registros del usuario
         if (registros.length === 0) {
-            return res.status(404).json({
+            return res.status(200).json({
                 success: false,
-                message: "No tienes notificaciones pendientes"
+                message: "No tienes notificaciones pendientes",
+                count: 0 // Retorna 0 si no hay notificaciones
             });
         }
 
@@ -353,3 +357,20 @@ exports.createNotificacion = async (req, res) => {
     }
 }
 
+
+
+exports.sendNotification = async (req, res) => {
+    console.log("sendNotification called"); // Agregar un log para verificar la llamada a la función
+  const { tokens, message } = req.body;
+
+  if (!tokens || !message) {
+    return res.status(400).json({ error: 'Tokens and message are required' });
+  }
+
+  try {
+    const tickets = await sendPushNotifications(tokens, message);
+    res.json({ success: true, tickets });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to send notifications', details: error });
+  }
+};
