@@ -100,3 +100,46 @@ exports.UpdateEstado = async (req, res) => {
     res.status(500).json({ message: "Error interno del servidor" });
   }
 }
+
+
+exports.UpdateTokenExpo = async (req, res) => {
+  const { KeyDispositivo, TokenExpo } = req.body; // Suponemos que la cédula y la clave del dispositivo vienen en el cuerpo de la solicitud
+  console.log("KeyDispositivo:", KeyDispositivo);
+  console.log("TokenExpo:", TokenExpo);
+  if (!KeyDispositivo || !TokenExpo) {
+    return res.status(400).json({
+      estado: "fail",
+      message: "Los parámetros 'KeyDispositivo' y 'TokenExpo' son obligatorios."
+    });
+  }
+
+  try {
+    // Obtener el repositorio de la tabla de DispositivosAPP
+    const usuarioRepository = AppDataSource.getRepository(DispositivosAPPSchema);
+
+    // Buscar al usuario por cédula y clave del dispositivo
+    const usuario = await usuarioRepository.findOne({
+      where: { KeyDispositivo: KeyDispositivo },
+    });
+
+    // Verificar si el usuario existe
+    if (usuario) {
+      // Actualizar el estado del usuario a activo
+      usuario.TokenExpo = TokenExpo;
+      await usuarioRepository.save(usuario);
+
+      return res.json({
+        estado: "success",
+        message: "Token actualizado correctamente"
+       // KeyDispositivo: usuario.KeyDispositivo
+      });
+
+    } else {
+      // Si no se encuentra al usuario
+      res.status(200).json({ estado: "fail", message: "Usuario no autorizado comuniquese con R.R.H.H/Desarrollo" });
+    }
+  } catch (error) {
+    console.error("Error al buscar usuario:", error);
+    res.status(500).json({ message: "Error interno del servidor" });
+  }
+}

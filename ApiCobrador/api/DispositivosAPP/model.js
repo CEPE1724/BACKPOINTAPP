@@ -16,6 +16,7 @@ const DispositivosAPP = new EntitySchema({
             this.iTipoPersonal = 0;
             this.Pin = "";
             this.PinSeguridad = "";
+            this.TokenExpo ="";
            
         }
     },
@@ -55,7 +56,11 @@ const DispositivosAPP = new EntitySchema({
         PinSeguridad: {
             type: 'varchar',
             length: 6
-        }
+        },
+        TokenExpo: {
+            type: 'varchar',
+            length: 500
+        },
     }
 });
 
