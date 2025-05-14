@@ -1,6 +1,6 @@
 const { AppDataSource } = require("../config/database");
-const { In } = require('typeorm');
-
+const { In, Not } = require('typeorm');
+const DispositivosAPP = require('../DispositivosAPP/model');
 const NotificationUser = require('./model');
 const Notifications = require('../Notifications/model');
 const { getIO } = require('../../sockets/socketio');  // IMPORTAR getIO desde socketio
@@ -363,7 +363,7 @@ exports.createNotificacion = async (req, res) => {
 exports.sendNotification = async (req, res) => {
     console.log("sendNotification called");
     const { tokens, notification } = req.body;
-  
+
     console.log("tokens:", tokens);
     console.log("notification:", notification);
 
@@ -372,7 +372,7 @@ exports.sendNotification = async (req, res) => {
             error: 'Request must include "tokens" (array) and "notification" (object)',
         });
     }
- 
+
     // Validar notificación
     const validation = validateNotification(notification);
     if (!validation.success) {
@@ -381,23 +381,48 @@ exports.sendNotification = async (req, res) => {
             message: validation.message,
         });
     }
-    const { type, title, body, url } = notification;
-    
+    const { type, title, body, url, empresa } = notification;
+
     try {
+
         // Aquí podrías guardar la notificación en base de datos si quieres
         // await saveNotificationToDb(notification);
-        const newNotification = AppDataSource.getRepository(Notifications).create();
-                newNotification.Title = title;
-                newNotification.Message = body;
-                newNotification.Type = type;
-               newNotification.URL = url || '';
-                //newNotification.ImageURL = ImageURL;
-                newNotification.IsActive = 1;
-        
-                await AppDataSource.getRepository(Notifications).save(newNotification);
-        
+        const idTipoEmpresa = empresa === 'POINT' ? 1 : 33;
+        const dispositivos = await AppDataSource.getRepository(DispositivosAPP).find({ where: { TokenExpo: In(tokens), Empresa: idTipoEmpresa, idCom_Estado: Not(2) } });
+        console.log("dispositivos", dispositivos);
 
-       
+        if (dispositivos.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "No se encontraron dispositivos para enviar la notificación"
+            });
+        }
+        const newNotification = AppDataSource.getRepository(Notifications).create();
+        newNotification.Title = title;
+        newNotification.Message = body;
+        newNotification.Type = type;
+        newNotification.URL = url || '';
+        newNotification.Empresa = idTipoEmpresa;
+        //newNotification.ImageURL = ImageURL;
+        newNotification.IsActive = 1;
+        await AppDataSource.getRepository(Notifications).save(newNotification);
+        // obtener el id de la notificacion creada
+        const idNotifications = newNotification.idNotifications;
+
+        // consultar dispositivosAPP para obtener el UserID
+        console.log("dispositivos",  dispositivos[0].idNomina);
+
+        const nuevoRegistro = AppDataSource.getRepository(NotificationUser).create();
+        nuevoRegistro.idNotifications = parseInt(idNotifications);
+        nuevoRegistro.UserID = parseInt( dispositivos[0].idNomina);
+        nuevoRegistro.Status = 'unread';
+
+
+        await AppDataSource.getRepository(NotificationUser).save(nuevoRegistro);
+
+        handleNewNotification(nuevoRegistro); // Emitir la notificación creada a través de socket
+
+
         const tickets = await sendPushNotifications(tokens, notification);
 
         return res.status(200).json({
@@ -416,10 +441,10 @@ exports.sendNotification = async (req, res) => {
 
 
 function validateNotification(notification) {
-    const { type, title, body, url } = notification;
+    const { type, title, body, url, empresa } = notification;
 
     const validTypes = ['alert', 'info', 'promotion', 'update', 'warning'];
-
+    const validEmpresas = ['POINT', 'CREDI']; // Reemplaza con tus empresas válidas
     if (!title || title.length < 5 || title.length > 255) {
         return {
             success: false,
@@ -447,7 +472,14 @@ function validateNotification(notification) {
         };
     }
 
-    
+    if (!validEmpresas.includes(empresa)) {
+        return {
+            success: false,
+            message: "La empresa no es válida",
+        };
+    }
+
+
 
     return { success: true };
 }
