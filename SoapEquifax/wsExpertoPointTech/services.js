@@ -449,7 +449,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 const perfilRiesgoDirectoSeisRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
                                     Indicador: handleEmptyString(item.Indicador),
-                                    Valor: handleEmpyDecimal(item.Valor),
+                                    Valor: item.Valor || '0',
                                     Fecha: item.Fecha || new Date()
                                 };
                                 console.log('Datos de PerfilRiesgoDirectoSeis:', perfilRiesgoDirectoSeisRegistro);

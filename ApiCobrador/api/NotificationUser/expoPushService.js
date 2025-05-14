@@ -5,14 +5,17 @@ const expo = new Expo({
   useFcmV1: true,
 });
 
-async function sendPushNotifications(tokens, messageBody) {
+async function sendPushNotifications(tokens, notification) {
+  const { title, body, data } = notification;
+
   const messages = tokens
     .filter(Expo.isExpoPushToken)
     .map(token => ({
       to: token,
       sound: 'default',
-      body: messageBody,
-      data: { someData: 'example' },
+      title,
+      body,
+      data,
     }));
 
   const chunks = expo.chunkPushNotifications(messages);

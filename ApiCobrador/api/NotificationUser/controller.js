@@ -36,7 +36,7 @@ exports.allID = async (req, res) => {
 
         // Consulta las notificaciones asociadas usando los idNotifications encontrados
         const notificacion = await AppDataSource.getRepository(Notifications).find({
-            where: { 
+            where: {
                 idNotifications: In(idNotificationsArray), // In() permite buscar múltiples IDs
                 Status: 'unread'
             }
@@ -89,7 +89,7 @@ exports.allIDNotification = async (req, res) => {
             return res.status(200).json({
                 success: false,
                 message: "No tienes notificaciones pendientes",
-                
+
             });
         }
 
@@ -98,7 +98,7 @@ exports.allIDNotification = async (req, res) => {
 
         // Consulta las notificaciones asociadas usando los idNotifications encontrados
         const notificacion = await AppDataSource.getRepository(Notifications).find({
-            where: { 
+            where: {
                 idNotifications: In(idNotificationsArray), // In() permite buscar múltiples IDs
                 Status: 'unread'
             }
@@ -193,8 +193,9 @@ exports.countUserNotificacion = async (req, res) => {
 
         // Realiza la consulta para obtener todos los registros del usuario
         const registros = await AppDataSource.getRepository(NotificationUser).find({
-            where: { 
-                UserID: UserID }
+            where: {
+                UserID: UserID
+            }
         });
 
         // Verifica si no se encontraron registros del usuario
@@ -241,14 +242,14 @@ exports.create = async (req, res) => {
                 message: "Faltan parámetros requeridos"
             });
         }
-         // verificar si idNotifications existe
-            const notificacion = await AppDataSource.getRepository(Notifications).findOne({ where: { idNotifications } });
-            if (!notificacion) {
-                return res.status(404).json({
-                    success: false,
-                    message: "La notificación no existe"
-                });
-            }
+        // verificar si idNotifications existe
+        const notificacion = await AppDataSource.getRepository(Notifications).findOne({ where: { idNotifications } });
+        if (!notificacion) {
+            return res.status(404).json({
+                success: false,
+                message: "La notificación no existe"
+            });
+        }
 
         // Verificar si el usuario ya tiene la notificación
         const registro = await AppDataSource.getRepository(NotificationUser).findOne({ where: { UsuarioAPP, idNotifications } });
@@ -262,7 +263,7 @@ exports.create = async (req, res) => {
         }
 
         // Crear un nuevo registro de notificación para el usuario
-    
+
 
         const nuevoRegistro = AppDataSource.getRepository(NotificationUser).create();
         nuevoRegistro.UsuarioAPP = UsuarioAPP;
@@ -296,7 +297,7 @@ exports.create = async (req, res) => {
 
 exports.createNotificacion = async (req, res) => {
     try {
-        const {  idNotifications, UserID } = req.body;
+        const { idNotifications, UserID } = req.body;
 
         // Verificar si falta alguno de los parámetros requeridos
         if (!UserID || !idNotifications) {
@@ -305,14 +306,14 @@ exports.createNotificacion = async (req, res) => {
                 message: "Faltan parámetros requeridos"
             });
         }
-         // verificar si idNotifications existe
-            const notificacion = await AppDataSource.getRepository(Notifications).findOne({ where: { idNotifications } });
-            if (!notificacion) {
-                return res.status(404).json({
-                    success: false,
-                    message: "La notificación no existe"
-                });
-            }
+        // verificar si idNotifications existe
+        const notificacion = await AppDataSource.getRepository(Notifications).findOne({ where: { idNotifications } });
+        if (!notificacion) {
+            return res.status(404).json({
+                success: false,
+                message: "La notificación no existe"
+            });
+        }
 
         // Verificar si el usuario ya tiene la notificación
         const registro = await AppDataSource.getRepository(NotificationUser).findOne({ where: { UserID, idNotifications } });
@@ -326,7 +327,7 @@ exports.createNotificacion = async (req, res) => {
         }
 
         // Crear un nuevo registro de notificación para el usuario
-    
+
 
         const nuevoRegistro = AppDataSource.getRepository(NotificationUser).create();
         nuevoRegistro.idNotifications = parseInt(idNotifications);
@@ -360,17 +361,93 @@ exports.createNotificacion = async (req, res) => {
 
 
 exports.sendNotification = async (req, res) => {
-    console.log("sendNotification called"); // Agregar un log para verificar la llamada a la función
-  const { tokens, message } = req.body;
+    console.log("sendNotification called");
+    const { tokens, notification } = req.body;
+  
+    console.log("tokens:", tokens);
+    console.log("notification:", notification);
 
-  if (!tokens || !message) {
-    return res.status(400).json({ error: 'Tokens and message are required' });
-  }
+    if (!Array.isArray(tokens) || tokens.length === 0 || !notification) {
+        return res.status(400).json({
+            error: 'Request must include "tokens" (array) and "notification" (object)',
+        });
+    }
+ 
+    // Validar notificación
+    const validation = validateNotification(notification);
+    if (!validation.success) {
+        return res.status(400).json({
+            success: false,
+            message: validation.message,
+        });
+    }
+    const { type, title, body, url } = notification;
+    
+    try {
+        // Aquí podrías guardar la notificación en base de datos si quieres
+        // await saveNotificationToDb(notification);
+        const newNotification = AppDataSource.getRepository(Notifications).create();
+                newNotification.Title = title;
+                newNotification.Message = body;
+                newNotification.Type = type;
+               newNotification.URL = url || '';
+                //newNotification.ImageURL = ImageURL;
+                newNotification.IsActive = 1;
+        
+                await AppDataSource.getRepository(Notifications).save(newNotification);
+        
 
-  try {
-    const tickets = await sendPushNotifications(tokens, message);
-    res.json({ success: true, tickets });
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to send notifications', details: error });
-  }
+       
+        const tickets = await sendPushNotifications(tokens, notification);
+
+        return res.status(200).json({
+            success: true,
+            message: 'Notifications sent successfully',
+            tickets,
+        });
+    } catch (error) {
+        console.error("Error sending push notifications:", error);
+        return res.status(500).json({
+            success: false,
+            error: error.message || 'Unexpected error sending notifications',
+        });
+    }
 };
+
+
+function validateNotification(notification) {
+    const { type, title, body, url } = notification;
+
+    const validTypes = ['alert', 'info', 'promotion', 'update', 'warning'];
+
+    if (!title || title.length < 5 || title.length > 255) {
+        return {
+            success: false,
+            message: "El título debe tener entre 5 y 255 caracteres",
+        };
+    }
+
+    if (!body || body.length < 10 || body.length > 255) {
+        return {
+            success: false,
+            message: "El mensaje debe tener entre 10 y 255 caracteres",
+        };
+    }
+
+    if (url && url.trim() !== "" && !/^https?:\/\/.+\..+/.test(url)) {
+        return {
+            success: false,
+            message: "La URL no es válida",
+        };
+    }
+    if (!validTypes.includes(type)) {
+        return {
+            success: false,
+            message: "El tipo de notificación no es válido",
+        };
+    }
+
+    
+
+    return { success: true };
+}
