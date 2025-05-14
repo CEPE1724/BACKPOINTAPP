@@ -9,4 +9,5 @@ router.get('/Notifications/getAllNot', controller.getAll);
 router.get('/Notifications/getId/:idNotifications', controller.getId);
 router.get('/Notifications/getBy', controller.getBy);
 
+router.patch('/NotificationUser/update/read',controller.updateNotification);
 module.exports = router;

@@ -1,3 +1,4 @@
+const { cp } = require('fs');
 const { getIO } = require('./socketio');
 
 const handleNewList = (registros) => {
@@ -17,6 +18,7 @@ const handleNewVTCount = (estadosCount) => {
 }
 // **Nueva función para emitir la nueva notificación**
 const handleNewNotification = (notification) => {
+    console.log('handleNewNotification', notification);
     getIO().emit('newNotification', notification); // Emitir la nueva notificación a los clientes
 };
 module.exports = {

@@ -19,9 +19,9 @@ exports.allID = async (req, res) => {
             });
         }
 
-        console.log(UsuarioAPP);
+
         const registros = await AppDataSource.getRepository(NotificationUser).find({ where: { UsuarioAPP: UsuarioAPP } });
-        console.log("hola", registros);
+
 
         // Verifica si no se encontraron registros del usuario
         if (registros.length === 0) {
@@ -76,52 +76,51 @@ exports.allIDNotification = async (req, res) => {
         if (!UserID) {
             return res.status(400).json({
                 success: false,
-                message: "Falta el parámetro UsuarioAPP"
+                message: "Falta el parámetro UsuarioAPP",
+                count: 0,
+                data: []
             });
         }
 
-        console.log(UserID);
         const registros = await AppDataSource.getRepository(NotificationUser).find({ where: { UserID: UserID } });
-        console.log("hola", registros);
 
-        // Verifica si no se encontraron registros del usuario
         if (registros.length === 0) {
             return res.status(200).json({
-                success: false,
-                message: "No tienes notificaciones pendientes",
-
+                success: true,
+                message: "No tienes notificaciones registradas",
+                data: [],
+                count: 0
             });
         }
 
-        // Extraer todos los idNotifications de los registros del usuario
         const idNotificationsArray = registros.map(registro => registro.idNotifications);
 
-        // Consulta las notificaciones asociadas usando los idNotifications encontrados
         const notificacion = await AppDataSource.getRepository(Notifications).find({
             where: {
-                idNotifications: In(idNotificationsArray), // In() permite buscar múltiples IDs
+                idNotifications: In(idNotificationsArray),
                 Status: 'unread'
             }
         });
 
-        // Verifica si no se encontraron notificaciones asociadas
         if (notificacion.length === 0) {
-            return res.status(404).json({
-                success: false,
-                message: "No se encontraron notificaciones para este usuario"
+            return res.status(200).json({
+                success: true,
+                message: "No se encontraron notificaciones pendientes",
+                data: [],
+                count: 0
             });
         }
+
         getIO().emit('updatedNotifications', { UserID, notificaciones: notificacion });
 
-        // Responde con las notificaciones encontradas
         return res.status(200).json({
             success: true,
             message: "Notificaciones obtenidas exitosamente",
-            data: notificacion
+            data: notificacion,
+            count: notificacion.length
         });
     } catch (error) {
         console.error("Error al realizar la consulta:", error);
-
         return res.status(500).json({
             success: false,
             message: "Error interno del servidor",
@@ -194,7 +193,8 @@ exports.countUserNotificacion = async (req, res) => {
         // Realiza la consulta para obtener todos los registros del usuario
         const registros = await AppDataSource.getRepository(NotificationUser).find({
             where: {
-                UserID: UserID
+                UserID: UserID,
+                Status: 'unread' // Solo contar las notificaciones no leídas
             }
         });
 
@@ -361,11 +361,10 @@ exports.createNotificacion = async (req, res) => {
 
 
 exports.sendNotification = async (req, res) => {
-    console.log("sendNotification called");
+
     const { tokens, notification } = req.body;
 
-    console.log("tokens:", tokens);
-    console.log("notification:", notification);
+
 
     if (!Array.isArray(tokens) || tokens.length === 0 || !notification) {
         return res.status(400).json({
@@ -389,7 +388,7 @@ exports.sendNotification = async (req, res) => {
         // await saveNotificationToDb(notification);
         const idTipoEmpresa = empresa === 'POINT' ? 1 : 33;
         const dispositivos = await AppDataSource.getRepository(DispositivosAPP).find({ where: { TokenExpo: In(tokens), Empresa: idTipoEmpresa, idCom_Estado: Not(2) } });
-        console.log("dispositivos", dispositivos);
+
 
         if (dispositivos.length === 0) {
             return res.status(404).json({
@@ -410,11 +409,11 @@ exports.sendNotification = async (req, res) => {
         const idNotifications = newNotification.idNotifications;
 
         // consultar dispositivosAPP para obtener el UserID
-        console.log("dispositivos",  dispositivos[0].idNomina);
+
 
         const nuevoRegistro = AppDataSource.getRepository(NotificationUser).create();
         nuevoRegistro.idNotifications = parseInt(idNotifications);
-        nuevoRegistro.UserID = parseInt( dispositivos[0].idNomina);
+        nuevoRegistro.UserID = parseInt(dispositivos[0].idNomina);
         nuevoRegistro.Status = 'unread';
 
 
@@ -443,7 +442,7 @@ exports.sendNotification = async (req, res) => {
 function validateNotification(notification) {
     const { type, title, body, url, empresa } = notification;
 
-    const validTypes = ['alert', 'info', 'promotion', 'update', 'warning'];
+    const validTypes = ['alert', 'info', 'promotion', 'update', 'warning', 'success', 'event'];
     const validEmpresas = ['POINT', 'CREDI']; // Reemplaza con tus empresas válidas
     if (!title || title.length < 5 || title.length > 255) {
         return {
@@ -483,3 +482,5 @@ function validateNotification(notification) {
 
     return { success: true };
 }
+
+

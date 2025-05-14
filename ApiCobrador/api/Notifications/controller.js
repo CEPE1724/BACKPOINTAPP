@@ -2,7 +2,9 @@ const { AppDataSource } = require("../config/database");
 const { In } = require('typeorm');
 
 const NotificationsSchema = require('./model'); // Ensure you are destructuring the correct export
+const NotificationUserSchema = require('../NotificationUser/model'); // Ensure you are destructuring the correct export
 
+const { handleNewNotification } = require('../../sockets/eventHandlers'); // Asegúrate de que la ruta sea correcta
 exports.create = async (req, res) => {
     try {
         const { Title, Message, CreatedAt, Type, URL, ImageURL, IsActive, Empresa } = req.body; // Asegúrate de que estos campos estén en el cuerpo de la solicitud
@@ -183,6 +185,61 @@ exports.getBy = async (req, res) => {
         });
     } catch (error) {
         console.error("Error al obtener las notificaciones:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Error interno del servidor",
+            error: error.message
+        });
+    }
+}
+
+
+// Actualizar notificaciones por idNotifications de usuario
+exports.updateNotification = async (req, res) => {
+    try {
+        const { idNotifications } = req.body;
+
+        if(!idNotifications || idNotifications.length === 0) {
+            return res.status(400).json({
+                success: false,
+                message: "No se proporcionaron IDs de notificaciones"
+            });
+        }
+        
+        console.log("idNotifications", idNotifications);
+        const notifications = await AppDataSource.getRepository(NotificationsSchema).find({
+            where: {
+                idNotifications: idNotifications
+            }
+        });
+        if (notifications.length === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "No se encontraron notificaciones con los IDs proporcionados"
+            });
+        }
+        // Actualizar el campo IsRead a true
+        await AppDataSource.getRepository(NotificationsSchema).update(
+            { idNotifications: idNotifications },
+            { Status: 'read' } // Cambia el campo que deseas actualizar
+        );
+
+        await AppDataSource.getRepository(NotificationUserSchema).update(
+            { idNotifications: idNotifications },
+            { Status: 'read' } // Cambia el campo que deseas actualizar
+        );
+        // Emitir el evento de nueva notificación
+        notifications.forEach(notification => {
+            handleNewNotification({ ...notification, isNew: false });
+        });
+        return res.status(200).json({
+            success: true,
+            message: "Notificaciones actualizadas exitosamente",
+            data: notifications
+        });
+    }
+    catch (error) {
+        console.error("Error al actualizar las notificaciones:", error);
         return res.status(500).json({
             success: false,
             message: "Error interno del servidor",
