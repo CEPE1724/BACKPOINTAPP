@@ -123,13 +123,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                         const respuesta = result;
                         const codigoConsulta = respuesta.codigoConsulta || '';
                         const mensaje = respuesta.mensajeError || '';
-                         countdata = Object.keys(data).length;
+                        countdata = Object.keys(data).length;
                         console.log('Cantidad de datos:', countdata);
                         const keys = Object.keys(data);
                         console.log('Keys:', keys);
-                         countarraydata = 0;
+                        countarraydata = 0;
 
-                         const idReportePadre = codigoConsulta;
+                        const idReportePadre = codigoConsulta;
                         if (data && data.IdentificacionConsultada) {
                             countarraydata = countarraydata + 1;
                             const identificacionData = Array.isArray(data.IdentificacionConsultada) ? data.IdentificacionConsultada[0] : data.IdentificacionConsultada;
@@ -180,6 +180,61 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                             await repository.save(politicasRegistro);
                         }
 
+                        if (data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr) {
+                            countarraydata = countarraydata + 1;
+                            const dataIndicadoresDeudaActualSbsSicomRfr = Array.isArray(data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr)
+                                ? data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr
+                                : [data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr];
+                            for (let i = 0; i < dataIndicadoresDeudaActualSbsSicomRfr.length; i++) {
+                                const item = dataIndicadoresDeudaActualSbsSicomRfr[i];
+                                const indicadoresDeudaActualSbsSicomRfrRegistro = {
+                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
+                                    FechaCorte: handleEmptyString(item.FechaCorte),
+                                    Segmento: handleEmptyString(item.Segmento),
+                                    Institucion: handleEmptyString(item.Institucion),
+                                    TipoDeudor: handleEmptyString(item.TipoDeudor),
+                                    TipoCredito: handleEmptyString(item.TipoCredito),
+                                    Calificacion: handleEmptyString(item.Calificacion),
+                                    PorVencer: handleEmpyDecimal(item.PorVencer),
+                                    NoDevengaInt: handleEmpyDecimal(item.NoDevengaInt),
+                                    Vencido: handleEmpyDecimal(item.Vencido),
+                                    DemandaJudicial: handleEmpyDecimal(item.DemandaJudicial),
+                                    CarteraCastigada: handleEmpyDecimal(item.CarteraCastigada),
+                                    Total: handleEmpyDecimal(item.Total),
+                                    DiasVencido: handleEmptyString(item.DiasVencido)
+                                };
+                                console.log('Datos de IndicadoresDeudaActualSbsSicomRfr:', indicadoresDeudaActualSbsSicomRfrRegistro);
+                                const repository = AppDataSource.getRepository(EQFX_IndicadoresDeudaActualSbsSicomRfr);
+                                await repository.save(indicadoresDeudaActualSbsSicomRfrRegistro);
+                            }
+                        }
+                        if (data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr) {
+                            countarraydata = countarraydata + 1;
+                            const dataIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores = Array.isArray(data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr)
+                                ? data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr
+                                : [data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr];
+                            for (let i = 0; i < dataIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores.length; i++) {
+                                const item = dataIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores[i];
+                                const indicadoresDeudaHistoricaInstitucionSbsSicomRfrdoresRegistro = {
+                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
+                                    FechaCorte: handleEmptyString(item.FechaCorte),
+                                    Segmento: handleEmptyString(item.Segmento),
+                                    Institucion: handleEmptyString(item.Institucion),
+                                    TipoRiesgo: handleEmptyString(item.TipoRiesgo),
+                                    TipoCredito: handleEmptyString(item.TipoCredito),
+                                    Calificacion: handleEmptyString(item.Calificacion),
+                                    MayorValorVencido: handleEmpyDecimal(item.MayorValorVencido),
+                                    FechaMayorValor: handleEmptyString(item.FechaMayorValor),
+                                    MayorPlazoVencido: handleEmptyString(item.MayorPlazoVencido),
+                                    FechaMayorPlazo: handleEmptyString(item.FechaMayorPlazo),
+                                    FechaUltimoVencido: handleEmptyString(item.FechaUltimoVencido),
+                                    Operacion: handleEmptyString(item.Operacion)
+                                };
+                                console.log('Datos de IndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores:', indicadoresDeudaHistoricaInstitucionSbsSicomRfrdoresRegistro);
+                                const repository = AppDataSource.getRepository(EQFX_IndicaIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores);
+                                await repository.save(indicadoresDeudaHistoricaInstitucionSbsSicomRfrdoresRegistro);
+                            }
+                        }
                         if (data.Score_x0020_Puntaje_x0020_y_x0020_Grafico_x0020_V3_x0020__x0028_Institucion_x0029_) {
                             countarraydata = countarraydata + 1;
                             const dataScorePuntajeyGraficoV3 = data.Score_x0020_Puntaje_x0020_y_x0020_Grafico_x0020_V3_x0020__x0028_Institucion_x0029_;
@@ -430,7 +485,8 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 const perfilRiesgoDirectoRegistro = {
                                     idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
                                     Indicador: handleEmptyString(item.Indicador),
-                                    Valor: handleEmpyDecimal(item.Valor),
+                                    Valor: String(handleEmpyDecimal(item.Valor)),
+
                                     Fecha: item.Fecha || new Date()
                                 };
                                 console.log('Datos de PerfilRiesgoDirecto:', perfilRiesgoDirectoRegistro);
@@ -578,63 +634,6 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 console.log('Datos de EntidadesQueConsultaron:', entidadesQueConsultaronRegistro);
                                 const repository = AppDataSource.getRepository(EntidadesQueConsultaron);
                                 await repository.save(entidadesQueConsultaronRegistro);
-                            }
-                        }
-
-                        if (data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr) {
-                            countarraydata = countarraydata + 1;
-                            const dataIndicadoresDeudaActualSbsSicomRfr = Array.isArray(data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr)
-                                ? data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr
-                                : [data.Indicadores_x0020_DeudaActual_x0020_SbsSicomRfr];
-                            for (let i = 0; i < dataIndicadoresDeudaActualSbsSicomRfr.length; i++) {
-                                const item = dataIndicadoresDeudaActualSbsSicomRfr[i];
-                                const indicadoresDeudaActualSbsSicomRfrRegistro = {
-                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
-                                    FechaCorte: handleEmptyString(item.FechaCorte),
-                                    Segmento: handleEmptyString(item.Segmento),
-                                    Institucion: handleEmptyString(item.Institucion),
-                                    TipoDeudor: handleEmptyString(item.TipoDeudor),
-                                    TipoCredito: handleEmptyString(item.TipoCredito),
-                                    Calificacion: handleEmptyString(item.Calificacion),
-                                    PorVencer: handleEmpyDecimal(item.PorVencer),
-                                    NoDevengaInt: handleEmpyDecimal(item.NoDevengaInt),
-                                    Vencido: handleEmpyDecimal(item.Vencido),
-                                    DemandaJudicial: handleEmpyDecimal(item.DemandaJudicial),
-                                    CarteraCastigada: handleEmpyDecimal(item.CarteraCastigada),
-                                    Total: handleEmpyDecimal(item.Total),
-                                    DiasVencido: handleEmptyString(item.DiasVencido)
-                                };
-                                console.log('Datos de IndicadoresDeudaActualSbsSicomRfr:', indicadoresDeudaActualSbsSicomRfrRegistro);
-                                const repository = AppDataSource.getRepository(EQFX_IndicadoresDeudaActualSbsSicomRfr);
-                                await repository.save(indicadoresDeudaActualSbsSicomRfrRegistro);
-                            }
-                        }
-
-                        if (data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr) {
-                            countarraydata = countarraydata + 1;
-                            const dataIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores = Array.isArray(data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr)
-                                ? data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr
-                                : [data.Indicadores_x0020_DeudaHistorica_x0020_por_x0020_Institucion_x0020_Sbs_x0020_Sicom_x0020_Rfr];
-                            for (let i = 0; i < dataIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores.length; i++) {
-                                const item = dataIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores[i];
-                                const indicadoresDeudaHistoricaInstitucionSbsSicomRfrdoresRegistro = {
-                                    idEQFX_IdentificacionConsultada: idEQFX_IdentificacionConsultada,
-                                    FechaCorte: handleEmptyString(item.FechaCorte),
-                                    Segmento: handleEmptyString(item.Segmento),
-                                    Institucion: handleEmptyString(item.Institucion),
-                                    TipoRiesgo: handleEmptyString(item.TipoRiesgo),
-                                    TipoCredito: handleEmptyString(item.TipoCredito),
-                                    Calificacion: handleEmptyString(item.Calificacion),
-                                    MayorValorVencido: handleEmpyDecimal(item.MayorValorVencido),
-                                    FechaMayorValor: handleEmptyString(item.FechaMayorValor),
-                                    MayorPlazoVencido: handleEmptyString(item.MayorPlazoVencido),
-                                    FechaMayorPlazo: handleEmptyString(item.FechaMayorPlazo),
-                                    FechaUltimoVencido: handleEmptyString(item.FechaUltimoVencido),
-                                    Operacion: handleEmptyString(item.Operacion)
-                                };
-                                console.log('Datos de IndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores:', indicadoresDeudaHistoricaInstitucionSbsSicomRfrdoresRegistro);
-                                const repository = AppDataSource.getRepository(EQFX_IndicaIndicadoresDeudaHistoricaInstitucionSbsSicomRfrdores);
-                                await repository.save(indicadoresDeudaHistoricaInstitucionSbsSicomRfrdoresRegistro);
                             }
                         }
 
@@ -911,13 +910,13 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 await repository.save(informacionPosteriorFechaCorteOperacionesCanceladasRegistro);
                             }
                         }
-                      
+
                         if (data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas) {
                             countarraydata = countarraydata + 1;
                             const dataDetalleOperacionesVencidas = Array.isArray(data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas)
                                 ? data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas
                                 : [data.Detalle_x0020_de_x0020_operaciones_x0020_vencidas];
-                                //0983267357
+                            //0983267357
                             for (let i = 0; i < dataDetalleOperacionesVencidas.length; i++) {
                                 const item = dataDetalleOperacionesVencidas[i];
                                 const detalleOperacionesVencidasRegistro = {
@@ -941,7 +940,7 @@ const consultarExpertoPointTech = (tipoDocumento, numeroDocumento) => {
                                 await repository.save(detalleOperacionesVencidasRegistro);
                             }
                         }
-                    
+
                         console.log('Datos de IdentificacionConsultada:', idEQFX_IdentificacionConsultada, codigoConsulta, mensaje);
                         resolve({
                             idEQFX_IdentificacionConsultada,
