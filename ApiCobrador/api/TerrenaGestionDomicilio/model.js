@@ -29,6 +29,7 @@ const TerrenaGestionDomicilio = new EntitySchema({
             this.CallePrincipal = '';
             this.CalleSecundaria = '';
             this.ValorArrendado = 0;
+            this.direccionCoincide = 0;
 
         }
     }
@@ -117,6 +118,9 @@ const TerrenaGestionDomicilio = new EntitySchema({
         },
         ValorArrendado: {
             type: 'float'
+        },
+        direccionCoincide: {
+            type: 'int'
         }
     }
 });

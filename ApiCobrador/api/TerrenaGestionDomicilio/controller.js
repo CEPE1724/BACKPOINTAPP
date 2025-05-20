@@ -26,10 +26,12 @@ exports.save = async (req, res) => {
     CallePrincipal,
     CalleSecundaria,
     ValorArrendado,
+    direccionCoincide,
   } = req.body;
   const requiredFields = [
     { name: "idClienteVerificacion", value: idClienteVerificacion },
     { name: "idTerrenaTipoCliente", value: idTerrenaTipoCliente },
+    { name: "direccionCoincide", value: direccionCoincide },
     { name: "iTiempoVivienda", value: iTiempoVivienda },
     { name: "idTerrenaTipoVivienda", value: idTerrenaTipoVivienda },
     { name: "idTerrenaEstadoVivienda", value: idTerrenaEstadoVivienda },
@@ -79,6 +81,7 @@ exports.save = async (req, res) => {
       CallePrincipal,
       CalleSecundaria,
       ValorArrendado,
+      direccionCoincide,
     });
     const savedLocation = await AppDataSource.getRepository(
       TerrenaGestionDomicilio
