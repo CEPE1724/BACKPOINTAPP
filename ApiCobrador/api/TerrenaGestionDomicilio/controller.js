@@ -27,6 +27,7 @@ exports.save = async (req, res) => {
     CalleSecundaria,
     ValorArrendado,
     direccionCoincide,
+    tipoVerificacion,
   } = req.body;
   const requiredFields = [
     { name: "idClienteVerificacion", value: idClienteVerificacion },
@@ -49,6 +50,7 @@ exports.save = async (req, res) => {
     { name: "domicilioImages", value: domicilioImages },
     { name: "CallePrincipal", value: CallePrincipal },
     { name: "CalleSecundaria", value: CalleSecundaria },
+    { name: "tipoVerificacion", value: tipoVerificacion },
   ];
 
   for (const field of requiredFields) {
@@ -82,6 +84,7 @@ exports.save = async (req, res) => {
       CalleSecundaria,
       ValorArrendado,
       direccionCoincide,
+      tipoVerificacion,
     });
     const savedLocation = await AppDataSource.getRepository(
       TerrenaGestionDomicilio

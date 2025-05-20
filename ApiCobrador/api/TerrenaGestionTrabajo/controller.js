@@ -22,6 +22,7 @@ exports.save = async (req, res) => {
     CallePrincipal,
     CalleSecundaria,
     direccionCoincide,
+    tipoVerificacion,
 
   } = req.body;
   const requiredFields = [
@@ -41,6 +42,7 @@ exports.save = async (req, res) => {
     { name: 'trabajoImages', value: trabajoImages },
     { name: 'CallePrincipal', value: CallePrincipal },
     { name: 'CalleSecundaria', value: CalleSecundaria },
+    { name: 'tipoVerificacion', value: tipoVerificacion },
   ];
 
   for (const field of requiredFields) {
@@ -69,6 +71,7 @@ exports.save = async (req, res) => {
         trabajoImages: trabajoImagesString,
         CallePrincipal,
         CalleSecundaria,
+        tipoVerificacion,
       }
     );
 

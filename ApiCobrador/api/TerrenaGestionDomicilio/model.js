@@ -30,6 +30,7 @@ const TerrenaGestionDomicilio = new EntitySchema({
             this.CalleSecundaria = '';
             this.ValorArrendado = 0;
             this.direccionCoincide = 0;
+            this.tipoVerificacion = 0;
 
         }
     }
@@ -120,6 +121,9 @@ const TerrenaGestionDomicilio = new EntitySchema({
             type: 'float'
         },
         direccionCoincide: {
+            type: 'int'
+        },
+        tipoVerificacion: {
             type: 'int'
         }
     }
