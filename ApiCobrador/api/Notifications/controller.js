@@ -32,7 +32,7 @@ exports.create = async (req, res) => {
         }
 
         // validarq ue type este en el enum
-        const validTypes = ['alert', 'info', 'promotion', 'update', 'warning'];
+        const validTypes = ['alert', 'info', 'promotion', 'update', 'warning', 'success', 'event'];
         if (!validTypes.includes(Type)) {
             return res.status(400).json({
                 success: false,

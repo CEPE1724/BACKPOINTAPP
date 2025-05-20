@@ -21,11 +21,13 @@ exports.save = async (req, res) => {
     trabajoImages,
     CallePrincipal,
     CalleSecundaria,
+    direccionCoincide,
 
   } = req.body;
   const requiredFields = [
     { name: 'idClienteVerificacion', value: idClienteVerificacion },
     { name: 'idTerrenaTipoTrabajo', value: idTerrenaTipoTrabajo },
+    { name: 'direccionCoincide', value: direccionCoincide },
     { name: 'iTiempoTrabajo', value: iTiempoTrabajo },
     { name: 'iTiempoTrabajoYear', value: iTiempoTrabajoYear },
     { name: 'dIngresoTrabajo', value: dIngresoTrabajo },
@@ -53,6 +55,7 @@ exports.save = async (req, res) => {
       {
         idClienteVerificacion,
         idTerrenaTipoTrabajo,
+        direccionCoincide,
         iTiempoTrabajo,
         iTiempoTrabajoYear,
         dIngresoTrabajo,
