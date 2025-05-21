@@ -1,6 +1,7 @@
 const { AppDataSource } = require("../config/database");
 const TerrenaGestionDomicilio = require("./model");
 const ClientesVerificionTerrena = require("../ClientesVerificionTerrena/model");
+const Cre_SolicitudWeb = require("../Cre_SolicitudWeb/model");
 const DocTerrena = require("../DocTerrena/controller");
 const { getPdfDomicilio } = require('./services');
 exports.save = async (req, res) => {
@@ -98,6 +99,7 @@ exports.save = async (req, res) => {
       { idClienteVerificacion },
       { idTerrenaGestionDomicilio: savedLocation.idTerrenaGestionDomicilio }
     );
+
     const cliente = await clientesRepo.findOne({
       where: { idClienteVerificacion },
     });
@@ -118,24 +120,26 @@ exports.save = async (req, res) => {
           console.log("Error: ", result.error);
           return; // O maneja el error de la manera que consideres
         }*/
-    
+
         // Si no hubo error, obtiene la URL del documento generado
-       // const urldoc = result.url;
+        // const urldoc = result.url;
 
         // Realiza la actualización del cliente
         await clientesRepo.update(
           { idClienteVerificacion },          // Condición para identificar el cliente
-          { iEstado: 1, UrlGoogle: "",
+          {
+            iEstado: 1, UrlGoogle: "",
             FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
-           }   // Los campos a actualizar
+          }   // Los campos a actualizar
         );
-    
+
+
       } catch (error) {
         console.error("Error en el proceso:", error);
         // Aquí puedes manejar errores adicionales si es necesario
       }
     }
-    
+
     if (!bTrabajo) {
       try {
         /*const result = await getPdfDomicilio(idClienteVerificacion);
@@ -145,23 +149,36 @@ exports.save = async (req, res) => {
           console.log("Error: ", result.error);
           return; // O maneja el error de la manera que consideres
         }*/
-    
+
         // Si no hubo error, obtiene la URL del documento generado
         //const urldoc = result.url;
         // Realiza la actualización del cliente
         await clientesRepo.update(
           { idClienteVerificacion },          // Condición para identificar el cliente
-          { iEstado: 1, UrlGoogle: "",
+          {
+            iEstado: 1, UrlGoogle: "",
             FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
-           }   // Los campos a actualizar
+          }   // Los campos a actualizar
         );
-    
+
       } catch (error) {
         console.error("Error en el proceso:", error);
         // Aquí puedes manejar errores adicionales si es necesario
       }
     }
-
+    // obtener idcre_solicitud de clientes verificacion terrena
+    const clienteVerificacion = await clientesRepo.findOne({
+      where: { idClienteVerificacion },
+    });
+    // actualizar en cre_solicitud_web el campo idEstadoVerificacionDomicilio a  2
+    if (clienteVerificacion) {
+      const { idCre_solicitud } = clienteVerificacion;
+      const creSolicitudRepo = AppDataSource.getRepository(Cre_SolicitudWeb);
+      await creSolicitudRepo.update(
+        { idCre_SolicitudWeb: idCre_solicitud },
+        { idEstadoVerificacionDomicilio: 2 }
+      );
+    }
     res.status(201).json({
       message: "Datos guardados Correctamente",
       location: savedLocation,

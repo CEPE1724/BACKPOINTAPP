@@ -1,6 +1,7 @@
 const { AppDataSource } = require("../config/database");
 const TerrenaGestionTrabajo = require("./model");
 const ClientesVerificionTerrena = require("../ClientesVerificionTerrena/model");
+const Cre_SolicitudWeb = require("../Cre_SolicitudWeb/model");
 const { handleNewLocation } = require("../../sockets/eventHandlers");
 const { getPdfDomicilio } = require('../TerrenaGestionDomicilio/services');
 exports.save = async (req, res) => {
@@ -156,6 +157,19 @@ exports.save = async (req, res) => {
       }
     }
 
+    // obtener idcre_solicitud de clientes verificacion terrena
+        const clienteVerificacion = await clientesRepo.findOne({
+          where: { idClienteVerificacion },
+        });
+        // actualizar en cre_solicitud_web el campo idEstadoVerificacionDomicilio a  2
+        if (clienteVerificacion) {
+          const { idCre_solicitud } = clienteVerificacion;
+          const creSolicitudRepo = AppDataSource.getRepository(Cre_SolicitudWeb);
+          await creSolicitudRepo.update(
+            { idCre_SolicitudWeb: idCre_solicitud },
+            { idEstadoVerificacionTerrena: 2 }
+          );
+        }
     res.status(201).json({
       message: "TerrenaGestionTrabajo guardada correctamente",
       location: savedLocation,

@@ -78,6 +78,7 @@ const publicRoutes = [
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/RecojoAPP/router') },
     { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Notifications/router') },
     
+    
 ];
 
 // Rutas protegidas (con middleware)
