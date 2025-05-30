@@ -21,7 +21,7 @@ const validateToken = (req, res, next) => {
           data: null// No hay datos en caso de error
         });
       }
-      req.user = decoded;// Adjuntamos la información del cliente al objeto 'req'
+      req.user = decoded;// Adjuntamo la información del cliente al objeto 'req'
       next();// Llamamos al siguiente middleware o controlador
     });
   } else {
