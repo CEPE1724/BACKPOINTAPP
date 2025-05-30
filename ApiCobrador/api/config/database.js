@@ -33,6 +33,7 @@ const entities = [
     require('../Notifications/model'),
     require('../RecojoAPP/model'),
     require('../Cre_SolicitudWeb/model'),
+    require('../ExpoNotificacionesComisiones/model'),
 
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),

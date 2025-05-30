@@ -32,7 +32,13 @@ const ClientesVerificionTerrena = new EntitySchema({
             this.UrlGoogle= '',
             this.Latitud = 0,
             this.Longitud = 0,
-            this.UrlPhoto = ''
+            this.UrlPhoto = '',
+            this.JefeInmediato = '',
+            this.CelularInmediato = '',
+            this.Afiliado = 0,
+            this.idTipoVivienda = 0,
+            this.idCre_TiempoVivienda = 0,
+            this.idCre_Tiempo = 0
         }
     },
     columns: {
@@ -128,6 +134,26 @@ const ClientesVerificionTerrena = new EntitySchema({
         },
         UrlPhoto: {
             type: 'text'  // Cambié de 'varchar' a 'text'
+        },
+        JefeInmediato: {
+            type: 'varchar',
+            length: 255
+        },
+        CelularInmediato: {
+            type: 'varchar',
+            length: 15
+        },
+        Afiliado: {
+            type: 'int'
+        },
+        idTipoVivienda: {
+            type: 'int'
+        },
+        idCre_TiempoVivienda: {
+            type: 'int'
+        },
+        idCre_Tiempo: {
+            type: 'int'
         }
     }
 });

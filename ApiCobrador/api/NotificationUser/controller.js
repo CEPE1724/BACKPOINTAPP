@@ -363,7 +363,7 @@ exports.createNotificacion = async (req, res) => {
 exports.sendNotification = async (req, res) => {
 
     const { tokens, notification } = req.body;
-
+     console.log("Received tokens:", tokens);
 
 
     if (!Array.isArray(tokens) || tokens.length === 0 || !notification) {
