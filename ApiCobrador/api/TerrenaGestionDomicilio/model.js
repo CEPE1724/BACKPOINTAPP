@@ -70,15 +70,15 @@ const TerrenaGestionDomicilio = new EntitySchema({
         },
         PuntoReferencia: {
             type: 'varchar',
-            length: 255
+            length: 499
         },
         PersonaEntrevistada: {
             type: 'varchar',
-            length: 255
+            length: 299
         },
         Observaciones: {
             type: 'varchar',
-            length: 255
+            length: 499
         },
         VecinoEntreVisto: {
             type: 'varchar',
@@ -86,7 +86,7 @@ const TerrenaGestionDomicilio = new EntitySchema({
         },
         DireccionesVisitada: {
             type: 'varchar',
-            length: 255
+            length: 499
         },
         Latitud: {
             type: 'float'
@@ -111,11 +111,11 @@ const TerrenaGestionDomicilio = new EntitySchema({
         },
         CallePrincipal: {
             type: 'varchar',
-            length: 255
+            length: 299
         },
         CalleSecundaria: {
             type: 'varchar',
-            length: 255
+            length: 299
         },
         ValorArrendado: {
             type: 'float'

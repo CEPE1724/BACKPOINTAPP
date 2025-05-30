@@ -74,11 +74,11 @@ const TerrenaGestionTrabajo = new EntitySchema({
         },
         CallePrincipal: {
             type: 'varchar',
-            length: 250
+            length: 299
         },
         CalleSecundaria: {
             type: 'varchar',
-            length: 250
+            length: 299
         },
         direccionCoincide: {
             type: 'int'
