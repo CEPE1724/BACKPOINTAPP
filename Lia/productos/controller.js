@@ -39,7 +39,7 @@ exports.Baratazos_WEB_WP = async (req, res) => {
     }
 
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
 
     const data = result.map((p) => {
       const {
@@ -110,7 +110,7 @@ exports.Ofertas_WEB_WP = async (req, res) => {
     }
 
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
 
     const data = result.map((p) => {
       const {
@@ -170,7 +170,7 @@ exports.productosWEB_WP = async (req, res) => {
       })
     }
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
     const data = result.map((p) => {
       const {
         Codigo,
@@ -324,7 +324,7 @@ exports.crearCarrito = async (req, res) => {
       carritoDetalle.idWEB_CarritoDetalle = createDetalle[0].idWEB_CarritoDetalle
     }
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
     const finalCarrito = {
       KeyCarrito,
       MetodoPago,
