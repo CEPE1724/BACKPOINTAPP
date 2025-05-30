@@ -39,7 +39,7 @@ exports.Baratazos_WEB_WP = async (req, res) => {
     }
 
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
 
     const data = result.map((p) => {
       const {
@@ -110,7 +110,7 @@ exports.Ofertas_WEB_WP = async (req, res) => {
     }
 
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
 
     const data = result.map((p) => {
       const {
@@ -170,7 +170,7 @@ exports.productosWEB_WP = async (req, res) => {
       })
     }
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
     const data = result.map((p) => {
       const {
         Codigo,
@@ -231,6 +231,7 @@ exports.crearCarrito = async (req, res) => {
     !carritoDetalle.idWEB_Grupos || carritoDetalle.idWEB_Grupos === 0) {
     return res.status(400).json({ error: 'Los detalles del carrito son inválidos o faltan detalles.' })
   }
+  console.log('carritoDetalle', carritoDetalle)
   let idWEB_Carrito
   try {
     const findKeyCarrito = await AppDataSource.query(
@@ -324,12 +325,12 @@ exports.crearCarrito = async (req, res) => {
       carritoDetalle.idWEB_CarritoDetalle = createDetalle[0].idWEB_CarritoDetalle
     }
     const marketplaceUrl =
-      process.env.MARKETPLACE_URL || 'https://www.point.com.ec/' // URL base del marketplace
+      process.env.MARKETPLACE_URL || 'https://point.appservices.com.ec/' // URL base del marketplace
     const finalCarrito = {
       KeyCarrito,
       MetodoPago,
       detalle: [],
-      UrlCarrito: `${marketplaceUrl}carrito?id=${KeyCarrito}`
+      UrlCarrito: `${marketplaceUrl}cargar-carrito/${KeyCarrito}`
     }
     const finalDetalle = await AppDataSource.query(
       'select * from WEB_CarritoDetalle where idWEB_Carrito = @0',
