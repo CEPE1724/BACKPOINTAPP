@@ -97,7 +97,8 @@ const protectedRoutes = [
 ];
 
 const publicRoutesWhatsApp = [
-    { path: '/v1/whatsapp/point/', route: require('./WhatsApp/CBO_GestorVirtualCobranzas/router') }
+    { path: '/v1/whatsapp/point/', route: require('./WhatsApp/CBO_GestorVirtualCobranzas/router') },
+    { path: '/v1/whatsapp/point/', route: require('./WhatsApp/Ins_Cbo_Gestor_Cobranzas_Detalle/router') },
 ];
 // rutas de Cognoware
 

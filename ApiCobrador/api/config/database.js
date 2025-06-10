@@ -84,6 +84,8 @@ const entities = [
 
     // ruta pagados
     require('../../../Pagados/Pagados/model'),
+    // ruta Cbo_Gestor_Cobranzas_Detalle
+    require('../../../WhatsApp/Ins_Cbo_Gestor_Cobranzas_Detalle/model'),
 
 ];
 
