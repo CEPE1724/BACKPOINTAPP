@@ -444,17 +444,17 @@ function validateNotification(notification) {
 
     const validTypes = ['alert', 'info', 'promotion', 'update', 'warning', 'success', 'event'];
     const validEmpresas = ['POINT', 'CREDI']; // Reemplaza con tus empresas válidas
-    if (!title || title.length < 5 || title.length > 255) {
+    if (!title || title.length < 5 || title.length > 200) {
         return {
             success: false,
-            message: "El título debe tener entre 5 y 255 caracteres",
+            message: "El título debe tener entre 5 y 200 caracteres",
         };
     }
 
-    if (!body || body.length < 10 || body.length > 255) {
+    if (!body || body.length < 10 || body.length > 490) {
         return {
             success: false,
-            message: "El mensaje debe tener entre 10 y 255 caracteres",
+            message: "El mensaje debe tener entre 10 y 500 caracteres",
         };
     }
 
