@@ -9,6 +9,8 @@ const Cre_SolicitudWeb = new EntitySchema({
             this.idCre_SolicitudWeb = undefined;
             this.idEstadoVerificacionTerrena = 0;
             this.idEstadoVerificacionDomicilio = 0;
+            this.Estado =0;
+            this.Resultado = 0;
 
            
         }
@@ -25,6 +27,14 @@ const Cre_SolicitudWeb = new EntitySchema({
         idEstadoVerificacionDomicilio: {
             type: 'int'
         },
+        Estado: {
+            type: 'int',
+            default: 0
+        },
+        Resultado: {
+            type: 'int',
+            default: 0
+        }
     }
 });
 

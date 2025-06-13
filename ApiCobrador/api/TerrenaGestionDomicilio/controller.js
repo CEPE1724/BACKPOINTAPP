@@ -3,7 +3,9 @@ const TerrenaGestionDomicilio = require("./model");
 const ClientesVerificionTerrena = require("../ClientesVerificionTerrena/model");
 const Cre_SolicitudWeb = require("../Cre_SolicitudWeb/model");
 const DocTerrena = require("../DocTerrena/controller");
+const ListaNegraCedula = require("../ListaNegraCedula/model");
 const { getPdfDomicilio } = require('./services');
+const DispositivosAPP = require("../DispositivosAPP/model");
 exports.save = async (req, res) => {
   const {
     idTerrenaGestionDomicilio,
@@ -94,6 +96,16 @@ exports.save = async (req, res) => {
     let bDomicilio = true;
     let idTerrenaGestionDomicilioV = 0;
     let idTerrenaGestionTrabajoV = 0;
+
+    /* { value: 2, label: "Aprobado", icon: "check-circle" },
+    { value: 1, label: "Dirección incorrecta", icon: "map-marker" }, estado 4, resulato 0
+    { value: 3, label: "Malas referencias", icon: "thumbs-down" },estado 4, resulato 0 list anegra
+    { value: 4, label: "No vive ahí", icon: "question-circle" },estado 4, resulato 0
+    { value: 5, label: "Datos falsos", icon: "exclamation-circle" }, estado 4, resulato 0 list anegra
+    { value: 6, label: "Zona Vetada", icon: "ban" },estado 4, resulato 0
+    { value: 7, label: "No sustenta ingresos", icon: "money" }, estado 4, resulato 0 list anegra*/
+    let EstadoVerificacionDomicilio = tipoVerificacion === 2 ? 2 : 3; // Si es aprobado, estado 1, si no, estado 0
+
     let clientesRepo = AppDataSource.getRepository(ClientesVerificionTerrena);
     await clientesRepo.update(
       { idClienteVerificacion },
@@ -173,11 +185,36 @@ exports.save = async (req, res) => {
     // actualizar en cre_solicitud_web el campo idEstadoVerificacionDomicilio a  2
     if (clienteVerificacion) {
       const { idCre_solicitud } = clienteVerificacion;
+      console.log("idCre_solicitud:", idCre_solicitud);
+      console.log("EstadoVerificacionDomicilio:", tipoVerificacion);
       const creSolicitudRepo = AppDataSource.getRepository(Cre_SolicitudWeb);
       await creSolicitudRepo.update(
         { idCre_SolicitudWeb: idCre_solicitud },
-        { idEstadoVerificacionDomicilio: 2 }
+        {
+          idEstadoVerificacionDomicilio: EstadoVerificacionDomicilio,
+          Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 4,
+          Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0
+        },
+
+
       );
+      const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
+      const codigoVerificador = await dispositivoRepo.findOne({
+        where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
+        select: ['UsuarioAPP'],
+      });
+
+      if (tipoVerificacion === 3 || tipoVerificacion === 5 || tipoVerificacion === 7) {
+        const listaNegraResult = await ListaNegraCedulaLis(
+          cliente.Ruc,
+          'Enviado desde la APP de TerrenaGestionDomicilio',
+          true,
+          codigoVerificador.UsuarioAPP || 'Desconocido'
+        );
+        if (!listaNegraResult.success) {
+          console.error("Error al guardar en la lista negra:", listaNegraResult.message);
+        }
+      }
     }
     res.status(201).json({
       message: "Datos guardados Correctamente",
@@ -214,3 +251,27 @@ exports.getAll = async (req, res) => {
       .json({ message: "Error interno del servidor", error: error.message });
   }
 };
+
+async function ListaNegraCedulaLis(Cedula, Observacion, Activo = true, Usuario = 'Desconocido') {
+  const listaNegraRepo = AppDataSource.getRepository(ListaNegraCedula);
+
+  try {
+    if (!Cedula) {
+      return { success: false, message: "Cédula es requerida." };
+    }
+
+    const nuevaEntrada = listaNegraRepo.create({
+      Cedula,
+      Observacion: Observacion || 'Sin observación',
+      Activo,
+      Usuario,
+    });
+
+    await listaNegraRepo.save(nuevaEntrada);
+
+    return { success: true, message: "Entrada guardada correctamente" };
+  } catch (error) {
+    console.error("❌ Error al guardar la entrada en la lista negra:", error.message);
+    return { success: false, message: "Error al guardar la entrada: " + error.message };
+  }
+}

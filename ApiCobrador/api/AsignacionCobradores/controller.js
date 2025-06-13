@@ -6,17 +6,34 @@ const ClientesVerificionTerrena = require('../ClientesVerificionTerrena/model');
 const DispositivosAPP = require('../DispositivosAPP/model');
 const IngresoCobrador = require('../IngresoCobrador/model');
 const Usuario = require('../Usuario/model');
+const TiempoSolicitudesWeb = require('../TiempoSolicitudesWeb/model');
 
-// Función auxiliar para validar IDs
-const validarIds = (idVerificador, idClienteVerificacion) =>
-  idVerificador > 0 && idClienteVerificacion > 0;
 
-// Función auxiliar para enviar notificación
-const enviarNotificacion = async (idVerificador, cliente) => {
+// Validar IDs
+const validarIds = (idVerificador, idClienteVerificacion) => idVerificador > 0 && idClienteVerificacion > 0;
+
+// Insertar registro de tiempo de solicitud web
+async function insertarTiempoSolicitudWeb({ idCre_SolicitudWeb, Tipo, Usuario, Telefono, ID_ESTADO_VERIFICACION_DOCUMENTAL }) {
+  try {
+    await AppDataSource.getRepository(TiempoSolicitudesWeb).save({
+      idEstadoVerificacionDocumental: ID_ESTADO_VERIFICACION_DOCUMENTAL,
+      idCre_SolicitudWeb,
+      Tipo,
+      Usuario,
+      Telefono,
+    });
+    console.log('Tiempo de solicitud web insertado correctamente');
+  } catch (error) {
+    console.error('Error al insertar tiempo de solicitud web:', error);
+  }
+}
+
+// Enviar notificación push
+async function enviarNotificacion(idVerificador, cliente) {
   const dispositivo = await AppDataSource.getRepository(DispositivosAPP).findOne({
     where: { idNomina: idVerificador, Empresa: 33 },
   });
-
+console.log('Dispositivo encontrado:', dispositivo);
   if (!dispositivo?.TokenExpo) return;
 
   const fechaHoraEcuador = new Date().toLocaleString('es-EC', {
@@ -45,62 +62,79 @@ Por favor, verifica la nueva asignación en la aplicación.`,
     },
   };
 
-  await axios.post('https://appservices.com.ec/cobranza/api/v1/point/NotificationUser/expo', payload);
-};
+  try {
+    await axios.post('https://appservices.com.ec/cobranza/api/v1/point/NotificationUser/expo', payload);
+  } catch (error) {
+    console.error('Error enviando notificación:', error);
+  }
+}
+
+// Manejo de errores y respuestas
+const responseError = (res, status, message, data = []) =>
+  res.status(status).json({ message, status: false, data });
+
+// Manejo de respuestas exitosas
+const responseSuccess = (res, message, data) =>
+  res.json({ message, status: true, data });
 
 // Reasignar verificación al supervisor de una asignación activa
 exports.alllist = async (req, res) => {
   try {
     const { idVerificador, idClienteVerificacion } = req.body;
 
-    if (!validarIds(idVerificador, idClienteVerificacion)) {
-      return res.status(400).json({
-        message: 'Parámetros idVerificador e idClienteVerificacion son requeridos y deben ser mayores que cero.',
-        status: false,
-        data: []
-      });
-    }
+    if (!validarIds(idVerificador, idClienteVerificacion))
+      return responseError(res, 400, 'Parámetros idVerificador e idClienteVerificacion son requeridos y deben ser mayores que cero.');
 
     const today = new Date();
     const asignacion = await AppDataSource.getRepository(AsignacionCobradores).findOne({
       where: {
-        idPersonal: idVerificador,//para pruebas poner 222
+        idPersonal: idVerificador, // para pruebas poner 222
         Desde: LessThanOrEqual(today),
         Hasta: MoreThanOrEqual(today),
       },
     });
 
-    if (!asignacion) {
-      return res.status(404).json({
-        message: 'Verificador no tiene una asignación activa.',
-        status: false,
-        data: [],
-      });
-    }
+    if (!asignacion)
+      return responseError(res, 404, 'Verificador no tiene una asignación activa.');
 
-    const cliente = await AppDataSource.getRepository(ClientesVerificionTerrena).findOne({
-      where: { idClienteVerificacion },
-    });
+    const clienteRepo = AppDataSource.getRepository(ClientesVerificionTerrena);
+    const cliente = await clienteRepo.findOne({ where: { idClienteVerificacion } });
 
-    if (!cliente) {
-      return res.status(404).json({
-        message: 'Cliente de verificación no encontrado.',
-        status: false,
-        data: [],
-      });
-    }
+    if (!cliente)
+      return responseError(res, 404, 'Cliente de verificación no encontrado.');
 
     cliente.idAsignacionCobradores = asignacion.idAsignacionCobradores;
     cliente.idVerificador = asignacion.idSupervisor;
-    await AppDataSource.getRepository(ClientesVerificionTerrena).save(cliente);
+    await clienteRepo.save(cliente);
+
+    const ingresoCobradorRepo = AppDataSource.getRepository(IngresoCobrador);
+
+    const codigoVerificador = await ingresoCobradorRepo.findOne({
+      where: { idIngresoCobrador: idVerificador },
+      select: ['Codigo'],
+    });
+    if (!codigoVerificador)
+      return responseError(res, 404, 'Verificador no encontrado.');
+
+    const nombreJefe = await ingresoCobradorRepo.findOne({
+      where: { idIngresoCobrador: asignacion.idSupervisor },
+      select: ['Nombre'],
+    });
+    if (!nombreJefe)
+      return responseError(res, 404, 'Supervisor no encontrado.');
+
+    const Tipo = cliente.bDomicilio ? 4 : 5; // 4: Domicilio, 5: Trabajo
+    await insertarTiempoSolicitudWeb({
+      idCre_SolicitudWeb: cliente.idCre_solicitud,
+      Tipo,
+      Usuario: codigoVerificador.Codigo,
+      Telefono: nombreJefe.Nombre,
+      ID_ESTADO_VERIFICACION_DOCUMENTAL: 4, // Asignación realizada
+    });
 
     await enviarNotificacion(idVerificador, cliente);
 
-    res.json({
-      message: 'Asignación realizada correctamente.',
-      status: true,
-      data: asignacion,
-    });
+    responseSuccess(res, 'Asignación realizada correctamente.', asignacion);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
@@ -112,36 +146,48 @@ exports.UpdateCobrador = async (req, res) => {
   try {
     const { idVerificador, idClienteVerificacion } = req.body;
 
-    if (!validarIds(idVerificador, idClienteVerificacion)) {
-      return res.status(400).json({
-        message: 'Parámetros idVerificador e idClienteVerificacion son requeridos y deben ser mayores que cero.',
-        status: false,
-        data: []
-      });
-    }
+    if (!validarIds(idVerificador, idClienteVerificacion))
+      return responseError(res, 400, 'Parámetros idVerificador e idClienteVerificacion son requeridos y deben ser mayores que cero.');
 
-    const cliente = await AppDataSource.getRepository(ClientesVerificionTerrena).findOne({
-      where: { idClienteVerificacion },
+    const clienteRepo = AppDataSource.getRepository(ClientesVerificionTerrena);
+    const cliente = await clienteRepo.findOne({ where: { idClienteVerificacion } });
+
+    if (!cliente)
+      return responseError(res, 404, 'Cliente de verificación no encontrado.');
+    const idVerificadorafter = cliente.idVerificador;
+    cliente.idVerificador = idVerificador;
+    await clienteRepo.save(cliente);
+
+    const ingresoCobradorRepo = AppDataSource.getRepository(IngresoCobrador);
+
+    const codigoVerificador = await ingresoCobradorRepo.findOne({
+      where: { idIngresoCobrador: idVerificadorafter },
+      select: ['Codigo'],
+    });
+    if (!codigoVerificador)
+      return responseError(res, 404, 'Verificador no encontrado.');
+
+    const nombreJefe = await ingresoCobradorRepo.findOne({
+      where: { idIngresoCobrador: idVerificador },
+      select: ['Nombre'],
+    });
+    if (!nombreJefe)
+      return responseError(res, 404, 'Supervisor no encontrado.');
+    const Tipo = cliente.bDomicilio ? 4 : 5; // 4: Domicilio, 5: Trabajo
+    await insertarTiempoSolicitudWeb({
+      idCre_SolicitudWeb: cliente.idCre_solicitud,
+      Tipo,
+      Usuario: codigoVerificador.Codigo,
+      Telefono: nombreJefe.Nombre,
+      ID_ESTADO_VERIFICACION_DOCUMENTAL: 3, // Asignación realizada
     });
 
-    if (!cliente) {
-      return res.status(404).json({
-        message: 'Cliente de verificación no encontrado.',
-        status: false,
-        data: [],
-      });
-    }
 
-    cliente.idVerificador = idVerificador;
-    await AppDataSource.getRepository(ClientesVerificionTerrena).save(cliente);
+
 
     await enviarNotificacion(idVerificador, cliente);
 
-    res.json({
-      message: 'Asignación realizada correctamente.',
-      status: true,
-      data: cliente,
-    });
+    responseSuccess(res, 'Asignación realizada correctamente.', cliente);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
@@ -153,14 +199,8 @@ exports.searchJefeidCobrador = async (req, res) => {
   try {
     const { idVerificador } = req.query;
 
-    if (!idVerificador || idVerificador <= 0) {
-      return res.status(400).json({
-        message: 'Parámetro idVerificador es requerido y debe ser mayor que cero.',
-        status: false,
-        data: [],
-        totalRegistros: 0
-      });
-    }
+    if (!idVerificador || idVerificador <= 0)
+      return responseError(res, 400, 'Parámetro idVerificador es requerido y debe ser mayor que cero.', [], 0);
 
     const today = new Date();
     const asignaciones = await AppDataSource.getRepository(AsignacionCobradores).find({
@@ -172,14 +212,8 @@ exports.searchJefeidCobrador = async (req, res) => {
       },
     });
 
-    if (!asignaciones.length) {
-      return res.status(404).json({
-        message: 'No existen asignaciones activas para este supervisor.',
-        status: false,
-        data: [],
-        totalRegistros: 0,
-      });
-    }
+    if (!asignaciones.length)
+      return responseError(res, 404, 'No existen asignaciones activas para este supervisor.', [], 0);
 
     const ids = asignaciones.map(a => a.idPersonal);
     const cobradores = await AppDataSource.getRepository(IngresoCobrador).find({
@@ -187,14 +221,8 @@ exports.searchJefeidCobrador = async (req, res) => {
       order: { Nombre: 'ASC' },
     });
 
-    if (!cobradores.length) {
-      return res.status(404).json({
-        message: 'No se encontraron cobradores asociados a las asignaciones.',
-        status: false,
-        data: [],
-        totalRegistros: 0,
-      });
-    }
+    if (!cobradores.length)
+      return responseError(res, 404, 'No se encontraron cobradores asociados a las asignaciones.', [], 0);
 
     res.json({
       message: 'Asignaciones encontradas.',
@@ -213,45 +241,34 @@ exports.searchSupervisor = async (req, res) => {
   try {
     const { idVerificador } = req.query;
 
-    if (!idVerificador || idVerificador <= 0) {
-      return res.status(400).json({
-        message: 'Parámetro idVerificador es requerido y debe ser mayor que cero.',
-        status: false,
-        data: []
-      });
-    }
+    if (!idVerificador || idVerificador <= 0)
+      return responseError(res, 400, 'Parámetro idVerificador es requerido y debe ser mayor que cero.');
 
     const verificador = await AppDataSource.getRepository(IngresoCobrador).findOne({
       where: { idIngresoCobrador: idVerificador },
     });
 
-    if (!verificador) {
+    if (!verificador)
       return res.status(200).json({
         message: 'Supervisor no encontrado.',
         status: false,
         data: 0,
       });
-    }
 
     const usuario = await AppDataSource.getRepository(Usuario).findOne({
       where: { Nombre: verificador.Codigo },
     });
 
-    if (!usuario) {
+    if (!usuario)
       return res.status(200).json({
         message: 'Usuario no encontrado.',
         status: false,
         data: 0,
       });
-    }
 
     const isSupervisor = usuario.idGrupo === 33 ? 1 : 0;
 
-    res.json({
-      message: 'Supervisor encontrado.',
-      status: true,
-      data: isSupervisor,
-    });
+    responseSuccess(res, 'Supervisor encontrado.', isSupervisor);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });

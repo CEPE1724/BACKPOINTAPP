@@ -17,6 +17,7 @@ const DispositivosAPP = new EntitySchema({
             this.Pin = "";
             this.PinSeguridad = "";
             this.TokenExpo ="";
+            this.UsuarioAPP = "";
            
         }
     },
@@ -61,6 +62,10 @@ const DispositivosAPP = new EntitySchema({
             type: 'varchar',
             length: 500
         },
+        UsuarioAPP: {
+            type: 'varchar',
+            length: 50
+        }
     }
 });
 

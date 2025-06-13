@@ -4,6 +4,8 @@ const ClientesVerificionTerrena = require("../ClientesVerificionTerrena/model");
 const Cre_SolicitudWeb = require("../Cre_SolicitudWeb/model");
 const { handleNewLocation } = require("../../sockets/eventHandlers");
 const { getPdfDomicilio } = require('../TerrenaGestionDomicilio/services');
+const DispositivosAPP = require("../DispositivosAPP/model");
+const listaNegraCedula = require("../ListaNegraCedula/model");
 exports.save = async (req, res) => {
   const {
     idTerrenaGestionTrabajo,
@@ -83,12 +85,14 @@ exports.save = async (req, res) => {
     let bDomicilio = true;
     let idTerrenaGestionDomicilioV = 0;
     let idTerrenaGestionTrabajoV = 0;
-
+    let EstadoVerificacionTerrena = tipoVerificacion === 2 ? 2 : 3;
     const clientesRepo = AppDataSource.getRepository(ClientesVerificionTerrena);
     await clientesRepo.update(
       { idClienteVerificacion },
       { idTerrenaGestionTrabajo: savedLocation.idTerrenaGestionTrabajo }
     );
+
+
 
     const cliente = await clientesRepo.findOne({
       where: { idClienteVerificacion },
@@ -104,53 +108,55 @@ exports.save = async (req, res) => {
     if (bDomicilio && idTerrenaGestionDomicilioV > 0) {
       try {
         const result = await getPdfDomicilio(idClienteVerificacion);
-        
+
         // Verifica si la respuesta contiene un error
         if (result.error) {
           console.log("Error: ", result.error);
           return; // O maneja el error de la manera que consideres
         }
-    
+
         // Si no hubo error, obtiene la URL del documento generado
         const urldoc = result.url;
         console.log("URL del documento:", urldoc);
-        
+
         // Realiza la actualización del cliente
         await clientesRepo.update(
           { idClienteVerificacion },          // Condición para identificar el cliente
-          { iEstado: 1, UrlGoogle: urldoc,
+          {
+            iEstado: 1, UrlGoogle: urldoc,
             FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
-           }   // Los campos a actualizar
+          }   // Los campos a actualizar
         );
-    
+
       } catch (error) {
         console.error("Error en el proceso:", error);
         // Aquí puedes manejar errores adicionales si es necesario
       }
     }
-    
+
     if (!bDomicilio) {
       try {
         const result = await getPdfDomicilio(idClienteVerificacion);
-        
+
         // Verifica si la respuesta contiene un error
         if (result.error) {
           console.log("Error: ", result.error);
           return; // O maneja el error de la manera que consideres
         }
-    
+
         // Si no hubo error, obtiene la URL del documento generado
         const urldoc = result.url;
         console.log("URL del documento:", urldoc);
-        
+
         // Realiza la actualización del cliente
         await clientesRepo.update(
           { idClienteVerificacion },          // Condición para identificar el cliente
-          { iEstado: 1, UrlGoogle: urldoc,
+          {
+            iEstado: 1, UrlGoogle: urldoc,
             FechaEnvio: new Date().toISOString().replace('T', ' ').substr(0, 19),
-           }   // Los campos a actualizar
+          }   // Los campos a actualizar
         );
-    
+
       } catch (error) {
         console.error("Error en el proceso:", error);
         // Aquí puedes manejar errores adicionales si es necesario
@@ -158,18 +164,42 @@ exports.save = async (req, res) => {
     }
 
     // obtener idcre_solicitud de clientes verificacion terrena
-        const clienteVerificacion = await clientesRepo.findOne({
-          where: { idClienteVerificacion },
-        });
-        // actualizar en cre_solicitud_web el campo idEstadoVerificacionDomicilio a  2
-        if (clienteVerificacion) {
-          const { idCre_solicitud } = clienteVerificacion;
-          const creSolicitudRepo = AppDataSource.getRepository(Cre_SolicitudWeb);
-          await creSolicitudRepo.update(
-            { idCre_SolicitudWeb: idCre_solicitud },
-            { idEstadoVerificacionTerrena: 2 }
-          );
+    const clienteVerificacion = await clientesRepo.findOne({
+      where: { idClienteVerificacion },
+    });
+    // actualizar en cre_solicitud_web el campo idEstadoVerificacionDomicilio a  2
+    if (clienteVerificacion) {
+      const { idCre_solicitud } = clienteVerificacion;
+      console.log("idCre_solicitud:", idCre_solicitud);
+      console.log("EstadoVerificacionDomicilio:", tipoVerificacion);
+      const creSolicitudRepo = AppDataSource.getRepository(Cre_SolicitudWeb);
+      await creSolicitudRepo.update(
+        { idCre_SolicitudWeb: idCre_solicitud },
+        {
+          idEstadoVerificacionTerrena: EstadoVerificacionTerrena,
+          Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 4, // undefined no actualiza
+          Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0,
         }
+      );
+      // si tipoVerificacion es 3,5,7 pasar  alista negra
+      const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
+      const codigoVerificador = await dispositivoRepo.findOne({
+        where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
+        select: ['UsuarioAPP'],
+      });
+      
+      if (tipoVerificacion === 3 || tipoVerificacion === 5 || tipoVerificacion === 7) {
+        const listaNegraResult = await ListaNegraCedulaLis(
+          cliente.Ruc,
+          'Enviado desde la APP de TerrenaGestionTrabajo',
+          true,
+           codigoVerificador.UsuarioAPP || 'Desconocido'
+        );
+        if (!listaNegraResult.success) {
+          console.error("Error al guardar en la lista negra:", listaNegraResult.message);
+        }
+      }
+    }
     res.status(201).json({
       message: "TerrenaGestionTrabajo guardada correctamente",
       location: savedLocation,
@@ -204,3 +234,26 @@ exports.getAll = async (req, res) => {
   }
 };
 
+async function ListaNegraCedulaLis(Cedula, Observacion, Activo = true, Usuario = 'Desconocido') {
+  const listaNegraRepo = AppDataSource.getRepository(listaNegraCedula);
+
+  try {
+    if (!Cedula) {
+      return { success: false, message: "Cédula es requerida." };
+    }
+
+    const nuevaEntrada = listaNegraRepo.create({
+      Cedula,
+      Observacion: Observacion || 'Sin observación',
+      Activo,
+      Usuario,
+    });
+
+    await listaNegraRepo.save(nuevaEntrada);
+
+    return { success: true, message: "Entrada guardada correctamente" };
+  } catch (error) {
+    console.error("❌ Error al guardar la entrada en la lista negra:", error.message);
+    return { success: false, message: "Error al guardar la entrada: " + error.message };
+  }
+}
