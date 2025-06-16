@@ -1,6 +1,6 @@
-/*Create table Cbo_Gestor_Cobranzas_Detalle (idCbo_Gestor_Cobranzas_Detalle Int Primary Key Identity(1, 1), idCompra int, Estado int, Fecha Datetime default getdate(), Notas Varchar(8000), URL Varchar(1000)) */
 
 const { EntitySchema } = require('typeorm');
+
 
 const Cbo_Gestor_Cobranzas_Detalle = new EntitySchema({
     name: 'Cbo_Gestor_Cobranzas_Detalle',
@@ -9,10 +9,17 @@ const Cbo_Gestor_Cobranzas_Detalle = new EntitySchema({
         constructor() {
             this.idCbo_Gestor_Cobranzas_Detalle = undefined;
             this.idCompra = 0;
-            this.Estado = 0;
             this.Fecha = new Date();
-            this.Notas = '';
-            this.URL = '';
+            this.intentosLLamada = 0;            
+            this.Contesto = '';
+            this.succesEvaluation = '';
+            this.urlGrabacion = '';
+            this.transcript = '';
+            this.tiempoLlamada = '';
+            this.compromiso = '';
+            this.fechaCompromisoDePago = null;            
+            this.resumen = '';
+            this.numeroequivocado = '';
         }
     },
     columns: {
@@ -23,22 +30,51 @@ const Cbo_Gestor_Cobranzas_Detalle = new EntitySchema({
         },
         idCompra: {
             type: 'int'
-        },
-        Estado: {
-            type: 'int'
-        },
+        },        
         Fecha: {
             type: 'datetime',
             default: () => 'CURRENT_TIMESTAMP'
         },
-        Notas: {
+        intentosLLamada: {
+            type: 'int',
+            default: 0
+        },
+        Contesto: {
+            type: 'varchar',
+            length: 2
+        },
+        succesEvaluation: {
+            type: 'varchar',
+            length: 1000
+        },
+        urlGrabacion: {
+            type: 'varchar',
+            length: 1000
+        },
+        transcript: {
+            type: 'varchar',
+            length: 1000
+        }, 
+        tiempoLlamada: {
+            type: 'varchar',
+            length: 1000
+        },  
+        compromiso: {
+            type: 'varchar',
+            length: 2
+        },     
+        fechaCompromisoDePago: {
+            type: 'datetime',
+            nullable: true
+        },
+        resumen: {
             type: 'varchar',
             length: 8000
         },
-        URL: {
+        numeroequivocado: {
             type: 'varchar',
-            length: 1000
-        }
+            length: 2
+        },
     }
 
 });
