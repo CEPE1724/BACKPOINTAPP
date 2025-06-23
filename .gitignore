@@ -46,3 +46,5 @@ logs/
 iisnode/
 ApiCobrador/api/documentos
 iisnode/
+.prettierrc
+.vscode
