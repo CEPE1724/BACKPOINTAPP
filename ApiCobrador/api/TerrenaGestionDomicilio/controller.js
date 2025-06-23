@@ -192,7 +192,7 @@ exports.save = async (req, res) => {
         { idCre_SolicitudWeb: idCre_solicitud },
         {
           idEstadoVerificacionDomicilio: EstadoVerificacionDomicilio,
-          Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 4,
+          Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7,
           Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0
         },
 
