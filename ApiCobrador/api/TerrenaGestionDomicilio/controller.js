@@ -192,18 +192,18 @@ exports.save = async (req, res) => {
         { idCre_SolicitudWeb: idCre_solicitud },
         {
           idEstadoVerificacionDomicilio: EstadoVerificacionDomicilio,
-          Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7,
-          Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0
+         // Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7,
+          //Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0
         },
 
 
       );
-      const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
+    /*  const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
       const codigoVerificador = await dispositivoRepo.findOne({
         where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
         select: ['UsuarioAPP'],
-      });
-
+      });*/
+/*
       if (tipoVerificacion === 3 || tipoVerificacion === 5 || tipoVerificacion === 7) {
         const listaNegraResult = await ListaNegraCedulaLis(
           cliente.Ruc,
@@ -214,7 +214,7 @@ exports.save = async (req, res) => {
         if (!listaNegraResult.success) {
           console.error("Error al guardar en la lista negra:", listaNegraResult.message);
         }
-      }
+      }*/
     }
     res.status(201).json({
       message: "Datos guardados Correctamente",

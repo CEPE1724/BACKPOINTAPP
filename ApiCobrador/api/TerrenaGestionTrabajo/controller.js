@@ -177,12 +177,12 @@ exports.save = async (req, res) => {
         { idCre_SolicitudWeb: idCre_solicitud },
         {
           idEstadoVerificacionTerrena: EstadoVerificacionTerrena,
-          Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7, // undefined no actualiza
-          Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0,
+         // Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7, // undefined no actualiza
+          //Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0,
         }
       );
       // si tipoVerificacion es 3,5,7 pasar  alista negra
-      const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
+    /*  const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
       const codigoVerificador = await dispositivoRepo.findOne({
         where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
         select: ['UsuarioAPP'],
@@ -198,7 +198,7 @@ exports.save = async (req, res) => {
         if (!listaNegraResult.success) {
           console.error("Error al guardar en la lista negra:", listaNegraResult.message);
         }
-      }
+      }*/
     }
     res.status(201).json({
       message: "TerrenaGestionTrabajo guardada correctamente",
