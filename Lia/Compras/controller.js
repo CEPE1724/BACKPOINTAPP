@@ -16,16 +16,7 @@ exports.Compras_Por_Ruc = async (req, res) => {
   try {
     const compras = await AppDataSource.query(
       `
-      Select c.idCompra, c.SerieFactura + ' ' + c.Numero As Factura, c.Fecha, c.Total
-      From Compra c 
-        Inner Join Cre_TablaDeAmortizacion ta On ta.idCompra = c.idCompra
-      Where c.idTipoFactura = 1
-        And c.Borrar = 0
-        And c.Estado = 10
-        And c.idFormaPago = 9
-        And c.Ruc = @0
-      Group By c.idCompra, c.SerieFactura, c.Numero, c.Fecha, c.Total
-      Having SUM(Capital - ABCapital) > 0;
+      exec dbo.ObtenerComprasPorRuc @0;
       `, [ruc]
     )
     if (!compras || compras.length === 0) {
@@ -66,29 +57,7 @@ exports.Compra_Por_idCompra = async (req, res) => {
   try {
     const compra = await AppDataSource.query(
       `
-      SELECT 
-      NumeroCuota,
-      Inicia,
-      Vence,
-      FechaCancelacion,
-      ValorCuota,
-      Interes,
-      Capital,
-      ABCapital,
-      ABInteres,
-      Abono,
-      Saldo,
-      Estado,
-      CASE Estado 
-        WHEN 2 THEN 'CANCELADO'
-        WHEN 1 THEN 'EN MORA'
-        WHEN 0 THEN 'PENDIENTE'
-        WHEN 3 THEN 'ABONADO'
-        ELSE 'DESCONOCIDO'
-      END AS EstadoDescripcion
-      FROM Cre_TablaDeAmortizacion
-      WHERE idCompra = @0
-      ORDER BY NumeroCuota;
+      exec dbo.ObtenerEstadoCompraPorId @0;
       `, [idCompra]
     )
     if (!compra || compra.length === 0) {
