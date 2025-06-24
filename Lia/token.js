@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../../.env' }) // Cargar las variables de entorno
+require('dotenv').config({ path: '../.env' }) // Cargar las variables de entorno
 
 const jwt = require('jsonwebtoken')
 // Información del cliente (esto podría venir de tu base de datos o de otro lugar)

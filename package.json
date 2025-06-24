@@ -4,7 +4,8 @@
   "description": "BACK DE COBRADORES CONEXION SQL SERVER",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,12 +20,14 @@
     "docxtemplater": "^3.54.0",
     "docxtemplater-image-module": "^3.0.0",
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "expo-server-sdk": "^3.15.0",
     "express": "^4.21.2",
     "express-rate-limit": "^7.3.1",
     "express-validator": "^7.1.0",
     "fs": "^0.0.1-security",
     "helmet": "^7.1.0",
+    "html-pdf": "^3.0.1",
     "jsonwebtoken": "^9.0.2",
     "leaflet": "^1.9.4",
     "leaflet-image": "^0.4.0",
