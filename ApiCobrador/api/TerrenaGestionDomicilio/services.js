@@ -9,6 +9,7 @@ const TerrenaGestionDomicilio = require("../TerrenaGestionDomicilio/model");
 const TerrenaGestionTrabajo = require("../TerrenaGestionTrabajo/model");
 const IngresoCobrador = require("../IngresoCobrador/model");
 const { uploadFileToCloud } = require("./uploadFileToCloud");
+const { Console } = require("console");
 
 function getOptionLabel(value, options) {
     const selectedOption = options.find(option => option.value === value);
@@ -17,20 +18,30 @@ function getOptionLabel(value, options) {
 
 async function getPdfDomicilio(idClienteVerificacion) {
     if (!idClienteVerificacion) {
-        return res.status(400).json({ message: "El campo idClienteVerificacion es obligatorio" });
+        return { error: "El campo idClienteVerificacion es obligatorio" }; // ✅ Solo retornas un error
     }
+
+    console.log("idClienteVerificacion:", idClienteVerificacion);
     const queryRunner = AppDataSource.createQueryRunner();
     await queryRunner.startTransaction();
     try {
         // Obtener el cliente
-        const cliente = await queryRunner.manager.findOne(ClientesVerificionTerrena, { where: { idClienteVerificacion: idClienteVerificacion } });
+        const cliente = await queryRunner.manager.findOne(ClientesVerificionTerrena, { where: { idClienteVerificacion: idClienteVerificacion, iEstado : 1 } });
         if (!cliente) {
-            return res.status(404).json({ message: "Cliente no encontrado" });
+            return { error: "Cliente no encontrado" }
         }
 
+
+        const clienteTrabajo = await queryRunner.manager.findOne(ClientesVerificionTerrena, { 
+            where: { idCre_solicitud: cliente.idCre_solicitud, bTrabajo: true, iEstado: 1 } 
+        });
+
+       
         // Obtener información de domicilio y trabajo
-        const Domicilio = await queryRunner.manager.findOne(TerrenaGestionDomicilio, { where: { idClienteVerificacion } });
-        const Trabajo = await queryRunner.manager.findOne(TerrenaGestionTrabajo, { where: { idClienteVerificacion } });
+        const Domicilio = await queryRunner.manager.findOne(TerrenaGestionDomicilio, { where: { idClienteVerificacion , tipoVerificacion : 2 } });
+        const Trabajo = await queryRunner.manager.findOne(TerrenaGestionTrabajo, { where: { idClienteVerificacion: clienteTrabajo.idClienteVerificacion, tipoVerificacion : 2  } });
+     
+        console.log("Trabajo:", Trabajo);
         const Ingreso = await queryRunner.manager.findOne(IngresoCobrador, { where: { idIngresoCobrador: cliente.idVerificador } });
 
         if (!Domicilio && !Trabajo) {
@@ -46,11 +57,11 @@ async function getPdfDomicilio(idClienteVerificacion) {
             { value: 4, label: "Mixta", icon: "building" }
         ]);
 
-        let A = Domicilio?.iTiempoVivienda === 1 ? 'X' : '';
-        let B = Domicilio?.iTiempoVivienda === 2 ? 'X' : '';
-        let C = Domicilio?.iTiempoVivienda === 5 ? 'X' : '';
-        let D = Domicilio?.iTiempoVivienda === 3 ? 'X' : '';
-        let E = Domicilio?.iTiempoVivienda === 4 ? 'X' : '';
+        let A = Domicilio?.idTerrenaTipoVivienda === 1 ? 'X' : '';
+        let B = Domicilio?.idTerrenaTipoVivienda === 2 ? 'X' : '';
+        let C = Domicilio?.idTerrenaTipoVivienda === 5 ? 'X' : '';
+        let D = Domicilio?.idTerrenaTipoVivienda === 3 ? 'X' : '';
+        let E = Domicilio?.idTerrenaTipoVivienda === 4 ? 'X' : '';
 
         const estado = getOptionLabel(Domicilio?.idTerrenaTipoVivienda ?? null, [
             { value: 2, label: "Muy Bueno", icon: "smile-o" },
@@ -58,9 +69,9 @@ async function getPdfDomicilio(idClienteVerificacion) {
             { value: 3, label: "Malo", icon: "frown-o" }
         ]);
 
-        let F = Domicilio?.idTerrenaTipoVivienda === 2 ? 'X' : '';
-        let G = Domicilio?.idTerrenaTipoVivienda === 1 ? 'X' : '';
-        let H = Domicilio?.idTerrenaTipoVivienda === 3 ? 'X' : '';
+        let F = Domicilio?.idTerrenaEstadoVivienda === 2 ? 'X' : '';
+        let G = Domicilio?.idTerrenaEstadoVivienda === 1 ? 'X' : '';
+        let H = Domicilio?.idTerrenaEstadoVivienda === 3 ? 'X' : '';
 
         const zona = getOptionLabel(Domicilio?.idTerrenaZonaVivienda ?? null, [
             { value: 1, label: "Urbano", icon: "building" },
@@ -136,7 +147,7 @@ async function getPdfDomicilio(idClienteVerificacion) {
         };
 
         // Crear un nuevo documento DOCX
-        const inputPath = path.join(__dirname, 'INFORMEVERIFICACIONTERRENA.docx');
+        const inputPath = path.join(__dirname, 'INFORMEVERIFICACIONTERRENA2.docx');
         const content = fs.readFileSync(inputPath, 'binary');
         const zip = new PizZip(content);
         const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });

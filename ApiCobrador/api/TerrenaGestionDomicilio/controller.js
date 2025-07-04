@@ -192,29 +192,29 @@ exports.save = async (req, res) => {
         { idCre_SolicitudWeb: idCre_solicitud },
         {
           idEstadoVerificacionDomicilio: EstadoVerificacionDomicilio,
-         // Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7,
+          // Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7,
           //Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0
         },
 
 
       );
-    /*  const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
-      const codigoVerificador = await dispositivoRepo.findOne({
-        where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
-        select: ['UsuarioAPP'],
-      });*/
-/*
-      if (tipoVerificacion === 3 || tipoVerificacion === 5 || tipoVerificacion === 7) {
-        const listaNegraResult = await ListaNegraCedulaLis(
-          cliente.Ruc,
-          'Enviado desde la APP de TerrenaGestionDomicilio',
-          true,
-          codigoVerificador.UsuarioAPP || 'Desconocido'
-        );
-        if (!listaNegraResult.success) {
-          console.error("Error al guardar en la lista negra:", listaNegraResult.message);
-        }
-      }*/
+      /*  const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
+        const codigoVerificador = await dispositivoRepo.findOne({
+          where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
+          select: ['UsuarioAPP'],
+        });*/
+      /*
+            if (tipoVerificacion === 3 || tipoVerificacion === 5 || tipoVerificacion === 7) {
+              const listaNegraResult = await ListaNegraCedulaLis(
+                cliente.Ruc,
+                'Enviado desde la APP de TerrenaGestionDomicilio',
+                true,
+                codigoVerificador.UsuarioAPP || 'Desconocido'
+              );
+              if (!listaNegraResult.success) {
+                console.error("Error al guardar en la lista negra:", listaNegraResult.message);
+              }
+            }*/
     }
     res.status(201).json({
       message: "Datos guardados Correctamente",
@@ -273,5 +273,54 @@ async function ListaNegraCedulaLis(Cedula, Observacion, Activo = true, Usuario =
   } catch (error) {
     console.error("❌ Error al guardar la entrada en la lista negra:", error.message);
     return { success: false, message: "Error al guardar la entrada: " + error.message };
+  }
+}
+
+
+exports.getAllPDF = async (req, res) => {
+  const { idCre_SolicitudWeb } = req.params;
+  if (!idCre_SolicitudWeb) {
+    return res
+      .status(400)
+      .json({ message: "idTerrenaGestionDomicilio es requerido" });
+  }
+
+ // validar o traer idTerrenaGestionDomicilio desde clientes verificion terrena
+  const clientesRepo = AppDataSource.getRepository(ClientesVerificionTerrena);
+  const cliente = await clientesRepo.findOne({
+    where: { idCre_solicitud: parseInt(idCre_SolicitudWeb), bDomicilio: true },
+  });
+
+  console.log("Cliente encontrado:", cliente);
+  if (!cliente) {
+    return res.status(404).json({ message: "Cliente no encontrado" });
+  }
+  const idTerrenaGestionDomicilio = cliente.idClienteVerificacion;
+  if (!idTerrenaGestionDomicilio) {
+    return res.status(404).json({ message: "idTerrenaGestionDomicilio no encontrado" });
+  }
+
+  try {
+    const result = await getPdfDomicilio(idTerrenaGestionDomicilio);
+    
+    // Verifica si la respuesta contiene un error
+    if (result.error) {
+      console.log("Error: ", result.error);
+      return res.status(500).json({ message: "Error al generar el PDF" });
+    }
+// actualizar cresolicitudweb con el pdf generado
+    const creSolicitudRepo = AppDataSource.getRepository(Cre_SolicitudWeb);
+    await creSolicitudRepo.update(
+      { idCre_SolicitudWeb: idCre_SolicitudWeb },
+      { PDFTerrena: result.url }
+    );
+    // Si no hubo error, obtiene la URL del documento generado
+    const urldoc = result.url;
+
+    // Envía la URL del documento como respuesta
+    res.json({ url: urldoc });
+  } catch (error) {
+    console.error("Error al obtener el PDF:", error);
+    res.status(500).json({ message: "Error interno del servidor", error: error.message });
   }
 }

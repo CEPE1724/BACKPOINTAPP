@@ -11,6 +11,7 @@ const Cre_SolicitudWeb = new EntitySchema({
             this.idEstadoVerificacionDomicilio = 0;
             this.Estado =0;
             this.Resultado = 0;
+            this.PDFTerrena = '';
 
            
         }
@@ -34,6 +35,11 @@ const Cre_SolicitudWeb = new EntitySchema({
         Resultado: {
             type: 'int',
             default: 0
+        },
+        PDFTerrena: {
+            type: 'varchar',
+            length: 800,
+            nullable: true
         }
     }
 });
