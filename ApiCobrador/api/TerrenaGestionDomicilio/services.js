@@ -20,36 +20,47 @@ async function getPdfDomicilio(idClienteVerificacion) {
     if (!idClienteVerificacion) {
         return { error: "El campo idClienteVerificacion es obligatorio" };
     }
-
-    console.log("idClienteVerificacion:", idClienteVerificacion);
     const queryRunner = AppDataSource.createQueryRunner();
     await queryRunner.startTransaction();
     try {
+
+        console.log("Iniciando la generación del PDF para el cliente:", idClienteVerificacion);
         const cliente = await queryRunner.manager.findOne(ClientesVerificionTerrena, {
-            where: { idClienteVerificacion, iEstado: 1 }
+            where: { idClienteVerificacion, iEstado: 1, bDomicilio: 1 },
         });
+
+
+
 
         if (!cliente) {
             return { error: "Cliente no encontrado" };
         }
 
+        const clienteTrabajoSol = await queryRunner.manager.findOne(ClientesVerificionTerrena, {
+            where: { idCre_solicitud: cliente.idCre_solicitud, iEstado: 1, bTrabajo: 1 },
+        });
+
+       
+
         const Domicilio = await queryRunner.manager.findOne(TerrenaGestionDomicilio, {
             where: { idClienteVerificacion, tipoVerificacion: 2 }
         });
 
-        let Trabajo = null;
-        if (cliente.bTrabajo === true) {
-            const clienteTrabajo = await queryRunner.manager.findOne(ClientesVerificionTerrena, {
-                where: { idCre_solicitud: cliente.idCre_solicitud, bTrabajo: true, iEstado: 1 }
-            });
+         console.log("Cliente encontrado domicilio:", Domicilio);
 
-            if (clienteTrabajo) {
+        let Trabajo = null;
+
+        if (clienteTrabajoSol && clienteTrabajoSol.bTrabajo) {
+            console.log("Cliente tiene trabajo, buscando información de trabajo...");
+
+         
                 Trabajo = await queryRunner.manager.findOne(TerrenaGestionTrabajo, {
-                    where: { idClienteVerificacion: clienteTrabajo.idClienteVerificacion, tipoVerificacion: 2 }
+                    where: { idClienteVerificacion: clienteTrabajoSol.idClienteVerificacion, tipoVerificacion: 2 }
                 });
-            }
+            
         }
 
+ 
         const Ingreso = await queryRunner.manager.findOne(IngresoCobrador, {
             where: { idIngresoCobrador: cliente.idVerificador }
         });
@@ -128,7 +139,7 @@ async function getPdfDomicilio(idClienteVerificacion) {
         const bucketName = "sparta_bucket";
         const cloudPath = `VerificaciónTerrena/${cliente.Ruc}/contrato_${cliente.Ruc}_${timestamp}.docx`;
         const publicUrl = await uploadFileToCloud(docxPath, bucketName, cloudPath);
-
+        await queryRunner.commitTransaction();
         return { message: "Documento creado y subido correctamente.", url: publicUrl };
 
     } catch (error) {
