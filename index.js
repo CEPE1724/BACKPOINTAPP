@@ -25,9 +25,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // Lista de orígenes permitidos
 const allowedOrigins = [process.env.DOMAIN_PRUEBA, process.env.DOMAIN]
-app.use(cors({
-  origin: '*'
-}))
+app.use(
+  cors({
+    origin: '*'
+  })
+)
 
 app.use(morgan('dev'))
 
@@ -58,68 +60,171 @@ app.use(helmet())
 
 // Rutas sin autenticación (sin middleware)
 const publicRoutes = [
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Usuario/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./Equifax/api/EQFX_IdentificacionConsultada/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/ProteccionDatos/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Bodega/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/DispositivosAPP/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./WebProductos/api/Productos/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/UbicacionesAPP/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/googleApi/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/SolicitudNCListaProductos/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/DocTerrena/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cre_GCTelefono/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionDomicilio/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/TerrenaGestionTrabajo/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/GestionDiaria/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/AccionesUbicaciones/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Seteo/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/NotificationUser/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/RecojoAPP/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Notifications/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/ExpoNotificacionesComisiones/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/AsignacionCobradores/router') }
-
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Usuario/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./Equifax/api/EQFX_IdentificacionConsultada/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/ProteccionDatos/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Bodega/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/DispositivosAPP/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./WebProductos/api/Productos/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/UbicacionesAPP/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/googleApi/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/SolicitudNCListaProductos/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/DocTerrena/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_GCTelefono/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/TerrenaGestionDomicilio/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/TerrenaGestionTrabajo/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/GestionDiaria/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/AccionesUbicaciones/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Seteo/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/NotificationUser/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/RecojoAPP/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Notifications/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/ExpoNotificacionesComisiones/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/AsignacionCobradores/router')
+  }
 ]
 
 // Rutas protegidas (con middleware)
 const protectedRoutes = [
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_GestorDeCobranzas/router') }, //
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_EstadosGestion/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_EstadosTipocontacto/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_ResultadoGestion/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cbo_GestionesDeCobranzas/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/ClientesVerificionTerrena/router') },
-  { path: '/cobranza/api/v1/point/', route: require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router') }
-
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cbo_GestorDeCobranzas/router')
+  }, //
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cbo_EstadosGestion/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cbo_EstadosTipocontacto/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cbo_ResultadoGestion/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cbo_GestionesDeCobranzas/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/ClientesVerificionTerrena/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cob_APPCobrosEfectivo/router')
+  }
 ]
 
 const publicRoutesWhatsApp = [
-  { path: '/v1/whatsapp/point/', route: require('./WhatsApp/CBO_GestorVirtualCobranzas/router') },
-  { path: '/v1/whatsapp/point/', route: require('./WhatsApp/Ins_Cbo_Gestor_Cobranzas_Detalle/router') }
+  {
+    path: '/v1/whatsapp/point/',
+    route: require('./WhatsApp/CBO_GestorVirtualCobranzas/router')
+  },
+  {
+    path: '/v1/whatsapp/point/',
+    route: require('./WhatsApp/Ins_Cbo_Gestor_Cobranzas_Detalle/router')
+  }
 ]
 // rutas de Cognoware
 
 const publicRoutesCognoware = [
-  { path: '/v1/cognoware/', route: require('./CognoWare/TransaccionesCognoware/router') }
+  {
+    path: '/v1/cognoware/',
+    route: require('./CognoWare/TransaccionesCognoware/router')
+  }
 ]
 
 const publicRoutesmassend = [
-  { path: '/v1/massend/', route: require('./Massend/api/NotifiacionCuotaPagos/router') }
+  {
+    path: '/v1/massend/',
+    route: require('./Massend/api/NotifiacionCuotaPagos/router')
+  }
 ]
 
 // rutas de Equifax
 const publicRoutesEquifax = [
-  { path: '/v1/equifax/', route: require('./SoapEquifax/wsExpertoPointTech/router') }
+  {
+    path: '/v1/equifax/',
+    route: require('./SoapEquifax/wsExpertoPointTech/router')
+  }
 ]
 // rutas de Cuadricula
 const publicRoutesCuadricula = [
-  { path: '/api/v1/point/', route: require('./CuadriculaHabitacion/Cuadricula/router') }
+  {
+    path: '/api/v1/point/',
+    route: require('./CuadriculaHabitacion/Cuadricula/router')
+  }
 ]
 
 // rutas google cloud
 const publicRoutesGoogleCloud = [
-  { path: '/v1/googlecloud/', route: require('./GoogleCloud/Latinium/Point/Compra/router') }
+  {
+    path: '/v1/googlecloud/',
+    route: require('./GoogleCloud/Latinium/Point/Compra/router')
+  }
 ]
 
 // rutas de pagados
@@ -130,58 +235,59 @@ const publicRoutesPagados = [
 // rutas lia
 const publicRoutesLia = [
   { path: '/api/v1/', route: require('./Lia/productos/router') },
-  { path: '/api/v1/', route: require('./Lia/Compras/router') }
+  { path: '/api/v1/', route: require('./Lia/Compras/router') },
+  { path: '/api/v1/', route: require('./Lia/Cobranzas/router') }
 ]
 // Aplica las rutas sin protección
-publicRoutes.forEach(route => {
+publicRoutes.forEach((route) => {
   app.use(route.path, route.route)
 })
 
 // Aplica las rutas con protección de token
-protectedRoutes.forEach(route => {
+protectedRoutes.forEach((route) => {
   app.use(route.path, authenticateToken, route.route)
 })
 
 // Aplica las rutas de Equifax
-publicRoutesEquifax.forEach(route => {
+publicRoutesEquifax.forEach((route) => {
   app.use(route.path, route.route)
 })
 
 // Aplica las rutas de Massend
-publicRoutesmassend.forEach(route => {
+publicRoutesmassend.forEach((route) => {
   app.use(route.path, route.route)
 })
 
 // Aplica las rutas de Massend Token
 
 // Aplica las rutas de Cuadricula
-publicRoutesCuadricula.forEach(route => {
+publicRoutesCuadricula.forEach((route) => {
   app.use(route.path, route.route)
 })
 
 // Aplica las rutas de Google Cloud
-publicRoutesGoogleCloud.forEach(route => {
+publicRoutesGoogleCloud.forEach((route) => {
   app.use(route.path, route.route)
 })
 // Inicializa la conexión a la base de datos
 
 // aplica rutas de whatsapp
-publicRoutesWhatsApp.forEach(route => {
+publicRoutesWhatsApp.forEach((route) => {
   app.use(route.path, route.route)
 })
 
 // aplica rutas de Cognoware
 
-publicRoutesCognoware.forEach(route => {
+publicRoutesCognoware.forEach((route) => {
   app.use(route.path, route.route)
 })
 
 // aplñica rutas de pagados
-publicRoutesPagados.forEach(route => {
+publicRoutesPagados.forEach((route) => {
   app.use(route.path, route.route)
 })
 // aplica rutas de lia
-publicRoutesLia.forEach(route => {
+publicRoutesLia.forEach((route) => {
   app.use(route.path, route.route)
 })
 initializeDatabase()
@@ -200,7 +306,7 @@ initializeDatabase()
       console.log(`Server is running on port ${port}`)
     })
   })
-  .catch(error => {
+  .catch((error) => {
     console.error('Error al conectar a la base de datos:', error)
   })
 
