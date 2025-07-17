@@ -21,7 +21,7 @@ exports.pushComisiones = async (req, res) => {
     }
 
     for (const comision of comisiones) {
-      const { TokenExpo, Alert, Titulo, Mensaje, idExpoNotificacionesComisiones } = comision;
+      const { TokenExpo, Alert, Titulo, Mensaje, idExpoNotificacionesComisiones, empresa } = comision;
 
       // Validar token Expo
       if (TokenExpo && TokenExpo.startsWith('ExponentPushToken')) {
@@ -32,7 +32,7 @@ exports.pushComisiones = async (req, res) => {
             title: Titulo,
             body: Mensaje,
             url: "",
-            empresa: "POINT"
+            empresa: empresa || "POINT", // Asegurarse de que empresa no sea undefined
           }
         };
         try {
