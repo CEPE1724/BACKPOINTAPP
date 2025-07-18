@@ -143,7 +143,11 @@ const publicRoutes = [
   {
     path: '/cobranza/api/v1/point/',
     route: require('./ApiCobrador/api/AsignacionCobradores/router')
-  }
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/mail/router')
+  },
 ]
 
 // Rutas protegidas (con middleware)
