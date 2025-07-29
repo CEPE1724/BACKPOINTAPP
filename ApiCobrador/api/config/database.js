@@ -37,7 +37,11 @@ const entities = [
     require('../AsignacionCobradores/model'),
     require('../TiempoSolicitudesWeb/model'),
     require('../ListaNegraCedula/model'),
-
+    require('../CompraEncuesta/model'),
+    require('../Cre_SituacionLaboral/model'),
+    require('../Cre_ActividadEconomica/model'),
+    require('../Cre_Tiempo/model'),
+    require('../Cre_ProductoSolicitud/model'),
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),

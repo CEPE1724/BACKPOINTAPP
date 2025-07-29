@@ -148,6 +148,30 @@ const publicRoutes = [
     path: '/cobranza/api/v1/point/',
     route: require('./ApiCobrador/api/mail/router')
   },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/CompraEncuesta/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_SituacionLaboral/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_ActividadEconomica/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_Tiempo/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_ProductoSolicitud/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Nomina/router')
+  },
 ]
 
 // Rutas protegidas (con middleware)
