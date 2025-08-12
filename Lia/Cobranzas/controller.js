@@ -49,8 +49,10 @@ exports.getBancos = async (req, res) => {
 }
 
 exports.subirDeposito = async (req, res) => {
-  const { Fecha, BancoId, Abono, IdCompra, NumeroDeposito, Cedula } = req.body
+  const { Fecha, BancoId, Abono, IdCompra, NumeroDeposito, Cedula, Nota } =
+    req.body
   const file = req.file
+  const notaFinal = Nota ?? ''
   try {
     if (
       !Fecha ||
@@ -96,7 +98,7 @@ exports.subirDeposito = async (req, res) => {
 
     const insert = (
       await AppDataSource.query(
-        'exec dbo.GrabaDepositosPendientesLIA @0, @1, @2, @3, @4, @5, @6, @7;',
+        'exec dbo.GrabaDepositosPendientesLIA @0, @1, @2, @3, @4, @5, @6, @7, @8;',
         [
           Fecha,
           idCliente,
@@ -105,7 +107,8 @@ exports.subirDeposito = async (req, res) => {
           IdCompra,
           NumeroDeposito,
           Cedula,
-          publicUrl
+          publicUrl,
+          notaFinal
         ]
       )
     )[0].Voucher
