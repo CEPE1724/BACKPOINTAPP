@@ -26,6 +26,7 @@ exports.save = async (req, res) => {
     CalleSecundaria,
     direccionCoincide,
     tipoVerificacion,
+    Observacion
 
   } = req.body;
   const requiredFields = [
@@ -46,6 +47,7 @@ exports.save = async (req, res) => {
     { name: 'CallePrincipal', value: CallePrincipal },
     { name: 'CalleSecundaria', value: CalleSecundaria },
     { name: 'tipoVerificacion', value: tipoVerificacion },
+    { name: 'Observacion', value: Observacion }
   ];
 
   for (const field of requiredFields) {
@@ -75,6 +77,7 @@ exports.save = async (req, res) => {
         CallePrincipal,
         CalleSecundaria,
         tipoVerificacion,
+        Observacion
       }
     );
 
@@ -107,13 +110,13 @@ exports.save = async (req, res) => {
 
     if (bDomicilio && idTerrenaGestionDomicilioV > 0) {
       try {
-       // const result = await getPdfDomicilio(idClienteVerificacion);
+        // const result = await getPdfDomicilio(idClienteVerificacion);
 
         // Verifica si la respuesta contiene un error
-       /* if (result.error) {
-          console.log("Error: ", result.error);
-          return; // O maneja el error de la manera que consideres
-        }*/
+        /* if (result.error) {
+           console.log("Error: ", result.error);
+           return; // O maneja el error de la manera que consideres
+         }*/
 
         // Si no hubo error, obtiene la URL del documento generado
         /*const urldoc = result.url;
@@ -136,17 +139,17 @@ exports.save = async (req, res) => {
 
     if (!bDomicilio) {
       try {
-       /* const result = await getPdfDomicilio(idClienteVerificacion);
-
-        // Verifica si la respuesta contiene un error
-       /* if (result.error) {
-          console.log("Error: ", result.error);
-          return; // O maneja el error de la manera que consideres
-        }*/
+        /* const result = await getPdfDomicilio(idClienteVerificacion);
+ 
+         // Verifica si la respuesta contiene un error
+        /* if (result.error) {
+           console.log("Error: ", result.error);
+           return; // O maneja el error de la manera que consideres
+         }*/
 
         // Si no hubo error, obtiene la URL del documento generado
-       /* const urldoc = result.url;
-        console.log("URL del documento:", urldoc);*/
+        /* const urldoc = result.url;
+         console.log("URL del documento:", urldoc);*/
 
         // Realiza la actualización del cliente
         await clientesRepo.update(
@@ -177,28 +180,28 @@ exports.save = async (req, res) => {
         { idCre_SolicitudWeb: idCre_solicitud },
         {
           idEstadoVerificacionTerrena: EstadoVerificacionTerrena,
-         // Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7, // undefined no actualiza
+          // Estado: tipoVerificacion === 2 ? creSolicitudRepo.Estado : 7, // undefined no actualiza
           //Resultado: tipoVerificacion === 2 ? creSolicitudRepo.Resultado : 0,
         }
       );
       // si tipoVerificacion es 3,5,7 pasar  alista negra
-    /*  const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
-      const codigoVerificador = await dispositivoRepo.findOne({
-        where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
-        select: ['UsuarioAPP'],
-      });
-      
-      if (tipoVerificacion === 3 || tipoVerificacion === 5 || tipoVerificacion === 7) {
-        const listaNegraResult = await ListaNegraCedulaLis(
-          cliente.Ruc,
-          'Enviado desde la APP de TerrenaGestionTrabajo',
-          true,
-           codigoVerificador.UsuarioAPP || 'Desconocido'
-        );
-        if (!listaNegraResult.success) {
-          console.error("Error al guardar en la lista negra:", listaNegraResult.message);
-        }
-      }*/
+      /*  const dispositivoRepo = AppDataSource.getRepository(DispositivosAPP);
+        const codigoVerificador = await dispositivoRepo.findOne({
+          where: { idNomina: clienteVerificacion.idVerificador, Empresa: 33 },
+          select: ['UsuarioAPP'],
+        });
+        
+        if (tipoVerificacion === 3 || tipoVerificacion === 5 || tipoVerificacion === 7) {
+          const listaNegraResult = await ListaNegraCedulaLis(
+            cliente.Ruc,
+            'Enviado desde la APP de TerrenaGestionTrabajo',
+            true,
+             codigoVerificador.UsuarioAPP || 'Desconocido'
+          );
+          if (!listaNegraResult.success) {
+            console.error("Error al guardar en la lista negra:", listaNegraResult.message);
+          }
+        }*/
     }
     res.status(201).json({
       message: "TerrenaGestionTrabajo guardada correctamente",

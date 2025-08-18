@@ -23,6 +23,7 @@ const TerrenaGestionTrabajo = new EntitySchema({
             this.CalleSecundaria = '';
             this.direccionCoincide = 0;
             this.tipoVerificacion = 0;
+            this.Observacion = '';
             
 
         }
@@ -86,6 +87,10 @@ const TerrenaGestionTrabajo = new EntitySchema({
         },
         tipoVerificacion: {
             type: 'int'
+        },
+        Observacion: {
+            type: 'varchar',
+            length: 500
         }
 
     }
