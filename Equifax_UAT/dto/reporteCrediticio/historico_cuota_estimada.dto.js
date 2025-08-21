@@ -19,6 +19,9 @@
  * * @returns {HistoricoCuotaEstimadaDTO[]}
  * */
 function parseHistoricoCuotaEstimada(historico_cuota_estimada = []) {
+    if (!Array.isArray(historico_cuota_estimada) || historico_cuota_estimada.length === 0) {
+        return [];
+    }
     return historico_cuota_estimada.map(item => ({
         orden: item.orden,
         retroactivo: item.retroactivo,

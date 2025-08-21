@@ -19,7 +19,7 @@ const { parseEvolucionDeudaSBSEPSICOM } = require("./dto/reporteCrediticio/evolu
 const { parseDetalleDeudaActualSB } = require("./dto/reporteCrediticio/detalle_deuda_actual_sb.dto");
 const { parseDetalleDeudaActualSeps } = require("./dto/reporteCrediticio/detalle_deuda_actual_seps.dto");
 const { parseDetalleDeudaActualSicom } = require("./dto/reporteCrediticio/detalle_deuda_actual_sicom.dto");
-
+const { parseDetalleTarjetas } = require("./dto/reporteCrediticio/detalle_tarjetas.dto");
 
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
@@ -45,7 +45,7 @@ const EQFX_UAT_evolucion_deuda_sb_seps_sicom = require('../ApiCobrador/api/EQFX_
 const EQFX_UAT_detalle_deuda_actual_sb = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_actual_sb/model');
 const EQFX_UAT_detalle_deuda_actual_seps = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_actual_seps/model');
 const EQFX_UAT_detalle_deuda_actual_sicom = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_actual_sicom/model');
-
+const EQFX_UAT_detalle_tarjetas = require('../ApiCobrador/api/EQFX_UAT_detalle_tarjetas/model');
 
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
@@ -166,6 +166,7 @@ exports.equifaxOauth = async (req, res) => {
         const detalleDeudaActualSBDTO = parseDetalleDeudaActualSB(detalle_deuda_actual_sb || []);
         const detalleDeudaActualSepsDTO = parseDetalleDeudaActualSeps(detalle_deuda_actual_seps || []);
         const detalleDeudaActualSicomDTO = parseDetalleDeudaActualSicom(detalle_deuda_actual_sicom || []);
+        const detalleTarjetasDTO = parseDetalleTarjetas(detalle_tarjetas || []);
 
 
 
@@ -217,6 +218,7 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_detalle_deuda_actual_sb, data: detalleDeudaActualSBDTO }, /* 19 */
             { repo: EQFX_UAT_detalle_deuda_actual_seps, data: detalleDeudaActualSepsDTO }, /* 20 */
             { repo: EQFX_UAT_detalle_deuda_actual_sicom, data: detalleDeudaActualSicomDTO }, /* 21 */
+            { repo: EQFX_UAT_detalle_tarjetas, data: detalleTarjetasDTO } /* 22 */
 
      
      

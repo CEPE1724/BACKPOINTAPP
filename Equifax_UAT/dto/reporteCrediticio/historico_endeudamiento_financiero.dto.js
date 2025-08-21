@@ -22,6 +22,10 @@
  * * @returns {HistoricoEndeudamientoFinancieroDTO[]}
  * */
 function parseHistoricoEndeudamientoFinanciero(historico_endeudamiento_financiero = []) {
+
+    if (!Array.isArray(historico_endeudamiento_financiero) || historico_endeudamiento_financiero.length === 0) {
+        return [];
+    }
     return historico_endeudamiento_financiero.map(item => ({
         retroactivo: item.retroactivo,
         saldo_total: item.saldo_total
