@@ -4,12 +4,20 @@ const { parseInterconnectResultadoPoliticas } = require("./dto/interconnect/resu
 const { parseInterconnectResultado } = require("./dto/interconnect/resultado.dto");
 const { parseInformacionSRI } = require("./dto/reporteCrediticio/informacion_sri.dto");
 const { parseResumenInforme } = require("./dto/reporteCrediticio/resumen_informe.dto");
+const { parseScoreInclusion } = require("./dto/reporteCrediticio/score_inclusion.dto");
+const { parseScore } = require("./dto/reporteCrediticio/score.dto");
+const { parseScoreSobreendeudamiento } = require("./dto/reporteCrediticio/score_sobreendeudamiento");
+
+
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
 const EQFX_UAT_resultado_segmentacion = require('../ApiCobrador/api/EQFX_UAT_resultado_segmentacion/model');
 const EQFX_UAT_resultado_politicas = require('../ApiCobrador/api/EQFX_UAT_resultado_politicas/model');
 const EQFX_UAT_resultado = require('../ApiCobrador/api/EQFX_UAT_resultado/model');
 const EQFX_UAT_informacion_sri = require('../ApiCobrador/api/EQFX_UAT_informacion_sri/model');
 const EQFX_UAT_resumen_informe = require('../ApiCobrador/api/EQFX_UAT_resumen_informe/model');
+const EQFX_UAT_score_inclusion = require('../ApiCobrador/api/EQFX_UAT_score_inclusion/model');
+const EQFX_UAT_score = require('../ApiCobrador/api/EQFX_UAT_score/model');
+const EQFX_UAT_score_sobreendeudamiento = require('../ApiCobrador/api/EQFX_UAT_score_sobreendeudamiento/model');
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
@@ -56,66 +64,70 @@ exports.equifaxOauth = async (req, res) => {
         } = orchestrationResponse;
 
         const {
-            identificacion_consultada = [],
-            informacion_sri = [],
-            resumen_informe = [],
-            score_inclusion = [],
-            score = [],
-            score_sobreendeudamiento = [],
-            indicador_impacto_economico = [],
-            index_pymes = [],
-            historico_score = [],
-            historico_acreedores = [],
-            historico_cuota_estimada = [],
-            historico_endeudamiento_comercial = [],
-            historico_endeudamiento_financiero = [],
-            historico_vencidos_comercial = [],
-            historico_vencidos_financiero = [],
-            valor_deuda_3_sistemas = [],
-            protestos_morosidades = [],
-            evolucion_deuda_sb_seps_sicom = [],
-            detalle_deuda_actual_sb = [],
-            detalle_deuda_actual_seps = [],
-            detalle_deuda_actual_sicom = [],
-            detalle_tarjetas = [],
-            distribucion_endeudamiento = [],
-            deuda_historica = [],
-            estructura_vencimiento = [],
-            creditos_otorgados = [],
-            saldos_por_vencer = [],
-            detalle_estructura_vencimiento = [],
-            cuota_estimada_mensual = [],
-            personas_inhabilitadas = [],
-            sujeto_al_dia = [],
-            mantiene_historial_crediticio = [],
-            identificador_perfil_riesgo_directo = [],
-            identificador_perfil_riesgo_directo_6_meses = [],
-            garantias_personales_codeudores_operaciones_vigentes = [],
-            garantias_personales_codeudores_operaciones_no_vigentes = [],
-            vinculaciones_instituciones_financieras = [],
-            operaciones_canceladas = [],
-            tarjetas_canceladas = [],
-            informacion_demografica = [],
-            mensaje_califica_detalle_tarjetas = [],
-            factores_influyen_score = [],
-            entidades_consultados = [],
-            detalle_deuda_historica_sb = [],
-            detalle_deuda_historica_seps = [],
-            detalle_deuda_historica_sicom = []
+            identificacion_consultada = [], /*1*/
+            informacion_sri = [], /*2*/
+            resumen_informe = [], /*3*/
+            score_inclusion = [], /*4*/
+            score = [], /*5*/
+            score_sobreendeudamiento = [], /*6*/
+            indicador_impacto_economico = [], /*7*/
+            index_pymes = [], /*8*/
+            historico_score = [], /*9*/
+            historico_acreedores = [], /*10*/
+            historico_cuota_estimada = [], /*11*/
+            historico_endeudamiento_comercial = [], /*12*/
+            historico_endeudamiento_financiero = [], /*13*/
+            historico_vencidos_comercial = [], /*14*/
+            historico_vencidos_financiero = [], /*15*/
+            valor_deuda_3_sistemas = [], /*16*/
+            protestos_morosidades = [], /*17*/
+            evolucion_deuda_sb_seps_sicom = [], /*18*/
+            detalle_deuda_actual_sb = [], /*19*/
+            detalle_deuda_actual_seps = [], /*20*/
+            detalle_deuda_actual_sicom = [], /*21*/
+            detalle_tarjetas = [], /*22*/
+            distribucion_endeudamiento = [], /*23*/
+            deuda_historica = [], /*24*/
+            estructura_vencimiento = [], /*25*/
+            creditos_otorgados = [], /*26*/
+            saldos_por_vencer = [], /*27*/
+            detalle_estructura_vencimiento = [],  /*28*/   
+            cuota_estimada_mensual = [], /*29*/
+            personas_inhabilitadas = [], /*30*/
+            sujeto_al_dia = [], /*31*/
+            mantiene_historial_crediticio = [], /*32*/
+            identificador_perfil_riesgo_directo = [], /*33*/
+            identificador_perfil_riesgo_directo_6_meses = [], /*34*/
+            garantias_personales_codeudores_operaciones_vigentes = [], /*35*/
+            garantias_personales_codeudores_operaciones_no_vigentes = [], /*36*/
+            vinculaciones_instituciones_financieras = [], /*37*/
+            operaciones_canceladas = [], /*38*/
+            tarjetas_canceladas = [], /*39*/
+            informacion_demografica = [], /*40*/
+            mensaje_califica_detalle_tarjetas = [], /*41*/
+            factores_influyen_score = [], /*42*/
+            entidades_consultados = [], /*43*/
+            detalle_deuda_historica_sb = [], /*44*/
+            detalle_deuda_historica_seps = [], /*45*/
+            detalle_deuda_historica_sicom = [] /*46*/
 
         } = reporteCrediticio;
 
-        console.log("Datos de reporte crediticio:", {
-            informacion_sri
-        });
 
 
         const segmentacionDTO = parseSegmentacion(interconnect.resultado_segmentacion || []);
         const politicasDTO = parseInterconnectResultadoPoliticas(interconnect.resultado_politicas || []);
         const resultadoDTO = parseInterconnectResultado(interconnect.resultado || []);
         const sriDTO = parseInformacionSRI(informacion_sri || []);
-        const resumenInformeDTO = parseResumenInforme(reporteCrediticio.resumen_informe || []);
-        console.log("Datos de SRI:", sriDTO);
+        const resumenInformeDTO = parseResumenInforme(resumen_informe || []);
+        const scoreInclusionDTO = parseScoreInclusion(score_inclusion || []);
+        const scoreDTO = parseScore(score || []);
+        const scoreSobreendeudamientoDTO = parseScoreSobreendeudamiento(score_sobreendeudamiento || []);
+        console.log("DTOs scoreSobreendeudamientoDTO:", {
+          
+            scoreSobreendeudamientoDTO
+        });
+
 
         // Guardar en la base de datos
         const identificacionRepo = AppDataSource.getRepository(EQFX_IdentificacionConsultada);
@@ -130,41 +142,26 @@ exports.equifaxOauth = async (req, res) => {
         await identificacionRepo.save(newRegistro);
         const idEQFX_IdentificacionConsultada = newRegistro.idEQFX_IdentificacionConsultada;
 
-        await saveDTODataIfExists(
-            AppDataSource.getRepository(EQFX_UAT_resultado_segmentacion),
-            segmentacionDTO,
-            'idEQFX_IdentificacionConsultada',
-            idEQFX_IdentificacionConsultada
-        );
+        const repositoriesToSave = [
+            { repo: EQFX_UAT_resultado_segmentacion, data: segmentacionDTO }, 
+            { repo: EQFX_UAT_resultado_politicas, data: politicasDTO }, 
+            { repo: EQFX_UAT_resultado, data: resultadoDTO }, 
+            { repo: EQFX_UAT_informacion_sri, data: sriDTO }, /* 2*/
+            { repo: EQFX_UAT_score_inclusion, data: scoreInclusionDTO }, /* 3 */
+            { repo: EQFX_UAT_resumen_informe, data: resumenInformeDTO }, /* 4 */
+            { repo: EQFX_UAT_score, data: scoreDTO }, /* 5 */
+            { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO }, /* 6 */
+        ];
 
-        await saveDTODataIfExists(
-            AppDataSource.getRepository(EQFX_UAT_resultado_politicas),
-            politicasDTO,
-            'idEQFX_IdentificacionConsultada',
-            idEQFX_IdentificacionConsultada
-        );
-
-        await saveDTODataIfExists(
-            AppDataSource.getRepository(EQFX_UAT_resultado),
-            resultadoDTO,
-            'idEQFX_IdentificacionConsultada',
-            idEQFX_IdentificacionConsultada
-        );
-
-        await saveDTODataIfExists(
-            AppDataSource.getRepository(EQFX_UAT_informacion_sri),
-            sriDTO,
-            'idEQFX_IdentificacionConsultada',
-            idEQFX_IdentificacionConsultada
-        );
-
-        await saveDTODataIfExists(
-            AppDataSource.getRepository(EQFX_UAT_resumen_informe),
-            resumenInformeDTO,
-            'idEQFX_IdentificacionConsultada',
-            idEQFX_IdentificacionConsultada
-        );
-
+        for (const { repo, data } of repositoriesToSave) {
+            console.log(`Guardando datos en ${repo.name}:`, data);
+            if (!data || (Array.isArray(data) && data.length === 0)) {
+                console.warn(`No hay datos para guardar en ${repo.name}`);
+                continue;
+            }
+            const repository = AppDataSource.getRepository(repo);
+            await saveDTODataIfExists(repository, data, 'idEQFX_IdentificacionConsultada', idEQFX_IdentificacionConsultada);
+        }
         return res.status(200).json({
             status: 'success',
             data: transactionId,
