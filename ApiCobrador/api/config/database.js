@@ -51,6 +51,8 @@ const entities = [
     require('../EQFX_UAT_score_inclusion/model'),
     require('../EQFX_UAT_score/model'),
     require('../EQFX_UAT_score_sobreendeudamiento/model'),
+    require('../EQFX_UAT_indicador_impacto_economico/model'),
+    require('../EQFX_UAT_historico_score/model'),
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),

@@ -7,6 +7,7 @@ const { parseResumenInforme } = require("./dto/reporteCrediticio/resumen_informe
 const { parseScoreInclusion } = require("./dto/reporteCrediticio/score_inclusion.dto");
 const { parseScore } = require("./dto/reporteCrediticio/score.dto");
 const { parseScoreSobreendeudamiento } = require("./dto/reporteCrediticio/score_sobreendeudamiento");
+const { parseIndicadorImpactoEconomico } = require("./dto/reporteCrediticio/indicador_impacto_economico.dto");
 
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
@@ -18,6 +19,12 @@ const EQFX_UAT_resumen_informe = require('../ApiCobrador/api/EQFX_UAT_resumen_in
 const EQFX_UAT_score_inclusion = require('../ApiCobrador/api/EQFX_UAT_score_inclusion/model');
 const EQFX_UAT_score = require('../ApiCobrador/api/EQFX_UAT_score/model');
 const EQFX_UAT_score_sobreendeudamiento = require('../ApiCobrador/api/EQFX_UAT_score_sobreendeudamiento/model');
+const EQFX_UAT_indicador_impacto_economico = require('../ApiCobrador/api/EQFX_UAT_indicador_impacto_economico/model');
+const EQFX_UAT_historico_score = require('../ApiCobrador/api/EQFX_UAT_historico_score/model');
+
+
+
+
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
@@ -123,6 +130,7 @@ exports.equifaxOauth = async (req, res) => {
         const scoreInclusionDTO = parseScoreInclusion(score_inclusion || []);
         const scoreDTO = parseScore(score || []);
         const scoreSobreendeudamientoDTO = parseScoreSobreendeudamiento(score_sobreendeudamiento || []);
+        const indicadorImpactoEconomicoDTO = parseIndicadorImpactoEconomico(indicador_impacto_economico || []);
         console.log("DTOs scoreSobreendeudamientoDTO:", {
           
             scoreSobreendeudamientoDTO
@@ -151,6 +159,7 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_resumen_informe, data: resumenInformeDTO }, /* 4 */
             { repo: EQFX_UAT_score, data: scoreDTO }, /* 5 */
             { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO }, /* 6 */
+            { repo: EQFX_UAT_indicador_impacto_economico, data: indicadorImpactoEconomicoDTO }, /* 7 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {

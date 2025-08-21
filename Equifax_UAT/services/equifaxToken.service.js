@@ -41,15 +41,18 @@ async function getEquifaxToken() {
             {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': 'Basic <TU_CLIENT_SECRET_ENCODED>'
+                    'Authorization': 'Basic dXZRRlhVTExnUmpMU0ZiWTNHYTdnaFFvZUtLQmFKRlY6S0lHaGNBTTZ1WVBKR2RhcA=='
                 }
             }
         );
 
+        console.log("Token response:", response.data);
+
         const tokenData = response.data;
-        const issuedAtMillis = tokenData.issued_at || Date.now();
+        const issuedAtMillis = parseInt(tokenData.issued_at) || Date.now();
         const adjustedExpiresIn = tokenData.expires_in - 3600; // 1h antes
         const expiresAt = new Date(issuedAtMillis + adjustedExpiresIn * 1000);
+
 
         const newToken = tokenRepo.create({
             access_token: tokenData.access_token,
