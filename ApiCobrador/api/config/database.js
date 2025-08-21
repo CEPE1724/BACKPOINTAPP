@@ -46,6 +46,8 @@ const entities = [
     require('../EQFX_UAT_resultado_segmentacion/model'),
     require('../EQFX_UAT_resultado_politicas/model'),
     require('../EQFX_UAT_resultado/model'),
+    require('../EQFX_UAT_informacion_sri/model'),
+    require('../EQFX_UAT_resumen_informe/model'),
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
