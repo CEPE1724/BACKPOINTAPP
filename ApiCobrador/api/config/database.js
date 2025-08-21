@@ -54,6 +54,10 @@ const entities = [
     require('../EQFX_UAT_indicador_impacto_economico/model'),
     require('../EQFX_UAT_historico_score/model'),
     require('../EQFX_UAT_historico_acreedores/model'),
+    require('../EQFX_UAT_historico_cuota_estimada/model'),
+    require('../EQFX_UAT_historico_endeudamiento_comercial/model'),
+
+
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),

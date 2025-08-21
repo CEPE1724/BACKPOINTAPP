@@ -10,8 +10,8 @@ const { parseScoreSobreendeudamiento } = require("./dto/reporteCrediticio/score_
 const { parseIndicadorImpactoEconomico } = require("./dto/reporteCrediticio/indicador_impacto_economico.dto");
 const { parseHistoricoScore } = require("./dto/reporteCrediticio/historico_score.dto");
 const { parseHistoricoAcreedores } = require("./dto/reporteCrediticio/historico_acreedores.dto");
-
-
+const { parseHistoricoCuotaEstimada } = require("./dto/reporteCrediticio/historico_cuota_estimada.dto");
+const { parseHistoricoEndeudamientoComercial } = require("./dto/reporteCrediticio/historico_endeudamiento_comercial.dto");
 
 
 
@@ -29,8 +29,8 @@ const EQFX_UAT_score_sobreendeudamiento = require('../ApiCobrador/api/EQFX_UAT_s
 const EQFX_UAT_indicador_impacto_economico = require('../ApiCobrador/api/EQFX_UAT_indicador_impacto_economico/model');
 const EQFX_UAT_historico_score = require('../ApiCobrador/api/EQFX_UAT_historico_score/model');
 const EQFX_UAT_historico_acreedores = require('../ApiCobrador/api/EQFX_UAT_historico_acreedores/model');
-
-
+const EQFX_UAT_historico_cuota_estimada = require('../ApiCobrador/api/EQFX_UAT_historico_cuota_estimada/model');
+const EQFX_UAT_historico_endeudamiento_comercial = require('../ApiCobrador/api/EQFX_UAT_historico_endeudamiento_comercial/model');
 
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
@@ -140,6 +140,8 @@ exports.equifaxOauth = async (req, res) => {
         const indicadorImpactoEconomicoDTO = parseIndicadorImpactoEconomico(indicador_impacto_economico || []);
         const historicoScoreDTO = parseHistoricoScore(historico_score || []);
         const historicoAcreedoresDTO = parseHistoricoAcreedores(historico_acreedores || []);
+        const historicoCuotaEstimadaDTO = parseHistoricoCuotaEstimada(historico_cuota_estimada || []);
+        const historicoEndeudamientoComercialDTO = parseHistoricoEndeudamientoComercial(historico_endeudamiento_comercial || []);
        
         console.log("DTOs scoreSobreendeudamientoDTO:", {
           
@@ -171,7 +173,9 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO }, /* 6 */
             { repo: EQFX_UAT_indicador_impacto_economico, data: indicadorImpactoEconomicoDTO }, /* 7 */
             { repo: EQFX_UAT_historico_score, data: historicoScoreDTO }, /* 9 */
-            { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO } /* 10 */
+            { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO }, /* 10 */
+            { repo: EQFX_UAT_historico_cuota_estimada, data: historicoCuotaEstimadaDTO }, /* 11 */
+            { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO } /* 12 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {
