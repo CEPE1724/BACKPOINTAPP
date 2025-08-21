@@ -31,7 +31,7 @@ const EQFX_UAT_historico_score = require('../ApiCobrador/api/EQFX_UAT_historico_
 const EQFX_UAT_historico_acreedores = require('../ApiCobrador/api/EQFX_UAT_historico_acreedores/model');
 const EQFX_UAT_historico_cuota_estimada = require('../ApiCobrador/api/EQFX_UAT_historico_cuota_estimada/model');
 const EQFX_UAT_historico_endeudamiento_comercial = require('../ApiCobrador/api/EQFX_UAT_historico_endeudamiento_comercial/model');
-
+const EQFX_UAT_historico_endeudamiento_financiero = require('../ApiCobrador/api/EQFX_UAT_historico_endeudamiento_financiero/model');
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
@@ -142,6 +142,7 @@ exports.equifaxOauth = async (req, res) => {
         const historicoAcreedoresDTO = parseHistoricoAcreedores(historico_acreedores || []);
         const historicoCuotaEstimadaDTO = parseHistoricoCuotaEstimada(historico_cuota_estimada || []);
         const historicoEndeudamientoComercialDTO = parseHistoricoEndeudamientoComercial(historico_endeudamiento_comercial || []);
+        const historicoEndeudamientoFinancieroDTO = parseHistoricoEndeudamientoComercial(historico_endeudamiento_financiero || []);
        
         console.log("DTOs scoreSobreendeudamientoDTO:", {
           
@@ -175,7 +176,8 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_historico_score, data: historicoScoreDTO }, /* 9 */
             { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO }, /* 10 */
             { repo: EQFX_UAT_historico_cuota_estimada, data: historicoCuotaEstimadaDTO }, /* 11 */
-            { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO } /* 12 */
+            { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO }, /* 12 */
+            { repo: EQFX_UAT_historico_endeudamiento_financiero, data: historicoEndeudamientoFinancieroDTO } /* 13 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {

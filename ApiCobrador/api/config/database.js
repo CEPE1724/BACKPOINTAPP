@@ -56,6 +56,7 @@ const entities = [
     require('../EQFX_UAT_historico_acreedores/model'),
     require('../EQFX_UAT_historico_cuota_estimada/model'),
     require('../EQFX_UAT_historico_endeudamiento_comercial/model'),
+    require('../EQFX_UAT_historico_endeudamiento_financiero/model'),
 
 
 
