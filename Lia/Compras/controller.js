@@ -17,7 +17,8 @@ exports.Compras_Por_Ruc = async (req, res) => {
     const compras = await AppDataSource.query(
       `
       exec dbo.ObtenerComprasPorRuc @0;
-      `, [ruc]
+      `,
+      [ruc]
     )
     if (!compras || compras.length === 0) {
       throw new Error('404')
@@ -29,6 +30,7 @@ exports.Compras_Por_Ruc = async (req, res) => {
       totalRecords: compras.length
     })
   } catch (error) {
+    console.log(error)
     if (error.message === '404') {
       return res.status(404).json({
         status: 'error',
@@ -58,17 +60,22 @@ exports.Compra_Por_idCompra = async (req, res) => {
     const compra = await AppDataSource.query(
       `
       exec dbo.ObtenerEstadoCompraPorId @0;
-      `, [idCompra]
+      `,
+      [idCompra]
     )
     if (!compra || compra.length === 0) {
       throw new Error('404')
     }
     const numCuotas = compra.length
-    const cuotasCanceladas = compra.filter(c => c.Estado === 2).length
-    const cuotasVencidas = compra.filter(c => c.Estado === 1).length
-    const cuotasAbonadas = compra.filter(c => c.Estado === 3).length
+    const cuotasCanceladas = compra.filter((c) => c.Estado === 2).length
+    const cuotasVencidas = compra.filter(
+      (c) => c.EstadoDescripcion === 'EN MORA'
+    ).length
+    const cuotasAbonadas = compra.filter((c) => c.Estado === 3).length
     const cuotasPendientes = numCuotas - cuotasCanceladas - cuotasVencidas
-    const saldoPendiente = compra.reduce((acc, c) => acc + (c.Saldo || 0), 0).toFixed(2)
+    const saldoPendiente = compra
+      .reduce((acc, c) => acc + (c.Saldo || 0), 0)
+      .toFixed(2)
     const fechaEmision = new Date().toLocaleDateString()
 
     const logoPath = path.join(__dirname, './image.png')
