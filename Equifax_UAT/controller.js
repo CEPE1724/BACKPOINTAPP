@@ -12,9 +12,9 @@ const { parseHistoricoScore } = require("./dto/reporteCrediticio/historico_score
 const { parseHistoricoAcreedores } = require("./dto/reporteCrediticio/historico_acreedores.dto");
 const { parseHistoricoCuotaEstimada } = require("./dto/reporteCrediticio/historico_cuota_estimada.dto");
 const { parseHistoricoEndeudamientoComercial } = require("./dto/reporteCrediticio/historico_endeudamiento_comercial.dto");
-
-
-
+const { parseHistoricoVencidosComercial } = require("./dto/reporteCrediticio/historico_vencidos_comercial.dto");
+const { parseValorDeuda3Sistemas } = require("./dto/reporteCrediticio/valor_deuda_3_sistemas.dto");
+const { parseProtestosMorosidades } = require("./dto/reporteCrediticio/protestos_morosidades.dto");
 
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
@@ -32,6 +32,16 @@ const EQFX_UAT_historico_acreedores = require('../ApiCobrador/api/EQFX_UAT_histo
 const EQFX_UAT_historico_cuota_estimada = require('../ApiCobrador/api/EQFX_UAT_historico_cuota_estimada/model');
 const EQFX_UAT_historico_endeudamiento_comercial = require('../ApiCobrador/api/EQFX_UAT_historico_endeudamiento_comercial/model');
 const EQFX_UAT_historico_endeudamiento_financiero = require('../ApiCobrador/api/EQFX_UAT_historico_endeudamiento_financiero/model');
+const EQFX_UAT_historico_vencidos_comercial = require('../ApiCobrador/api/EQFX_UAT_historico_vencidos_comercial/model');
+const EQFX_UAT_historico_vencidos_financiero = require('../ApiCobrador/api/EQFX_UAT_historico_vencidos_financiero/model');
+const EQFX_UAT_valor_deuda_3_sistemas = require('../ApiCobrador/api/EQFX_UAT_valor_deuda_3_sistemas/model');
+const EQFX_UAT_protestos_morosidades = require('../ApiCobrador/api/EQFX_UAT_protestos_morosidades/model');
+
+
+
+
+
+
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
@@ -143,7 +153,21 @@ exports.equifaxOauth = async (req, res) => {
         const historicoCuotaEstimadaDTO = parseHistoricoCuotaEstimada(historico_cuota_estimada || []);
         const historicoEndeudamientoComercialDTO = parseHistoricoEndeudamientoComercial(historico_endeudamiento_comercial || []);
         const historicoEndeudamientoFinancieroDTO = parseHistoricoEndeudamientoComercial(historico_endeudamiento_financiero || []);
-       
+        const historicoVencidosComercialDTO = parseHistoricoVencidosComercial(historico_vencidos_comercial || []);
+        const historicoVencidosFinancieroDTO = parseHistoricoVencidosComercial(historico_vencidos_financiero || []); // Asegúrate de crear este DTO si es necesario
+        const valorDeuda3SistemasDTO = parseValorDeuda3Sistemas(valor_deuda_3_sistemas || []);
+        const protestosMorosidadesDTO = parseProtestosMorosidades(protestos_morosidades || []);
+
+
+
+
+
+
+
+
+
+
+
         console.log("DTOs scoreSobreendeudamientoDTO:", {
           
             scoreSobreendeudamientoDTO
@@ -177,7 +201,14 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO }, /* 10 */
             { repo: EQFX_UAT_historico_cuota_estimada, data: historicoCuotaEstimadaDTO }, /* 11 */
             { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO }, /* 12 */
-            { repo: EQFX_UAT_historico_endeudamiento_financiero, data: historicoEndeudamientoFinancieroDTO } /* 13 */
+            { repo: EQFX_UAT_historico_endeudamiento_financiero, data: historicoEndeudamientoFinancieroDTO }, /* 13 */
+            { repo: EQFX_UAT_historico_vencidos_comercial, data: historicoVencidosComercialDTO }, /* 14 */
+            { repo: EQFX_UAT_historico_vencidos_financiero, data: historicoVencidosFinancieroDTO }, /* 15 */
+            { repo: EQFX_UAT_valor_deuda_3_sistemas, data: valorDeuda3SistemasDTO }, /* 16 */
+            { repo: EQFX_UAT_protestos_morosidades, data: protestosMorosidadesDTO }, /* 17 */
+       
+       
+       
         ];
 
         for (const { repo, data } of repositoriesToSave) {
