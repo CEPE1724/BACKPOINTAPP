@@ -63,6 +63,8 @@ const entities = [
     require('../EQFX_UAT_protestos_morosidades/model'),
     require('../EQFX_UAT_evolucion_deuda_sb_seps_sicom/model'),
     require('../EQFX_UAT_detalle_deuda_actual_sb/model'),
+    require('../EQFX_UAT_detalle_deuda_actual_seps/model'),
+    require('../EQFX_UAT_detalle_deuda_actual_sicom/model'),
 
 
 

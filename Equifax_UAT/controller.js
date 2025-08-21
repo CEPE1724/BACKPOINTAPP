@@ -17,6 +17,11 @@ const { parseValorDeuda3Sistemas } = require("./dto/reporteCrediticio/valor_deud
 const { parseProtestosMorosidades } = require("./dto/reporteCrediticio/protestos_morosidades.dto");
 const { parseEvolucionDeudaSBSEPSICOM } = require("./dto/reporteCrediticio/evolucion_deuda_sb_seps_sicom.dto");
 const { parseDetalleDeudaActualSB } = require("./dto/reporteCrediticio/detalle_deuda_actual_sb.dto");
+const { parseDetalleDeudaActualSeps } = require("./dto/reporteCrediticio/detalle_deuda_actual_seps.dto");
+const { parseDetalleDeudaActualSicom } = require("./dto/reporteCrediticio/detalle_deuda_actual_sicom.dto");
+
+
+
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
 const EQFX_UAT_resultado_segmentacion = require('../ApiCobrador/api/EQFX_UAT_resultado_segmentacion/model');
 const EQFX_UAT_resultado_politicas = require('../ApiCobrador/api/EQFX_UAT_resultado_politicas/model');
@@ -38,8 +43,8 @@ const EQFX_UAT_valor_deuda_3_sistemas = require('../ApiCobrador/api/EQFX_UAT_val
 const EQFX_UAT_protestos_morosidades = require('../ApiCobrador/api/EQFX_UAT_protestos_morosidades/model');
 const EQFX_UAT_evolucion_deuda_sb_seps_sicom = require('../ApiCobrador/api/EQFX_UAT_evolucion_deuda_sb_seps_sicom/model');
 const EQFX_UAT_detalle_deuda_actual_sb = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_actual_sb/model');
-
-
+const EQFX_UAT_detalle_deuda_actual_seps = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_actual_seps/model');
+const EQFX_UAT_detalle_deuda_actual_sicom = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_actual_sicom/model');
 
 
 
@@ -159,6 +164,8 @@ exports.equifaxOauth = async (req, res) => {
         const protestosMorosidadesDTO = parseProtestosMorosidades(protestos_morosidades || []);
         const evolucionDeudaSBSEPSICOMDTO = parseEvolucionDeudaSBSEPSICOM(evolucion_deuda_sb_seps_sicom || []);
         const detalleDeudaActualSBDTO = parseDetalleDeudaActualSB(detalle_deuda_actual_sb || []);
+        const detalleDeudaActualSepsDTO = parseDetalleDeudaActualSeps(detalle_deuda_actual_seps || []);
+        const detalleDeudaActualSicomDTO = parseDetalleDeudaActualSicom(detalle_deuda_actual_sicom || []);
 
 
 
@@ -208,6 +215,9 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_protestos_morosidades, data: protestosMorosidadesDTO }, /* 17 */
             { repo: EQFX_UAT_evolucion_deuda_sb_seps_sicom, data: evolucionDeudaSBSEPSICOMDTO }, /* 18 */
             { repo: EQFX_UAT_detalle_deuda_actual_sb, data: detalleDeudaActualSBDTO }, /* 19 */
+            { repo: EQFX_UAT_detalle_deuda_actual_seps, data: detalleDeudaActualSepsDTO }, /* 20 */
+            { repo: EQFX_UAT_detalle_deuda_actual_sicom, data: detalleDeudaActualSicomDTO }, /* 21 */
+
      
      
      

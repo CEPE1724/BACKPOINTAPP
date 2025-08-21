@@ -1,31 +1,59 @@
-/*"detalle_deuda_actual_sb": [
-{
-"institucion": "PRODUBANCO",
-"fecha_corte": "31/12/2018",
-"tipo_riesgo": "TITULAR",
-"tipo_credito": "Tarjeta",
-"cupo_monto_original": 11100,
-"fecha_apertura": "29/08/2012",
-"fecha_vencimiento": "31/08/2021",
-"total_vencer": 2909.38,
-"ndi": 0,
-"total_vencido": 0,
-"dem_jud": 0,
-"cart_cast": 0,
-"saldo_deuda": 2909.38,
-"cuota_mensual": 445.35,
-"dias_morosidad": 0
-}*/
+/*{
+ "detalle_deuda_actual_seps": [
+ {
+ "institucion": "",
+ "fecha_corte": "",
+ "tipo_riesgo": "",
+ "tipo_credito": "",
+ "cupo_monto_original": 0,
+ "fecha_apertura": "",
+ "fecha_vencimiento": "",
+ "total_vencer": 0,
+ "ndi": 0,
+ "total_vencido": 0,
+ "dem_jud": 0,
+ "cart_cast": 0,
+ "saldo_deuda": 0,
+ "cuota_mensual": 0,
+ "dias_morosidad": 0
+ }
+ ]
+}
+*/
 
-/** * DTO for Detalle Deuda Actual SB
- * @param {Array} detalle_deuda_actual_sb - Array of detalle_deuda_actual_sb objects
- * @returns {Array} - Array of parsed detalle_deuda_actual_sb DTOs
- * * @typedef {Object} DetalleDeudaActualSBDTO
+/*
+CREATE TABLE EQFX_UAT_detalle_deuda_actual_seps (
+    idEQFX_UAT_detalle_deuda_actual_seps INT IDENTITY(1,1) PRIMARY KEY,
+    idEQFX_IdentificacionConsultada INT NOT NULL,
+    institucion VARCHAR(255) DEFAULT '' ,
+    fecha_corte DATE NULL,
+    tipo_riesgo VARCHAR(100) DEFAULT '' ,
+    tipo_credito VARCHAR(100) DEFAULT '' ,
+    cupo_monto_original DECIMAL(18,2) DEFAULT 0.00,
+    fecha_apertura DATE NULL,
+    fecha_vencimiento DATE NULL,
+    total_vencer DECIMAL(18,2) DEFAULT 0.00,
+    ndi DECIMAL(18,2) DEFAULT 0.00,
+    total_vencido DECIMAL(18,2) DEFAULT 0.00,
+    dem_jud DECIMAL(18,2) DEFAULT 0.00,
+    cart_cast DECIMAL(18,2) DEFAULT 0.00,
+    saldo_deuda DECIMAL(18,2) DEFAULT 0.00,
+    cuota_mensual DECIMAL(18,2) DEFAULT 0.00,
+    dias_morosidad INT DEFAULT 0,
+    FechaSistema DATETIME DEFAULT GETDATE()
+);*/
+
+/**
+ * Parses the detalle_deuda_actual_seps array from the Equifax UAT report
+ * @param {Array} detalle_deuda_actual_seps - Array of detalle_deuda_actual
+ * _seps objects
+ * @returns {Array} - Array of parsed detalle_deuda_actual_seps DTOs
+ * * @typedef {Object} DetalleDeudaActualSepsDTO
  * @property {string} institucion - Nombre de la institución
  * * @property {string} fecha_corte - Fecha de corte
  * @property {string} tipo_riesgo - Tipo de riesgo (TITULAR, ADICIONAL)
  * @property {string} tipo_credito - Tipo de crédito (Tarjeta, Préstamo, etc.)
- * @property {number} cupo_monto_original - Monto original del crédito  
+ * @property {number} cupo_monto_original - Monto original del crédito
  * * @property {string} fecha_apertura - Fecha de apertura del crédito
  * @property {string} fecha_vencimiento - Fecha de vencimiento del crédito
  * * @property {number} total_vencer - Monto total por vencer
@@ -34,9 +62,9 @@
  * @property {number} dem_jud - Monto en demanda judicial
  * @property {number} cart_cast - Monto en cartera castigada
  * @property {number} saldo_deuda - Saldo total de la deuda
- * * @property {number} cuota_mensual - Cuota mensual a pagar
- * @property {number} dias_morosidad - Días de morosidad
- * * @returns {DetalleDeudaActualSBDTO[]}
+ * @property {number} cuota_mensual - Cuota mensual a pagar
+ * * @property {number} dias_morosidad - Días de morosidad
+ * * @returns {DetalleDeudaActualSepsDTO[]}
  * */
 
 function parseDateOrNull(value) {
@@ -54,14 +82,12 @@ function parseDateOrNull(value) {
     return isNaN(parsed.getTime()) ? null : parsed;
 }
 
-
-
-function parseDetalleDeudaActualSB(detalle_deuda_actual_sb = []) {
-    if (!Array.isArray(detalle_deuda_actual_sb) || detalle_deuda_actual_sb.length === 0) {
+function parseDetalleDeudaActualSeps(detalle_deuda_actual_seps = []) {
+    if (!Array.isArray(detalle_deuda_actual_seps) || detalle_deuda_actual_seps.length === 0) {
         return [];
     }
 
-    return detalle_deuda_actual_sb.map(item => ({
+    return detalle_deuda_actual_seps.map(item => ({
         institucion: item.institucion || '',
         fecha_corte: item.fecha_corte ? parseDateOrNull(item.fecha_corte) : null,
         tipo_riesgo: item.tipo_riesgo || '',
@@ -79,4 +105,4 @@ function parseDetalleDeudaActualSB(detalle_deuda_actual_sb = []) {
         dias_morosidad: Number(item.dias_morosidad) || 0
     }));
 }
-module.exports = { parseDetalleDeudaActualSB };
+module.exports = { parseDetalleDeudaActualSeps };
