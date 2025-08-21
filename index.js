@@ -239,6 +239,14 @@ const publicRoutesEquifax = [
     route: require('./SoapEquifax/wsExpertoPointTech/router')
   }
 ]
+// rutas de Equifax Uat
+const publicRoutesEquifaxUat = [
+  {
+    path: '/v2/api/equifax/uat/latam/',
+    route: require('./Equifax_UAT/router')
+  }
+]
+
 // rutas de Cuadricula
 const publicRoutesCuadricula = [
   {
@@ -278,6 +286,11 @@ protectedRoutes.forEach((route) => {
 
 // Aplica las rutas de Equifax
 publicRoutesEquifax.forEach((route) => {
+  app.use(route.path, route.route)
+})
+
+// Aplica las rutas de Equifax Uat
+publicRoutesEquifaxUat.forEach((route) => {
   app.use(route.path, route.route)
 })
 

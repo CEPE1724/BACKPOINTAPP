@@ -42,6 +42,10 @@ const entities = [
     require('../Cre_ActividadEconomica/model'),
     require('../Cre_Tiempo/model'),
     require('../Cre_ProductoSolicitud/model'),
+    require('../EquifaxToken/model'),
+    require('../EQFX_UAT_resultado_segmentacion/model'),
+    require('../EQFX_UAT_resultado_politicas/model'),
+    require('../EQFX_UAT_resultado/model'),
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
