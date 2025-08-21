@@ -61,6 +61,8 @@ const entities = [
     require('../EQFX_UAT_historico_vencidos_financiero/model'),
     require('../EQFX_UAT_valor_deuda_3_sistemas/model'),
     require('../EQFX_UAT_protestos_morosidades/model'),
+    require('../EQFX_UAT_evolucion_deuda_sb_seps_sicom/model'),
+    require('../EQFX_UAT_detalle_deuda_actual_sb/model'),
 
 
 

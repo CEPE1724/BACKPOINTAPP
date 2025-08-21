@@ -15,8 +15,8 @@ const { parseHistoricoEndeudamientoComercial } = require("./dto/reporteCreditici
 const { parseHistoricoVencidosComercial } = require("./dto/reporteCrediticio/historico_vencidos_comercial.dto");
 const { parseValorDeuda3Sistemas } = require("./dto/reporteCrediticio/valor_deuda_3_sistemas.dto");
 const { parseProtestosMorosidades } = require("./dto/reporteCrediticio/protestos_morosidades.dto");
-
-
+const { parseEvolucionDeudaSBSEPSICOM } = require("./dto/reporteCrediticio/evolucion_deuda_sb_seps_sicom.dto");
+const { parseDetalleDeudaActualSB } = require("./dto/reporteCrediticio/detalle_deuda_actual_sb.dto");
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
 const EQFX_UAT_resultado_segmentacion = require('../ApiCobrador/api/EQFX_UAT_resultado_segmentacion/model');
 const EQFX_UAT_resultado_politicas = require('../ApiCobrador/api/EQFX_UAT_resultado_politicas/model');
@@ -36,8 +36,8 @@ const EQFX_UAT_historico_vencidos_comercial = require('../ApiCobrador/api/EQFX_U
 const EQFX_UAT_historico_vencidos_financiero = require('../ApiCobrador/api/EQFX_UAT_historico_vencidos_financiero/model');
 const EQFX_UAT_valor_deuda_3_sistemas = require('../ApiCobrador/api/EQFX_UAT_valor_deuda_3_sistemas/model');
 const EQFX_UAT_protestos_morosidades = require('../ApiCobrador/api/EQFX_UAT_protestos_morosidades/model');
-
-
+const EQFX_UAT_evolucion_deuda_sb_seps_sicom = require('../ApiCobrador/api/EQFX_UAT_evolucion_deuda_sb_seps_sicom/model');
+const EQFX_UAT_detalle_deuda_actual_sb = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_actual_sb/model');
 
 
 
@@ -157,8 +157,8 @@ exports.equifaxOauth = async (req, res) => {
         const historicoVencidosFinancieroDTO = parseHistoricoVencidosComercial(historico_vencidos_financiero || []); // Asegúrate de crear este DTO si es necesario
         const valorDeuda3SistemasDTO = parseValorDeuda3Sistemas(valor_deuda_3_sistemas || []);
         const protestosMorosidadesDTO = parseProtestosMorosidades(protestos_morosidades || []);
-
-
+        const evolucionDeudaSBSEPSICOMDTO = parseEvolucionDeudaSBSEPSICOM(evolucion_deuda_sb_seps_sicom || []);
+        const detalleDeudaActualSBDTO = parseDetalleDeudaActualSB(detalle_deuda_actual_sb || []);
 
 
 
@@ -206,9 +206,21 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_historico_vencidos_financiero, data: historicoVencidosFinancieroDTO }, /* 15 */
             { repo: EQFX_UAT_valor_deuda_3_sistemas, data: valorDeuda3SistemasDTO }, /* 16 */
             { repo: EQFX_UAT_protestos_morosidades, data: protestosMorosidadesDTO }, /* 17 */
-       
-       
-       
+            { repo: EQFX_UAT_evolucion_deuda_sb_seps_sicom, data: evolucionDeudaSBSEPSICOMDTO }, /* 18 */
+            { repo: EQFX_UAT_detalle_deuda_actual_sb, data: detalleDeudaActualSBDTO }, /* 19 */
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
         ];
 
         for (const { repo, data } of repositoriesToSave) {
