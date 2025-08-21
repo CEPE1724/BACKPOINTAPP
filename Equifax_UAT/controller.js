@@ -8,6 +8,13 @@ const { parseScoreInclusion } = require("./dto/reporteCrediticio/score_inclusion
 const { parseScore } = require("./dto/reporteCrediticio/score.dto");
 const { parseScoreSobreendeudamiento } = require("./dto/reporteCrediticio/score_sobreendeudamiento");
 const { parseIndicadorImpactoEconomico } = require("./dto/reporteCrediticio/indicador_impacto_economico.dto");
+const { parseHistoricoScore } = require("./dto/reporteCrediticio/historico_score.dto");
+const { parseHistoricoAcreedores } = require("./dto/reporteCrediticio/historico_acreedores.dto");
+
+
+
+
+
 
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
@@ -21,7 +28,7 @@ const EQFX_UAT_score = require('../ApiCobrador/api/EQFX_UAT_score/model');
 const EQFX_UAT_score_sobreendeudamiento = require('../ApiCobrador/api/EQFX_UAT_score_sobreendeudamiento/model');
 const EQFX_UAT_indicador_impacto_economico = require('../ApiCobrador/api/EQFX_UAT_indicador_impacto_economico/model');
 const EQFX_UAT_historico_score = require('../ApiCobrador/api/EQFX_UAT_historico_score/model');
-
+const EQFX_UAT_historico_acreedores = require('../ApiCobrador/api/EQFX_UAT_historico_acreedores/model');
 
 
 
@@ -78,7 +85,7 @@ exports.equifaxOauth = async (req, res) => {
             score = [], /*5*/
             score_sobreendeudamiento = [], /*6*/
             indicador_impacto_economico = [], /*7*/
-            index_pymes = [], /*8*/
+            index_pymes = [], /*8 ESTA EN LA RESPUESTA PERO NO HAY DOCUMENTACION*/
             historico_score = [], /*9*/
             historico_acreedores = [], /*10*/
             historico_cuota_estimada = [], /*11*/
@@ -131,6 +138,9 @@ exports.equifaxOauth = async (req, res) => {
         const scoreDTO = parseScore(score || []);
         const scoreSobreendeudamientoDTO = parseScoreSobreendeudamiento(score_sobreendeudamiento || []);
         const indicadorImpactoEconomicoDTO = parseIndicadorImpactoEconomico(indicador_impacto_economico || []);
+        const historicoScoreDTO = parseHistoricoScore(historico_score || []);
+        const historicoAcreedoresDTO = parseHistoricoAcreedores(historico_acreedores || []);
+       
         console.log("DTOs scoreSobreendeudamientoDTO:", {
           
             scoreSobreendeudamientoDTO
@@ -160,10 +170,12 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_score, data: scoreDTO }, /* 5 */
             { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO }, /* 6 */
             { repo: EQFX_UAT_indicador_impacto_economico, data: indicadorImpactoEconomicoDTO }, /* 7 */
+            { repo: EQFX_UAT_historico_score, data: historicoScoreDTO }, /* 9 */
+            { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO } /* 10 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {
-            console.log(`Guardando datos en ${repo.name}:`, data);
+        
             if (!data || (Array.isArray(data) && data.length === 0)) {
                 console.warn(`No hay datos para guardar en ${repo.name}`);
                 continue;
