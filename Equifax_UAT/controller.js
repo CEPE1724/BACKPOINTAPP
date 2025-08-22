@@ -41,6 +41,7 @@ const { parseInformacionDemografica } = require("./dto/reporteCrediticio/informa
 const { parseMensajeCalificaDetalleTarjetas } = require("./dto/reporteCrediticio/mensaje_califica_detalle_tarjetas.dto");
 const { parseFactoresInfluyenScore } = require("./dto/reporteCrediticio/factores_influyen_score.dto");
 const { parseEntidadesConsultados } = require("./dto/reporteCrediticio/entidades_consultados.dto");
+const {parseDetalleDeudaHistoricaSb} = require("./dto/reporteCrediticio/detalle_deuda_historica_sb.dto");
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
 const EQFX_UAT_resultado_segmentacion = require('../ApiCobrador/api/EQFX_UAT_resultado_segmentacion/model');
@@ -87,7 +88,7 @@ const EQFX_UAT_informacion_demografica = require('../ApiCobrador/api/EQFX_UAT_in
 const EQFX_UAT_mensaje_califica_detalle_tarjetas = require('../ApiCobrador/api/EQFX_UAT_mensaje_califica_detalle_tarjetas/model');
 const EQFX_UAT_factores_influyen_score = require('../ApiCobrador/api/EQFX_UAT_factores_influyen_score/model');
 const EQFX_UAT_entidades_consultados = require('../ApiCobrador/api/EQFX_UAT_entidades_consultados/model');
-
+const EQFX_UAT_detalle_deuda_historica_sb = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_historica_sb/model');
 
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
@@ -230,7 +231,7 @@ exports.equifaxOauth = async (req, res) => {
         const mensajeCalificaDetalleTarjetasDTO = parseMensajeCalificaDetalleTarjetas(mensaje_califica_detalle_tarjetas || []);
         const factoresInfluyenScoreDTO = parseFactoresInfluyenScore(factores_influyen_score || []);
         const entidadesConsultadosDTO = parseEntidadesConsultados(entidades_consultados || []);
-       
+        const detalleDeudaHistoricaSbDTO = parseDetalleDeudaHistoricaSb(detalle_deuda_historica_sb || []);
        
        
        
@@ -297,7 +298,8 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_informacion_demografica, data: informacionDemograficaDTO }, /* 40 */
             { repo: EQFX_UAT_mensaje_califica_detalle_tarjetas, data: mensajeCalificaDetalleTarjetasDTO }, /* 41 */
             { repo: EQFX_UAT_factores_influyen_score, data: factoresInfluyenScoreDTO }, /* 42 */
-            { repo: EQFX_UAT_entidades_consultados, data: entidadesConsultadosDTO } /* 43 */
+            { repo: EQFX_UAT_entidades_consultados, data: entidadesConsultadosDTO }, /* 43 */
+            { repo: EQFX_UAT_detalle_deuda_historica_sb, data: detalleDeudaHistoricaSbDTO }, /* 44 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {

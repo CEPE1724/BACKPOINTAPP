@@ -87,6 +87,7 @@ const entities = [
     require('../EQFX_UAT_mensaje_califica_detalle_tarjetas/model'),
     require('../EQFX_UAT_factores_influyen_score/model'),
     require('../EQFX_UAT_entidades_consultados/model'),
+    require('../EQFX_UAT_detalle_deuda_historica_sb/model'),
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
