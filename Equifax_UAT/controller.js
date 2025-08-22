@@ -32,7 +32,7 @@ const { parseSujetoAlDia } = require("./dto/reporteCrediticio/sujeto_al_dia.dto"
 const { parseMantieneHistorialCrediticio } = require("./dto/reporteCrediticio/mantiene_historial_crediticio.dto");
 const { parseIdentificadorPerfilRiesgoDirecto } = require("./dto/reporteCrediticio/identificador_perfil_riesgo_directo.dto");
 const { parseIdentificadorPerfilRiesgoDirecto6Meses } = require("./dto/reporteCrediticio/identificador_perfil_riesgo_directo_6_meses.dto");
-
+const { parseGarantiasPersonalesCodeudoresOperacionesVigentes } = require("./dto/reporteCrediticio/garantias_personales_codeudores_operaciones_vigentes.dto");
 
 
 
@@ -73,7 +73,7 @@ const EQFX_UAT_sujeto_al_dia = require('../ApiCobrador/api/EQFX_UAT_sujeto_al_di
 const EQFX_UAT_mantiene_historial_crediticio = require('../ApiCobrador/api/EQFX_UAT_mantiene_historial_crediticio/model');
 const EQFX_UAT_identificador_perfil_riesgo_directo = require('../ApiCobrador/api/EQFX_UAT_identificador_perfil_riesgo_directo/model');
 const EQFX_UAT_identificador_perfil_riesgo_directo_6_meses = require('../ApiCobrador/api/EQFX_UAT_identificador_perfil_riesgo_directo_6_meses/model');
-
+const EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes = require('../ApiCobrador/api/EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes/model');
 
 
 
@@ -210,7 +210,7 @@ exports.equifaxOauth = async (req, res) => {
         const mantieneHistorialCrediticioDTO = parseMantieneHistorialCrediticio(mantiene_historial_crediticio || []);
         const identificadorPerfilRiesgoDirectoDTO = parseIdentificadorPerfilRiesgoDirecto(identificador_perfil_riesgo_directo || []);
         const identificadorPerfilRiesgoDirecto6MesesDTO = parseIdentificadorPerfilRiesgoDirecto6Meses(identificador_perfil_riesgo_directo_6_meses || []);
-
+        const garantiasPersonalesCodeudoresOperacionesVigentesDTO = parseGarantiasPersonalesCodeudoresOperacionesVigentes(garantias_personales_codeudores_operaciones_vigentes || []);
 
 
 
@@ -271,6 +271,12 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_mantiene_historial_crediticio, data: mantieneHistorialCrediticioDTO }, /* 32 */
             { repo: EQFX_UAT_identificador_perfil_riesgo_directo, data: identificadorPerfilRiesgoDirectoDTO }, /* 33 */
             { repo: EQFX_UAT_identificador_perfil_riesgo_directo_6_meses, data: identificadorPerfilRiesgoDirecto6MesesDTO }, /* 34 */
+            { repo: EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes, data: garantiasPersonalesCodeudoresOperacionesVigentesDTO }, /* 35 */
+       
+       
+       
+       
+       
         ];
 
         for (const { repo, data } of repositoriesToSave) {
