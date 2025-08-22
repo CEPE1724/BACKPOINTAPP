@@ -22,7 +22,7 @@ const { parseDetalleDeudaActualSicom } = require("./dto/reporteCrediticio/detall
 const { parseDetalleTarjetas } = require("./dto/reporteCrediticio/detalle_tarjetas.dto");
 const { parseDistribucionEndeudamiento } = require("./dto/reporteCrediticio/distribucion_endeudamiento.dto");
 const { parseDeudaHistorica } = require("./dto/reporteCrediticio/deuda_historica.dto");
-
+const { parseEstructuraVencimiento } = require("./dto/reporteCrediticio/estructura_vencimiento.dto");
 
 
 
@@ -56,6 +56,7 @@ const EQFX_UAT_detalle_deuda_actual_sicom = require('../ApiCobrador/api/EQFX_UAT
 const EQFX_UAT_detalle_tarjetas = require('../ApiCobrador/api/EQFX_UAT_detalle_tarjetas/model');
 const EQFX_UAT_distribucion_endeudamiento = require('../ApiCobrador/api/EQFX_UAT_distribucion_endeudamiento/model');
 const EQFX_UAT_deuda_historica = require('../ApiCobrador/api/EQFX_UAT_deuda_historica/model');
+const EQFX_UAT_estructura_vencimiento = require('../ApiCobrador/api/EQFX_UAT_estructura_vencimiento/model');
 
 
 
@@ -183,6 +184,7 @@ exports.equifaxOauth = async (req, res) => {
         const detalleTarjetasDTO = parseDetalleTarjetas(detalle_tarjetas || []);
         const distribucionEndeudamientoDTO = parseDistribucionEndeudamiento(distribucion_endeudamiento || []);
         const deudaHistoricaDTO = parseDeudaHistorica(deuda_historica || []);
+        const estructuraVencimientoDTO = parseEstructuraVencimiento(estructura_vencimiento || []);
 
 
 
@@ -236,7 +238,8 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_detalle_deuda_actual_sicom, data: detalleDeudaActualSicomDTO }, /* 21 */
             { repo: EQFX_UAT_detalle_tarjetas, data: detalleTarjetasDTO }, /* 22 */
             { repo: EQFX_UAT_distribucion_endeudamiento, data: distribucionEndeudamientoDTO }, /* 23 */
-            { repo: EQFX_UAT_deuda_historica, data: deudaHistoricaDTO } /* 24 */
+            { repo: EQFX_UAT_deuda_historica, data: deudaHistoricaDTO }, /* 24 */
+            { repo: EQFX_UAT_estructura_vencimiento, data: estructuraVencimientoDTO }, /* 25 */
      
      
      
