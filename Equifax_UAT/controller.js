@@ -28,7 +28,7 @@ const { parseSaldosPorVencer } = require("./dto/reporteCrediticio/saldos_por_ven
 const { parseDetalleEstructuraVencimiento } = require("./dto/reporteCrediticio/detalle_estructura_vencimiento.dto");
 const { parseCuotaEstimadaMensual } = require("./dto/reporteCrediticio/cuota_estimada_mensual.dto");
 const { parsePersonasInhabilitadas } = require("./dto/reporteCrediticio/personas_inhabilitadas.dto");
-
+const { parseSujetoAlDia } = require("./dto/reporteCrediticio/sujeto_al_dia.dto");
 
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
@@ -63,7 +63,7 @@ const EQFX_UAT_saldos_por_vencer = require('../ApiCobrador/api/EQFX_UAT_saldos_p
 const EQFX_UAT_detalle_estructura_vencimiento = require('../ApiCobrador/api/EQFX_UAT_detalle_estructura_vencimiento/model');
 const EQFX_UAT_cuota_estimada_mensual = require('../ApiCobrador/api/EQFX_UAT_cuota_estimada_mensual/model');
 const EQFX_UAT_personas_inhabilitadas = require('../ApiCobrador/api/EQFX_UAT_personas_inhabilitadas/model');
-
+const EQFX_UAT_sujeto_al_dia = require('../ApiCobrador/api/EQFX_UAT_sujeto_al_dia/model');
 
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
@@ -193,6 +193,7 @@ exports.equifaxOauth = async (req, res) => {
         const detalleEstructuraVencimientoDTO = parseDetalleEstructuraVencimiento(detalle_estructura_vencimiento || []);
         const cuotaEstimadaMensualDTO = parseCuotaEstimadaMensual(cuota_estimada_mensual || []);
         const personasInhabilitadasDTO = parsePersonasInhabilitadas(personas_inhabilitadas || []);
+        const sujetoAlDiaDTO = parseSujetoAlDia(sujeto_al_dia || []);
 
 
 
@@ -251,7 +252,8 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_saldos_por_vencer, data: saldosPorVencerDTO }, /* 27 */
             { repo: EQFX_UAT_detalle_estructura_vencimiento, data: detalleEstructuraVencimientoDTO }, /* 28 */
             { repo: EQFX_UAT_cuota_estimada_mensual, data: cuotaEstimadaMensualDTO }, /* 29 */
-            { repo: EQFX_UAT_personas_inhabilitadas, data: personasInhabilitadasDTO } /* 30 */
+            { repo: EQFX_UAT_personas_inhabilitadas, data: personasInhabilitadasDTO }, /* 30 */
+            { repo: EQFX_UAT_sujeto_al_dia, data: sujetoAlDiaDTO }, /* 31 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {
