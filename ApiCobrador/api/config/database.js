@@ -67,6 +67,7 @@ const entities = [
     require('../EQFX_UAT_detalle_deuda_actual_sicom/model'),
     require('../EQFX_UAT_detalle_tarjetas/model'),
     require('../EQFX_UAT_distribucion_endeudamiento/model'),
+    require('../EQFX_UAT_deuda_historica/model'),
 
 
 
