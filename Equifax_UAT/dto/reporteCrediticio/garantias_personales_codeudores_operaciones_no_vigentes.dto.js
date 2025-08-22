@@ -44,12 +44,13 @@ function parseDateOrNull(value) {
 
 
 function parseGarantiasPersonalesCodeudoresOperacionesNoVigentes(garantias_personales_codeudores_operaciones_no_vigentes = []) {
+   console.log(`Parsing garantias_personales_codeudores_operaciones_no_vigentes...${JSON.stringify(garantias_personales_codeudores_operaciones_no_vigentes)}`);
     if (!Array.isArray(garantias_personales_codeudores_operaciones_no_vigentes) || garantias_personales_codeudores_operaciones_no_vigentes.length === 0) {
         return [];
     }
 
     return garantias_personales_codeudores_operaciones_no_vigentes.map(item => ({
-        tipo_deudor: item.tipo_deudor || '',
+        tipo_deudor: typeof item.tipo_deudor === 'string' ? item.tipo_deudor.trim() : '',
         fecha_concesion: parseDateOrNull(item.fecha_concesion),
         fecha_eliminacion: parseDateOrNull(item.fecha_eliminacion),
         numero_documento: item.numero_documento || '',

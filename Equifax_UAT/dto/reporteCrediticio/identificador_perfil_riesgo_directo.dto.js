@@ -38,9 +38,11 @@
     return isNaN(parsed.getTime()) ? null : parsed;
 }
 function parseIdentificadorPerfilRiesgoDirecto(identificador_perfil_riesgo_directo = []) {
+  ;
     if (!Array.isArray(identificador_perfil_riesgo_directo) || identificador_perfil_riesgo_directo.length === 0) {
         return [];
     }
+    
 
     return identificador_perfil_riesgo_directo.map(item => ({
         indicador: item.indicador || '',

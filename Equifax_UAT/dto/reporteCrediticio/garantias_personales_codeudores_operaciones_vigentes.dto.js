@@ -22,6 +22,7 @@
  */
 
 function parseGarantiasPersonalesCodeudoresOperacionesVigentes(garantias_personales_codeudores_operaciones_vigentes = []) {
+   
     if (!Array.isArray(garantias_personales_codeudores_operaciones_vigentes) || garantias_personales_codeudores_operaciones_vigentes.length === 0) {
         return [];
     }

@@ -95,6 +95,7 @@ const EQFX_UAT_detalle_deuda_historica_seps = require('../ApiCobrador/api/EQFX_U
 const EQFX_UAT_detalle_deuda_historica_sicom = require('../ApiCobrador/api/EQFX_UAT_detalle_deuda_historica_sicom/model');
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
+const { name } = require("ejs");
 /**
  * Main controller for Equifax Orchestration
  */
@@ -237,12 +238,6 @@ exports.equifaxOauth = async (req, res) => {
         const detalleDeudaHistoricaSepsDTO = parseDetalleDeudaHistoricaSeps(detalle_deuda_historica_seps || []);
         const detalleDeudaHistoricaSicomDTO = parseDetalleDeudaHistoricaSicom(detalle_deuda_historica_sicom || []);
        
-       
-        console.log("DTOs scoreSobreendeudamientoDTO:", {
-          
-            scoreSobreendeudamientoDTO
-        });
-
 
         // Guardar en la base de datos
         const identificacionRepo = AppDataSource.getRepository(EQFX_IdentificacionConsultada);
@@ -258,63 +253,65 @@ exports.equifaxOauth = async (req, res) => {
         const idEQFX_IdentificacionConsultada = newRegistro.idEQFX_IdentificacionConsultada;
 
         const repositoriesToSave = [
-            { repo: EQFX_UAT_resultado_segmentacion, data: segmentacionDTO }, 
-            { repo: EQFX_UAT_resultado_politicas, data: politicasDTO }, 
-            { repo: EQFX_UAT_resultado, data: resultadoDTO }, 
-            { repo: EQFX_UAT_informacion_sri, data: sriDTO }, /* 2*/
-            { repo: EQFX_UAT_score_inclusion, data: scoreInclusionDTO }, /* 3 */
-            { repo: EQFX_UAT_resumen_informe, data: resumenInformeDTO }, /* 4 */
-            { repo: EQFX_UAT_score, data: scoreDTO }, /* 5 */
-            { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO }, /* 6 */
-            { repo: EQFX_UAT_indicador_impacto_economico, data: indicadorImpactoEconomicoDTO }, /* 7 */
-            { repo: EQFX_UAT_historico_score, data: historicoScoreDTO }, /* 9 */
-            { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO }, /* 10 */
-            { repo: EQFX_UAT_historico_cuota_estimada, data: historicoCuotaEstimadaDTO }, /* 11 */
-            { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO }, /* 12 */
-            { repo: EQFX_UAT_historico_endeudamiento_financiero, data: historicoEndeudamientoFinancieroDTO }, /* 13 */
-            { repo: EQFX_UAT_historico_vencidos_comercial, data: historicoVencidosComercialDTO }, /* 14 */
-            { repo: EQFX_UAT_historico_vencidos_financiero, data: historicoVencidosFinancieroDTO }, /* 15 */
-            { repo: EQFX_UAT_valor_deuda_3_sistemas, data: valorDeuda3SistemasDTO }, /* 16 */
-            { repo: EQFX_UAT_protestos_morosidades, data: protestosMorosidadesDTO }, /* 17 */
-            { repo: EQFX_UAT_evolucion_deuda_sb_seps_sicom, data: evolucionDeudaSBSEPSICOMDTO }, /* 18 */
-            { repo: EQFX_UAT_detalle_deuda_actual_sb, data: detalleDeudaActualSBDTO }, /* 19 */
-            { repo: EQFX_UAT_detalle_deuda_actual_seps, data: detalleDeudaActualSepsDTO }, /* 20 */
-            { repo: EQFX_UAT_detalle_deuda_actual_sicom, data: detalleDeudaActualSicomDTO }, /* 21 */
-            { repo: EQFX_UAT_detalle_tarjetas, data: detalleTarjetasDTO }, /* 22 */
-            { repo: EQFX_UAT_distribucion_endeudamiento, data: distribucionEndeudamientoDTO }, /* 23 */
-            { repo: EQFX_UAT_deuda_historica, data: deudaHistoricaDTO }, /* 24 */
-            { repo: EQFX_UAT_estructura_vencimiento, data: estructuraVencimientoDTO }, /* 25 */
-            { repo: EQFX_UAT_creditos_otorgados, data: creditosOtorgadosDTO }, /* 26 */
-            { repo: EQFX_UAT_saldos_por_vencer, data: saldosPorVencerDTO }, /* 27 */
-            { repo: EQFX_UAT_detalle_estructura_vencimiento, data: detalleEstructuraVencimientoDTO }, /* 28 */
-            { repo: EQFX_UAT_cuota_estimada_mensual, data: cuotaEstimadaMensualDTO }, /* 29 */
-            { repo: EQFX_UAT_personas_inhabilitadas, data: personasInhabilitadasDTO }, /* 30 */
-            { repo: EQFX_UAT_sujeto_al_dia, data: sujetoAlDiaDTO }, /* 31 */
-            { repo: EQFX_UAT_mantiene_historial_crediticio, data: mantieneHistorialCrediticioDTO }, /* 32 */
-            { repo: EQFX_UAT_identificador_perfil_riesgo_directo, data: identificadorPerfilRiesgoDirectoDTO }, /* 33 */
-            { repo: EQFX_UAT_identificador_perfil_riesgo_directo_6_meses, data: identificadorPerfilRiesgoDirecto6MesesDTO }, /* 34 */
-            { repo: EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes, data: garantiasPersonalesCodeudoresOperacionesVigentesDTO }, /* 35 */
-            { repo: EQFX_UAT_garantias_personales_codeudores_operaciones_no_vigentes, data: garantiasPersonalesCodeudoresOperacionesNoVigentesDTO }, /* 36 */
-            { repo: EQFX_UAT_vinculaciones_instituciones_financieras, data: vinculacionesInstitucionesFinancierasDTO }, /* 37 */
-            { repo: EQFX_UAT_operaciones_canceladas, data: operacionesCanceladasDTO }, /* 38 */
-            { repo: EQFX_UAT_tarjetas_canceladas, data: tarjetasCanceladasDTO }, /* 39 */
-            { repo: EQFX_UAT_informacion_demografica, data: informacionDemograficaDTO }, /* 40 */
-            { repo: EQFX_UAT_mensaje_califica_detalle_tarjetas, data: mensajeCalificaDetalleTarjetasDTO }, /* 41 */
-            { repo: EQFX_UAT_factores_influyen_score, data: factoresInfluyenScoreDTO }, /* 42 */
-            { repo: EQFX_UAT_entidades_consultados, data: entidadesConsultadosDTO }, /* 43 */
-            { repo: EQFX_UAT_detalle_deuda_historica_sb, data: detalleDeudaHistoricaSbDTO }, /* 44 */
-            { repo: EQFX_UAT_detalle_deuda_historica_seps, data: detalleDeudaHistoricaSepsDTO }, /* 45 */
-            { repo: EQFX_UAT_detalle_deuda_historica_sicom, data: detalleDeudaHistoricaSicomDTO } /* 46 */
+            { repo: EQFX_UAT_resultado_segmentacion, data: segmentacionDTO, name: 'segmentacionDTO', name : 'segmentacionDTO' }, 
+            { repo: EQFX_UAT_resultado_politicas, data: politicasDTO, name: 'politicasDTO' , name : 'politicasDTO' }, 
+            { repo: EQFX_UAT_resultado, data: resultadoDTO, name: 'resultadoDTO', name : 'resultadoDTO' }, 
+            { repo: EQFX_UAT_informacion_sri, data: sriDTO, name: 'sriDTO', name : 'sriDTO' }, /* 2*/
+            { repo: EQFX_UAT_score_inclusion, data: scoreInclusionDTO, name: 'scoreInclusionDTO', name : 'scoreInclusionDTO' }, /* 3 */
+            { repo: EQFX_UAT_resumen_informe, data: resumenInformeDTO, name: 'resumenInformeDTO', name : 'resumenInformeDTO' }, /* 4 */
+            { repo: EQFX_UAT_score, data: scoreDTO, name: 'scoreDTO', name : 'scoreDTO' }, /* 5 */
+            { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO, name: 'scoreSobreendeudamientoDTO', name : 'scoreSobreendeudamientoDTO' }, /* 6 */
+            { repo: EQFX_UAT_indicador_impacto_economico, data: indicadorImpactoEconomicoDTO, name: 'indicadorImpactoEconomicoDTO', name : 'indicadorImpactoEconomicoDTO' }, /* 7 */
+            { repo: EQFX_UAT_historico_score, data: historicoScoreDTO, name: 'historicoScoreDTO', name : 'historicoScoreDTO' }, /* 9 */
+            { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO, name: 'historicoAcreedoresDTO', name : 'historicoAcreedoresDTO' }, /* 10 */
+            { repo: EQFX_UAT_historico_cuota_estimada, data: historicoCuotaEstimadaDTO, name: 'historicoCuotaEstimadaDTO', name : 'historicoCuotaEstimadaDTO' }, /* 11 */
+            { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO, name: 'historicoEndeudamientoComercialDTO', name : 'historicoEndeudamientoComercialDTO' }, /* 12 */
+            { repo: EQFX_UAT_historico_endeudamiento_financiero, data: historicoEndeudamientoFinancieroDTO, name: 'historicoEndeudamientoFinancieroDTO', name : 'historicoEndeudamientoFinancieroDTO' }, /* 13 */
+            { repo: EQFX_UAT_historico_vencidos_comercial, data: historicoVencidosComercialDTO, name: 'historicoVencidosComercialDTO' }, /* 14 */
+            { repo: EQFX_UAT_historico_vencidos_financiero, data: historicoVencidosFinancieroDTO, name: 'historicoVencidosFinancieroDTO' }, /* 15 */
+            { repo: EQFX_UAT_valor_deuda_3_sistemas, data: valorDeuda3SistemasDTO, name: 'valorDeuda3SistemasDTO' }, /* 16 */
+            { repo: EQFX_UAT_protestos_morosidades, data: protestosMorosidadesDTO, name: 'protestosMorosidadesDTO' }, /* 17 */
+            { repo: EQFX_UAT_evolucion_deuda_sb_seps_sicom, data: evolucionDeudaSBSEPSICOMDTO, name: 'evolucionDeudaSBSEPSICOMDTO' }, /* 18 */
+            { repo: EQFX_UAT_detalle_deuda_actual_sb, data: detalleDeudaActualSBDTO, name: 'detalleDeudaActualSBDTO' }, /* 19 */
+            { repo: EQFX_UAT_detalle_deuda_actual_seps, data: detalleDeudaActualSepsDTO, name: 'detalleDeudaActualSepsDTO' }, /* 20 */
+            { repo: EQFX_UAT_detalle_deuda_actual_sicom, data: detalleDeudaActualSicomDTO, name: 'detalleDeudaActualSicomDTO' }, /* 21 */
+            { repo: EQFX_UAT_detalle_tarjetas, data: detalleTarjetasDTO, name: 'detalleTarjetasDTO' }, /* 22 */
+            { repo: EQFX_UAT_distribucion_endeudamiento, data: distribucionEndeudamientoDTO, name: 'distribucionEndeudamientoDTO' }, /* 23 */
+            { repo: EQFX_UAT_deuda_historica, data: deudaHistoricaDTO, name: 'deudaHistoricaDTO' }, /* 24 */
+            { repo: EQFX_UAT_estructura_vencimiento, data: estructuraVencimientoDTO, name: 'estructuraVencimientoDTO' }, /* 25 */
+            { repo: EQFX_UAT_creditos_otorgados, data: creditosOtorgadosDTO, name: 'creditosOtorgadosDTO' }, /* 26 */
+            { repo: EQFX_UAT_saldos_por_vencer, data: saldosPorVencerDTO, name: 'saldosPorVencerDTO' }, /* 27 */
+            { repo: EQFX_UAT_detalle_estructura_vencimiento, data: detalleEstructuraVencimientoDTO, name: 'detalleEstructuraVencimientoDTO' }, /* 28 */
+            { repo: EQFX_UAT_cuota_estimada_mensual, data: cuotaEstimadaMensualDTO, name: 'cuotaEstimadaMensualDTO' }, /* 29 */
+            { repo: EQFX_UAT_personas_inhabilitadas, data: personasInhabilitadasDTO, name: 'personasInhabilitadasDTO' }, /* 30 */
+            { repo: EQFX_UAT_sujeto_al_dia, data: sujetoAlDiaDTO, name: 'sujetoAlDiaDTO' }, /* 31 */
+            { repo: EQFX_UAT_mantiene_historial_crediticio, data: mantieneHistorialCrediticioDTO, name: 'mantieneHistorialCrediticioDTO' }, /* 32 */
+            { repo: EQFX_UAT_identificador_perfil_riesgo_directo, data: identificadorPerfilRiesgoDirectoDTO, name: 'identificadorPerfilRiesgoDirectoDTO' }, /* 33 */
+            { repo: EQFX_UAT_identificador_perfil_riesgo_directo_6_meses, data: identificadorPerfilRiesgoDirecto6MesesDTO, name: 'identificadorPerfilRiesgoDirecto6MesesDTO' }, /* 34 */
+            { repo: EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes, data: garantiasPersonalesCodeudoresOperacionesVigentesDTO, name: 'garantiasPersonalesCodeudoresOperacionesVigentesDTO' }, /* 35 */
+            { repo: EQFX_UAT_garantias_personales_codeudores_operaciones_no_vigentes, data: garantiasPersonalesCodeudoresOperacionesNoVigentesDTO, name: 'garantiasPersonalesCodeudoresOperacionesNoVigentesDTO' }, /* 36 */
+            { repo: EQFX_UAT_vinculaciones_instituciones_financieras, data: vinculacionesInstitucionesFinancierasDTO, name: 'vinculacionesInstitucionesFinancierasDTO' }, /* 37 */
+            { repo: EQFX_UAT_operaciones_canceladas, data: operacionesCanceladasDTO, name: 'operacionesCanceladasDTO' }, /* 38 */
+            { repo: EQFX_UAT_tarjetas_canceladas, data: tarjetasCanceladasDTO, name: 'tarjetasCanceladasDTO' }, /* 39 */
+            { repo: EQFX_UAT_informacion_demografica, data: informacionDemograficaDTO, name: 'informacionDemograficaDTO' }, /* 40 */
+            { repo: EQFX_UAT_mensaje_califica_detalle_tarjetas, data: mensajeCalificaDetalleTarjetasDTO, name: 'mensajeCalificaDetalleTarjetasDTO' }, /* 41 */
+            { repo: EQFX_UAT_factores_influyen_score, data: factoresInfluyenScoreDTO, name: 'factoresInfluyenScoreDTO' }, /* 42 */
+            { repo: EQFX_UAT_entidades_consultados, data: entidadesConsultadosDTO, name: 'entidadesConsultadosDTO' }, /* 43 */
+            { repo: EQFX_UAT_detalle_deuda_historica_sb, data: detalleDeudaHistoricaSbDTO, name: 'detalleDeudaHistoricaSbDTO' }, /* 44 */
+            { repo: EQFX_UAT_detalle_deuda_historica_seps, data: detalleDeudaHistoricaSepsDTO, name: 'detalleDeudaHistoricaSepsDTO' }, /* 45 */
+            { repo: EQFX_UAT_detalle_deuda_historica_sicom, data: detalleDeudaHistoricaSicomDTO, name: 'detalleDeudaHistoricaSicomDTO' } /* 46 */
         ];
-
-        for (const { repo, data } of repositoriesToSave) {
+        for (const { repo, data, name } of repositoriesToSave) {
         
             if (!data || (Array.isArray(data) && data.length === 0)) {
-                console.warn(`No hay datos para guardar en ${repo.name}`);
+                console.warn(`No hay datos para guardar en ${name}`);
                 continue;
             }
+            // capturara le nombre del repositorio
+            console.log(`Guardando datos en ${name}...`);
             const repository = AppDataSource.getRepository(repo);
             await saveDTODataIfExists(repository, data, 'idEQFX_IdentificacionConsultada', idEQFX_IdentificacionConsultada);
+            console.log(`Datos guardados en ${name} correctamente.`);
         }
         return res.status(200).json({
             status: 'success',
@@ -333,12 +330,22 @@ exports.equifaxOauth = async (req, res) => {
 };
 
 
-async function saveDTODataIfExists(repository, dtoData, foreignKeyName, foreignKeyValue) {
+async function saveDTODataIfExists(repository, dtoData, foreignKeyName, foreignKeyValue, chunkSize = 50) {
+
     if (!dtoData || (Array.isArray(dtoData) && dtoData.length === 0)) return;
 
-    const dataToSave = Array.isArray(dtoData)
-        ? dtoData.map(item => repository.create({ [foreignKeyName]: foreignKeyValue, ...item }))
-        : [repository.create({ [foreignKeyName]: foreignKeyValue, ...dtoData })];
+    const createEntity = item => repository.create({ [foreignKeyName]: foreignKeyValue, ...item });
 
-    await repository.save(dataToSave);
+    const dataToSave = Array.isArray(dtoData)
+        ? dtoData.map(createEntity)
+        : [createEntity(dtoData)];
+
+
+    for (let i = 0; i < dataToSave.length; i += chunkSize) {
+        const chunk = dataToSave.slice(i, i + chunkSize);
+        await repository.save(chunk);
+    }
+
+
+    // No imprimo todo el JSON para evitar logs gigantes si son muchos
 }
