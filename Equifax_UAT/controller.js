@@ -26,7 +26,7 @@ const { parseEstructuraVencimiento } = require("./dto/reporteCrediticio/estructu
 const { parseCreditosOtorgados  } = require("./dto/reporteCrediticio/creditos_otorgados.dto");
 const { parseSaldosPorVencer } = require("./dto/reporteCrediticio/saldos_por_vencer.dto");
 const { parseDetalleEstructuraVencimiento } = require("./dto/reporteCrediticio/detalle_estructura_vencimiento.dto");
-
+const { parseCuotaEstimadaMensual } = require("./dto/reporteCrediticio/cuota_estimada_mensual.dto");
 
 
 
@@ -61,7 +61,7 @@ const EQFX_UAT_estructura_vencimiento = require('../ApiCobrador/api/EQFX_UAT_est
 const EQFX_UAT_creditos_otorgados = require('../ApiCobrador/api/EQFX_UAT_creditos_otorgados/model');
 const EQFX_UAT_saldos_por_vencer = require('../ApiCobrador/api/EQFX_UAT_saldos_por_vencer/model');
 const EQFX_UAT_detalle_estructura_vencimiento = require('../ApiCobrador/api/EQFX_UAT_detalle_estructura_vencimiento/model');
-
+const EQFX_UAT_cuota_estimada_mensual = require('../ApiCobrador/api/EQFX_UAT_cuota_estimada_mensual/model');
 
 
 
@@ -190,7 +190,7 @@ exports.equifaxOauth = async (req, res) => {
         const creditosOtorgadosDTO = parseCreditosOtorgados(creditos_otorgados || []);
         const saldosPorVencerDTO = parseSaldosPorVencer(saldos_por_vencer || []);
         const detalleEstructuraVencimientoDTO = parseDetalleEstructuraVencimiento(detalle_estructura_vencimiento || []);
-
+        const cuotaEstimadaMensualDTO = parseCuotaEstimadaMensual(cuota_estimada_mensual || []);
 
 
 
@@ -248,7 +248,7 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_creditos_otorgados, data: creditosOtorgadosDTO }, /* 26 */
             { repo: EQFX_UAT_saldos_por_vencer, data: saldosPorVencerDTO }, /* 27 */
             { repo: EQFX_UAT_detalle_estructura_vencimiento, data: detalleEstructuraVencimientoDTO }, /* 28 */
-     
+            { repo: EQFX_UAT_cuota_estimada_mensual, data: cuotaEstimadaMensualDTO } /* 29 */
      
      
      
