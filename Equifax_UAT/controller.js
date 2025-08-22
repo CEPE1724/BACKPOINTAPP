@@ -25,6 +25,7 @@ const { parseDeudaHistorica } = require("./dto/reporteCrediticio/deuda_historica
 const { parseEstructuraVencimiento } = require("./dto/reporteCrediticio/estructura_vencimiento.dto");
 const { parseCreditosOtorgados  } = require("./dto/reporteCrediticio/creditos_otorgados.dto");
 const { parseSaldosPorVencer } = require("./dto/reporteCrediticio/saldos_por_vencer.dto");
+const { parseDetalleEstructuraVencimiento } = require("./dto/reporteCrediticio/detalle_estructura_vencimiento.dto");
 
 
 
@@ -59,6 +60,7 @@ const EQFX_UAT_deuda_historica = require('../ApiCobrador/api/EQFX_UAT_deuda_hist
 const EQFX_UAT_estructura_vencimiento = require('../ApiCobrador/api/EQFX_UAT_estructura_vencimiento/model');
 const EQFX_UAT_creditos_otorgados = require('../ApiCobrador/api/EQFX_UAT_creditos_otorgados/model');
 const EQFX_UAT_saldos_por_vencer = require('../ApiCobrador/api/EQFX_UAT_saldos_por_vencer/model');
+const EQFX_UAT_detalle_estructura_vencimiento = require('../ApiCobrador/api/EQFX_UAT_detalle_estructura_vencimiento/model');
 
 
 
@@ -187,6 +189,7 @@ exports.equifaxOauth = async (req, res) => {
         const estructuraVencimientoDTO = parseEstructuraVencimiento(estructura_vencimiento || []);
         const creditosOtorgadosDTO = parseCreditosOtorgados(creditos_otorgados || []);
         const saldosPorVencerDTO = parseSaldosPorVencer(saldos_por_vencer || []);
+        const detalleEstructuraVencimientoDTO = parseDetalleEstructuraVencimiento(detalle_estructura_vencimiento || []);
 
 
 
@@ -243,7 +246,8 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_deuda_historica, data: deudaHistoricaDTO }, /* 24 */
             { repo: EQFX_UAT_estructura_vencimiento, data: estructuraVencimientoDTO }, /* 25 */
             { repo: EQFX_UAT_creditos_otorgados, data: creditosOtorgadosDTO }, /* 26 */
-            { repo: EQFX_UAT_saldos_por_vencer, data: saldosPorVencerDTO } /* 27 */
+            { repo: EQFX_UAT_saldos_por_vencer, data: saldosPorVencerDTO }, /* 27 */
+            { repo: EQFX_UAT_detalle_estructura_vencimiento, data: detalleEstructuraVencimientoDTO }, /* 28 */
      
      
      
