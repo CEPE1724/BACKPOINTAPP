@@ -29,7 +29,7 @@ const { parseDetalleEstructuraVencimiento } = require("./dto/reporteCrediticio/d
 const { parseCuotaEstimadaMensual } = require("./dto/reporteCrediticio/cuota_estimada_mensual.dto");
 const { parsePersonasInhabilitadas } = require("./dto/reporteCrediticio/personas_inhabilitadas.dto");
 const { parseSujetoAlDia } = require("./dto/reporteCrediticio/sujeto_al_dia.dto");
-
+const { parseMantieneHistorialCrediticio } = require("./dto/reporteCrediticio/mantiene_historial_crediticio.dto");
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
 const EQFX_UAT_resultado_segmentacion = require('../ApiCobrador/api/EQFX_UAT_resultado_segmentacion/model');
@@ -64,7 +64,7 @@ const EQFX_UAT_detalle_estructura_vencimiento = require('../ApiCobrador/api/EQFX
 const EQFX_UAT_cuota_estimada_mensual = require('../ApiCobrador/api/EQFX_UAT_cuota_estimada_mensual/model');
 const EQFX_UAT_personas_inhabilitadas = require('../ApiCobrador/api/EQFX_UAT_personas_inhabilitadas/model');
 const EQFX_UAT_sujeto_al_dia = require('../ApiCobrador/api/EQFX_UAT_sujeto_al_dia/model');
-
+const EQFX_UAT_mantiene_historial_crediticio = require('../ApiCobrador/api/EQFX_UAT_mantiene_historial_crediticio/model');
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
@@ -194,6 +194,7 @@ exports.equifaxOauth = async (req, res) => {
         const cuotaEstimadaMensualDTO = parseCuotaEstimadaMensual(cuota_estimada_mensual || []);
         const personasInhabilitadasDTO = parsePersonasInhabilitadas(personas_inhabilitadas || []);
         const sujetoAlDiaDTO = parseSujetoAlDia(sujeto_al_dia || []);
+        const mantieneHistorialCrediticioDTO = parseMantieneHistorialCrediticio(mantiene_historial_crediticio || []);
 
 
 
@@ -254,6 +255,7 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_cuota_estimada_mensual, data: cuotaEstimadaMensualDTO }, /* 29 */
             { repo: EQFX_UAT_personas_inhabilitadas, data: personasInhabilitadasDTO }, /* 30 */
             { repo: EQFX_UAT_sujeto_al_dia, data: sujetoAlDiaDTO }, /* 31 */
+            { repo: EQFX_UAT_mantiene_historial_crediticio, data: mantieneHistorialCrediticioDTO }, /* 32 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {
