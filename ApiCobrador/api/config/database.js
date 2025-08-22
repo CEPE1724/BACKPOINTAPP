@@ -84,6 +84,9 @@ const entities = [
     require('../EQFX_UAT_operaciones_canceladas/model'),
     require('../EQFX_UAT_tarjetas_canceladas/model'),
     require('../EQFX_UAT_informacion_demografica/model'),
+    require('../EQFX_UAT_mensaje_califica_detalle_tarjetas/model'),
+    require('../EQFX_UAT_factores_influyen_score/model'),
+    require('../EQFX_UAT_entidades_consultados/model'),
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),

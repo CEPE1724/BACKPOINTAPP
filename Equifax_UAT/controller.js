@@ -38,9 +38,9 @@ const { parseVinculacionesInstitucionesFinancieras } = require("./dto/reporteCre
 const { parseOperacionesCanceladas } = require("./dto/reporteCrediticio/operaciones_canceladas.dto");
 const { parseTarjetasCanceladas } = require("./dto/reporteCrediticio/tarjetas_canceladas.dto");
 const { parseInformacionDemografica } = require("./dto/reporteCrediticio/informacion_demografica.dto");
-
-
-
+const { parseMensajeCalificaDetalleTarjetas } = require("./dto/reporteCrediticio/mensaje_califica_detalle_tarjetas.dto");
+const { parseFactoresInfluyenScore } = require("./dto/reporteCrediticio/factores_influyen_score.dto");
+const { parseEntidadesConsultados } = require("./dto/reporteCrediticio/entidades_consultados.dto");
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
 const EQFX_UAT_resultado_segmentacion = require('../ApiCobrador/api/EQFX_UAT_resultado_segmentacion/model');
@@ -84,6 +84,12 @@ const EQFX_UAT_vinculaciones_instituciones_financieras = require('../ApiCobrador
 const EQFX_UAT_operaciones_canceladas = require('../ApiCobrador/api/EQFX_UAT_operaciones_canceladas/model');
 const EQFX_UAT_tarjetas_canceladas = require('../ApiCobrador/api/EQFX_UAT_tarjetas_canceladas/model');
 const EQFX_UAT_informacion_demografica = require('../ApiCobrador/api/EQFX_UAT_informacion_demografica/model');
+const EQFX_UAT_mensaje_califica_detalle_tarjetas = require('../ApiCobrador/api/EQFX_UAT_mensaje_califica_detalle_tarjetas/model');
+const EQFX_UAT_factores_influyen_score = require('../ApiCobrador/api/EQFX_UAT_factores_influyen_score/model');
+const EQFX_UAT_entidades_consultados = require('../ApiCobrador/api/EQFX_UAT_entidades_consultados/model');
+
+
+
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
 /**
@@ -221,6 +227,13 @@ exports.equifaxOauth = async (req, res) => {
         const operacionesCanceladasDTO = parseOperacionesCanceladas(operaciones_canceladas || []);
         const tarjetasCanceladasDTO = parseTarjetasCanceladas(tarjetas_canceladas || []);
         const informacionDemograficaDTO = parseInformacionDemografica(informacion_demografica || []);
+        const mensajeCalificaDetalleTarjetasDTO = parseMensajeCalificaDetalleTarjetas(mensaje_califica_detalle_tarjetas || []);
+        const factoresInfluyenScoreDTO = parseFactoresInfluyenScore(factores_influyen_score || []);
+        const entidadesConsultadosDTO = parseEntidadesConsultados(entidades_consultados || []);
+       
+       
+       
+       
         console.log("DTOs scoreSobreendeudamientoDTO:", {
           
             scoreSobreendeudamientoDTO
@@ -282,6 +295,9 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_operaciones_canceladas, data: operacionesCanceladasDTO }, /* 38 */
             { repo: EQFX_UAT_tarjetas_canceladas, data: tarjetasCanceladasDTO }, /* 39 */
             { repo: EQFX_UAT_informacion_demografica, data: informacionDemograficaDTO }, /* 40 */
+            { repo: EQFX_UAT_mensaje_califica_detalle_tarjetas, data: mensajeCalificaDetalleTarjetasDTO }, /* 41 */
+            { repo: EQFX_UAT_factores_influyen_score, data: factoresInfluyenScoreDTO }, /* 42 */
+            { repo: EQFX_UAT_entidades_consultados, data: entidadesConsultadosDTO } /* 43 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {
