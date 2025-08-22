@@ -23,7 +23,7 @@ const { parseDetalleTarjetas } = require("./dto/reporteCrediticio/detalle_tarjet
 const { parseDistribucionEndeudamiento } = require("./dto/reporteCrediticio/distribucion_endeudamiento.dto");
 const { parseDeudaHistorica } = require("./dto/reporteCrediticio/deuda_historica.dto");
 const { parseEstructuraVencimiento } = require("./dto/reporteCrediticio/estructura_vencimiento.dto");
-
+const { parseCreditosOtorgados  } = require("./dto/reporteCrediticio/creditos_otorgados.dto");
 
 
 
@@ -57,7 +57,7 @@ const EQFX_UAT_detalle_tarjetas = require('../ApiCobrador/api/EQFX_UAT_detalle_t
 const EQFX_UAT_distribucion_endeudamiento = require('../ApiCobrador/api/EQFX_UAT_distribucion_endeudamiento/model');
 const EQFX_UAT_deuda_historica = require('../ApiCobrador/api/EQFX_UAT_deuda_historica/model');
 const EQFX_UAT_estructura_vencimiento = require('../ApiCobrador/api/EQFX_UAT_estructura_vencimiento/model');
-
+const EQFX_UAT_creditos_otorgados = require('../ApiCobrador/api/EQFX_UAT_creditos_otorgados/model');
 
 
 
@@ -185,6 +185,7 @@ exports.equifaxOauth = async (req, res) => {
         const distribucionEndeudamientoDTO = parseDistribucionEndeudamiento(distribucion_endeudamiento || []);
         const deudaHistoricaDTO = parseDeudaHistorica(deuda_historica || []);
         const estructuraVencimientoDTO = parseEstructuraVencimiento(estructura_vencimiento || []);
+        const creditosOtorgadosDTO = parseCreditosOtorgados(creditos_otorgados || []);
 
 
 
@@ -240,6 +241,7 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_distribucion_endeudamiento, data: distribucionEndeudamientoDTO }, /* 23 */
             { repo: EQFX_UAT_deuda_historica, data: deudaHistoricaDTO }, /* 24 */
             { repo: EQFX_UAT_estructura_vencimiento, data: estructuraVencimientoDTO }, /* 25 */
+            { repo: EQFX_UAT_creditos_otorgados, data: creditosOtorgadosDTO }, /* 26 */
      
      
      

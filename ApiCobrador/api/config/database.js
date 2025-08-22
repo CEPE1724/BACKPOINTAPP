@@ -69,6 +69,7 @@ const entities = [
     require('../EQFX_UAT_distribucion_endeudamiento/model'),
     require('../EQFX_UAT_deuda_historica/model'),
     require('../EQFX_UAT_estructura_vencimiento/model'),
+    require('../EQFX_UAT_creditos_otorgados/model'),
 
 
 
