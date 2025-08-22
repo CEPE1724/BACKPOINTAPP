@@ -33,6 +33,11 @@ const { parseMantieneHistorialCrediticio } = require("./dto/reporteCrediticio/ma
 const { parseIdentificadorPerfilRiesgoDirecto } = require("./dto/reporteCrediticio/identificador_perfil_riesgo_directo.dto");
 const { parseIdentificadorPerfilRiesgoDirecto6Meses } = require("./dto/reporteCrediticio/identificador_perfil_riesgo_directo_6_meses.dto");
 const { parseGarantiasPersonalesCodeudoresOperacionesVigentes } = require("./dto/reporteCrediticio/garantias_personales_codeudores_operaciones_vigentes.dto");
+const { parseGarantiasPersonalesCodeudoresOperacionesNoVigentes } = require("./dto/reporteCrediticio/garantias_personales_codeudores_operaciones_no_vigentes.dto");
+const { parseVinculacionesInstitucionesFinancieras } = require("./dto/reporteCrediticio/vinculaciones_instituciones_financieras.dto");
+const { parseOperacionesCanceladas } = require("./dto/reporteCrediticio/operaciones_canceladas.dto");
+const { parseTarjetasCanceladas } = require("./dto/reporteCrediticio/tarjetas_canceladas.dto");
+const { parseInformacionDemografica } = require("./dto/reporteCrediticio/informacion_demografica.dto");
 
 
 
@@ -74,11 +79,11 @@ const EQFX_UAT_mantiene_historial_crediticio = require('../ApiCobrador/api/EQFX_
 const EQFX_UAT_identificador_perfil_riesgo_directo = require('../ApiCobrador/api/EQFX_UAT_identificador_perfil_riesgo_directo/model');
 const EQFX_UAT_identificador_perfil_riesgo_directo_6_meses = require('../ApiCobrador/api/EQFX_UAT_identificador_perfil_riesgo_directo_6_meses/model');
 const EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes = require('../ApiCobrador/api/EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes/model');
-
-
-
-
-
+const EQFX_UAT_garantias_personales_codeudores_operaciones_no_vigentes = require('../ApiCobrador/api/EQFX_UAT_garantias_personales_codeudores_operaciones_no_vigentes/model');
+const EQFX_UAT_vinculaciones_instituciones_financieras = require('../ApiCobrador/api/EQFX_UAT_vinculaciones_instituciones_financieras/model');
+const EQFX_UAT_operaciones_canceladas = require('../ApiCobrador/api/EQFX_UAT_operaciones_canceladas/model');
+const EQFX_UAT_tarjetas_canceladas = require('../ApiCobrador/api/EQFX_UAT_tarjetas_canceladas/model');
+const EQFX_UAT_informacion_demografica = require('../ApiCobrador/api/EQFX_UAT_informacion_demografica/model');
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
 /**
@@ -211,11 +216,11 @@ exports.equifaxOauth = async (req, res) => {
         const identificadorPerfilRiesgoDirectoDTO = parseIdentificadorPerfilRiesgoDirecto(identificador_perfil_riesgo_directo || []);
         const identificadorPerfilRiesgoDirecto6MesesDTO = parseIdentificadorPerfilRiesgoDirecto6Meses(identificador_perfil_riesgo_directo_6_meses || []);
         const garantiasPersonalesCodeudoresOperacionesVigentesDTO = parseGarantiasPersonalesCodeudoresOperacionesVigentes(garantias_personales_codeudores_operaciones_vigentes || []);
-
-
-
-
-
+        const garantiasPersonalesCodeudoresOperacionesNoVigentesDTO = parseGarantiasPersonalesCodeudoresOperacionesNoVigentes(garantias_personales_codeudores_operaciones_no_vigentes || []);
+        const vinculacionesInstitucionesFinancierasDTO = parseVinculacionesInstitucionesFinancieras(vinculaciones_instituciones_financieras || []);
+        const operacionesCanceladasDTO = parseOperacionesCanceladas(operaciones_canceladas || []);
+        const tarjetasCanceladasDTO = parseTarjetasCanceladas(tarjetas_canceladas || []);
+        const informacionDemograficaDTO = parseInformacionDemografica(informacion_demografica || []);
         console.log("DTOs scoreSobreendeudamientoDTO:", {
           
             scoreSobreendeudamientoDTO
@@ -272,11 +277,11 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_identificador_perfil_riesgo_directo, data: identificadorPerfilRiesgoDirectoDTO }, /* 33 */
             { repo: EQFX_UAT_identificador_perfil_riesgo_directo_6_meses, data: identificadorPerfilRiesgoDirecto6MesesDTO }, /* 34 */
             { repo: EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes, data: garantiasPersonalesCodeudoresOperacionesVigentesDTO }, /* 35 */
-       
-       
-       
-       
-       
+            { repo: EQFX_UAT_garantias_personales_codeudores_operaciones_no_vigentes, data: garantiasPersonalesCodeudoresOperacionesNoVigentesDTO }, /* 36 */
+            { repo: EQFX_UAT_vinculaciones_instituciones_financieras, data: vinculacionesInstitucionesFinancierasDTO }, /* 37 */
+            { repo: EQFX_UAT_operaciones_canceladas, data: operacionesCanceladasDTO }, /* 38 */
+            { repo: EQFX_UAT_tarjetas_canceladas, data: tarjetasCanceladasDTO }, /* 39 */
+            { repo: EQFX_UAT_informacion_demografica, data: informacionDemograficaDTO }, /* 40 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {

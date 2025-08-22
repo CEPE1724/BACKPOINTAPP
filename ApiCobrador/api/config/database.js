@@ -79,8 +79,11 @@ const entities = [
     require('../EQFX_UAT_identificador_perfil_riesgo_directo/model'),
     require('../EQFX_UAT_identificador_perfil_riesgo_directo_6_meses/model'),
     require('../EQFX_UAT_garantias_personales_codeudores_operaciones_vigentes/model'),
-
-
+    require('../EQFX_UAT_garantias_personales_codeudores_operaciones_no_vigentes/model'),
+    require('../EQFX_UAT_vinculaciones_instituciones_financieras/model'),
+    require('../EQFX_UAT_operaciones_canceladas/model'),
+    require('../EQFX_UAT_tarjetas_canceladas/model'),
+    require('../EQFX_UAT_informacion_demografica/model'),
 
     require('../../../Equifax/api/EQFX_IdentificacionConsultada/model'),
     require('../../../Equifax/api/EQFX_ResultadoSegmentacion/model'),
