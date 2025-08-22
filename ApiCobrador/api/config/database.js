@@ -73,6 +73,7 @@ const entities = [
     require('../EQFX_UAT_saldos_por_vencer/model'),
     require('../EQFX_UAT_detalle_estructura_vencimiento/model'),
     require('../EQFX_UAT_cuota_estimada_mensual/model'),
+    require('../EQFX_UAT_personas_inhabilitadas/model'),
 
 
 
