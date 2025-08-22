@@ -30,6 +30,12 @@ const { parseCuotaEstimadaMensual } = require("./dto/reporteCrediticio/cuota_est
 const { parsePersonasInhabilitadas } = require("./dto/reporteCrediticio/personas_inhabilitadas.dto");
 const { parseSujetoAlDia } = require("./dto/reporteCrediticio/sujeto_al_dia.dto");
 const { parseMantieneHistorialCrediticio } = require("./dto/reporteCrediticio/mantiene_historial_crediticio.dto");
+const { parseIdentificadorPerfilRiesgoDirecto } = require("./dto/reporteCrediticio/identificador_perfil_riesgo_directo.dto");
+const { parseIdentificadorPerfilRiesgoDirecto6Meses } = require("./dto/reporteCrediticio/identificador_perfil_riesgo_directo_6_meses.dto");
+
+
+
+
 
 const EQFX_IdentificacionConsultada = require('../Equifax/api/EQFX_IdentificacionConsultada/model');
 const EQFX_UAT_resultado_segmentacion = require('../ApiCobrador/api/EQFX_UAT_resultado_segmentacion/model');
@@ -65,6 +71,13 @@ const EQFX_UAT_cuota_estimada_mensual = require('../ApiCobrador/api/EQFX_UAT_cuo
 const EQFX_UAT_personas_inhabilitadas = require('../ApiCobrador/api/EQFX_UAT_personas_inhabilitadas/model');
 const EQFX_UAT_sujeto_al_dia = require('../ApiCobrador/api/EQFX_UAT_sujeto_al_dia/model');
 const EQFX_UAT_mantiene_historial_crediticio = require('../ApiCobrador/api/EQFX_UAT_mantiene_historial_crediticio/model');
+const EQFX_UAT_identificador_perfil_riesgo_directo = require('../ApiCobrador/api/EQFX_UAT_identificador_perfil_riesgo_directo/model');
+const EQFX_UAT_identificador_perfil_riesgo_directo_6_meses = require('../ApiCobrador/api/EQFX_UAT_identificador_perfil_riesgo_directo_6_meses/model');
+
+
+
+
+
 
 const { getEquifaxToken } = require("../Equifax_UAT/services/equifaxToken.service");
 const { executeEquifaxOrchestration } = require("../Equifax_UAT/services/equifaxOrchestration.service");
@@ -195,8 +208,8 @@ exports.equifaxOauth = async (req, res) => {
         const personasInhabilitadasDTO = parsePersonasInhabilitadas(personas_inhabilitadas || []);
         const sujetoAlDiaDTO = parseSujetoAlDia(sujeto_al_dia || []);
         const mantieneHistorialCrediticioDTO = parseMantieneHistorialCrediticio(mantiene_historial_crediticio || []);
-
-
+        const identificadorPerfilRiesgoDirectoDTO = parseIdentificadorPerfilRiesgoDirecto(identificador_perfil_riesgo_directo || []);
+        const identificadorPerfilRiesgoDirecto6MesesDTO = parseIdentificadorPerfilRiesgoDirecto6Meses(identificador_perfil_riesgo_directo_6_meses || []);
 
 
 
@@ -256,6 +269,8 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_personas_inhabilitadas, data: personasInhabilitadasDTO }, /* 30 */
             { repo: EQFX_UAT_sujeto_al_dia, data: sujetoAlDiaDTO }, /* 31 */
             { repo: EQFX_UAT_mantiene_historial_crediticio, data: mantieneHistorialCrediticioDTO }, /* 32 */
+            { repo: EQFX_UAT_identificador_perfil_riesgo_directo, data: identificadorPerfilRiesgoDirectoDTO }, /* 33 */
+            { repo: EQFX_UAT_identificador_perfil_riesgo_directo_6_meses, data: identificadorPerfilRiesgoDirecto6MesesDTO }, /* 34 */
         ];
 
         for (const { repo, data } of repositoriesToSave) {

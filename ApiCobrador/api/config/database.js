@@ -76,6 +76,8 @@ const entities = [
     require('../EQFX_UAT_personas_inhabilitadas/model'),
     require('../EQFX_UAT_sujeto_al_dia/model'),
     require('../EQFX_UAT_mantiene_historial_crediticio/model'),
+    require('../EQFX_UAT_identificador_perfil_riesgo_directo/model'),
+    require('../EQFX_UAT_identificador_perfil_riesgo_directo_6_meses/model'),
 
 
 
