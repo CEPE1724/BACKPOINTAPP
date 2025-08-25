@@ -23,7 +23,7 @@ const { parseDetalleTarjetas } = require("./dto/reporteCrediticio/detalle_tarjet
 const { parseDistribucionEndeudamiento } = require("./dto/reporteCrediticio/distribucion_endeudamiento.dto");
 const { parseDeudaHistorica } = require("./dto/reporteCrediticio/deuda_historica.dto");
 const { parseEstructuraVencimiento } = require("./dto/reporteCrediticio/estructura_vencimiento.dto");
-const { parseCreditosOtorgados  } = require("./dto/reporteCrediticio/creditos_otorgados.dto");
+const { parseCreditosOtorgados } = require("./dto/reporteCrediticio/creditos_otorgados.dto");
 const { parseSaldosPorVencer } = require("./dto/reporteCrediticio/saldos_por_vencer.dto");
 const { parseDetalleEstructuraVencimiento } = require("./dto/reporteCrediticio/detalle_estructura_vencimiento.dto");
 const { parseCuotaEstimadaMensual } = require("./dto/reporteCrediticio/cuota_estimada_mensual.dto");
@@ -41,7 +41,7 @@ const { parseInformacionDemografica } = require("./dto/reporteCrediticio/informa
 const { parseMensajeCalificaDetalleTarjetas } = require("./dto/reporteCrediticio/mensaje_califica_detalle_tarjetas.dto");
 const { parseFactoresInfluyenScore } = require("./dto/reporteCrediticio/factores_influyen_score.dto");
 const { parseEntidadesConsultados } = require("./dto/reporteCrediticio/entidades_consultados.dto");
-const {parseDetalleDeudaHistoricaSb} = require("./dto/reporteCrediticio/detalle_deuda_historica_sb.dto");
+const { parseDetalleDeudaHistoricaSb } = require("./dto/reporteCrediticio/detalle_deuda_historica_sb.dto");
 const { parseDetalleDeudaHistoricaSeps } = require("./dto/reporteCrediticio/detalle_deuda_historica_seps.dto");
 const { parseDetalleDeudaHistoricaSicom } = require("./dto/reporteCrediticio/detalle_deuda_historica_sicom.dto");
 
@@ -166,7 +166,7 @@ exports.equifaxOauth = async (req, res) => {
             estructura_vencimiento = [], /*25*/
             creditos_otorgados = [], /*26*/
             saldos_por_vencer = [], /*27*/
-            detalle_estructura_vencimiento = [],  /*28*/   
+            detalle_estructura_vencimiento = [],  /*28*/
             cuota_estimada_mensual = [], /*29*/
             personas_inhabilitadas = [], /*30*/
             sujeto_al_dia = [], /*31*/
@@ -237,7 +237,7 @@ exports.equifaxOauth = async (req, res) => {
         const detalleDeudaHistoricaSbDTO = parseDetalleDeudaHistoricaSb(detalle_deuda_historica_sb || []);
         const detalleDeudaHistoricaSepsDTO = parseDetalleDeudaHistoricaSeps(detalle_deuda_historica_seps || []);
         const detalleDeudaHistoricaSicomDTO = parseDetalleDeudaHistoricaSicom(detalle_deuda_historica_sicom || []);
-       
+
 
         // Guardar en la base de datos
         const identificacionRepo = AppDataSource.getRepository(EQFX_IdentificacionConsultada);
@@ -253,20 +253,20 @@ exports.equifaxOauth = async (req, res) => {
         const idEQFX_IdentificacionConsultada = newRegistro.idEQFX_IdentificacionConsultada;
 
         const repositoriesToSave = [
-            { repo: EQFX_UAT_resultado_segmentacion, data: segmentacionDTO, name: 'segmentacionDTO', name : 'segmentacionDTO' }, 
-            { repo: EQFX_UAT_resultado_politicas, data: politicasDTO, name: 'politicasDTO' , name : 'politicasDTO' }, 
-            { repo: EQFX_UAT_resultado, data: resultadoDTO, name: 'resultadoDTO', name : 'resultadoDTO' }, 
-            { repo: EQFX_UAT_informacion_sri, data: sriDTO, name: 'sriDTO', name : 'sriDTO' }, /* 2*/
-            { repo: EQFX_UAT_score_inclusion, data: scoreInclusionDTO, name: 'scoreInclusionDTO', name : 'scoreInclusionDTO' }, /* 3 */
-            { repo: EQFX_UAT_resumen_informe, data: resumenInformeDTO, name: 'resumenInformeDTO', name : 'resumenInformeDTO' }, /* 4 */
-            { repo: EQFX_UAT_score, data: scoreDTO, name: 'scoreDTO', name : 'scoreDTO' }, /* 5 */
-            { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO, name: 'scoreSobreendeudamientoDTO', name : 'scoreSobreendeudamientoDTO' }, /* 6 */
-            { repo: EQFX_UAT_indicador_impacto_economico, data: indicadorImpactoEconomicoDTO, name: 'indicadorImpactoEconomicoDTO', name : 'indicadorImpactoEconomicoDTO' }, /* 7 */
-            { repo: EQFX_UAT_historico_score, data: historicoScoreDTO, name: 'historicoScoreDTO', name : 'historicoScoreDTO' }, /* 9 */
-            { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO, name: 'historicoAcreedoresDTO', name : 'historicoAcreedoresDTO' }, /* 10 */
-            { repo: EQFX_UAT_historico_cuota_estimada, data: historicoCuotaEstimadaDTO, name: 'historicoCuotaEstimadaDTO', name : 'historicoCuotaEstimadaDTO' }, /* 11 */
-            { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO, name: 'historicoEndeudamientoComercialDTO', name : 'historicoEndeudamientoComercialDTO' }, /* 12 */
-            { repo: EQFX_UAT_historico_endeudamiento_financiero, data: historicoEndeudamientoFinancieroDTO, name: 'historicoEndeudamientoFinancieroDTO', name : 'historicoEndeudamientoFinancieroDTO' }, /* 13 */
+            { repo: EQFX_UAT_resultado_segmentacion, data: segmentacionDTO, name: 'segmentacionDTO', name: 'segmentacionDTO' },
+            { repo: EQFX_UAT_resultado_politicas, data: politicasDTO, name: 'politicasDTO', name: 'politicasDTO' },
+            { repo: EQFX_UAT_resultado, data: resultadoDTO, name: 'resultadoDTO', name: 'resultadoDTO' },
+            { repo: EQFX_UAT_informacion_sri, data: sriDTO, name: 'sriDTO', name: 'sriDTO' }, /* 2*/
+            { repo: EQFX_UAT_score_inclusion, data: scoreInclusionDTO, name: 'scoreInclusionDTO', name: 'scoreInclusionDTO' }, /* 3 */
+            { repo: EQFX_UAT_resumen_informe, data: resumenInformeDTO, name: 'resumenInformeDTO', name: 'resumenInformeDTO' }, /* 4 */
+            { repo: EQFX_UAT_score, data: scoreDTO, name: 'scoreDTO', name: 'scoreDTO' }, /* 5 */
+            { repo: EQFX_UAT_score_sobreendeudamiento, data: scoreSobreendeudamientoDTO, name: 'scoreSobreendeudamientoDTO', name: 'scoreSobreendeudamientoDTO' }, /* 6 */
+            { repo: EQFX_UAT_indicador_impacto_economico, data: indicadorImpactoEconomicoDTO, name: 'indicadorImpactoEconomicoDTO', name: 'indicadorImpactoEconomicoDTO' }, /* 7 */
+            { repo: EQFX_UAT_historico_score, data: historicoScoreDTO, name: 'historicoScoreDTO', name: 'historicoScoreDTO' }, /* 9 */
+            { repo: EQFX_UAT_historico_acreedores, data: historicoAcreedoresDTO, name: 'historicoAcreedoresDTO', name: 'historicoAcreedoresDTO' }, /* 10 */
+            { repo: EQFX_UAT_historico_cuota_estimada, data: historicoCuotaEstimadaDTO, name: 'historicoCuotaEstimadaDTO', name: 'historicoCuotaEstimadaDTO' }, /* 11 */
+            { repo: EQFX_UAT_historico_endeudamiento_comercial, data: historicoEndeudamientoComercialDTO, name: 'historicoEndeudamientoComercialDTO', name: 'historicoEndeudamientoComercialDTO' }, /* 12 */
+            { repo: EQFX_UAT_historico_endeudamiento_financiero, data: historicoEndeudamientoFinancieroDTO, name: 'historicoEndeudamientoFinancieroDTO', name: 'historicoEndeudamientoFinancieroDTO' }, /* 13 */
             { repo: EQFX_UAT_historico_vencidos_comercial, data: historicoVencidosComercialDTO, name: 'historicoVencidosComercialDTO' }, /* 14 */
             { repo: EQFX_UAT_historico_vencidos_financiero, data: historicoVencidosFinancieroDTO, name: 'historicoVencidosFinancieroDTO' }, /* 15 */
             { repo: EQFX_UAT_valor_deuda_3_sistemas, data: valorDeuda3SistemasDTO, name: 'valorDeuda3SistemasDTO' }, /* 16 */
@@ -301,8 +301,9 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_detalle_deuda_historica_seps, data: detalleDeudaHistoricaSepsDTO, name: 'detalleDeudaHistoricaSepsDTO' }, /* 45 */
             { repo: EQFX_UAT_detalle_deuda_historica_sicom, data: detalleDeudaHistoricaSicomDTO, name: 'detalleDeudaHistoricaSicomDTO' } /* 46 */
         ];
+
         for (const { repo, data, name } of repositoriesToSave) {
-        
+
             if (!data || (Array.isArray(data) && data.length === 0)) {
                 console.warn(`No hay datos para guardar en ${name}`);
                 continue;
