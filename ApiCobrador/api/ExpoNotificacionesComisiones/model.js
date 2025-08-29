@@ -29,6 +29,13 @@ const ExpoNotificacionesComisiones = new EntitySchema({
             this.Alert = "";
             this.Titulo = "";
             this.Mensaje = "";
+            this.empresa ="";
+            this.bApp = false;
+            this.bSms = false;	
+            this.bEmail = false;
+            this.Emial = "";
+            this.Telefono = "";
+
         }
     },
     columns: {
@@ -78,6 +85,34 @@ const ExpoNotificacionesComisiones = new EntitySchema({
         Mensaje: {
             type: 'varchar',
             length: 500,
+            default: ''
+        },
+        empresa: {
+            type: 'varchar',
+            length: 50,
+            default: ''
+        },
+
+        bApp: {
+            type: 'bit',
+            default: false
+        },
+        bSms: {
+            type: 'bit',
+            default: false
+        },
+        bEmail: {
+            type: 'bit',
+            default: false
+        },
+        Emial: {
+            type: 'varchar',
+            length: 100,
+            default: ''
+        },
+        Telefono: {
+            type: 'varchar',
+            length: 20,
             default: ''
         }
     }

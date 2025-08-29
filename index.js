@@ -143,7 +143,35 @@ const publicRoutes = [
   {
     path: '/cobranza/api/v1/point/',
     route: require('./ApiCobrador/api/AsignacionCobradores/router')
-  }
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/mail/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/CompraEncuesta/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_SituacionLaboral/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_ActividadEconomica/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_Tiempo/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Cre_ProductoSolicitud/router')
+  },
+  {
+    path: '/cobranza/api/v1/point/',
+    route: require('./ApiCobrador/api/Nomina/router')
+  },
 ]
 
 // Rutas protegidas (con middleware)
@@ -211,6 +239,14 @@ const publicRoutesEquifax = [
     route: require('./SoapEquifax/wsExpertoPointTech/router')
   }
 ]
+// rutas de Equifax Uat
+const publicRoutesEquifaxUat = [
+  {
+    path: '/v2/api/equifax/uat/latam/',
+    route: require('./Equifax_UAT/router')
+  }
+]
+
 // rutas de Cuadricula
 const publicRoutesCuadricula = [
   {
@@ -250,6 +286,11 @@ protectedRoutes.forEach((route) => {
 
 // Aplica las rutas de Equifax
 publicRoutesEquifax.forEach((route) => {
+  app.use(route.path, route.route)
+})
+
+// Aplica las rutas de Equifax Uat
+publicRoutesEquifaxUat.forEach((route) => {
   app.use(route.path, route.route)
 })
 

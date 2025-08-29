@@ -13,7 +13,9 @@ const EQFX_IdentificacionConsultada = new EntitySchema({
             this.idReportePadre = 0;
             this.Estacion = "";
             this.Usuario = "";
-            this.FechaSistema = "";
+            this.FechaSistema = new Date();
+            this.originalTransactionId = "";
+            this.UAT = 0;
         }
     },
     columns: {
@@ -50,6 +52,15 @@ const EQFX_IdentificacionConsultada = new EntitySchema({
         },
         FechaSistema: {
             type: 'datetime',
+        },
+        originalTransactionId: {
+            type: 'varchar',
+            length: 100,
+            default: ''
+        },
+        UAT: {
+            type: 'int',
+            default: 0
         }
     }
 });

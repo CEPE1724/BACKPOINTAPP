@@ -1,5 +1,7 @@
 const { AppDataSource } = require("../config/database");
 const ExpoNotificacionesComisiones = require("./model");
+const { EmailService } = require('../mail/service'); // Asegúrate que './service.js' exporta la clase correctamente
+const emailService = new EmailService();   
 const axios = require('axios');
 
 exports.pushComisiones = async (req, res) => {
@@ -21,10 +23,12 @@ exports.pushComisiones = async (req, res) => {
     }
 
     for (const comision of comisiones) {
-      const { TokenExpo, Alert, Titulo, Mensaje, idExpoNotificacionesComisiones } = comision;
+      const { TokenExpo, Alert, Titulo, Mensaje, idExpoNotificacionesComisiones, empresa,
+        bApp, bSms, bEmail, Emial, Telefono
+       } = comision;
 
       // Validar token Expo
-      if (TokenExpo && TokenExpo.startsWith('ExponentPushToken')) {
+      if (TokenExpo && bApp && TokenExpo.startsWith('ExponentPushToken')) {
         const payload = {
           tokens: [TokenExpo],
           notification: {
@@ -32,7 +36,7 @@ exports.pushComisiones = async (req, res) => {
             title: Titulo,
             body: Mensaje,
             url: "",
-            empresa: "POINT"
+            empresa: empresa || "POINT", // Asegurarse de que empresa no sea undefined
           }
         };
         try {
@@ -45,6 +49,25 @@ exports.pushComisiones = async (req, res) => {
 
         } catch (error) {
           console.error(`❌ Error al enviar notificación a ${TokenExpo}:`, error.message || error);
+        }
+      }
+
+      // enicar correo electrónico si bEmail es true
+      if (bEmail && Emial) {
+        const emailPayload = {
+          to: Emial,
+          Mensaje: Mensaje,
+        };
+
+        try {
+          await emailService.enviarNotificacionGeneralV2(emailPayload);
+          // Actualizar la comisión como enviada
+          comision.FechaEnvioNotificacion = new Date();
+          comision.Enviado = true;
+          await AppDataSource.getRepository(ExpoNotificacionesComisiones).save(comision);
+          console.log(`📧 Correo enviado a ${Emial}`);
+        } catch (error) {
+          console.error(`❌ Error al enviar correo a ${Emial}:`, error.message || error);
         }
       }
     }

@@ -330,6 +330,27 @@ exports.getVaEmPassV1 = async (req, res) => {
 };
 
 
+// buscar usuario appuser
+exports.getUserApp = async (req, res) => {
+  try {
+    const usuarioRepository = AppDataSource.getRepository(UsuarioSchema);
+    const usuario = await usuarioRepository.findOne({
+      where: { Nombre: 'APPUSER'},
+    });
+
+    if (usuario) {
+      return res.json({
+        estado: "success",
+        usuario: usuario.Clave,
+      });
+    }
+    res.status(200).json({ estado: "fail", message: "Usuario no encontrado" });
+  } catch (error) {
+    console.error("Error al buscar usuario:", error);
+    res.status(500).json({ message: "Error interno del servidor" });
+  }
+};
+
 exports.getVaEmPassUnikeV1 = async (req, res) => {
   const { nombre, clave, keyDispositivo, KeyBuild } = req.body;
   if (!nombre || !clave || !keyDispositivo || !KeyBuild) {

@@ -42,10 +42,9 @@ iisnode/*.pid
 iisnode/index.html
 # Excluir la carpeta logs y su contenido
 logs/  
-iisnode
-./iisnode
-/iisnode
+
+iisnode/
 ApiCobrador/api/documentos
+iisnode/
 .prettierrc
 .vscode
-iisnode/
