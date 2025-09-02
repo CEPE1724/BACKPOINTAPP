@@ -316,6 +316,7 @@ exports.equifaxOauth = async (req, res) => {
         }
         return res.status(200).json({
             status: 'success',
+            success: true,
             data: transactionId,
             originalTransactionId
         });
@@ -324,6 +325,7 @@ exports.equifaxOauth = async (req, res) => {
         console.error("Error en equifaxOauth:", error.message || error);
         return res.status(500).json({
             status: 'error',
+            success: false,
             message: 'Error interno del servidor',
             data: null
         });
