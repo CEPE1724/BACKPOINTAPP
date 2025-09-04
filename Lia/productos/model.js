@@ -18,7 +18,7 @@ const Pagados = new EntitySchema({
       this.Numero = ''
       this.Cedula = ''
       this.Cliente = ''
-      this.Monto = 0.00
+      this.Monto = 0.0
       this.Vendedor = ''
     }
   },
