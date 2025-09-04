@@ -13,7 +13,9 @@ const CreReferenciasClientesWeb = require("./Cre_ReferenciasWeb/model");
 const qs = require("qs");
 const ActividadEconomica = require("../../ApiCobrador/api/Cre_ActividadEconomica/model");
 // Constante global para la API de carrito
-const API_URL = "http://192.168.2.67:3001/api/v1/";
+const API_URL =  process.env.MARKETPLACE_API_URL ||
+    'https://ecommerce.appservices.com.ec/api/v1/'
+////"http://192.168.2.67:3001/api/v1/"; ///PROBADO LOCAL 
 
 // Utilidades
 function splitNombreCompleto(nombreCompleto = "") {
@@ -102,11 +104,12 @@ const keycloakConfig = {
     "http://app.cognoconsultas.com/keycloak/auth/realms/point/protocol/openid-connect/token",
   clientId: process.env.KEYCLOAK_CLIENT_ID || "login-data-services",
   username: process.env.KEYCLOAK_USERNAME || "dpozo@point.com.ec",
-  password: process.env.KEYCLOAK_PASSWORD || "oneTONGLEmic",
+  password: process.env.KEYCLOAK_PASSWORD ,
 };
 
 async function obtenerCarritoCompleto(idWEB_Carrito) {
   const url = `${API_URL}carrito-compra/obtener-carrito-lhia/${idWEB_Carrito}`;
+  
   try {
     const response = await axios.get(url, {
       headers: { "Content-Type": "application/json" },
@@ -242,9 +245,10 @@ if (
     idWebCategoria
   );
   // Enviar al endpoint externo
+  //"http://192.168.2.3:3008/api/v1/cre-solicitud-web/web", ////PROBADO LOCAL
   try {
     const respuesta = await axios.post(
-      "http://192.168.2.3:3008/api/v1/cre-solicitud-web/web",
+      "https://backregistrocivil.appservices.com.ec/api/v1/",
       dtoFinal,
       { headers: { "Content-Type": "application/json" } }
     );
