@@ -272,7 +272,8 @@ const publicRoutesPagados = [
 const publicRoutesLia = [
   { path: '/api/v1/', route: require('./Lia/productos/router') },
   { path: '/api/v1/', route: require('./Lia/Compras/router') },
-  { path: '/api/v1/', route: require('./Lia/Cobranzas/router') }
+  { path: '/api/v1/', route: require('./Lia/Cobranzas/router') },
+  { path: '/api/v1/', route: require('./Lia/Credito/router') } // <-- Agrega esta línea
 ]
 // Aplica las rutas sin protección
 publicRoutes.forEach((route) => {

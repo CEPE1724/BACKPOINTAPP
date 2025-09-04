@@ -36,6 +36,11 @@ const Cre_SolicitudWeb = new EntitySchema({
             type: 'int',
             default: 0
         },
+        Foto: {
+            type: 'varchar',
+            length: 800,
+            nullable: true
+        },
         PDFTerrena: {
             type: 'varchar',
             length: 800,

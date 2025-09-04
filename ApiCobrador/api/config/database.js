@@ -141,7 +141,15 @@ const entities = [
   require('../../../Pagados/Pagados/model'),
   // ruta Cbo_Gestor_Cobranzas_Detalle
   // ruta Cbo_Gestor_Cobranzas_Detalle
-  require('../../../WhatsApp/Ins_Cbo_Gestor_Cobranzas_Detalle/model')
+  require('../../../WhatsApp/Ins_Cbo_Gestor_Cobranzas_Detalle/model'),
+  // Modelo de solicitudes grandes de crédito
+  require('../../../Lia/Credito/Cre_SolicitudGrande/model'),
+  require('../../../Lia/Credito/Cre_ReferenciasWeb/model'),
+  require('../../../Lia/Credito/Provincia/model'),
+  require('../../../Lia/Credito/Canton/model'),
+  require('../../../Lia/Credito/Parroquia/model'),
+  require('../../../Lia/Credito/Barrio/model'),
+  require('../../../Lia/Credito/Parentesco/model'),
 ]
 
 const AppDataSource = new DataSource({
