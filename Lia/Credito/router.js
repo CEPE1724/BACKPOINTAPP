@@ -49,3 +49,4 @@ router.get("/parroquias", controller.getParroquias); // ?idCanton=1
 router.get("/barrios", controller.getBarrios); // ?idParroquia=1
 router.get("/parentescos", controller.getParentescos); // Nueva ruta para parentescos
 router.get("/actividades-economicas", controller.getActividadesEconomicas); // Nueva ruta para actividades económicas
+router.get("/estado-solicitud-por-cedula", controller.getEstadoSolicitudPorCedula);

@@ -196,6 +196,8 @@ exports.registrarSolicitudCredito = async (req, res) => {
       .status(500)
       .json({ error: "Error consultando Cogno", detalle: e.message });
   }
+
+  console.log(trabajo, "Datos Persona");
   // Nombres y apellidos
   let nombres = {
     ApellidoPaterno: "",
@@ -210,13 +212,29 @@ exports.registrarSolicitudCredito = async (req, res) => {
   }
   // Situación laboral
   let idSituacionLaboral = 2;
-  if (
-    trabajo &&
-    Array.isArray(trabajo.trabajos) &&
-    trabajo.trabajos.length > 0
-  ) {
+if (
+  trabajo &&
+  Array.isArray(trabajo.trabajos) &&
+  trabajo.trabajos.length > 0
+) {
+  const hoy = Date.now();
+  const vigente = trabajo.trabajos.some((t) => {
+    // Si fechaAfiliacionHasta existe y es mayor o igual a hoy, está vigente
+    if (t.fechaAfiliacionHasta !== null && t.fechaAfiliacionHasta >= hoy) {
+      return true;
+    }
+    // Si fechaAfiliacionHasta es nulo, pero fechaActualizacion es mayor o igual a hoy, está vigente
+    if (t.fechaAfiliacionHasta === null && t.fechaActualizacion >= hoy) {
+      return true;
+    }
+    return false;
+  });
+  if (vigente) {
     idSituacionLaboral = 1;
+  } else {
+    idSituacionLaboral = 2;
   }
+}
   // DTO final
   const detalle = detalles[0] || {};
   const dtoFinal = buildDtoFinal(
@@ -689,11 +707,11 @@ exports.registrarIndependiente = async (req, res) => {
   //   where: { idCre_SolicitudWeb },
   // });
 
-  if (validarIndependiente.idSituacionLaboral !== 2) {
-    return res
-      .status(400)
-      .json({ mensaje: "Solo se permite registrar independientes." });
-  }
+  // if (validarIndependiente.idSituacionLaboral !== 2) {
+  //   return res
+  //     .status(400)
+  //     .json({ mensaje: "Solo se permite registrar independientes." });
+  // }
   // Actualizar WebSolicitudGrande con los datos nuevos
   try {
     await repoWebSolicitudGrande.update(
@@ -818,5 +836,71 @@ exports.getActividadesEconomicas = async (req, res) => {
       mensaje: "Error consultando actividades económicas",
       detalle: err.message,
     });
+  }
+};
+
+
+///endpoint para consultar el estado de la solicitud por cedula 
+
+exports.getEstadoSolicitudPorCedula = async (req, res) => {
+  const { cedula } = req.query;
+  if (!cedula) {
+    return res.status(400).json({ mensaje: "Falta el parámetro cedula." });
+  }
+  try {
+    const repo = AppDataSource.getRepository(Cre_SolicitudWeb);
+    // Busca el registro con la fecha más reciente para la cédula
+    const solicitud = await repo.findOne({
+      where: { Cedula: cedula },
+      order: { Fecha: "DESC" }
+    });
+    if (!solicitud) {
+      return res.status(404).json({ mensaje: "No se encontró solicitud para esa cédula." });
+    }
+    const estadosTextuales = {
+      1: "Pre-Aprobado",
+      2: "Aprobado",
+      3: "Anulado",
+      4: "Rechazado",
+      5: "No aplica",
+      6: "Facturado",
+      7: "Caducado"
+    };
+    const estado = solicitud.Estado;
+    let mensaje;
+    switch (estado) {
+      case 1:
+        mensaje = "Tu solicitud está pre-aprobada. ";
+        break;
+      case 2:
+        mensaje = "¡Felicidades! Tu solicitud fue aprobada.";
+        break;
+      case 3:
+        mensaje = "La solicitud fue anulada. Por favor, comunícate con soporte si tienes dudas.";
+        break;
+      case 4:
+        mensaje = "La solicitud fue rechazada. Puedes intentar nuevamente o consultar por otros productos.";
+        break;
+      case 5:
+        mensaje = "No aplica para crédito directo en este momento.";
+        break;
+      case 6:
+        mensaje = "La solicitud ya fue facturada.";
+        break;
+      case 7:
+        mensaje = "La solicitud está caducada. Por favor, inicia un nuevo proceso si lo deseas.";
+        break;
+      default:
+        mensaje = "Estado desconocido.";
+    }
+    return res.json({
+      // estado: estadosTextuales[estado] || estado,
+      mensaje,
+      // idCre_SolicitudWeb: solicitud.idCre_SolicitudWeb,
+      Fecha: solicitud.Fecha,
+      Cedula: solicitud.Cedula
+    });
+  } catch (err) {
+    return res.status(500).json({ mensaje: "Error consultando estado de la solicitud", detalle: err.message });
   }
 };
