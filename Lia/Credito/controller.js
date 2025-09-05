@@ -153,6 +153,7 @@ async function getPersonalData(token, cedula) {
   const resp = await axios.get(url, {
     headers: { Authorization: `Bearer ${token}` },
   });
+  console.log(resp.data, "Datos Persona");
   return resp.data;
 }
 
