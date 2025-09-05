@@ -46,8 +46,7 @@ exports.save = async (req, res) => {
     { name: 'trabajoImages', value: trabajoImages },
     { name: 'CallePrincipal', value: CallePrincipal },
     { name: 'CalleSecundaria', value: CalleSecundaria },
-    { name: 'tipoVerificacion', value: tipoVerificacion },
-    { name: 'Observacion', value: Observacion }
+    { name: 'tipoVerificacion', value: tipoVerificacion }
   ];
 
   for (const field of requiredFields) {
