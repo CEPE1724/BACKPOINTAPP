@@ -13,10 +13,12 @@ const CreReferenciasClientesWeb = require("./Cre_ReferenciasWeb/model");
 const qs = require("qs");
 const ActividadEconomica = require("../../ApiCobrador/api/Cre_ActividadEconomica/model");
 // Constante global para la API de carrito
-const API_URL =
-  process.env.MARKETPLACE_API_URL ||
-  // "https://ecommerce.appservices.com.ec/api/v1/";
-"http://192.168.2.67:3001/api/v1/"; ///PROBADO LOCAL
+const API_URL = "http://192.168.2.67:3001/api/v1/";
+  
+
+// process.env.MARKETPLACE_API_URL ||
+//   // "https://ecommerce.appservices.com.ec/api/v1/";
+// "http://192.168.2.67:3001/api/v1/"; ///PROBADO LOCAL
 
 // Utilidades
 function splitNombreCompleto(nombreCompleto = "") {
@@ -265,7 +267,7 @@ exports.registrarSolicitudCredito = async (req, res) => {
         JSON.stringify(dataExterna)
       );
       return res.status(500).json({
-        error: "No se obtuvo idCre_SolicitudWeb de la respuesta externa",
+        ///error: "No se obtuvo idCre_SolicitudWeb de la respuesta externa",
         detalle: dataExterna,
       });
     }
@@ -563,8 +565,8 @@ exports.registrarDependiente = async (req, res) => {
     return res.json({
       ok: true,
       mensaje: "Datos recibidos correctamente y referencias guardadas. Sigue el flujo de validación.",
-      referencias,
-      ...urls,
+      ////referencias,
+      ////...urls,
     });
   } catch (err) {
     return res.status(500).json({ mensaje: "Error interno", detalle: err.message });
@@ -636,8 +638,8 @@ exports.registrarIndependiente = async (req, res) => {
     return res.json({
       ok: true,
       mensaje: "Datos recibidos correctamente y referencias guardadas. Sigue el flujo de validación.",
-      referencias,
-      ...urls,
+     /// referencias,
+     //// ...urls,
     });
   } catch (err) {
     return res.status(500).json({ mensaje: "Error interno", detalle: err.message });
