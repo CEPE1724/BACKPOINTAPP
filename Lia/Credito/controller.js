@@ -252,12 +252,9 @@ exports.registrarSolicitudCredito = async (req, res) => {
     { detalle, idSituacionLaboral, dto, nombres, carrito },
     idWebCategoria
   )
-  // Enviar al endpoint externo
-  //"http://192.168.2.3:3008/api/v1/cre-solicitud-web/web", ////PROBADO LOCAL
   try {
     const respuesta = await axios.post(
-      // "https://backregistrocivil.appservices.com.ec/api/v1/"
-      'http://192.168.2.3:3008/api/v1/cre-solicitud-web/web',
+      "https://ecommerce.appservices.com.ec/api/v1/cre-solicitud-web/web",
       dtoFinal,
       { headers: { 'Content-Type': 'application/json' } }
     )
@@ -323,7 +320,7 @@ exports.registrarSolicitudCredito = async (req, res) => {
     if (cuotaAsignada >= precioCuotaCarrito && estadoFinal === 1) {
       if (idSituacionLaboral === 1) {
         // Dependiente
-        mensaje = `¡Felicitaciones! Tienes un crédito pre aprobado, la cuota del producto ${tituloProducto} que escogiste al inicio (incluyendo garantías) es de $${precioCuotaCarrito}. Escoge las siguientes opciones.`
+        mensaje = `¡Felicitaciones! Tienes un crédito pre aprobado, la cuota del carritos ${tituloProducto} que escogiste al inicio (incluyendo garantías) es de $${precioCuotaCarrito}. Escoge las siguientes opciones.`
       } else if (idSituacionLaboral === 2) {
         // Informal
         mensaje = `¡Felicitaciones! Tienes un crédito pre aprobado.`
@@ -813,10 +810,11 @@ exports.getActividadesEconomicas = async (req, res) => {
   try {
     const repo = AppDataSource.getRepository(ActividadEconomica)
     const actividades = await repo.find({
-      select: { idActEconomica: true, Nombre: true, Codigo: true },
+      select: { idActEconomica: true, Nombre: true },
       where: { Tipo: 2 }
     })
-    res.json(actividades)
+    // Solo devolver Nombre e idActEconomica en la respuesta
+    res.json(actividades.map(({ idActEconomica, Nombre }) => ({ idActEconomica, Nombre })))
   } catch (err) {
     res.status(500).json({
       mensaje: 'Error consultando actividades económicas',
