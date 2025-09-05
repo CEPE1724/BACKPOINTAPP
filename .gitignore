@@ -48,3 +48,7 @@ ApiCobrador/api/documentos
 iisnode/
 .prettierrc
 .vscode
+
+key.json
+/key.json
+./key.json
