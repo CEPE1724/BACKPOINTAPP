@@ -13,9 +13,10 @@ const CreReferenciasClientesWeb = require("./Cre_ReferenciasWeb/model");
 const qs = require("qs");
 const ActividadEconomica = require("../../ApiCobrador/api/Cre_ActividadEconomica/model");
 // Constante global para la API de carrito
-const API_URL =  process.env.MARKETPLACE_API_URL ||
-    'https://ecommerce.appservices.com.ec/api/v1/'
-////"http://192.168.2.67:3001/api/v1/"; ///PROBADO LOCAL 
+const API_URL =
+  process.env.MARKETPLACE_API_URL ||
+  // "https://ecommerce.appservices.com.ec/api/v1/";
+"http://192.168.2.67:3001/api/v1/"; ///PROBADO LOCAL
 
 // Utilidades
 function splitNombreCompleto(nombreCompleto = "") {
@@ -104,24 +105,10 @@ const keycloakConfig = {
     "http://app.cognoconsultas.com/keycloak/auth/realms/point/protocol/openid-connect/token",
   clientId: process.env.KEYCLOAK_CLIENT_ID || "login-data-services",
   username: process.env.KEYCLOAK_USERNAME || "dpozo@point.com.ec",
-  password: process.env.KEYCLOAK_PASSWORD ,
+  password: process.env.KEYCLOAK_PASSWORD,
 };
 
-async function obtenerCarritoCompleto(idWEB_Carrito) {
-  const url = `${API_URL}carrito-compra/obtener-carrito-lhia/${idWEB_Carrito}`;
-  
-  try {
-    const response = await axios.get(url, {
-      headers: { "Content-Type": "application/json" },
-    });
-    if (!response.data || response.data.status !== 200) {
-      throw new Error(response.data?.message || "Error al obtener carrito");
-    }
-    return response.data.data;
-  } catch (error) {
-    throw new Error(error.message || "Error al obtener carrito");
-  }
-}
+
 
 const apiEndpoints = {
   personalData: "http://app.cognoconsultas.com/consultas/pn_inf_basica/",
@@ -143,6 +130,22 @@ async function getCognoToken() {
   return resp.data.access_token;
 }
 
+
+async function obtenerCarritoCompleto(idWEB_Carrito) {
+  const url = `${API_URL}carrito-compra/obtener-carrito-lhia/${idWEB_Carrito}`;
+
+  try {
+    const response = await axios.get(url, {
+      headers: { "Content-Type": "application/json" },
+    });
+    if (!response.data || response.data.status !== 200) {
+      throw new Error(response.data?.message || "Error al obtener carrito");
+    }
+    return response.data.data;
+  } catch (error) {
+    throw new Error(error.message || "Error al obtener carrito");
+  }
+}
 async function getPersonalData(token, cedula) {
   const url = `${apiEndpoints.personalData}${cedula}`;
   const resp = await axios.get(url, {
@@ -215,29 +218,29 @@ exports.registrarSolicitudCredito = async (req, res) => {
   }
   // Situación laboral
   let idSituacionLaboral = 2;
-if (
-  trabajo &&
-  Array.isArray(trabajo.trabajos) &&
-  trabajo.trabajos.length > 0
-) {
-  const hoy = Date.now();
-  const vigente = trabajo.trabajos.some((t) => {
-    // Si fechaAfiliacionHasta existe y es mayor o igual a hoy, está vigente
-    if (t.fechaAfiliacionHasta !== null && t.fechaAfiliacionHasta >= hoy) {
-      return true;
+  if (
+    trabajo &&
+    Array.isArray(trabajo.trabajos) &&
+    trabajo.trabajos.length > 0
+  ) {
+    const hoy = Date.now();
+    const vigente = trabajo.trabajos.some((t) => {
+      // Si fechaAfiliacionHasta existe y es mayor o igual a hoy, está vigente
+      if (t.fechaAfiliacionHasta !== null && t.fechaAfiliacionHasta >= hoy) {
+        return true;
+      }
+      // Si fechaAfiliacionHasta es nulo, pero fechaActualizacion es mayor o igual a hoy, está vigente
+      if (t.fechaAfiliacionHasta === null && t.fechaActualizacion >= hoy) {
+        return true;
+      }
+      return false;
+    });
+    if (vigente) {
+      idSituacionLaboral = 1;
+    } else {
+      idSituacionLaboral = 2;
     }
-    // Si fechaAfiliacionHasta es nulo, pero fechaActualizacion es mayor o igual a hoy, está vigente
-    if (t.fechaAfiliacionHasta === null && t.fechaActualizacion >= hoy) {
-      return true;
-    }
-    return false;
-  });
-  if (vigente) {
-    idSituacionLaboral = 1;
-  } else {
-    idSituacionLaboral = 2;
   }
-}
   // DTO final
   const detalle = detalles[0] || {};
   const dtoFinal = buildDtoFinal(
@@ -248,7 +251,8 @@ if (
   //"http://192.168.2.3:3008/api/v1/cre-solicitud-web/web", ////PROBADO LOCAL
   try {
     const respuesta = await axios.post(
-      "https://backregistrocivil.appservices.com.ec/api/v1/",
+      // "https://backregistrocivil.appservices.com.ec/api/v1/"
+       "http://192.168.2.3:3008/api/v1/cre-solicitud-web/web",
       dtoFinal,
       { headers: { "Content-Type": "application/json" } }
     );
@@ -404,6 +408,10 @@ exports.cambiarMetodoPagoLHIA = async (req, res) => {
   }
 };
 
+
+// ==========================
+// Helpers de validación
+// ==========================
 function validarDireccion(direccion) {
   const campos = [
     "IdProvinciaDomicilio",
@@ -425,325 +433,217 @@ function validarDireccion(direccion) {
 }
 
 function validarReferencia(ref) {
-  const obligatorios = [
-    "nombre",
-    "apellido",
-    "celular",
-    "direccion",
-    "idParentesco",
-  ];
+  const obligatorios = ["nombre", "apellido", "celular", "direccion", "idParentesco"];
   const provincia = ["idProvincia", "idpronvicia"];
   const canton = ["idCanton", "IdCanton"];
+
   const tieneObligatorios = obligatorios.every(
-    (campo) =>
-      ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ""
+    (campo) => ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ""
   );
   const tieneProvincia = provincia.some(
-    (campo) =>
-      ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ""
+    (campo) => ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ""
   );
   const tieneCanton = canton.some(
-    (campo) =>
-      ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ""
+    (campo) => ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ""
   );
+
   return tieneObligatorios && tieneProvincia && tieneCanton;
 }
 
+// ==========================
+// Helpers de procesos comunes
+// ==========================
+async function guardarDireccionYDatos(repo, idCre_SolicitudWeb, direccionPersona, extra = {}) {
+  await repo.update(
+    { idCre_SolicitudWeb },
+    {
+      idProvinciaDomicilio: direccionPersona.IdProvinciaDomicilio,
+      idCantonDomicilio: direccionPersona.IdCantonDomicilio,
+      idParroquiaDomicilio: direccionPersona.IdParroquiaDomicilio,
+      idBarrioDomicilio: direccionPersona.idBarrioDomicilio,
+      CallePrincipal: direccionPersona.CallePrincipal,
+      NumeroCasa: direccionPersona.NumeroCasa,
+      CalleSecundaria: direccionPersona.CalleSecundaria,
+      ReferenciaUbicacion: direccionPersona.ReferenciaUbicacion,
+      TelefonoDomicilio: direccionPersona.TelefonoDomicilio || "",
+      Celular: direccionPersona.Celular,
+      ...extra, // Datos adicionales (actividad económica, ingresos, etc.)
+    }
+  );
+}
+
+async function subirImagenes(files) {
+  const [cedulaFrente, cedulaDorso, fotoRostro] = await Promise.all([
+    uploadImage(files.cedulaFrente[0].buffer, files.cedulaFrente[0].originalname),
+    uploadImage(files.cedulaDorso[0].buffer, files.cedulaDorso[0].originalname),
+    uploadImage(files.fotoRostro[0].buffer, files.fotoRostro[0].originalname),
+  ]);
+  return { cedulaFrente, cedulaDorso, fotoRostro };
+}
+
+async function guardarReferencias(repo, idCre_SolicitudWeb, referencias) {
+  const nuevasReferencias = referencias.map((ref) =>
+    repo.create({
+      idCre_SolicitudWeb,
+      ApellidoPaterno: ref.apellido,
+      PrimerNombre: ref.nombre,
+      Celular: ref.celular,
+      Direccion: ref.direccion,
+      idProvincia: ref.idProvincia || ref.idpronvicia || null,
+      idCanton: ref.idCanton || ref.IdCanton || null,
+      idParentesco: ref.idParentesco || null,
+    })
+  );
+  await repo.save(nuevasReferencias);
+}
+
+async function actualizarFotos(repoSolicitud, repoGrande, idCre_SolicitudWeb, urls) {
+  await repoSolicitud.update({ idCre_SolicitudWeb }, { Foto: urls.fotoRostro });
+  await repoGrande.update(
+    { idCre_SolicitudWeb },
+    { CedulaFrente: urls.cedulaFrente, CedulaDorso: urls.cedulaDorso }
+  );
+}
+
+// ==========================
+// Controladores
+// ==========================
 exports.registrarDependiente = async (req, res) => {
-  // Helpers
-
-  // Parsear datos
-  let referencias;
   try {
-    referencias = JSON.parse(req.body.referencias);
-  } catch {
-    referencias = req.body.referencias;
-  }
-  const files = req.files;
-  const idCre_SolicitudWeb = req.body.idCre_SolicitudWeb;
+    // Parsear datos
+    let referencias = JSON.parse(req.body.referencias || "[]");
+    const files = req.files;
+    const idCre_SolicitudWeb = req.body.idCre_SolicitudWeb;
 
-  // Parsear y validar dirección principal
-  let direccionPersona = null;
-  if (req.body.direccion) {
-    try {
-      direccionPersona =
-        typeof req.body.direccion === "string"
-          ? JSON.parse(req.body.direccion)
-          : req.body.direccion;
-    } catch {
-      return res.status(400).json({
-        mensaje: "La dirección de la persona debe ser un JSON válido.",
-      });
-    }
-    if (!validarDireccion(direccionPersona)) {
-      return res.status(400).json({
-        mensaje:
-          "La dirección de la persona debe tener todos los campos requeridos.",
-      });
-    }
-  }
+    // Validar dirección
+    let direccionPersona = null;
+    if (req.body.direccion) {
+      direccionPersona = typeof req.body.direccion === "string"
+        ? JSON.parse(req.body.direccion)
+        : req.body.direccion;
 
-  // Validaciones generales
-  if (!referencias || !Array.isArray(referencias) || referencias.length < 2) {
-    return res
-      .status(400)
-      .json({ mensaje: "Debes enviar al menos dos referencias personales." });
-  }
-  if (
-    !files ||
-    !files.cedulaFrente ||
-    !files.cedulaDorso ||
-    !files.fotoRostro
-  ) {
-    return res
-      .status(400)
-      .json({ mensaje: "Debes enviar las fotos requeridas." });
-  }
-  if (!referencias.every(validarReferencia)) {
-    return res.status(400).json({
-      mensaje:
-        "Cada referencia debe tener: nombre, apellido, celular, dirección, idParentesco, idProvincia y idCanton.",
-    });
-  }
-  if (!idCre_SolicitudWeb) {
-    return res.status(400).json({ mensaje: "Falta el idCre_SolicitudWeb." });
-  }
-
-  const repoWebSolicitudGrande =
-    AppDataSource.getRepository(WebSolicitudGrande);
-
-  // validar que el id de Situacionlaboral sea 1 por el idCre_solicitudWeb en la solitudGrande
-  // const validarDependiente = await repoWebSolicitudGrande.findOne({
-  //   where: { idCre_SolicitudWeb },
-  // });
-
-  // if (validarDependiente.idSituacionLaboral !== 1) {
-  //   return res
-  //     .status(400)
-  //     .json({ mensaje: "Solo se permite registrar dependientes." });
-  // }
-
-  // Guardar dirección principal en WebSolicitudGrande
-  if (direccionPersona && idCre_SolicitudWeb) {
-    try {
-      const repoWebSolicitudGrande =
-        AppDataSource.getRepository(WebSolicitudGrande);
-      await repoWebSolicitudGrande.update(
-        { idCre_SolicitudWeb },
-        {
-          idProvinciaDomicilio: direccionPersona.IdProvinciaDomicilio,
-          idCantonDomicilio: direccionPersona.IdCantonDomicilio,
-          idParroquiaDomicilio: direccionPersona.IdParroquiaDomicilio,
-          idBarrioDomicilio: direccionPersona.idBarrioDomicilio,
-          CallePrincipal: direccionPersona.CallePrincipal,
-          NumeroCasa: direccionPersona.NumeroCasa,
-          CalleSecundaria: direccionPersona.CalleSecundaria,
-          ReferenciaUbicacion: direccionPersona.ReferenciaUbicacion,
-          TelefonoDomicilio: direccionPersona.TelefonoDomicilio || "",
-          Celular: direccionPersona.Celular,
-        }
-      );
-    } catch (err) {
-      return res.status(500).json({
-        mensaje: "Error guardando la dirección en WebSolicitudGrande",
-        detalle: err.message,
-      });
-    }
-  }
-
-  // Subir imágenes a Google Cloud Storage
-  let urlCedulaFrente, urlCedulaDorso, urlFotoRostro;
-  try {
-    urlCedulaFrente = await uploadImage(
-      files.cedulaFrente[0].buffer,
-      files.cedulaFrente[0].originalname
-    );
-    urlCedulaDorso = await uploadImage(
-      files.cedulaDorso[0].buffer,
-      files.cedulaDorso[0].originalname
-    );
-    urlFotoRostro = await uploadImage(
-      files.fotoRostro[0].buffer,
-      files.fotoRostro[0].originalname
-    );
-  } catch (err) {
-    return res
-      .status(500)
-      .json({ mensaje: "Error subiendo imágenes", detalle: err.message });
-  }
-
-  // Guardar referencias en la base de datos
-  try {
-    const repo = AppDataSource.getRepository("CreReferenciasClientesWeb");
-    const nuevasReferencias = referencias.map((ref) =>
-      repo.create({
-        idCre_SolicitudWeb,
-        ApellidoPaterno: ref.apellido,
-        PrimerNombre: ref.nombre,
-        Celular: ref.celular,
-        Direccion: ref.direccion,
-        idProvincia: ref.idProvincia || ref.idpronvicia || null,
-        idCanton: ref.idCanton || ref.IdCanton || null,
-        idParentesco: ref.idParentesco || null,
-        // Puedes agregar más campos aquí según tu modelo y body
-      })
-    );
-    await repo.save(nuevasReferencias);
-  } catch (err) {
-    return res
-      .status(500)
-      .json({ mensaje: "Error guardando referencias", detalle: err.message });
-  }
-
-  // Actualizar la foto de rostro en la tabla Cre_SolicitudWeb
-  try {
-    const repoCreSolicitudWeb = AppDataSource.getRepository(Cre_SolicitudWeb);
-    await repoCreSolicitudWeb.update(
-      { idCre_SolicitudWeb },
-      { Foto: urlFotoRostro }
-    );
-  } catch (err) {
-    return res.status(500).json({
-      mensaje: "Error actualizando foto de rostro en la solicitud",
-      detalle: err.message,
-    });
-  }
-
-  //Actualizar las URLs de las cédulas en la tabla WebSolicitudGrande
-  try {
-    await repoWebSolicitudGrande.update(
-      { idCre_SolicitudWeb },
-      {
-        CedulaFrente: urlCedulaFrente,
-        CedulaDorso: urlCedulaDorso,
+      if (!validarDireccion(direccionPersona)) {
+        return res.status(400).json({ mensaje: "La dirección de la persona debe tener todos los campos requeridos." });
       }
-    );
-  } catch (err) {
-    return res.status(500).json({
-      mensaje: "Error actualizando URLs de cédulas en WebSolicitudGrande",
-      detalle: err.message,
-    });
-  }
+    }
 
-  return res.json({
-    ok: true,
-    mensaje:
-      "Datos recibidos correctamente y referencias guardadas. Sigue el flujo de validación.",
-    referencias,
-    cedulaFrente: urlCedulaFrente,
-    cedulaDorso: urlCedulaDorso,
-    fotoRostro: urlFotoRostro,
-  });
-  // --- FIN MÉTODO LIMPIO Y ESCALABLE ---
+    // Validaciones generales
+    if (!Array.isArray(referencias) || referencias.length < 2)
+      return res.status(400).json({ mensaje: "Debes enviar al menos dos referencias personales." });
+
+    if (!files?.cedulaFrente || !files?.cedulaDorso || !files?.fotoRostro)
+      return res.status(400).json({ mensaje: "Debes enviar las fotos requeridas." });
+
+    if (!referencias.every(validarReferencia))
+      return res.status(400).json({ mensaje: "Cada referencia debe tener: nombre, apellido, celular, dirección, idParentesco, idProvincia y idCanton." });
+
+    if (!idCre_SolicitudWeb)
+      return res.status(400).json({ mensaje: "Falta el idCre_SolicitudWeb." });
+
+    // Validar dependiente
+    const repoGrande = AppDataSource.getRepository(WebSolicitudGrande);
+    const solicitud = await repoGrande.findOne({ where: { idCre_SolicitudWeb } });
+    if (solicitud.idSituacionLaboral !== 1)
+      return res.status(400).json({ mensaje: "Solo se permite registrar dependientes." });
+
+    // Guardar dirección
+    if (direccionPersona) await guardarDireccionYDatos(repoGrande, idCre_SolicitudWeb, direccionPersona);
+
+    // Subir imágenes
+    const urls = await subirImagenes(files);
+
+    // Guardar referencias
+    const repoRefs = AppDataSource.getRepository("CreReferenciasClientesWeb");
+    await guardarReferencias(repoRefs, idCre_SolicitudWeb, referencias);
+
+    // Actualizar fotos
+    const repoSolicitud = AppDataSource.getRepository(Cre_SolicitudWeb);
+    await actualizarFotos(repoSolicitud, repoGrande, idCre_SolicitudWeb, urls);
+
+    return res.json({
+      ok: true,
+      mensaje: "Datos recibidos correctamente y referencias guardadas. Sigue el flujo de validación.",
+      referencias,
+      ...urls,
+    });
+  } catch (err) {
+    return res.status(500).json({ mensaje: "Error interno", detalle: err.message });
+  }
 };
 
 exports.registrarIndependiente = async (req, res) => {
-  // Extraer los datos adicionales
-  const { idCre_SolicitudWeb, idActividadEconomica, IngresoPromedio } =
-    req.body;
-
-  // Validar datos requeridos
-  if (
-    !idCre_SolicitudWeb ||
-    !idActividadEconomica ||
-    IngresoPromedio === undefined
-  ) {
-    return res.status(400).json({
-      mensaje:
-        "Faltan datos requeridos: idCre_SolicitudWeb, idActividadEconomica, IngresoPromedio.",
-    });
-  }
-
-  // Validar que llegan los archivos y referencias antes de actualizar
-  let referencias;
   try {
-    referencias = JSON.parse(req.body.referencias);
-  } catch {
-    referencias = req.body.referencias;
-  }
-  const files = req.files;
-  let direccionPersona = null;
-  if (!req.body.direccion) {
-    return res.status(400).json({ mensaje: "Falta el campo direccion." });
-  }
-  try {
-    direccionPersona =
-      typeof req.body.direccion === "string"
+    // Parsear datos
+    let referencias = JSON.parse(req.body.referencias || "[]");
+    const files = req.files;
+    const idCre_SolicitudWeb = req.body.idCre_SolicitudWeb;
+    const idActividadEconomica = req.body.idActividadEconomica;
+    const IngresoPromedio = req.body.IngresoPromedio;
+
+    // Validar dirección
+    let direccionPersona = null;
+    if (req.body.direccion) {
+      direccionPersona = typeof req.body.direccion === "string"
         ? JSON.parse(req.body.direccion)
         : req.body.direccion;
-  } catch {
-    return res
-      .status(400)
-      .json({ mensaje: "La dirección de la persona debe ser un JSON válido." });
-  }
-  // Validaciones generales antes de actualizar
-  if (!referencias || !Array.isArray(referencias) || referencias.length < 2) {
-    return res
-      .status(400)
-      .json({ mensaje: "Debes enviar al menos dos referencias personales." });
-  }
-  if (
-    !files ||
-    !files.cedulaFrente ||
-    !files.cedulaDorso ||
-    !files.fotoRostro
-  ) {
-    return res.status(400).json({
-      mensaje:
-        "Debes enviar las fotos requeridas: cedulaFrente, cedulaDorso y fotoRostro.",
-    });
-  }
-  if (!files.cedulaFrente[0] || !files.cedulaDorso[0] || !files.fotoRostro[0]) {
-    return res
-      .status(400)
-      .json({ mensaje: "Faltan archivos en las fotos requeridas." });
-  }
-  if (!idCre_SolicitudWeb) {
-    return res.status(400).json({ mensaje: "Falta el idCre_SolicitudWeb." });
-  }
-  //  validar si es independiente
 
-  const repoWebSolicitudGrande =
-    AppDataSource.getRepository(WebSolicitudGrande);
+      if (!validarDireccion(direccionPersona)) {
+        return res.status(400).json({ mensaje: "La dirección de la persona debe tener todos los campos requeridos." });
+      }
+    }
 
-  // validar que el id de Situacionlaboral sea 1 por el idCre_solicitudWeb en la solitudGrande
-  // const validarIndependiente = await repoWebSolicitudGrande.findOne({
-  //   where: { idCre_SolicitudWeb },
-  // });
+    // Validaciones generales
+    if (!Array.isArray(referencias) || referencias.length < 2)
+      return res.status(400).json({ mensaje: "Debes enviar al menos dos referencias personales." });
 
-  // if (validarIndependiente.idSituacionLaboral !== 2) {
-  //   return res
-  //     .status(400)
-  //     .json({ mensaje: "Solo se permite registrar independientes." });
-  // }
-  // Actualizar WebSolicitudGrande con los datos nuevos
-  try {
-    await repoWebSolicitudGrande.update(
-      { idCre_SolicitudWeb },
-      {
+    if (!files?.cedulaFrente || !files?.cedulaDorso || !files?.fotoRostro)
+      return res.status(400).json({ mensaje: "Debes enviar las fotos requeridas." });
+
+    if (!referencias.every(validarReferencia))
+      return res.status(400).json({ mensaje: "Cada referencia debe tener: nombre, apellido, celular, dirección, idParentesco, idProvincia y idCanton." });
+
+    if (!idCre_SolicitudWeb)
+      return res.status(400).json({ mensaje: "Falta el idCre_SolicitudWeb." });
+
+    if (!idActividadEconomica || IngresoPromedio === undefined)
+      return res.status(400).json({ mensaje: "Faltan idActividadEconomica o IngresoPromedio." });
+
+    // Validar independiente
+    const repoGrande = AppDataSource.getRepository(WebSolicitudGrande);
+    const solicitud = await repoGrande.findOne({ where: { idCre_SolicitudWeb } });
+    if (solicitud.idSituacionLaboral !== 2)
+      return res.status(400).json({ mensaje: "Solo se permite registrar independientes." });
+
+    // Guardar dirección + datos económicos
+    if (direccionPersona) {
+      await guardarDireccionYDatos(repoGrande, idCre_SolicitudWeb, direccionPersona, {
         idActEconomica: idActividadEconomica,
         IngresosNegosio: IngresoPromedio,
-      }
-    );
-  } catch (err) {
-    return res.status(500).json({
-      mensaje: "Error guardando datos en WebSolicitudGrande",
-      detalle: err.message,
-    });
-  }
+      });
+    }
 
-  // Reutilizar la lógica de registrarDependiente para el resto del flujo
-  try {
-    return await exports.registrarDependiente(req, res);
-  } catch (err) {
-    return res.status(500).json({
-      mensaje: "Error en el proceso de registro de dependiente",
-      detalle: err.message,
+    // Subir imágenes
+    const urls = await subirImagenes(files);
+
+    // Guardar referencias
+    const repoRefs = AppDataSource.getRepository("CreReferenciasClientesWeb");
+    await guardarReferencias(repoRefs, idCre_SolicitudWeb, referencias);
+
+    // Actualizar fotos
+    const repoSolicitud = AppDataSource.getRepository(Cre_SolicitudWeb);
+    await actualizarFotos(repoSolicitud, repoGrande, idCre_SolicitudWeb, urls);
+
+    return res.json({
+      ok: true,
+      mensaje: "Datos recibidos correctamente y referencias guardadas. Sigue el flujo de validación.",
+      referencias,
+      ...urls,
     });
+  } catch (err) {
+    return res.status(500).json({ mensaje: "Error interno", detalle: err.message });
   }
 };
 
-// Consulta de provincias
 exports.getProvincias = async (req, res) => {
   try {
     const repo = AppDataSource.getRepository(Cre_Provincia);
@@ -843,8 +743,7 @@ exports.getActividadesEconomicas = async (req, res) => {
   }
 };
 
-
-///endpoint para consultar el estado de la solicitud por cedula 
+///endpoint para consultar el estado de la solicitud por cedula
 
 exports.getEstadoSolicitudPorCedula = async (req, res) => {
   const { cedula } = req.query;
@@ -856,10 +755,12 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
     // Busca el registro con la fecha más reciente para la cédula
     const solicitud = await repo.findOne({
       where: { Cedula: cedula },
-      order: { Fecha: "DESC" }
+      order: { Fecha: "DESC" },
     });
     if (!solicitud) {
-      return res.status(404).json({ mensaje: "No se encontró solicitud para esa cédula." });
+      return res
+        .status(404)
+        .json({ mensaje: "No se encontró solicitud para esa cédula." });
     }
     const estadosTextuales = {
       1: "Pre-Aprobado",
@@ -868,7 +769,7 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
       4: "Rechazado",
       5: "No aplica",
       6: "Facturado",
-      7: "Caducado"
+      7: "Caducado",
     };
     const estado = solicitud.Estado;
     let mensaje;
@@ -880,10 +781,12 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
         mensaje = "¡Felicidades! Tu solicitud fue aprobada.";
         break;
       case 3:
-        mensaje = "La solicitud fue anulada. Por favor, comunícate con soporte si tienes dudas.";
+        mensaje =
+          "La solicitud fue anulada. Por favor, comunícate con soporte si tienes dudas.";
         break;
       case 4:
-        mensaje = "La solicitud fue rechazada. Puedes intentar nuevamente o consultar por otros productos.";
+        mensaje =
+          "La solicitud fue rechazada. Puedes intentar nuevamente o consultar por otros productos.";
         break;
       case 5:
         mensaje = "No aplica para crédito directo en este momento.";
@@ -892,7 +795,8 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
         mensaje = "La solicitud ya fue facturada.";
         break;
       case 7:
-        mensaje = "La solicitud está caducada. Por favor, inicia un nuevo proceso si lo deseas.";
+        mensaje =
+          "La solicitud está caducada. Por favor, inicia un nuevo proceso si lo deseas.";
         break;
       default:
         mensaje = "Estado desconocido.";
@@ -902,9 +806,14 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
       mensaje,
       // idCre_SolicitudWeb: solicitud.idCre_SolicitudWeb,
       Fecha: solicitud.Fecha,
-      Cedula: solicitud.Cedula
+      Cedula: solicitud.Cedula,
     });
   } catch (err) {
-    return res.status(500).json({ mensaje: "Error consultando estado de la solicitud", detalle: err.message });
+    return res
+      .status(500)
+      .json({
+        mensaje: "Error consultando estado de la solicitud",
+        detalle: err.message,
+      });
   }
 };
