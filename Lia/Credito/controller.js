@@ -254,7 +254,7 @@ exports.registrarSolicitudCredito = async (req, res) => {
   )
   try {
     const respuesta = await axios.post(
-      "https://credipoint.appservices.com.ec/api/v1/cre-solicitud-web/web",
+      "https://backregistrocivil.appservices.com.ec/api/v1/cre-solicitud-web/web",
       dtoFinal,
       { headers: { 'Content-Type': 'application/json' } }
     )
