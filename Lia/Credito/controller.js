@@ -13,9 +13,7 @@ const CreReferenciasClientesWeb = require('./Cre_ReferenciasWeb/model')
 const qs = require('qs')
 const ActividadEconomica = require('../../ApiCobrador/api/Cre_ActividadEconomica/model')
 // Constante global para la API de carrito
-const API_URL =
-  process.env.MARKETPLACE_API_URL ||
-  'https://ecommerce.appservices.com.ec/api/v1/'
+const API_URL ='https://ecommerce.appservices.com.ec/api/v1/'
 
 // Utilidades
 function splitNombreCompleto(nombreCompleto = '') {
@@ -113,7 +111,7 @@ const apiEndpoints = {
 }
 
 async function getCognoToken() {
-  console.log('entra a obtner el token')
+  // console.log('entra a obtner el token')
   const data = qs.stringify({
     client_id: keycloakConfig.clientId,
     username: keycloakConfig.username,
@@ -121,11 +119,11 @@ async function getCognoToken() {
     grant_type: 'password',
     scope: 'email profile'
   })
-  console.log('data', data)
+  // console.log('data', data)
   const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
-  console.log('headers', headers)
+  // console.log('headers', headers)
   const resp = await axios.post(keycloakConfig.url, data, { headers })
-  console.log('resp', resp)
+  // console.log('resp', resp)
   if (!resp.data || !resp.data.access_token)
     throw new Error('No se obtuvo token de Cogno')
   return resp.data.access_token
@@ -168,6 +166,14 @@ exports.registrarSolicitudCredito = async (req, res) => {
   if (!dto.idCarrito || !dto.cedula || !dto.Celular) {
     return res.status(400).json({ error: 'Faltan parámetros requeridos' })
   }
+  // Validar que cedula y celular sean numéricos y de máximo 10 dígitos
+  const soloNumeros = /^\d{1,10}$/;
+  if (!soloNumeros.test(dto.cedula)) {
+    return res.status(400).json({ error: 'La cédula debe ser numérica y máximo 10 dígitos' });
+  }
+  if (!soloNumeros.test(dto.Celular)) {
+    return res.status(400).json({ error: 'El celular debe ser numérico y máximo 10 dígitos' });
+  }
   // Obtener carrito
   let carrito
   try {
@@ -181,6 +187,13 @@ exports.registrarSolicitudCredito = async (req, res) => {
   if (!Array.isArray(detalles) || detalles.length === 0) {
     return res.status(400).json({ error: 'El carrito no tiene detalles' })
   }
+  // Validar método de pago (debe ser 9 para crédito)
+  const idWebMetodoPago = carrito.MetodoPago;
+  if (idWebMetodoPago !== 9) {
+    return res.status(400).json({
+      error: 'El método de pago del carrito no es crédito. Solo se permite continuar si el método de pago es crédito',
+    });
+  }
   const idWebCategoria = detalles[0].idWEB_Categoria
   if (idWebCategoria === 73) {
     return res.status(400).json({ error: 'Categoría no permitida (Baratazo)' })
@@ -193,22 +206,26 @@ exports.registrarSolicitudCredito = async (req, res) => {
   }
   // Obtener token y datos externos
   let token, datosPersona, trabajo
-  console.log('Antes de try')
-  console.log('datos cogno token', keycloakConfig)
+  // console.log('Antes de try')
+  // console.log('datos cogno token', keycloakConfig)
   try {
     token = await getCognoToken()
-    console.log('getCognoToken')
+    // console.log('getCognoToken')
     datosPersona = await getPersonalData(token, dto.cedula)
-    console.log('datosPersonales')
+    // console.log(datosPersona, 'datosPersonales')
     trabajo = await getWorkData(token, dto.cedula)
-    console.log('getWorkData')
+    // console.log(trabajo, 'Datos Trabajo')
+    // Validar si no se encontró información de la persona o el servicio devolvió error
+    if (!datosPersona || datosPersona.estado?.codigo === 'ERROR' || !trabajo || trabajo.estado?.codigo === 'ERROR') {
+      return res.status(400).json({ error: 'No se encontró información para la cédula ingresada. Ingrese una cédula válida o vuelva a intentar más tarde.' });
+    }
   } catch (e) {
     return res
-      .status(500)
-      .json({ error: 'Error consultando Cogno', detalle: e.message })
+      .status(400)
+      .json({ error: 'No se encontró información para la cédula ingresada. Ingrese una cédula válida o vuelva a intentar más tarde.' })
   }
 
-  console.log(trabajo, 'Datos Persona')
+  // console.log(trabajo, 'Datos Persona')
   // Nombres y apellidos
   let nombres = {
     ApellidoPaterno: '',
@@ -287,7 +304,7 @@ exports.registrarSolicitudCredito = async (req, res) => {
     }
 
     const estadoFinal = solicitudActualizada.Estado
-    console.log(solicitudActualizada, 'Estado Final')
+    // console.log(solicitudActualizada, 'Estado Final')
     // Consultar cuota asignada en la base de datos
     const repo = AppDataSource.getRepository(WebSolicitudGrande)
     const registro = await repo.findOne({ where: { idCre_SolicitudWeb } })
@@ -297,12 +314,12 @@ exports.registrarSolicitudCredito = async (req, res) => {
         .json({ error: 'No se encontró la solicitud en WebSolicitudGrande.' })
     }
 
-    console.log(registro, 'Registro Consulta')
+    // console.log(registro, 'Registro Consulta')
     const cuotaAsignada = registro.CuotaAsignada
     const precioCuotaCarrito = carrito.PrecioCuota
-    console.log(precioCuotaCarrito, 'Cuota Carrito')
-    console.log(cuotaAsignada, 'Cuota Asignada')
-    console.log(estadoFinal, 'Estado Final')
+    // console.log(precioCuotaCarrito, 'Cuota Carrito')
+    // console.log(cuotaAsignada, 'Cuota Asignada')
+    // console.log(estadoFinal, 'Estado Final')
 
     // Mapeo de estados
     const estadosTextuales = {
@@ -424,13 +441,34 @@ function validarDireccion(direccion) {
     'CalleSecundaria',
     'ReferenciaUbicacion',
     'Celular'
-  ]
-  return campos.every(
-    (campo) =>
-      direccion[campo] !== undefined &&
-      direccion[campo] !== null &&
-      direccion[campo] !== ''
-  )
+  ];
+  for (const campo of campos) {
+    if (direccion[campo] === undefined || direccion[campo] === null || direccion[campo] === '') {
+      return { valido: false, mensaje: `El campo ${campo} es obligatorio.` };
+    }
+  }
+  // Validar rangos de IDs
+  const idProvincia = Number(direccion.IdProvinciaDomicilio);
+  if (!(idProvincia >= 1 && idProvincia <= 25)) {
+    return { valido: false, mensaje: 'Provincia no válida.' };
+  }
+  const idCanton = Number(direccion.IdCantonDomicilio);
+  if (!(idCanton >= 1 && idCanton <= 232)) {
+    return { valido: false, mensaje: 'Cantón no válido.' };
+  }
+  const idParroquia = Number(direccion.IdParroquiaDomicilio);
+  if (!(idParroquia >= 1 && idParroquia <= 1000)) {
+    return { valido: false, mensaje: 'Parroquia no válida.' };
+  }
+  const idBarrio = Number(direccion.idBarrioDomicilio);
+  if (!(idBarrio >= 1 && idBarrio <= 15034)) {
+    return { valido: false, mensaje: 'Barrio no válido.' };
+  }
+  // Validar celular: numérico y exactamente 10 dígitos
+  if (!(typeof direccion.Celular === 'string' && /^\d{10}$/.test(direccion.Celular))) {
+    return { valido: false, mensaje: 'El celular debe ser numérico y de 10 dígitos.' };
+  }
+  return { valido: true };
 }
 
 function validarReferencia(ref) {
@@ -440,24 +478,53 @@ function validarReferencia(ref) {
     'celular',
     'direccion',
     'idParentesco'
-  ]
-  const provincia = ['idProvincia', 'idpronvicia']
-  const canton = ['idCanton', 'IdCanton']
+  ];
+  const provincia = ['idProvincia', 'idpronvicia'];
+  const canton = ['idCanton', 'IdCanton'];
 
-  const tieneObligatorios = obligatorios.every(
-    (campo) =>
-      ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ''
-  )
-  const tieneProvincia = provincia.some(
-    (campo) =>
-      ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ''
-  )
-  const tieneCanton = canton.some(
-    (campo) =>
-      ref[campo] !== undefined && ref[campo] !== null && ref[campo] !== ''
-  )
-
-  return tieneObligatorios && tieneProvincia && tieneCanton
+  for (const campo of obligatorios) {
+    if (ref[campo] === undefined || ref[campo] === null || ref[campo] === '') {
+      return { valido: false, mensaje: `El campo ${campo} es obligatorio en la referencia.` };
+    }
+  }
+  let idProvincia = null;
+  let tieneProvincia = false;
+  for (const key of provincia) {
+    if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
+      idProvincia = Number(ref[key]);
+      tieneProvincia = true;
+      break;
+    }
+  }
+  if (!tieneProvincia) {
+    return { valido: false, mensaje: 'El campo idProvincia es obligatorio en la referencia.' };
+  }
+  let idCanton = null;
+  let tieneCanton = false;
+  for (const key of canton) {
+    if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
+      idCanton = Number(ref[key]);
+      tieneCanton = true;
+      break;
+    }
+  }
+  if (!tieneCanton) {
+    return { valido: false, mensaje: 'El campo idCanton es obligatorio en la referencia.' };
+  }
+  const idParentesco = Number(ref.idParentesco);
+  if (!(idProvincia >= 1 && idProvincia <= 25)) {
+    return { valido: false, mensaje: 'Provincia de la referencia no válida.' };
+  }
+  if (!(idCanton >= 1 && idCanton <= 232)) {
+    return { valido: false, mensaje: 'Cantón de la referencia no válido.' };
+  }
+  if (!(idParentesco >= 1 && idParentesco <= 21)) {
+    return { valido: false, mensaje: 'Parentesco de la referencia no válido.' };
+  }
+  if (!(typeof ref.celular === 'string' && /^\d{10}$/.test(ref.celular))) {
+    return { valido: false, mensaje: 'El celular de la referencia debe ser numérico y de 10 dígitos.' };
+  }
+  return { valido: true };
 }
 
 // ==========================
@@ -546,11 +613,9 @@ exports.registrarDependiente = async (req, res) => {
           ? JSON.parse(req.body.direccion)
           : req.body.direccion
 
-      if (!validarDireccion(direccionPersona)) {
-        return res.status(400).json({
-          mensaje:
-            'La dirección de la persona debe tener todos los campos requeridos.'
-        })
+      const validacionDireccion = validarDireccion(direccionPersona);
+      if (!validacionDireccion.valido) {
+        return res.status(400).json({ mensaje: validacionDireccion.mensaje });
       }
     }
 
@@ -565,11 +630,12 @@ exports.registrarDependiente = async (req, res) => {
         .status(400)
         .json({ mensaje: 'Debes enviar las fotos requeridas.' })
 
-    if (!referencias.every(validarReferencia))
-      return res.status(400).json({
-        mensaje:
-          'Cada referencia debe tener: nombre, apellido, celular, dirección, idParentesco, idProvincia y idCanton.'
-      })
+    for (const ref of referencias) {
+      const validacionRef = validarReferencia(ref);
+      if (!validacionRef.valido) {
+        return res.status(400).json({ mensaje: validacionRef.mensaje });
+      }
+    }
 
     if (!idCre_SolicitudWeb)
       return res.status(400).json({ mensaje: 'Falta el idCre_SolicitudWeb.' })
@@ -633,11 +699,9 @@ exports.registrarIndependiente = async (req, res) => {
           ? JSON.parse(req.body.direccion)
           : req.body.direccion
 
-      if (!validarDireccion(direccionPersona)) {
-        return res.status(400).json({
-          mensaje:
-            'La dirección de la persona debe tener todos los campos requeridos.'
-        })
+      const validacionDireccion = validarDireccion(direccionPersona);
+      if (!validacionDireccion.valido) {
+        return res.status(400).json({ mensaje: validacionDireccion.mensaje });
       }
     }
 
@@ -652,11 +716,12 @@ exports.registrarIndependiente = async (req, res) => {
         .status(400)
         .json({ mensaje: 'Debes enviar las fotos requeridas.' })
 
-    if (!referencias.every(validarReferencia))
-      return res.status(400).json({
-        mensaje:
-          'Cada referencia debe tener: nombre, apellido, celular, dirección, idParentesco, idProvincia y idCanton.'
-      })
+    for (const ref of referencias) {
+      const validacionRef = validarReferencia(ref);
+      if (!validacionRef.valido) {
+        return res.status(400).json({ mensaje: validacionRef.mensaje });
+      }
+    }
 
     if (!idCre_SolicitudWeb)
       return res.status(400).json({ mensaje: 'Falta el idCre_SolicitudWeb.' })
