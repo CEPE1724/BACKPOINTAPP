@@ -181,6 +181,13 @@ exports.registrarSolicitudCredito = async (req, res) => {
   if (!Array.isArray(detalles) || detalles.length === 0) {
     return res.status(400).json({ error: 'El carrito no tiene detalles' })
   }
+  // Validar método de pago ( 9 para crédito)
+  const idWebMetodoPago = carrito.MetodoPago;
+  if (idWebMetodoPago !== 9) {
+    return res.status(400).json({
+      error: 'El método de pago del carrito no es crédito. Solo se permite continuar si el método de pago es crédito',
+    });
+  }
   const idWebCategoria = detalles[0].idWEB_Categoria
   if (idWebCategoria === 73) {
     return res.status(400).json({ error: 'Categoría no permitida (Baratazo)' })
