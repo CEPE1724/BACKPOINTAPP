@@ -691,6 +691,28 @@ exports.registrarIndependiente = async (req, res) => {
     const idActividadEconomica = req.body.idActividadEconomica
     const IngresoPromedio = req.body.IngresoPromedio
 
+    // Validar que idActividadEconomica venga y sea válido
+    let actividadesValidas = [];
+    try {
+      const repo = AppDataSource.getRepository(ActividadEconomica);
+      const actividades = await repo.find({
+        select: { idActEconomica: true },
+        where: { Tipo: 2 }
+      });
+      actividadesValidas = actividades.map(a => a.idActEconomica);
+    } catch (err) {
+      return res.status(500).json({ mensaje: 'Error validando actividad económica', detalle: err.message });
+    }
+
+    if (!idActividadEconomica || !actividadesValidas.includes(Number(idActividadEconomica))) {
+      return res.status(400).json({ mensaje: 'La actividad económica seleccionada no es válida.' });
+    }
+
+    // Validar que IngresoPromedio venga y sea un número
+    if (IngresoPromedio === undefined || IngresoPromedio === null || IngresoPromedio === '' || isNaN(Number(IngresoPromedio))) {
+      return res.status(400).json({ mensaje: 'El ingreso promedio debe ser un número válido.' });
+    }
+
     // Validar dirección
     let direccionPersona = null
     if (req.body.direccion) {
@@ -726,10 +748,7 @@ exports.registrarIndependiente = async (req, res) => {
     if (!idCre_SolicitudWeb)
       return res.status(400).json({ mensaje: 'Falta el idCre_SolicitudWeb.' })
 
-    if (!idActividadEconomica || IngresoPromedio === undefined)
-      return res
-        .status(400)
-        .json({ mensaje: 'Faltan idActividadEconomica o IngresoPromedio.' })
+  // (Ya validado arriba)
 
     // Validar independiente
     const repoGrande = AppDataSource.getRepository(WebSolicitudGrande)
