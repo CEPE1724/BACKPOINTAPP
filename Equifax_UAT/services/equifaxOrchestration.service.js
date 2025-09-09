@@ -26,7 +26,7 @@ async function executeEquifaxOrchestration(token, tipoDocumento, numeroDocumento
         };
 
         const response = await axios.post(
-            'https://api.uat.latam.equifax.com/business/interconnect/v1/decision-orchestrations/execute',
+            'https://api.latam.equifax.com/business/interconnect/v1/decision-orchestrations/execute',
             JSON.stringify(payload),
             {
                 headers: {
@@ -35,7 +35,7 @@ async function executeEquifaxOrchestration(token, tipoDocumento, numeroDocumento
                 }
             }
         );
-
+  
         return response.data;
 
     } catch (error) {

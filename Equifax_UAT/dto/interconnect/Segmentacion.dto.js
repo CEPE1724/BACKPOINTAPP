@@ -8,7 +8,7 @@
 
 
 function parseSegmentacion(resultado_segmentacion) {
-
+     console.log("Parsing resultado_segmentacion:", resultado_segmentacion);
     if (!Array.isArray(resultado_segmentacion) || resultado_segmentacion.length === 0) {
         return {
             resultado_evaluacion: '',

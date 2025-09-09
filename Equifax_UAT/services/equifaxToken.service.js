@@ -36,12 +36,12 @@ async function getEquifaxToken() {
         });
 
         const response = await axios.post(
-            'https://api.uat.latam.equifax.com/v2/oauth/token',
+            'https://api.latam.equifax.com/v2/oauth/token',
             data,
             {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': 'Basic dXZRRlhVTExnUmpMU0ZiWTNHYTdnaFFvZUtLQmFKRlY6S0lHaGNBTTZ1WVBKR2RhcA=='
+                    'Authorization': 'Basic eVpZbG00RzdBbEloeDVzOHFVaGI2clZ6ZlRCZ1VPMVU6UmJ5R1k2c0RGZ2xWaVA2bw=='
                 }
             }
         );

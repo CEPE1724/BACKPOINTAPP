@@ -193,7 +193,10 @@ exports.registrarSolicitudCredito = async (req, res) => {
   if (!Array.isArray(detalles) || detalles.length === 0) {
     return res.status(400).json({ error: "El carrito no tiene detalles" });
   }
+
   // Validar método de pago (debe ser 9 para crédito)
+
+
   const idWebMetodoPago = carrito.MetodoPago;
   if (idWebMetodoPago !== 9) {
     return res.status(400).json({
