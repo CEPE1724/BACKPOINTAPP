@@ -133,11 +133,12 @@ exports.equifaxOauth = async (req, res) => {
         }
 
         const {
-            interconnect, transactionId,
+            interconnectResponse, transactionId,
             originalTransactionId, integrante_facturacion = [],
             reporteCrediticio = {}
         } = orchestrationResponse;
 
+        console.log("Orchestration response:", interconnectResponse);
         const {
             identificacion_consultada = [], /*1*/
             informacion_sri = [], /*2*/
@@ -188,11 +189,11 @@ exports.equifaxOauth = async (req, res) => {
 
         } = reporteCrediticio;
 
+       
 
-
-        const segmentacionDTO = parseSegmentacion(interconnect.resultado_segmentacion || []);
-        const politicasDTO = parseInterconnectResultadoPoliticas(interconnect.resultado_politicas || []);
-        const resultadoDTO = parseInterconnectResultado(interconnect.resultado || []);
+        const segmentacionDTO = parseSegmentacion(interconnectResponse.resultado_segmentacion || []);
+        const politicasDTO = parseInterconnectResultadoPoliticas(interconnectResponse.resultado_politicas || []);
+        const resultadoDTO = parseInterconnectResultado(interconnectResponse.resultado || []);
         const sriDTO = parseInformacionSRI(informacion_sri || []);
         const resumenInformeDTO = parseResumenInforme(resumen_informe || []);
         const scoreInclusionDTO = parseScoreInclusion(score_inclusion || []);
