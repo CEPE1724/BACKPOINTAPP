@@ -162,11 +162,26 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
     if (!compra || compra.length === 0) {
       throw new Error('404')
     }
+    const hoy = new Date()
+
+    // Encontrar la primera cuota vencida (no cancelada)
+    const cuotaVencida = compra.find((c) => {
+      const fechaVence = new Date(c.Vence)
+      return c.Estado !== 2 && fechaVence < hoy
+    })
+
+    let diasMora = 0
+    if (cuotaVencida) {
+      const fechaVence = new Date(cuotaVencida.Vence)
+      const diffMs = hoy.getTime() - fechaVence.getTime()
+      diasMora = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+    }
     const numCuotas = compra.length
     const cuotasCanceladas = compra.filter((c) => c.Estado === 2).length
-    const cuotasVencidas = compra.filter(
-      (c) => c.EstadoDescripcion === 'EN MORA'
-    ).length
+    const cuotasVencidas = compra.filter((c) => {
+      const fechaVence = new Date(c.Vence)
+      return c.Estado !== 2 && fechaVence < hoy
+    }).length
     const cuotasAbonadas = compra.filter((c) => c.Estado === 3).length
     const cuotasPendientes = numCuotas - cuotasCanceladas - cuotasVencidas
     const saldoPendiente = compra
@@ -190,7 +205,8 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
         saldoPendiente,
         fechaCompra: Fecha,
         fechaEmision,
-        logoBase64
+        logoBase64,
+        diasMora
       }
     )
 
