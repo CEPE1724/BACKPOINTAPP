@@ -215,10 +215,11 @@ exports.CarritoAgregarDetalle = async (req, res) => {
         totalRecords: 0
       })
     }
+    const carritoURL = `${API_URL}carrito-compra/${data.data.idWEB_Carrito}`
     return res.status(200).json({
       status: 'success',
       message: data.message,
-      data: data.data,
+      data: { URL: carritoURL, ...data.data },
       totalRecords: 1
     })
   } catch (error) {
@@ -268,10 +269,11 @@ exports.CarritoReducirDetalle = async (req, res) => {
         totalRecords: 0
       })
     }
+    const carritoURL = `${MARKETPLACE_URL}cargar-carrito/${idWEB_Carrito}`
     return res.status(200).json({
       status: 'success',
       message: data.message,
-      data: data.data,
+      data: { URL: carritoURL, ...data.data },
       totalRecords: 1
     })
   } catch (error) {

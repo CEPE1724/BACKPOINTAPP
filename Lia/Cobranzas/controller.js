@@ -123,6 +123,7 @@ exports.subirDeposito = async (req, res) => {
       totalRecords: 0
     })
   } catch (error) {
+    console.log(error)
     if (error.message === '400-body') {
       return res.status(400).json({
         status: 'error',
