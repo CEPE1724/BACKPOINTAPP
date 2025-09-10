@@ -1,167 +1,211 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Estado de Compra</title>
-		<style>
-			@page {
-				size: A4;
-				margin: 0.5cm;
-			}
-			body {
-				font-family: Arial, sans-serif;
-				font-size: 10px;
-				color: #333;
-				margin: 0;
-				padding: 0;
-			}
-			.header {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				margin-bottom: 10px;
-			}
-			.logo {
-				height: 50px;
-			}
-			h1 {
-				font-size: 16px;
-				text-align: center;
-				color: #2c3e50;
-				margin: 10px 0;
-			}
-			.info-section {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 5px;
-				margin-bottom: 10px;
-			}
-			.info-item {
-				display: flex;
-				justify-content: space-between;
-				border-bottom: 1px solid #eee;
-			}
-			.info-label {
-				font-weight: bold;
-			}
-			table {
-				width: 100%;
-				border-collapse: collapse;
-				font-size: 9px;
-			}
-			th,
-			td {
-				border: 1px solid #ccc;
-				padding: 3px;
-				text-align: center;
-			}
-			th {
-				background-color: #f2f2f2;
-				font-weight: bold;
-			}
-			.total-saldo {
-				text-align: right;
-				font-size: 12px;
-				font-weight: bold;
-				margin-top: 5px;
-				padding: 4px;
-				border: 1px solid #ddd;
-			}
-			.footer {
-				margin-top: 10px;
-				text-align: center;
-				font-size: 8px;
-				color: #777;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="header">
-			<img src="data:image/png;base64,<%= logoBase64 %>" class="logo" alt="Logo" />
-			<div class="document-info">
-				<div>Documento: Estado de Compra</div>
-				<div>Fecha emisión: <%= fechaEmision %></div>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Estado de Compra</title>
+	<style>
+		@page {
+			size: A4;
+			margin: 0.5cm;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 10px;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+
+		.logo {
+			height: 50px;
+		}
+
+		h1 {
+			font-size: 16px;
+			text-align: center;
+			color: #2c3e50;
+			margin: 10px 0;
+		}
+
+		.info-section {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 5px;
+			margin-bottom: 10px;
+		}
+
+		.info-item {
+			display: flex;
+			justify-content: space-between;
+			border-bottom: 1px solid #eee;
+		}
+
+		.info-label {
+			font-weight: bold;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 9px;
+		}
+
+		th,
+		td {
+			border: 1px solid #ccc;
+			padding: 3px;
+			text-align: center;
+		}
+
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+
+		.total-saldo {
+			text-align: right;
+			font-size: 12px;
+			font-weight: bold;
+			margin-top: 5px;
+			padding: 4px;
+			border: 1px solid #ddd;
+		}
+
+		.cuota-vencida {
+			background-color: rgb(250, 229, 229);
+			/* rojo muy claro */
+		}
+
+		.footer {
+			margin-top: 10px;
+			text-align: center;
+			font-size: 8px;
+			color: #777;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<img src="data:image/png;base64,<%= logoBase64 %>" class="logo" alt="Logo" />
+		<div class="document-info">
+			<div>Documento: Estado de Compra</div>
+			<div>Fecha emisión: <%= fechaEmision %>
 			</div>
 		</div>
+	</div>
 
-		<h1>Estado de Compra</h1>
+	<h1>Estado de Compra</h1>
 
-		<div class="info-section">
-			<div class="info-item">
-				<span class="info-label">Factura:</span>
-				<span><%= factura %></span>
-			</div>
-			<div class="info-item">
-				<span class="info-label">Fecha de compra:</span>
-
-				<span
-					><%= new
-					Date(fechaCompra).toISOString().split('T')[0].split('-').reverse().join('/')
-					%></span
-				>
-			</div>
-			<div class="info-item">
-				<span class="info-label">Número de cuotas:</span>
-				<span><%= numCuotas %></span>
-			</div>
-			<div class="info-item">
-				<span class="info-label">Cuotas canceladas:</span>
-				<span><%= cuotasCanceladas %></span>
-			</div>
-			<div class="info-item">
-				<span class="info-label">Cuotas vencidas:</span>
-				<span><%= cuotasVencidas %></span>
-			</div>
-			<div class="info-item">
-				<span class="info-label">Cuotas pendientes:</span>
-				<span><%= cuotasPendientes %> (<%= cuotasAbonadas %> abonadas)</span>
-			</div>
+	<div class="info-section">
+		<div class="info-item">
+			<span class="info-label">Factura:</span>
+			<span>
+				<%= factura %>
+			</span>
 		</div>
+		<div class="info-item">
+			<span class="info-label">Fecha de compra:</span>
 
-		<table>
-			<thead>
-				<tr>
-					<th>N°</th>
-					<th>Inicia</th>
-					<th>Vence</th>
-					<th>Cuota</th>
-					<th>Interés</th>
-					<th>Capital</th>
-					<th>Abono</th>
-					<th>Saldo</th>
-					<th>Estado</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% items.forEach(item => { %>
-				<tr>
-					<td><%= item.NumeroCuota %></td>
-					<td>
-						<%= new
-						Date(item.Inicia).toISOString().split('T')[0].split('-').reverse().join('/')
-						%>
-					</td>
-					<td>
-						<%= new
-						Date(item.Vence).toISOString().split('T')[0].split('-').reverse().join('/')
-						%>
-					</td>
-					<td>$<%= item.ValorCuota.toFixed(2) %></td>
-					<td>$<%= item.Interes.toFixed(2) %></td>
-					<td>$<%= item.Capital.toFixed(2) %></td>
-					<td>$<%= item.Abono.toFixed(2) %></td>
-					<td>$<%= item.Saldo.toFixed(2) %></td>
-					<td><%= item.EstadoDescripcion %></td>
-				</tr>
-				<% }); %>
-			</tbody>
-		</table>
-
-		<div class="total-saldo">Saldo pendiente deuda: $<%= saldoPendiente %></div>
-
-		<div class="footer">
-			Documento generado automáticamente. Contacte al departamento de cobranzas
-			para más información.
+			<span>
+				<%= new Date(fechaCompra).toISOString().split('T')[0].split('-').reverse().join('/') %>
+			</span>
 		</div>
-	</body>
+		<div class="info-item">
+			<span class="info-label">Número de cuotas:</span>
+			<span>
+				<%= numCuotas %>
+			</span>
+		</div>
+		<div class="info-item">
+			<span class="info-label">Cuotas canceladas:</span>
+			<span>
+				<%= cuotasCanceladas %>
+			</span>
+		</div>
+		<div class="info-item">
+			<span class="info-label">Cuotas vencidas:</span>
+			<span>
+				<%= cuotasVencidas %>
+			</span>
+		</div>
+		<div class="info-item">
+			<span class="info-label">Dias en mora:</span>
+			<span>
+				<%= diasMora %>
+			</span>
+		</div>
+		<div class="info-item">
+			<span class="info-label">Cuotas pendientes:</span>
+			<span>
+				<%= cuotasPendientes %> (<%= cuotasAbonadas %> abonadas)
+			</span>
+		</div>
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>N°</th>
+				<th>Inicia</th>
+				<th>Vence</th>
+				<th>Cuota</th>
+				<th>Interés</th>
+				<th>Capital</th>
+				<th>Abono</th>
+				<th>Saldo</th>
+				<th>Estado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% const hoy=new Date(); %>
+				<% items.forEach(item=> {
+					const fechaVence = new Date(item.Vence);
+					const vencida = item.Estado !== 2 && fechaVence < hoy; %>
+						<tr class="<%= vencida ? 'cuota-vencida' : '' %>">
+							<td>
+								<%= item.NumeroCuota %>
+							</td>
+							<td>
+								<%= new Date(item.Inicia).toISOString().split('T')[0].split('-').reverse().join('/') %>
+							</td>
+							<td>
+								<%= new Date(item.Vence).toISOString().split('T')[0].split('-').reverse().join('/') %>
+							</td>
+							<td>$<%= item.ValorCuota.toFixed(2) %>
+							</td>
+							<td>$<%= item.Interes.toFixed(2) %>
+							</td>
+							<td>$<%= item.Capital.toFixed(2) %>
+							</td>
+							<td>$<%= item.Abono.toFixed(2) %>
+							</td>
+							<td>$<%= item.Saldo.toFixed(2) %>
+							</td>
+							<td>
+								<%= item.EstadoDescripcion %>
+							</td>
+						</tr>
+						<% }); %>
+		</tbody>
+	</table>
+
+	<div class="total-saldo">Saldo pendiente deuda: $<%= saldoPendiente %>
+	</div>
+
+	<div class="footer">
+		Documento generado automáticamente. Contacte al departamento de cobranzas
+		para más información.
+	</div>
+</body>
+
 </html>
