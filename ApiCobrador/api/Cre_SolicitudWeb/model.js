@@ -51,9 +51,22 @@ const Cre_SolicitudWeb = new EntitySchema({
             length: 20,
             nullable: true
         },
-         Fecha: {
-             type: 'datetime',
-             nullable: true
+        idCre_TiempoVivienda: {
+            type: 'int',
+            nullable: true
+        },
+        idSituacionLaboral: {
+            type: 'int',
+            default: 0
+        },
+        NumeroSolicitud: {
+            type: 'varchar',
+            length: 50,
+            nullable: true
+        },
+        Fecha: {
+            type: 'datetime',
+            nullable: true
         }
     }
 });
