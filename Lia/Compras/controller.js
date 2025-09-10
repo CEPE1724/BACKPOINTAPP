@@ -66,11 +66,27 @@ exports.Compra_Por_idCompra = async (req, res) => {
     if (!compra || compra.length === 0) {
       throw new Error('404')
     }
+    const hoy = new Date()
+
+    // Encontrar la primera cuota vencida (no cancelada)
+    const cuotaVencida = compra.find((c) => {
+      const fechaVence = new Date(c.Vence)
+      return c.Estado !== 2 && fechaVence < hoy
+    })
+
+    let diasMora = 0
+    if (cuotaVencida) {
+      const fechaVence = new Date(cuotaVencida.Vence)
+      const diffMs = hoy.getTime() - fechaVence.getTime()
+      diasMora = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+    }
+
     const numCuotas = compra.length
     const cuotasCanceladas = compra.filter((c) => c.Estado === 2).length
-    const cuotasVencidas = compra.filter(
-      (c) => c.EstadoDescripcion === 'EN MORA'
-    ).length
+    const cuotasVencidas = compra.filter((c) => {
+      const fechaVence = new Date(c.Vence)
+      return c.Estado !== 2 && fechaVence < hoy
+    }).length
     const cuotasAbonadas = compra.filter((c) => c.Estado === 3).length
     const cuotasPendientes = numCuotas - cuotasCanceladas - cuotasVencidas
     const saldoPendiente = compra
@@ -94,7 +110,8 @@ exports.Compra_Por_idCompra = async (req, res) => {
         saldoPendiente,
         fechaCompra: Fecha,
         fechaEmision,
-        logoBase64
+        logoBase64,
+        diasMora
       }
     )
 
@@ -176,6 +193,7 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
       const diffMs = hoy.getTime() - fechaVence.getTime()
       diasMora = Math.floor(diffMs / (1000 * 60 * 60 * 24))
     }
+
     const numCuotas = compra.length
     const cuotasCanceladas = compra.filter((c) => c.Estado === 2).length
     const cuotasVencidas = compra.filter((c) => {
@@ -187,45 +205,25 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
     const saldoPendiente = compra
       .reduce((acc, c) => acc + (c.Saldo || 0), 0)
       .toFixed(2)
-    const fechaEmision = new Date().toLocaleDateString()
 
-    const logoPath = path.join(__dirname, './image.png')
-    const logoBase64 = fs.readFileSync(logoPath, { encoding: 'base64' })
+    const resultSet = {
+      Factura: Factura,
+      FechaCompra: Fecha,
+      NumeroCuotas: numCuotas,
+      CuotasCanceladas: cuotasCanceladas,
+      CuotasAbonadas: cuotasAbonadas,
+      CuotasPendientes: cuotasPendientes,
+      CuotasVencidas: cuotasVencidas,
+      DiasMora: diasMora,
+      SaldoPendiente: saldoPendiente,
+      TablaAmortizacion: compra
+    }
 
-    const html = await ejs.renderFile(
-      path.join(__dirname, './templates/Compra.ejs'),
-      {
-        factura: Factura,
-        items: compra,
-        numCuotas,
-        cuotasCanceladas,
-        cuotasAbonadas,
-        cuotasPendientes,
-        cuotasVencidas,
-        saldoPendiente,
-        fechaCompra: Fecha,
-        fechaEmision,
-        logoBase64,
-        diasMora
-      }
-    )
-
-    const options = { format: 'A4' }
-
-    // Crear y enviar PDF
-    pdf.create(html, options).toBuffer((err, buffer) => {
-      if (err) {
-        console.error('Error generando PDF:', err)
-        return res.status(500).send('Error generando PDF')
-      }
-
-      res.set({
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': 'attachment; filename=estado-compra.pdf',
-        'Content-Length': buffer.length
-      })
-
-      res.send(buffer)
+    return res.status(200).json({
+      status: 'success',
+      message: 'Compra obtenida correctamente',
+      data: resultSet,
+      totalRecords: compra.length
     })
   } catch (error) {
     console.log(error)
