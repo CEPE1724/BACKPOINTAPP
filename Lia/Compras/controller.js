@@ -193,7 +193,7 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
       const diffMs = hoy.getTime() - fechaVence.getTime()
       diasMora = Math.floor(diffMs / (1000 * 60 * 60 * 24))
     }
-
+    const saldoVencido = matchCompra.SaldoVencido
     const numCuotas = compra.length
     const cuotasCanceladas = compra.filter((c) => c.Estado === 2).length
     const cuotasVencidas = compra.filter((c) => {
@@ -202,9 +202,9 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
     }).length
     const cuotasAbonadas = compra.filter((c) => c.Estado === 3).length
     const cuotasPendientes = numCuotas - cuotasCanceladas - cuotasVencidas
-    const saldoPendiente = compra
-      .reduce((acc, c) => acc + (c.Saldo || 0), 0)
-      .toFixed(2)
+    const saldoPendiente = Number(
+      compra.reduce((acc, c) => acc + (c.Saldo || 0), 0).toFixed(2)
+    )
 
     const resultSet = {
       Factura: Factura,
@@ -215,6 +215,7 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
       CuotasPendientes: cuotasPendientes,
       CuotasVencidas: cuotasVencidas,
       DiasMora: diasMora,
+      SaldoVencido: saldoVencido,
       SaldoPendiente: saldoPendiente,
       TablaAmortizacion: compra
     }
