@@ -164,7 +164,6 @@ exports.CarritoAgregarDetalle = async (req, res) => {
   const API_URL =
     process.env.MARKETPLACE_API_URL ||
     'https://ecommerce.appservices.com.ec/api/v1/'
-  console.log('API_URL', API_URL)
   try {
     const {
       idWEB_Carrito,
@@ -184,9 +183,11 @@ exports.CarritoAgregarDetalle = async (req, res) => {
       })
     }
     // Extraer la ruta del URL (sin validación)
-    const ItemUrl = new URL(UrlItem).pathname
+    const ItemUrl = /^https?:\/\//i.test(UrlItem || '')
+      ? new URL(UrlItem).pathname
+      : null
     const detalle = {
-      idWEB_Carrito,
+      idWEB_Carrito: idWEB_Carrito || null,
       idWEB_Categoria,
       idItem,
       cantidad,
@@ -224,6 +225,7 @@ exports.CarritoAgregarDetalle = async (req, res) => {
     })
   } catch (error) {
     console.error('CarritoAgregarDetalle Error:', error)
+
     return res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor',
