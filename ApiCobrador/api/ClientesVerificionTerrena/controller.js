@@ -3,6 +3,7 @@ const { AppDataSource } = require("../config/database");
 const ClientesVerificionTerrena = require('./model');
 const socketIO = require('../../sockets/socketio');
 const { handleNewVT, handleNewVTCount } = require('../../sockets/eventHandlers');
+const { Between } = require('typeorm');
 
 exports.alllist = async (req, res) => {
     const { idVerificador } = req.query; // Obtener los parámetros de consulta
@@ -12,21 +13,27 @@ exports.alllist = async (req, res) => {
 
     try {
         // Usar un enfoque con `where` optimizado por `FechaSistema` u otro campo único
+        const today = new Date();
+        const fifteenDaysAgo = new Date();
+        fifteenDaysAgo.setDate(today.getDate() - 15);
+
         const [registros, total] = await Promise.all([
             AppDataSource.getRepository(ClientesVerificionTerrena).find({
-                where: {
-                    idVerificador: idVerificador
-                },
-                take: limit, // Límite de registros por página
-                skip: offset, // Paginación
-                order: {
-                    FechaSistema: 'DESC' // Ordenar por FechaSistema en orden descendente
-                }
+            where: {
+                idVerificador: idVerificador,
+                FechaSistema: Between(fifteenDaysAgo, today)
+            },
+            take: limit,
+            skip: offset,
+            order: {
+                FechaSistema: 'DESC'
+            }
             }),
             AppDataSource.getRepository(ClientesVerificionTerrena).count({
-                where: {
-                    idVerificador: idVerificador
-                }
+            where: {
+                idVerificador: idVerificador,
+                FechaSistema: Between(fifteenDaysAgo, today)
+            }
             })
         ]);
 
@@ -45,12 +52,16 @@ exports.countEstado = async (req, res) => {
     const { idVerificador } = req.query; // Obtener los parámetros de consulta
     
     try {
+        const today = new Date();
+        const fifteenDaysAgo = new Date();
+        fifteenDaysAgo.setDate(today.getDate() - 15);
         // Obtener el conteo y los estados agrupados
         const estadosCount = await AppDataSource.getRepository(ClientesVerificionTerrena)
             .createQueryBuilder('clientes')
             .select('COUNT(iEstado) AS Count')
             .addSelect('CASE WHEN iEstado = 0 THEN \'PENDIENTE\' WHEN iEstado = 1 THEN \'ENVIADO\' WHEN iEstado = 2 THEN \'ANULADO\' END AS eSTADO')
             .where('idVerificador = :idVerificador', { idVerificador })
+            .andWhere('FechaSistema BETWEEN :fifteenDaysAgo AND :today', { fifteenDaysAgo, today })
             .groupBy('iEstado')
             .getRawMany();
             handleNewVTCount(estadosCount); // Si necesitas emitir esta información, ajusta la función según sea necesario
