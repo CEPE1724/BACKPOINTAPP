@@ -2,7 +2,8 @@ const { Storage } = require('@google-cloud/storage')
 const path = require('path')
 const fs = require('fs')
 const multer = require('multer')
-
+const { AppDataSource } = require("../config/database");
+const DTIngreso = require('../DTIngreso/model');
 // Cargar las credenciales de Google Cloud desde un archivo JSON
 const credentialsPath = path.join(__dirname, '../../api/key/credentials.json')
 const credentials = JSON.parse(fs.readFileSync(credentialsPath))
@@ -170,6 +171,50 @@ exports.uploadFileToGCSLatinium = async (req, res) => {
     console.log(`${fileName} eliminado del servidor local.`)
   } catch (error) {
     console.error('Error al subir el archivo:', error)
+    res.status(500).json({
+      status: 'error',
+      message: 'Error interno del servidor.'
+    })
+  }
+}
+
+
+exports.getFilesFromGCSDepartamentoTecnico = async (req, res) => {
+  try {
+    const { idIngreso, Ingreso } = req.params;
+
+    if (!idIngreso || !Ingreso) {
+      return res
+        .status(400)
+        .json({ status: 'error', message: "Se requiere 'idIngreso' e 'Ingreso'." })
+    }
+
+    // Obtener la entidad DTIngreso desde la base de datos
+    const dtIngresoRepository = AppDataSource.getRepository(DTIngreso);
+    const dtIngreso = await dtIngresoRepository.findOneBy({ idIngreso: parseInt(idIngreso) });
+    console.log(dtIngreso);
+    
+
+    if (!dtIngreso) {
+      return res
+        .status(404)
+        .json({ status: 'error', message: 'DTIngreso no encontrado.' })
+    }
+
+    // Lógica para obtener archivos de GCS para el departamento técnico
+
+    // update igoogle a 1 
+    dtIngreso.iGoogle = 1;
+    await dtIngresoRepository.save(dtIngreso);
+    console.log('iGoogle actualizado a 1 para DTIngreso con id:', idIngreso);
+    res.json({
+      status: 'success',
+      message: `Archivos para DTIngreso con id ${idIngreso} e Ingreso ${Ingreso} procesados.`,
+      data: dtIngreso
+    });
+
+  } catch (error) {
+    console.error('Error al obtener archivos de GCS:', error)
     res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor.'
