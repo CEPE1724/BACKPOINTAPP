@@ -41,7 +41,6 @@ router.post(
   controller.registrarIndependiente
 );
 
-module.exports = router;
 // Rutas de consulta de ubicaciones
 router.get("/provincias", controller.getProvincias);
 router.get("/cantones", controller.getCantones); // ?idProvincia=1
@@ -50,3 +49,5 @@ router.get("/barrios", controller.getBarrios); // ?idParroquia=1
 router.get("/parentescos", controller.getParentescos); // Nueva ruta para parentescos
 router.get("/actividades-economicas", controller.getActividadesEconomicas); // Nueva ruta para actividades económicas
 router.get("/estado-solicitud-por-cedula", controller.getEstadoSolicitudPorCedula);
+
+module.exports = router;
