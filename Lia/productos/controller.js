@@ -11,7 +11,6 @@ exports.Productos_WEB_LHIA = async (req, res) => {
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
     const filtroTitulo = req.query.filtroTitulo
-    console.log(filtroTitulo)
     const result = await AppDataSource.query(
       'EXEC dbo.ObtenerWEBProductosLhia @filtroTitulo = @0',
       [filtroTitulo]
@@ -43,7 +42,7 @@ exports.Productos_WEB_LHIA = async (req, res) => {
       totalRecords: result.length
     })
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor',
@@ -55,6 +54,9 @@ exports.Productos_WEB_LHIA = async (req, res) => {
 
 exports.Ofertas_WEB_LHIA = async (req, res) => {
   try {
+    const tasaAnual = await this.ObtenerTasaAnual()
+    const numCuotas = 18
+    const tablaRangoCuotaPR = await this.ObtenerTablaRangoCuotaPR()
     const filtroTitulo = req.query.filtroTitulo
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
@@ -79,8 +81,13 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
             Imagen: fila.Imagen,
             Tarjeta: fila.Tarjeta,
             Credito: fila.Credito,
-            Cuotas: fila.Cuotas,
-            ValorCuota: fila.ValorCuota,
+            Cuotas: numCuotas,
+            ValorCuota: this.CalcularValorCuota(
+              fila.Credito,
+              numCuotas,
+              tasaAnual,
+              tablaRangoCuotaPR
+            ),
             idWEB_Categorias: fila.idWEB_Categorias,
             URL: `${BaseUrl}productooferta/${encodeURIComponent(fila.Titulo)}-${fila.idItem}`,
             detalles: []
@@ -101,7 +108,7 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
       totalRecords: ofertasAgrupadas.length
     })
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor',
@@ -160,7 +167,7 @@ exports.Baratazos_WEB_LHIA = async (req, res) => {
       totalRecords: baratazosAgrupadas.length
     })
   } catch (error) {
-    console.log(error)
+    console.error(error)
     return res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor',
@@ -353,7 +360,7 @@ exports.CarritoObtenerCompleto = async (req, res) => {
   }
 }
 
-CalculaCuotaInicial = (capital, cuotas, tasaAnual) => {
+exports.CalculaCuotaInicial = (capital, cuotas, tasaAnual) => {
   const tasaMensualDecimal = tasaAnual / 12 / 100
   if (tasaMensualDecimal === 0) {
     return capital / cuotas
@@ -364,14 +371,14 @@ CalculaCuotaInicial = (capital, cuotas, tasaAnual) => {
   return Math.round(valorCuotas * 100) / 100
 }
 
-ObtenerTasaAnual = async () => {
+exports.ObtenerTasaAnual = async () => {
   const fechaActual = new Date()
   const idEntidadFinanciera = 1
   const tasaAnual = await AppDataSource.query(
     `Select TasaAnual
   	From Cre_Parametros
-  	Where @fechaActual Between CONVERT(Date, Desde) And CONVERT(Date, Hasta)
-  	And idEntidadFinanciera = @idEntidadFinanciera
+  	Where @0 Between CONVERT(Date, Desde) And CONVERT(Date, Hasta)
+  	And idEntidadFinanciera = @1
   `,
     [fechaActual, idEntidadFinanciera]
   ).then((result) => {
@@ -380,12 +387,12 @@ ObtenerTasaAnual = async () => {
   return tasaAnual
 }
 
-CalcularValorCuota = (capital, cuotas, tasaAnual, tCompProt) => {
-  const cuotaSinPr = this.CalculaCuotaInicial(capital, cuotas, tasaAnual)
+exports.CalcularValorCuota = (capital, cuotas, tasaAnual, tCompProt) => {
+  const cuotaSinPR = this.CalculaCuotaInicial(capital, cuotas, tasaAnual)
   const rango = tCompProt.find(
-    (r) => cuotaSinPR >= Number(r.desde) && cuotaSinPR <= Number(r.hasta)
+    (r) => cuotaSinPR >= Number(r.Desde) && cuotaSinPR <= Number(r.Hasta)
   )
-  const precioBasePR = rango ? Number(rango.precio) : 9.99
+  const precioBasePR = rango ? Number(rango.Precio) : 9.99
   const precioPointRespaldo = precioBasePR * 1.15 * cuotas
   const MontoFinanciamiento = capital + precioPointRespaldo
   const cuotaConPR = this.CalculaCuotaInicial(
@@ -396,10 +403,9 @@ CalcularValorCuota = (capital, cuotas, tasaAnual, tCompProt) => {
   return cuotaConPR
 }
 
-ObtenerTablaRangoCuotaPR = async () => {
+exports.ObtenerTablaRangoCuotaPR = async () => {
   const result = await AppDataSource.query(
     `SELECT * FROM RangoCuotaPointRespaldo`
   )
-  console.log('tabla rangos: ', result)
   return result
 }
