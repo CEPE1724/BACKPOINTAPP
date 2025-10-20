@@ -5,6 +5,9 @@ require('dotenv').config({ path: '../../.env' }) // Cargar las variables de ento
 
 exports.Productos_WEB_LHIA = async (req, res) => {
   try {
+    const tasaAnual = await this.ObtenerTasaAnual()
+    const numCuotas = 18
+    const tablaRangoCuotaPR = await this.ObtenerTablaRangoCuotaPR()
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
     const filtroTitulo = req.query.filtroTitulo
@@ -23,6 +26,13 @@ exports.Productos_WEB_LHIA = async (req, res) => {
     }
     const productosConURL = result.map((p) => ({
       ...p,
+      Cuotas: numCuotas,
+      ValorCuota: this.CalcularValorCuota(
+        p.Credito,
+        numCuotas,
+        tasaAnual,
+        tablaRangoCuotaPR
+      ),
       URL: `${BaseUrl}producto/${encodeURIComponent(p.Titulo)}-${p.idItem}`
     }))
 
@@ -341,4 +351,55 @@ exports.CarritoObtenerCompleto = async (req, res) => {
       totalRecords: 0
     })
   }
+}
+
+CalculaCuotaInicial = (capital, cuotas, tasaAnual) => {
+  const tasaMensualDecimal = tasaAnual / 12 / 100
+  if (tasaMensualDecimal === 0) {
+    return capital / cuotas
+  }
+  const numerador = tasaMensualDecimal
+  const denominador = 1 - Math.pow(1 + tasaMensualDecimal, -cuotas)
+  const valorCuotas = capital * (numerador / denominador)
+  return Math.round(valorCuotas * 100) / 100
+}
+
+ObtenerTasaAnual = async () => {
+  const fechaActual = new Date()
+  const idEntidadFinanciera = 1
+  const tasaAnual = await AppDataSource.query(
+    `Select TasaAnual
+  	From Cre_Parametros
+  	Where @fechaActual Between CONVERT(Date, Desde) And CONVERT(Date, Hasta)
+  	And idEntidadFinanciera = @idEntidadFinanciera
+  `,
+    [fechaActual, idEntidadFinanciera]
+  ).then((result) => {
+    return result[0].TasaAnual
+  })
+  return tasaAnual
+}
+
+CalcularValorCuota = (capital, cuotas, tasaAnual, tCompProt) => {
+  const cuotaSinPr = this.CalculaCuotaInicial(capital, cuotas, tasaAnual)
+  const rango = tCompProt.find(
+    (r) => cuotaSinPR >= Number(r.desde) && cuotaSinPR <= Number(r.hasta)
+  )
+  const precioBasePR = rango ? Number(rango.precio) : 9.99
+  const precioPointRespaldo = precioBasePR * 1.15 * cuotas
+  const MontoFinanciamiento = capital + precioPointRespaldo
+  const cuotaConPR = this.CalculaCuotaInicial(
+    MontoFinanciamiento,
+    cuotas,
+    tasaAnual
+  )
+  return cuotaConPR
+}
+
+ObtenerTablaRangoCuotaPR = async () => {
+  const result = await AppDataSource.query(
+    `SELECT * FROM RangoCuotaPointRespaldo`
+  )
+  console.log('tabla rangos: ', result)
+  return result
 }
