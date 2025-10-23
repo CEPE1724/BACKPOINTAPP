@@ -1033,4 +1033,33 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
       detalle: err.message,
     });
   }
-};
+}
+
+exports.validarIdentificacion = async (req, res) => {
+  const { NumeroId, IdTipoRuc } = req.query
+  if (!NumeroId || !IdTipoRuc) {
+    return res
+      .status(400)
+      .json({ mensaje: 'Falta el parámetro NumeroId o IdTipoRuc.' })
+  }
+  try {
+    const result = await AppDataSource.query(
+      `SELECT dbo.ValidaIdentificacion(@0, @1) AS Validacion`,
+      [NumeroId, IdTipoRuc]
+    )
+    console.log(result)
+    if (!result || result.length === 0) {
+      throw new Error('No se pudo validar la identificación.')
+    }
+    return res.status(200).json({
+      status: 200,
+      message: `Estado de validacion: ${result[0].Validacion}`,
+      data: result[0].Validacion
+    })
+  } catch (err) {
+    return res.status(500).json({
+      mensaje: 'Error validando identificación',
+      detalle: err.message
+    })
+  }
+}
