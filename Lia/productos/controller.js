@@ -7,7 +7,6 @@ exports.Productos_WEB_LHIA = async (req, res) => {
   try {
     const tasaAnual = await this.ObtenerTasaAnual()
     const numCuotas = 18
-    const tablaRangoCuotaPR = await this.ObtenerTablaRangoCuotaPR()
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
     const filtroTitulo = req.query.filtroTitulo
@@ -23,17 +22,18 @@ exports.Productos_WEB_LHIA = async (req, res) => {
         totalRecords: 0
       })
     }
-    const productosConURL = result.map((p) => ({
-      ...p,
-      Cuotas: numCuotas,
-      ValorCuota: this.CalcularValorCuota(
-        p.Credito,
-        numCuotas,
-        tasaAnual,
-        tablaRangoCuotaPR
-      ),
-      URL: `${BaseUrl}producto/${encodeURIComponent(p.Titulo)}-${p.idItem}`
-    }))
+    const productosConURL = await Promise.all(
+      result.map(async (p) => ({
+        ...p,
+        Cuotas: numCuotas,
+        ValorCuota: await exports.CalcularValorCuota(
+          p.Credito,
+          numCuotas,
+          tasaAnual
+        ),
+        URL: `${BaseUrl}producto/${encodeURIComponent(p.Titulo)}-${p.idItem}`
+      }))
+    )
 
     return res.status(200).json({
       status: 'success',
@@ -56,7 +56,6 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
   try {
     const tasaAnual = await this.ObtenerTasaAnual()
     const numCuotas = 18
-    const tablaRangoCuotaPR = await this.ObtenerTablaRangoCuotaPR()
     const filtroTitulo = req.query.filtroTitulo
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
@@ -72,35 +71,37 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
         totalRecords: 0
       })
     }
-    const ofertasAgrupadas = Object.values(
-      result.reduce((acc, fila) => {
-        if (!acc[fila.idItem]) {
-          acc[fila.idItem] = {
-            idItem: fila.idItem,
-            Titulo: fila.Titulo,
-            Imagen: fila.Imagen,
-            Tarjeta: fila.Tarjeta,
-            Credito: fila.Credito,
-            Cuotas: numCuotas,
-            ValorCuota: this.CalcularValorCuota(
-              fila.Credito,
-              numCuotas,
-              tasaAnual,
-              tablaRangoCuotaPR
-            ),
-            idWEB_Categorias: fila.idWEB_Categorias,
-            URL: `${BaseUrl}productooferta/${encodeURIComponent(fila.Titulo)}-${fila.idItem}`,
-            detalles: []
-          }
+    const ofertasAgrupadasMap = {}
+
+    for (const fila of result) {
+      if (!ofertasAgrupadasMap[fila.idItem]) {
+        ofertasAgrupadasMap[fila.idItem] = {
+          idItem: fila.idItem,
+          Titulo: fila.Titulo,
+          Imagen: fila.Imagen,
+          Tarjeta: fila.Tarjeta,
+          Credito: fila.Credito,
+          Cuotas: numCuotas,
+          ValorCuota: await exports.CalcularValorCuota(
+            fila.Credito,
+            numCuotas,
+            tasaAnual
+          ),
+          idWEB_Categorias: fila.idWEB_Categorias,
+          URL: `${BaseUrl}productooferta/${encodeURIComponent(fila.Titulo)}-${fila.idItem}`,
+          detalles: []
         }
-        acc[fila.idItem].detalles.push({
-          idWEB_DetalleOfertas: fila.idWEB_DetalleOfertas,
-          Producto: fila.Producto,
-          ProductoImagen: fila.ProductoImagen
-        })
-        return acc
-      }, {})
-    )
+      }
+
+      ofertasAgrupadasMap[fila.idItem].detalles.push({
+        idWEB_DetalleOfertas: fila.idWEB_DetalleOfertas,
+        Producto: fila.Producto,
+        ProductoImagen: fila.ProductoImagen
+      })
+    }
+
+    const ofertasAgrupadas = Object.values(ofertasAgrupadasMap)
+
     return res.status(200).json({
       status: 'success',
       message: 'Productos obtenidos correctamente',
@@ -387,13 +388,15 @@ exports.ObtenerTasaAnual = async () => {
   return tasaAnual
 }
 
-exports.CalcularValorCuota = (capital, cuotas, tasaAnual, tCompProt) => {
+exports.CalcularValorCuota = async (capital, cuotas, tasaAnual) => {
   const cuotaSinPR = this.CalculaCuotaInicial(capital, cuotas, tasaAnual)
-  const rango = tCompProt.find(
-    (r) => cuotaSinPR >= Number(r.Desde) && cuotaSinPR <= Number(r.Hasta)
-  )
-  const precioBasePR = rango ? Number(rango.Precio) : 9.99
-  const precioPointRespaldo = precioBasePR * 1.15 * cuotas
+  const precioPointRespaldoSinIva = await AppDataSource.query(
+    `EXEC Cre_CalcularPrecioPointRespaldo
+          @valorCuota = @0,
+          @numeroCuotas = @1`,
+    [cuotaSinPR, cuotas]
+  ).then((res) => res?.[0]?.Total ?? 0)
+  const precioPointRespaldo = precioPointRespaldoSinIva * 1.15
   const MontoFinanciamiento = capital + precioPointRespaldo
   const cuotaConPR = this.CalculaCuotaInicial(
     MontoFinanciamiento,
@@ -401,11 +404,4 @@ exports.CalcularValorCuota = (capital, cuotas, tasaAnual, tCompProt) => {
     tasaAnual
   )
   return cuotaConPR
-}
-
-exports.ObtenerTablaRangoCuotaPR = async () => {
-  const result = await AppDataSource.query(
-    `SELECT * FROM RangoCuotaPointRespaldo`
-  )
-  return result
 }
