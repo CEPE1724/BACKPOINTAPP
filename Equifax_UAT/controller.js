@@ -194,7 +194,7 @@ exports.equifaxOauth = async (req, res) => {
         const segmentacionDTO = parseSegmentacion(interconnectResponse.resultado_segmentacion || []);
         const politicasDTO = parseInterconnectResultadoPoliticas(interconnectResponse.resultado_politicas || []);
         const resultadoDTO = parseInterconnectResultado(interconnectResponse.resultado || []);
-        const sriDTO = parseInformacionSRI(informacion_sri || []);
+       // const sriDTO = parseInformacionSRI(informacion_sri || []);
         const resumenInformeDTO = parseResumenInforme(resumen_informe || []);
         const scoreInclusionDTO = parseScoreInclusion(score_inclusion || []);
         const scoreDTO = parseScore(score || []);
@@ -257,7 +257,7 @@ exports.equifaxOauth = async (req, res) => {
             { repo: EQFX_UAT_resultado_segmentacion, data: segmentacionDTO, name: 'segmentacionDTO', name: 'segmentacionDTO' },
             { repo: EQFX_UAT_resultado_politicas, data: politicasDTO, name: 'politicasDTO', name: 'politicasDTO' },
             { repo: EQFX_UAT_resultado, data: resultadoDTO, name: 'resultadoDTO', name: 'resultadoDTO' },
-            { repo: EQFX_UAT_informacion_sri, data: sriDTO, name: 'sriDTO', name: 'sriDTO' }, /* 2*/
+            //{ repo: EQFX_UAT_informacion_sri, data: sriDTO, name: 'sriDTO', name: 'sriDTO' }, /* 2*/
             { repo: EQFX_UAT_score_inclusion, data: scoreInclusionDTO, name: 'scoreInclusionDTO', name: 'scoreInclusionDTO' }, /* 3 */
             { repo: EQFX_UAT_resumen_informe, data: resumenInformeDTO, name: 'resumenInformeDTO', name: 'resumenInformeDTO' }, /* 4 */
             { repo: EQFX_UAT_score, data: scoreDTO, name: 'scoreDTO', name: 'scoreDTO' }, /* 5 */
@@ -313,6 +313,7 @@ exports.equifaxOauth = async (req, res) => {
             console.log(`Guardando datos en ${name}...`);
             const repository = AppDataSource.getRepository(repo);
             await saveDTODataIfExists(repository, data, 'idEQFX_IdentificacionConsultada', idEQFX_IdentificacionConsultada);
+            console.log("ideqfx", idEQFX_IdentificacionConsultada);
             console.log(`Datos guardados en ${name} correctamente.`);
         }
         return res.status(200).json({
