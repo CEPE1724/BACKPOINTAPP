@@ -161,15 +161,12 @@ exports.Compra_Por_Ruc_IdCompra = async (req, res) => {
     if (!compras || compras.length === 0) {
       throw new Error('404')
     }
-
     const matchCompra = compras.find((c) => c.idCompra === idCompra)
     if (!matchCompra) {
       throw new Error('404')
     }
-
     const Factura = matchCompra.Factura
-    const dateObj = new Date(matchCompra.Fecha)
-    const Fecha = dateObj.toISOString().split('T')[0]
+    const Fecha = new Date(matchCompra.FechaCompra).toISOString().split('T')[0]
     const compra = await AppDataSource.query(
       `
       exec dbo.ObtenerEstadoCompraPorId @0;
