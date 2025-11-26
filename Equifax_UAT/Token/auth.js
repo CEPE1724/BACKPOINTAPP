@@ -4,7 +4,7 @@ require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 const jwt = require('jsonwebtoken');
 
 const secretKey = process.env.FIXED_TOKEN_EQUIFAX_UAT;
-
+  
 // Validar que la clave secreta esté configurada
 if (!secretKey) {
     console.error('❌ ERROR: FIXED_TOKEN_EQUIFAX_UAT no está definida en .env');
