@@ -1,22 +1,26 @@
-require('dotenv').config({ path: '../.env' }) // Cargar las variables de entorno
-
+// ./Lia/token.js
+const path = require('path')
+require('dotenv').config({ path: path.join(__dirname, '../.env') })
 const jwt = require('jsonwebtoken')
-// Información del cliente (esto podría venir de tu base de datos o de otro lugar)
+
 const cliente = {
   clienteId: 4,
   nombre: 'LiaGestionesPoint$.$',
   correo: 'dpozo@point.com.ec',
-  roles: ['usuario', 'Lia'] // Ejemplo de roles
+  roles: ['usuario', 'Lia']
 }
-// Leer la clave secreta desde las variables de entorno
-const secretKey = process.env.FIXED_TOKEN_LIA // Cambié SECRET_KEY por FIXED_TOKEN_WHATSAPP
+
+const secretKey = process.env.FIXED_TOKEN_LIA
 
 if (!secretKey) {
-  console.error('Error: La clave secreta no está definida en el archivo .env')
-  process.exit(1) // Detener la ejecución si no se encuentra la clave secreta
+  console.error('❌ Error: FIXED_TOKEN_LIA no está definida en .env')
+  process.exit(1)
 }
 
-// Crear un token estático con la información del cliente
-const token = jwt.sign(cliente, secretKey, { expiresIn: '365d' }) // El token durará 1 año
+const token = jwt.sign(cliente, secretKey, { expiresIn: '365d' })
 
-console.log('Token generado:', token)
+console.log('\n✅ Token JWT generado correctamente [Lia]\n')
+console.log('📋 Copia este token:\n')
+console.log(token)
+console.log('\n📝 Uso: Authorization: Bearer ' + token)
+console.log('')

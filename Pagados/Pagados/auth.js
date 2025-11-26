@@ -1,37 +1,59 @@
-// ./ApiCobrador/api/config/auth.js
-require('dotenv').config({ path: '../../.env' });  // Cargar las variables de entorno desde el archivo .env
+// ./Pagados/Pagados/auth.js
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../../.env') });
 const jwt = require('jsonwebtoken');
-const secretKey = process.env.FIXED_TOKEN_PAGADOS;  // Clave secreta para verificar el token
 
-// Middleware para validar el token
+const secretKey = process.env.FIXED_TOKEN_PAGADOS;
+
+if (!secretKey) {
+    console.error('❌ ERROR: FIXED_TOKEN_PAGADOS no está definida en .env');
+} else {
+    console.log('✅ Secret key PAGADOS cargada correctamente');
+}
+
 const validateToken = (req, res, next) => {
-    const authHeader = req.headers['authorization'];  // Obtenemos el token del encabezado 'Authorization'
+    const authHeader = req.headers['authorization'];
 
-    // Si el token está presente
-    if (authHeader) {
-        const token = authHeader.split(' ')[1];  // El formato debería ser 'Bearer token'
+    console.log('🔍 [Pagados] Validando token...');
+    console.log('Authorization header:', authHeader ? 'Presente' : 'Ausente');
 
-        // Verificamos el token con la clave secreta
-        jwt.verify(token, secretKey, (err, decoded) => {
-            if (err) {
-                // Si el token no es válido, respondemos con error
-                return res.status(403).json({
-                    status: 'error',
-                    message: 'Forbidden: Invalid token',
-                    data: null  // No hay datos en caso de error
-                });
-            }
-            req.user = decoded;  // Adjuntamos la información del cliente al objeto 'req'
-            next();  // Llamamos al siguiente middleware o controlador
-        });
-    } else {
-        // Si no se proporciona el token, respondemos con error
+    if (!authHeader) {
+        console.log('❌ No se proporcionó token');
         return res.status(403).json({
             status: 'error',
             message: 'Forbidden: No token provided',
-            data: null  // No hay datos en caso de error
+            data: null
         });
     }
+
+    const token = authHeader.startsWith('Bearer ') 
+        ? authHeader.split(' ')[1] 
+        : authHeader;
+
+    if (!token) {
+        console.log('❌ Token vacío después de extraer');
+        return res.status(403).json({
+            status: 'error',
+            message: 'Forbidden: Invalid token format',
+            data: null
+        });
+    }
+
+    jwt.verify(token, secretKey, (err, decoded) => {
+        if (err) {
+            console.log('❌ Token inválido:', err.message);
+            return res.status(403).json({
+                status: 'error',
+                message: 'Forbidden: Invalid token',
+                data: null,
+                error: process.env.NODE_ENV === 'development' ? err.message : undefined
+            });
+        }
+        
+        console.log('✅ Token válido para:', decoded.nombre);
+        req.user = decoded;
+        next();
+    });
 };
 
 module.exports = validateToken;
