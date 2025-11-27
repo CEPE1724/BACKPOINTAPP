@@ -508,43 +508,43 @@ function validarReferencia(ref) {
       }
     }
   }
-  let idProvincia = null
-  let tieneProvincia = false
-  for (const key of provincia) {
-    if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
-      idProvincia = Number(ref[key])
-      tieneProvincia = true
-      break
-    }
-  }
-  if (!tieneProvincia) {
-    return {
-      valido: false,
-      mensaje: 'El campo idProvincia es obligatorio en la referencia.'
-    }
-  }
-  let idCanton = null
-  let tieneCanton = false
-  for (const key of canton) {
-    if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
-      idCanton = Number(ref[key])
-      tieneCanton = true
-      break
-    }
-  }
-  if (!tieneCanton) {
-    return {
-      valido: false,
-      mensaje: 'El campo idCanton es obligatorio en la referencia.'
-    }
-  }
+  // let idProvincia = null
+  // let tieneProvincia = false
+  // for (const key of provincia) {
+  //   if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
+  //     idProvincia = Number(ref[key])
+  //     tieneProvincia = true
+  //     break
+  //   }
+  // }
+  // if (!tieneProvincia) {
+  //   return {
+  //     valido: false,
+  //     mensaje: 'El campo idProvincia es obligatorio en la referencia.'
+  //   }
+  // }
+  // let idCanton = null
+  // let tieneCanton = false
+  // for (const key of canton) {
+  //   if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
+  //     idCanton = Number(ref[key])
+  //     tieneCanton = true
+  //     break
+  //   }
+  // }
+  // if (!tieneCanton) {
+  //   return {
+  //     valido: false,
+  //     mensaje: 'El campo idCanton es obligatorio en la referencia.'
+  //   }
+  // }
   const idParentesco = Number(ref.idParentesco)
-  if (!(idProvincia >= 0 && idProvincia <= 25)) {
-    return { valido: false, mensaje: 'Provincia de la referencia no válida.' }
-  }
-  if (!(idCanton >= 0 && idCanton <= 232)) {
-    return { valido: false, mensaje: 'Cantón de la referencia no válido.' }
-  }
+  // if (!(idProvincia >= 0 && idProvincia <= 25)) {
+  //   return { valido: false, mensaje: 'Provincia de la referencia no válida.' }
+  // }
+  // if (!(idCanton >= 0 && idCanton <= 232)) {
+  //   return { valido: false, mensaje: 'Cantón de la referencia no válido.' }
+  // }
   if (!(idParentesco >= 1 && idParentesco <= 21)) {
     return { valido: false, mensaje: 'Parentesco de la referencia no válido.' }
   }
