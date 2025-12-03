@@ -52,3 +52,6 @@ iisnode/
 key.json
 /key.json
 ./key.json
+
+ApiCobrador/api/key/key.json
+ApiCobrador/api/TerrenaGestionDomicilio/
