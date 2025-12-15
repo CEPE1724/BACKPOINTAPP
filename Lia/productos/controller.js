@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 const { AppDataSource } = require('../../ApiCobrador/api/config/database')
+const { procesarTerminosBusqueda } = require('../utils/searchUtils')
 
 require('dotenv').config({ path: '../../.env' }) // Cargar las variables de entorno desde el archivo .env
 
@@ -10,9 +11,18 @@ exports.Productos_WEB_LHIA = async (req, res) => {
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
     const filtroTitulo = req.query.filtroTitulo
+    // Procesar términos de búsqueda
+    let terminosProcesados = null
+    if (filtroTitulo) {
+      const terminos = procesarTerminosBusqueda(filtroTitulo)
+      terminosProcesados = terminos.join(',')
+      // Log para debug
+      //console.log('Búsqueda original:', filtroTitulo)
+      //console.log('Términos procesados:', terminos)
+    }
     const result = await AppDataSource.query(
-      'EXEC dbo.ObtenerWEBProductosLhia @filtroTitulo = @0',
-      [filtroTitulo]
+      'EXEC dbo.ObtenerWEBProductosLhia @FiltroTitulo = @0',
+      [terminosProcesados]
     )
     if (!result || result.length === 0) {
       return res.status(404).json({
@@ -34,7 +44,6 @@ exports.Productos_WEB_LHIA = async (req, res) => {
         URL: `${BaseUrl}producto/${encodeURIComponent(p.Titulo)}-${p.idItem}`
       }))
     )
-
     return res.status(200).json({
       status: 'success',
       message: 'Productos obtenidos correctamente',
@@ -42,7 +51,7 @@ exports.Productos_WEB_LHIA = async (req, res) => {
       totalRecords: result.length
     })
   } catch (error) {
-    console.error(error)
+    console.error('Error en Productos_WEB_LHIA:', error)
     return res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor',
@@ -59,10 +68,22 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
     const filtroTitulo = req.query.filtroTitulo
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
+
+    // Procesar términos de búsqueda
+    let terminosProcesados = null
+    if (filtroTitulo) {
+      const terminos = procesarTerminosBusqueda(filtroTitulo)
+      terminosProcesados = terminos.join(',')
+
+      //console.log('Búsqueda ofertas original:', filtroTitulo)
+      //console.log('Términos procesados:', terminos)
+    }
+
     const result = await AppDataSource.query(
-      'EXEC dbo.ObtenerWEBOfertasLhia @filtroTitulo = @0',
-      [filtroTitulo]
+      'EXEC dbo.ObtenerWEBOfertasLhia @FiltroTitulo = @0',
+      [terminosProcesados]
     )
+
     if (!result || result.length === 0) {
       return res.status(404).json({
         status: 'error',
@@ -71,6 +92,7 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
         totalRecords: 0
       })
     }
+
     const ofertasAgrupadasMap = {}
 
     for (const fila of result) {
@@ -79,6 +101,8 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
           idItem: fila.idItem,
           Titulo: fila.Titulo,
           Imagen: fila.Imagen,
+          Descripcion: fila.Descripcion,
+          PalabrasClave: fila.PalabrasClave,
           Tarjeta: fila.Tarjeta,
           Credito: fila.Credito,
           Cuotas: numCuotas,
@@ -89,6 +113,7 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
           ),
           idWEB_Categorias: fila.idWEB_Categorias,
           URL: `${BaseUrl}productooferta/${encodeURIComponent(fila.Titulo)}-${fila.idItem}`,
+          Relevancia: fila.Relevancia, // IMPORTANTE: Guardar relevancia
           detalles: []
         }
       }
@@ -100,16 +125,24 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
       })
     }
 
-    const ofertasAgrupadas = Object.values(ofertasAgrupadasMap)
+    // CRÍTICO: Ordenar por Relevancia después de agrupar
+    const ofertasAgrupadas = Object.values(ofertasAgrupadasMap).sort((a, b) => {
+      // Primero por Relevancia (descendente)
+      if (b.Relevancia !== a.Relevancia) {
+        return b.Relevancia - a.Relevancia
+      }
+      // Si tienen la misma relevancia, por Titulo (alfabético)
+      return a.Titulo.localeCompare(b.Titulo)
+    })
 
     return res.status(200).json({
       status: 'success',
-      message: 'Productos obtenidos correctamente',
+      message: 'Ofertas obtenidas correctamente',
       data: ofertasAgrupadas,
       totalRecords: ofertasAgrupadas.length
     })
   } catch (error) {
-    console.error(error)
+    console.error('Error en Ofertas_WEB_LHIA:', error)
     return res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor',
@@ -120,15 +153,26 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
 }
 
 exports.Baratazos_WEB_LHIA = async (req, res) => {
-  // dbo.ObtenerWEBBaratazosLhia
   try {
     const filtroTitulo = req.query.filtroTitulo
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
+
+    // Procesar términos de búsqueda
+    let terminosProcesados = null
+    if (filtroTitulo) {
+      const terminos = procesarTerminosBusqueda(filtroTitulo)
+      terminosProcesados = terminos.join(',')
+
+      //console.log('Búsqueda baratazos original:', filtroTitulo)
+      //console.log('Términos procesados:', terminos)
+    }
+
     const result = await AppDataSource.query(
-      'EXEC dbo.ObtenerWEBBaratazosLhia @filtroTitulo = @0',
-      [filtroTitulo]
+      'EXEC dbo.ObtenerWEBBaratazosLhia @FiltroTitulo = @0',
+      [terminosProcesados]
     )
+
     if (!result || result.length === 0) {
       return res.status(404).json({
         status: 'error',
@@ -137,38 +181,50 @@ exports.Baratazos_WEB_LHIA = async (req, res) => {
         totalRecords: 0
       })
     }
-    const baratazosAgrupadas = Object.values(
-      result.reduce((acc, fila) => {
-        if (!acc[fila.idItem]) {
-          acc[fila.idItem] = {
-            idItem: fila.idItem,
-            Titulo: fila.Titulo,
-            Imagen: fila.Imagen,
-            Tarjeta: fila.Tarjeta,
-            Credito: fila.Credito,
-            Cuotas: fila.Cuotas,
-            ValorCuota: fila.ValorCuota,
-            idWEB_Categorias: fila.idWEB_Categorias,
-            URL: `${BaseUrl}productobaratazo/${encodeURIComponent(fila.Titulo)}-${fila.idItem}`,
-            detalles: []
-          }
+
+    const baratazosAgrupadosMap = {}
+
+    for (const fila of result) {
+      if (!baratazosAgrupadosMap[fila.idItem]) {
+        baratazosAgrupadosMap[fila.idItem] = {
+          idItem: fila.idItem,
+          Titulo: fila.Titulo,
+          Imagen: fila.Imagen,
+          Descripcion: fila.Descripcion,
+          PalabrasClave: fila.PalabrasClave,
+          Tarjeta: fila.Tarjeta,
+          Credito: fila.Credito,
+          idWEB_Categorias: fila.idWEB_Categorias,
+          URL: `${BaseUrl}productobaratazo/${encodeURIComponent(fila.Titulo)}-${fila.idItem}`,
+          Relevancia: fila.Relevancia,
+          detalles: []
         }
-        acc[fila.idItem].detalles.push({
-          idWEB_DetalleOfertas: fila.idWEB_DetalleOfertas,
-          Producto: fila.Producto,
-          ProductoImagen: fila.ProductoImagen
-        })
-        return acc
-      }, {})
+      }
+
+      baratazosAgrupadosMap[fila.idItem].detalles.push({
+        idWEB_DetalleOfertas: fila.idWEB_DetalleOfertas,
+        Producto: fila.Producto
+      })
+    }
+
+    // CRÍTICO: Ordenar por Relevancia después de agrupar
+    const baratazosAgrupados = Object.values(baratazosAgrupadosMap).sort(
+      (a, b) => {
+        if (b.Relevancia !== a.Relevancia) {
+          return b.Relevancia - a.Relevancia
+        }
+        return a.Titulo.localeCompare(b.Titulo)
+      }
     )
+
     return res.status(200).json({
       status: 'success',
-      message: 'Productos obtenidos correctamente',
-      data: baratazosAgrupadas,
-      totalRecords: baratazosAgrupadas.length
+      message: 'Baratazos obtenidos correctamente',
+      data: baratazosAgrupados,
+      totalRecords: baratazosAgrupados.length
     })
   } catch (error) {
-    console.error(error)
+    console.error('Error en Baratazos_WEB_LHIA:', error)
     return res.status(500).json({
       status: 'error',
       message: 'Error interno del servidor',

@@ -119,6 +119,32 @@ exports.equifaxOauth = async (req, res) => {
         });
     }
 
+    // verificar si ya existe en la base de datos en el periodo actual auta =1
+    const existingRecord = await AppDataSource.getRepository(EQFX_IdentificacionConsultada).findOneBy({
+        TipoDocumento: tipoDocumento,
+        NumeroDocumento: numeroDocumento,
+        UAT: 1,
+    });
+    // CON LA FECHA SISTEMA VERIFICAR SI ESTA EN EL PEIRODO ACTUAL CON LA FECHA ACTUAL
+    if (existingRecord) {
+        const currentDate = new Date();
+        const recordDate = new Date(existingRecord.FechaSistema);
+        const isSameMonth = currentDate.getMonth() === recordDate.getMonth();
+        const isSameYear = currentDate.getFullYear() === recordDate.getFullYear();
+        if (isSameMonth && isSameYear) {
+            /*status: 'success',
+        success: true,
+        data: transactionId,
+        originalTransactionId*/
+            return res.status(200).json({
+                status: true,
+                data: existingRecord.originalTransactionId,
+                originalTransactionId: existingRecord.originalTransactionId,
+                message: 'Consulta ya realizada en el periodo actual UAT'
+            });
+        }
+    }
+
     try {
         const tokenResponse = await getEquifaxToken();
         if (tokenResponse.status === 'error') {
@@ -189,12 +215,12 @@ exports.equifaxOauth = async (req, res) => {
 
         } = reporteCrediticio;
 
-       
+
 
         const segmentacionDTO = parseSegmentacion(interconnectResponse.resultado_segmentacion || []);
         const politicasDTO = parseInterconnectResultadoPoliticas(interconnectResponse.resultado_politicas || []);
         const resultadoDTO = parseInterconnectResultado(interconnectResponse.resultado || []);
-       // const sriDTO = parseInformacionSRI(informacion_sri || []);
+        // const sriDTO = parseInformacionSRI(informacion_sri || []);
         const resumenInformeDTO = parseResumenInforme(resumen_informe || []);
         const scoreInclusionDTO = parseScoreInclusion(score_inclusion || []);
         const scoreDTO = parseScore(score || []);
