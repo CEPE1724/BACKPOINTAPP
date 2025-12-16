@@ -325,24 +325,31 @@ exports.registrarSolicitudCredito = async (req, res) => {
 
       let mensajeSalida = ''
       if (idCre_SolicitudWeb && referenciasExistentes.length >= 2) {
-        mensajeSalida = `Ya tienes una solicitud activada . Número de solicitud: ${numeroSolicitud} , No puedes crear una nueva solicitud`
+        mensajeSalida = `Ya tienes una solicitud activada . Número de solicitud: ${numeroSolicitud} , No puedes crear una nueva solicitud`;
+        return res.status(400).json({
+          numeroSolicitud,
+          idCre_SolicitudWeb,
+          mensaje: mensajeSalida
+        });
       } else if (idCre_SolicitudWeb) {
         if (SituacionLaboral === 1) {
-          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud. Tu situacion laboral es dependiente. Por favor, completa el registro de referencias personales para finalizar el proceso.`
+          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud. Tu situacion laboral es dependiente. Por favor, completa el registro de referencias personales para finalizar el proceso.`;
         } else {
-          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud . Tu situacion laboral es independiente. Por favor, completa el registro de referencias personales para finalizar el proceso. `
+          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud . Tu situacion laboral es independiente. Por favor, completa el registro de referencias personales para finalizar el proceso. `;
         }
+        return res.status(400).json({
+          numeroSolicitud,
+          idCre_SolicitudWeb,
+          mensaje: mensajeSalida
+        });
       } else {
-        mensajeSalida =
-          'No se obtuvo idCre_SolicitudWeb de la respuesta externa.'
+        mensajeSalida = 'No se obtuvo idCre_SolicitudWeb de la respuesta externa.';
+        return res.status(500).json({
+          numeroSolicitud,
+          idCre_SolicitudWeb,
+          mensaje: mensajeSalida
+        });
       }
-
-      return res.status(500).json({
-        ///detalle: dataExterna,
-        numeroSolicitud,
-        idCre_SolicitudWeb,
-        mensaje: mensajeSalida
-      })
     }
 
     // Esperar unos segundos para que el proceso interno actualice el estado
@@ -508,43 +515,43 @@ function validarReferencia(ref) {
       }
     }
   }
-  let idProvincia = null
-  let tieneProvincia = false
-  for (const key of provincia) {
-    if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
-      idProvincia = Number(ref[key])
-      tieneProvincia = true
-      break
-    }
-  }
-  if (!tieneProvincia) {
-    return {
-      valido: false,
-      mensaje: 'El campo idProvincia es obligatorio en la referencia.'
-    }
-  }
-  let idCanton = null
-  let tieneCanton = false
-  for (const key of canton) {
-    if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
-      idCanton = Number(ref[key])
-      tieneCanton = true
-      break
-    }
-  }
-  if (!tieneCanton) {
-    return {
-      valido: false,
-      mensaje: 'El campo idCanton es obligatorio en la referencia.'
-    }
-  }
+  // let idProvincia = null
+  // let tieneProvincia = false
+  // for (const key of provincia) {
+  //   if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
+  //     idProvincia = Number(ref[key])
+  //     tieneProvincia = true
+  //     break
+  //   }
+  // }
+  // if (!tieneProvincia) {
+  //   return {
+  //     valido: false,
+  //     mensaje: 'El campo idProvincia es obligatorio en la referencia.'
+  //   }
+  // }
+  // let idCanton = null
+  // let tieneCanton = false
+  // for (const key of canton) {
+  //   if (ref[key] !== undefined && ref[key] !== null && ref[key] !== '') {
+  //     idCanton = Number(ref[key])
+  //     tieneCanton = true
+  //     break
+  //   }
+  // }
+  // if (!tieneCanton) {
+  //   return {
+  //     valido: false,
+  //     mensaje: 'El campo idCanton es obligatorio en la referencia.'
+  //   }
+  // }
   const idParentesco = Number(ref.idParentesco)
-  if (!(idProvincia >= 0 && idProvincia <= 25)) {
-    return { valido: false, mensaje: 'Provincia de la referencia no válida.' }
-  }
-  if (!(idCanton >= 0 && idCanton <= 232)) {
-    return { valido: false, mensaje: 'Cantón de la referencia no válido.' }
-  }
+  // if (!(idProvincia >= 0 && idProvincia <= 25)) {
+  //   return { valido: false, mensaje: 'Provincia de la referencia no válida.' }
+  // }
+  // if (!(idCanton >= 0 && idCanton <= 232)) {
+  //   return { valido: false, mensaje: 'Cantón de la referencia no válido.' }
+  // }
   if (!(idParentesco >= 1 && idParentesco <= 21)) {
     return { valido: false, mensaje: 'Parentesco de la referencia no válido.' }
   }
@@ -1036,12 +1043,21 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
       default:
         mensaje = 'Estado desconocido.'
     }
+    let tipoSituacion = '';
+    if (solicitud.idSituacionLaboral === 1) {
+      tipoSituacion = 'Dependiente';
+    } else if (solicitud.idSituacionLaboral === 2) {
+      tipoSituacion = 'Independiente';
+    } else {
+      tipoSituacion = 'Desconocido';
+    }
     return res.json({
-      // estado: estadosTextuales[estado] || estado,
       mensaje,
-      // idCre_SolicitudWeb: solicitud.idCre_SolicitudWeb,
       Fecha: solicitud.Fecha,
-      Cedula: solicitud.Cedula
+      Cedula: solicitud.Cedula,
+      idSolicitud: solicitud.idCre_SolicitudWeb,
+      SituacionLaboral: solicitud.idSituacionLaboral,
+      TipoSituacion: tipoSituacion
     })
   } catch (err) {
     return res.status(500).json({
