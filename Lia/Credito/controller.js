@@ -325,24 +325,31 @@ exports.registrarSolicitudCredito = async (req, res) => {
 
       let mensajeSalida = ''
       if (idCre_SolicitudWeb && referenciasExistentes.length >= 2) {
-        mensajeSalida = `Ya tienes una solicitud activada . Número de solicitud: ${numeroSolicitud} , No puedes crear una nueva solicitud`
+        mensajeSalida = `Ya tienes una solicitud activada . Número de solicitud: ${numeroSolicitud} , No puedes crear una nueva solicitud`;
+        return res.status(400).json({
+          numeroSolicitud,
+          idCre_SolicitudWeb,
+          mensaje: mensajeSalida
+        });
       } else if (idCre_SolicitudWeb) {
         if (SituacionLaboral === 1) {
-          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud. Tu situacion laboral es dependiente. Por favor, completa el registro de referencias personales para finalizar el proceso.`
+          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud. Tu situacion laboral es dependiente. Por favor, completa el registro de referencias personales para finalizar el proceso.`;
         } else {
-          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud . Tu situacion laboral es independiente. Por favor, completa el registro de referencias personales para finalizar el proceso. `
+          mensajeSalida = `Ya tienes una solicitud activada. No puedes crear una nueva solicitud . Tu situacion laboral es independiente. Por favor, completa el registro de referencias personales para finalizar el proceso. `;
         }
+        return res.status(400).json({
+          numeroSolicitud,
+          idCre_SolicitudWeb,
+          mensaje: mensajeSalida
+        });
       } else {
-        mensajeSalida =
-          'No se obtuvo idCre_SolicitudWeb de la respuesta externa.'
+        mensajeSalida = 'No se obtuvo idCre_SolicitudWeb de la respuesta externa.';
+        return res.status(500).json({
+          numeroSolicitud,
+          idCre_SolicitudWeb,
+          mensaje: mensajeSalida
+        });
       }
-
-      return res.status(500).json({
-        ///detalle: dataExterna,
-        numeroSolicitud,
-        idCre_SolicitudWeb,
-        mensaje: mensajeSalida
-      })
     }
 
     // Esperar unos segundos para que el proceso interno actualice el estado
@@ -1036,12 +1043,21 @@ exports.getEstadoSolicitudPorCedula = async (req, res) => {
       default:
         mensaje = 'Estado desconocido.'
     }
+    let tipoSituacion = '';
+    if (solicitud.idSituacionLaboral === 1) {
+      tipoSituacion = 'Dependiente';
+    } else if (solicitud.idSituacionLaboral === 2) {
+      tipoSituacion = 'Independiente';
+    } else {
+      tipoSituacion = 'Desconocido';
+    }
     return res.json({
-      // estado: estadosTextuales[estado] || estado,
       mensaje,
-      // idCre_SolicitudWeb: solicitud.idCre_SolicitudWeb,
       Fecha: solicitud.Fecha,
-      Cedula: solicitud.Cedula
+      Cedula: solicitud.Cedula,
+      idSolicitud: solicitud.idCre_SolicitudWeb,
+      SituacionLaboral: solicitud.idSituacionLaboral,
+      TipoSituacion: tipoSituacion
     })
   } catch (err) {
     return res.status(500).json({
