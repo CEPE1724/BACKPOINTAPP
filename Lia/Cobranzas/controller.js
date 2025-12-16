@@ -49,8 +49,16 @@ exports.getBancos = async (req, res) => {
 }
 
 exports.subirDeposito = async (req, res) => {
-  const { Fecha, BancoId, Abono, IdCompra, NumeroDeposito, Cedula, Nota } =
-    req.body
+  const {
+    Fecha,
+    BancoId,
+    Abono,
+    IdCompra,
+    NumeroDeposito,
+    Cedula,
+    Nota,
+    Origen
+  } = req.body
   const file = req.file
   const notaFinal = Nota ?? ''
   try {
@@ -98,7 +106,7 @@ exports.subirDeposito = async (req, res) => {
 
     const insert = (
       await AppDataSource.query(
-        'exec dbo.GrabaDepositosPendientesLIA @0, @1, @2, @3, @4, @5, @6, @7, @8;',
+        'exec dbo.GrabaDepositosPendientesLIA @0, @1, @2, @3, @4, @5, @6, @7, @8, @9;',
         [
           Fecha,
           idCliente,
@@ -108,14 +116,14 @@ exports.subirDeposito = async (req, res) => {
           NumeroDeposito,
           Cedula,
           publicUrl,
-          notaFinal
+          notaFinal,
+          Origen ?? null
         ]
       )
     )[0].Voucher
     if (!insert) {
       throw new Error('400-insert')
     }
-
     return res.status(200).json({
       status: 'success',
       message: 'Deposito subido correctamente, #Voucher: ' + insert,
@@ -153,6 +161,14 @@ exports.subirDeposito = async (req, res) => {
       return res.status(400).json({
         status: 'error',
         message: 'Error al subir el deposito',
+        data: null,
+        totalRecords: 0
+      })
+    }
+    if (error.message && error.message.includes('ya existe en el sistema')) {
+      return res.status(409).json({
+        status: 'error',
+        message: 'El número de depósito ya ha sido registrado previamente',
         data: null,
         totalRecords: 0
       })
