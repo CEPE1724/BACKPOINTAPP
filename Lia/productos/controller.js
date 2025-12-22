@@ -20,9 +20,16 @@ exports.Productos_WEB_LHIA = async (req, res) => {
       //console.log('Búsqueda original:', filtroTitulo)
       //console.log('Términos procesados:', terminos)
     }
+    const precioMinimo = (
+      await AppDataSource.query(
+        'select top 1 wgc.ValorInt from WEB_GlobalConfig wgc where wgc.idWEB_GlobalConfig =23;'
+      )
+    )[0].ValorInt
     const result = await AppDataSource.query(
-      'EXEC dbo.ObtenerWEBProductosLhia @FiltroTitulo = @0',
-      [terminosProcesados]
+      `EXEC dbo.ObtenerWEBProductosLhia
+        @FiltroTitulo = @0,
+        @PrecioMinimo = @1`,
+      [terminosProcesados, precioMinimo]
     )
     if (!result || result.length === 0) {
       return res.status(404).json({
