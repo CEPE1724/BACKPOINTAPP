@@ -7,11 +7,6 @@ const storage = multer.memoryStorage()
 const upload = multer({ storage })
 
 router.get('/cobranzas/bancos', validateToken, controller.getBancos)
-router.post(
-  '/cobranzas/insert',
-  validateToken,
-  upload.single('file'),
-  controller.subirDeposito
-)
+router.post('/cobranzas/insert',validateToken, upload.single('file'), controller.subirDeposito)
 
 module.exports = router
