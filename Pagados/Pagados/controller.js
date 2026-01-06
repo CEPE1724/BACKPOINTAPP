@@ -4,7 +4,7 @@ const Pagados = require("./model");
 exports.InsertarPagados = async (req, res) => {
     try {
 
-        const { Estado, Numero, Cedula, Cliente, Monto , Vendedor } = req.body;
+        const { Estado, Numero, Cedula, Cliente, Monto, Vendedor } = req.body;
 
         // Validar que todos los campos requeridos estén presentes
         if (!Estado || !Numero || !Cedula || !Cliente || !Monto || !Vendedor) {
@@ -19,13 +19,13 @@ exports.InsertarPagados = async (req, res) => {
 
 
 
-              // 5. Validar que el número no se repita
-              const repo = AppDataSource.getRepository(Pagados);
-              const existe = await repo.findOne({ where: { Numero } });
-              if (existe) {
-                  return res.status(400).json({ error: 'Ya existe un registro con este número.' });
-              }
-      
+        // 5. Validar que el número no se repita
+        const repo = AppDataSource.getRepository(Pagados);
+        const existe = await repo.findOne({ where: { Numero } });
+        if (existe) {
+            return res.status(400).json({ error: 'Ya existe un registro con este número.' });
+        }
+
 
         // 2. Validar Cedula: debe tener exactamente 10 dígitos y los dos primeros entre 01 y 24
         if (!/^\d{10}$/.test(Cedula)) {
@@ -57,9 +57,9 @@ exports.InsertarPagados = async (req, res) => {
             return res.status(400).json({ error: 'La cédula del vendedor debe iniciar con un código de provincia entre 01 y 24.' });
         }
 
-  
+
         // Crear una nueva instancia de Pagados
-        const registro ={
+        const registro = {
             Fecha: new Date(),
             Estado,
             Numero,

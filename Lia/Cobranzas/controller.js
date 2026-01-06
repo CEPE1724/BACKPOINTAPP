@@ -40,7 +40,7 @@ exports.getBancos = async (req, res) => {
       })
     }
     res.status(500).json({
-      statatus: 'error',
+      status: 'error',
       message: 'Error interno del servidor',
       data: null,
       totalRecords: 0
