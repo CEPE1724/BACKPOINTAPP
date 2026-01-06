@@ -18,5 +18,10 @@ router.post(
   validateToken,
   compraController.Compra_Por_Ruc_IdCompra
 )
+router.post(
+  '/compras/factura-por-idCompra',
+  validateToken,
+  compraController.Factura_Por_idCompra
+)
 
 module.exports = router

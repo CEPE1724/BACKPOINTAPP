@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 8.5px;
+      color: #000;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    /* Estructura de Encabezado con Tablas para mayor precisión */
+    .table-header {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 10px 0;
+      margin-bottom: 10px;
+    }
+
+    .td-header {
+      width: 50%;
+      vertical-align: top;
+    }
+
+    /* Cajas con bordes redondeados según ejemplo 2 */
+    .box {
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 8px;
+      margin-bottom: 5px;
+    }
+
+    .logo-box {
+      text-align: center;
+      margin-bottom: 10px;
+      height: 110px;
+    }
+
+    .logo-box img {
+      max-width: 200px;
+      max-height: 100px;
+    }
+
+    .razon-social {
+      font-weight: bold;
+      font-size: 10px;
+      text-transform: uppercase;
+      text-align: center;
+      /* Asegura el centrado de todas las líneas */
+      line-height: 1.2;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+
+    .info-empresa {
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 10px;
+      display: block;
+      /* Mejor que grid para compatibilidad de renderizado PDF */
+      text-align: center;
+      /* Centra el contenido interno */
+    }
+
+    .info-line {
+      text-align: left;
+      /* La información detallada suele ir a la izquierda según RIDE */
+      margin-bottom: 2px;
+      font-size: 8.5px;
+    }
+
+    /* Recuadro RUC y Autorización */
+    .ruc-box {
+      padding: 12px;
+    }
+
+    .ruc-text {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .factura-text {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .numero-factura {
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .clave-acceso {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 11px;
+      word-break: break-all;
+      margin-top: 5px;
+      line-height: 1.1;
+    }
+
+    .clave-acceso2 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      word-break: break-all;
+      margin-top: 5px;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+
+    /* Datos del Cliente - Fila Continua */
+    .client-box {
+      width: 100%;
+      border: 1px solid #000;
+      padding: 6px 10px;
+      margin: 0 10px 10px 10px;
+      width: calc(100% - 20px);
+    }
+
+    .client-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .client-table td {
+      padding: 2px 0;
+    }
+
+    /* Tabla de Detalles (Productos) */
+    .items-table {
+      width: calc(100% - 20px);
+      margin: 0 10px 10px 10px;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: none;
+    }
+
+    .items-table th {
+      background-color: #FFFFFF;
+      font-weight: bold;
+      padding: 6px 4px;
+      text-align: center;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      font-size: 8.5px;
+    }
+
+    .items-table th:first-child {
+      border-left: 1px solid #000;
+    }
+
+    .items-table th:last-child {
+      border-right: 1px solid #000;
+    }
+
+    .items-table td {
+      border: none;
+      padding: 6px 4px;
+      vertical-align: top;
+      font-size: 8px;
+    }
+
+    /* Sección de Totales e Info Adicional */
+    .footer-table {
+      width: calc(100% - 20px);
+      margin: 0 10px;
+      border-collapse: collapse;
+    }
+
+    .td-adicional {
+      width: 60%;
+      vertical-align: top;
+      padding-right: 15px;
+    }
+
+    .td-totales {
+      width: 40%;
+      vertical-align: top;
+    }
+
+    .adicional-box {
+      border: 1px solid #000;
+      padding: 8px;
+      min-height: 90px;
+    }
+
+    .resumen-precios-box {
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 5px 0;
+      width: 100%;
+    }
+
+    .totales-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: none;
+    }
+
+    .totales-table td {
+      padding: 2px 8px;
+      border: none;
+      font-size: 8.5px;
+    }
+
+    .fila-total td {
+      border-top: 1px solid #000 !important;
+      padding-top: 5px;
+      margin-top: 2px;
+      font-weight: bold;
+      font-size: 10px;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    /* Formas de Pago */
+    .pago-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .pago-table th,
+    .pago-table td {
+      border: 1px solid #000;
+      padding: 3px;
+      text-align: center;
+      font-size: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <table class="table-header">
+      <tr>
+        <td class="td-header">
+          <div class="logo-box">
+            <img src="data:image/png;base64,<%= logoBase64 %>" alt="Logo">
+          </div>
+          <div class="box info-empresa">
+            <div class="razon-social">
+              <%- datosEmpresa.RazonSocial %>
+            </div>
+            <div style="font-weight: bold; text-align: center; margin-bottom: 5px;">
+              <%= datosEmpresa.NombreComercial %>
+            </div>
+            <div class="info-line">
+              <strong>Dirección Matriz:</strong>
+              <%= datosEmpresa.DirEmpresa %>
+            </div>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 2px;">
+              <tr>
+                <td class="info-line" style="border: none; padding: 0;">
+                  <strong>Telefono(PBX):</strong>
+                  <%= datosEmpresa.Telefono %>
+                </td>
+                <td class="info-line" style="border: none; padding: 0; text-align: right;">
+                  <%= datosEmpresa.Website %>
+                </td>
+              </tr>
+            </table>
+            <div class="info-line">
+              <strong>Dirección Sucursal:</strong>
+            </div>
+            <div class="info-line">
+              <%= datosEmpresa.DirSucursal %>
+            </div>
+            <div class="info-line" style="margin-top: 5px;">
+              <strong>CONTIBUYENTE ESPECIAL:</strong> No. Resolución <%= datosEmpresa.NResolucion %>
+            </div>
+            <div class="info-line">
+              <strong>OBLIGADO A LLEVAR CONTABILIDAD:</strong>
+              <%= datosEmpresa.ObligadoContabilidad %>
+            </div>
+          </div>
+        </td>
+        <td class="td-header">
+          <div class="box ruc-box">
+            <div class="ruc-text">R.U.C.: <%= datosEmpresa.RucEmpresa %>
+            </div>
+            <div class="factura-text">F A C T U R A N.</div>
+            <div class="numero-factura">
+              <%= factura.Numero %>
+            </div>
+            <div class="info-line"><strong>NÚMERO DE AUTORIZACIÓN:</strong></div>
+            <div class="clave-acceso">
+              <%= factura.NombreArchivoSRI %>
+            </div><br>
+            <div class="info-line"><strong>FECHA Y HORA DE AUTORIZACIÓN:</strong>
+              <%= factura.FechaEnviaSRI %>
+            </div>
+            <div class="info-line"><strong>AMBIENTE:</strong>
+              <%= datosEmpresa.tAmbiente %>
+            </div>
+            <div class="info-line"><strong>EMISIÓN:</strong>
+              <%= factura.TipoEmision %>
+            </div><br>
+            <div class="info-line"><strong>CLAVE DE ACCESO:</strong></div>
+            <div class="clave-acceso2">
+              <%= factura.NombreArchivoSRI %>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="client-box">
+      <table class="client-table">
+        <tr>
+          <td style="width: 70%;"><strong>Razón Social / Nombres y Apellidos:</strong>
+            <%= cliente.Nombre %>
+          </td>
+          <td style="width: 30%;"><strong>Identificación:</strong>
+            <%= cliente.Ruc %>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Fecha Emisión:</strong>
+            <%= factura.Fecha %>
+          </td>
+          <td><strong>Guía Remisión:</strong>
+            <%= factura.GuiaRemision || '' %>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th style="width: 15%;">Cod. Principal</th>
+          <th style="width: 45%;">Descripción</th>
+          <th style="width: 8%;">Cant.</th>
+          <th style="width: 10%;">Precio Unitario</th>
+          <th style="width: 10%;">Descuento</th>
+          <th style="width: 12%;">Precio Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% productos.forEach(function(item) { %>
+          <tr>
+            <td>
+              <%= item.Codigo %>
+            </td>
+            <td>
+              <%= item.Articulo %>
+            </td>
+            <td style="text-align: center;">
+              <%= Number(item.Cantidad).toFixed(2) %>
+            </td>
+            <td class="text-right">
+              <%= Number(item.Precio).toFixed(2) %>
+            </td>
+            <td class="text-right">
+              <%= Number(item.DescuentoArt).toFixed(2) %>
+            </td>
+            <td class="text-right">
+              <%= Number(item.Subtotal).toFixed(2) %>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+
+    <table class="footer-table">
+      <tr>
+        <td class="td-adicional">
+          <div class="adicional-box">
+            <div style="font-weight: bold; margin-bottom: 8px; font-size: 9px;">INFORMACIÓN ADICIONAL</div>
+            <div class="info-line"><strong>Dirección:</strong>
+              <%= cliente.Direccion %>
+            </div>
+            <div class="info-line"><strong>Teléfono:</strong>
+              <%= cliente.Telefono %>
+            </div>
+            <div class="info-line"><strong>Email:</strong>
+              <%= cliente.Email %>
+            </div>
+            <div class="info-line"><strong>Local:</strong>
+              <%= factura.BodNombre %>
+            </div>
+          </div>
+
+          <table class="pago-table">
+            <thead>
+              <tr>
+                <th>Forma de Pago</th>
+                <th>Valor</th>
+                <th>Plazo</th>
+                <th>Tiempo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left;">
+                  <%= formaPago.nombre %>
+                </td>
+                <td>
+                  <%= Number(formaPago.valor).toFixed(2) %>
+                </td>
+                <td>
+                  <%= formaPago.tiempo %>
+                </td>
+                <td>
+                  <%= formaPago.plazo %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="margin-top: 5px; font-size: 7.5px;">
+            <%= seriales %>
+          </div>
+        </td>
+        <td class="td-totales">
+          <div class="resumen-precios-box">
+            <table class="totales-table">
+              <tr>
+                <td>SUB TOTAL 0%:</td>
+                <td class="text-right">
+                  <%= Number(totales.SubTotExent || 0).toFixed(2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>DSCTO 0 %:</td>
+                <td class="text-right">
+                  <%= Number(totales.Dscto0 || 0).toFixed(2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>SUB TOTAL <%= totales.Impuesto || '15,00' %> %:</td>
+                <td class="text-right">
+                  <%= Number(totales.SubTotIva || 0).toFixed(2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>DESCUENTO <%= totales.Impuesto.toFixed(2) || '15,00' %> %:</td>
+                <td class="text-right">
+                  <%= Number(totales.Dscto || 0).toFixed(2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>BASE IMPONIBLE:</td>
+                <td class="text-right">
+                  <%= Number(totales.BaseImponible || 0).toFixed(2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>ICE:</td>
+                <td class="text-right">
+                  <%= Number(totales.Ice || 0).toFixed(2) %>
+                </td>
+              </tr>
+              <tr>
+                <td>I.V.A. <%= totales.Impuesto.toFixed(2) || '15,00' %> %:</td>
+                <td class="text-right">
+                  <%= Number(totales.Iva || 0).toFixed(2) %>
+                </td>
+              </tr>
+              <tr class="fila-total">
+                <td>VALOR TOTAL:</td>
+                <td class="text-right">
+                  <%= Number(totales.Total).toFixed(2) %>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
