@@ -1,53 +1,32 @@
 const { AppDataSource } = require("../../ApiCobrador/api/config/database");
-const crypto = require("crypto");
-
 require("dotenv").config();
 
-const PAYJOY_SECRET = process.env.PAYJOY_SECRET;
+const PAYJOY_API_KEY = process.env.PAYJOY_API_KEY;
 
-
-
-if (!PAYJOY_SECRET) {
-  console.warn("⚠️  ADVERTENCIA: PAYJOY_SECRET no está configurada en .env");
+if (!PAYJOY_API_KEY) {
+  console.warn("⚠️  ADVERTENCIA: PAYJOY_API_KEY no está configurada en .env");
 }
 
-
-function verifyPayjoySignature(req) {
+/**
+ * Verificar API Key de PayJoy
+ */
+function verifyPayjoyApiKey(req) {
   try {
-    const receivedSignature = req.get("X-PayJoy-Signature");
+    const apiKey = req.get("X-PayJoy-Signature");
     
-    if (!receivedSignature) {
-      console.log("❌ Falta firma X-PayJoy-Signature");
+    if (!apiKey) {
+      console.log("❌ Falta header X-PayJoy-Signature");
       return false;
     }
 
-    // Para GET sin body, usamos string vacío
-    const bodyToSign = req.rawBody || Buffer.from('');
-
-    const expectedSignature = crypto
-      .createHmac("sha256", PAYJOY_SECRET)
-      .update(bodyToSign)
-      .digest("base64");
-
-    const bufferExpected = Buffer.from(expectedSignature);
-    const bufferReceived = Buffer.from(receivedSignature);
-
-    if (bufferExpected.length !== bufferReceived.length) {
-      console.log("❌ Longitud de firmas no coincide");
+    if (apiKey !== PAYJOY_API_KEY) {
+      console.log("❌ API Key inválida");
       return false;
     }
 
-    const isValid = crypto.timingSafeEqual(bufferExpected, bufferReceived);
-    
-    if (!isValid) {
-      console.log("❌ Firma inválida");
-      console.log("Esperada:", expectedSignature);
-      console.log("Recibida:", receivedSignature);
-    }
-
-    return isValid;
+    return true;
   } catch (error) {
-    console.error("❌ Error al verificar firma PayJoy:", error.message);
+    console.error("❌ Error al verificar API Key:", error.message);
     return false;
   }
 }
@@ -55,15 +34,14 @@ function verifyPayjoySignature(req) {
 
 const getProductos = async (req, res) => {
   try {
-    // 1️⃣ Verificar firma de PayJoy
-    if (!verifyPayjoySignature(req)) {
+    // 1️⃣ Verificar API Key de PayJoy
+    if (!verifyPayjoyApiKey(req)) {
       return res.status(401).json({
         ok: false,
-        message: "Firma inválida. La solicitud no proviene de PayJoy."
+        message: "API Key inválida. La solicitud no está autorizada."
       });
     }
 
-    console.log("✅ Firma verificada correctamente");
 
     // 2️⃣ Ejecutar procedimiento almacenado
     const result = await AppDataSource.query(
@@ -80,8 +58,6 @@ const getProductos = async (req, res) => {
       description: item.description || ''
     }));
 
-    console.log(`✅ Se obtuvieron ${productos.length} productos`);
-
     // 4️⃣ Retornar array directo
     return res.status(200).json(productos);
 
@@ -97,5 +73,5 @@ const getProductos = async (req, res) => {
 
 module.exports = {
   getProductos,
-  verifyPayjoySignature
+  verifyPayjoyApiKey
 };

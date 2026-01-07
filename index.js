@@ -177,6 +177,7 @@ const publicRoutes = [
     path: '/cobranza/api/v1/point/',
     route: require('./ApiCobrador/api/Nomina/router')
   },
+  
 ]
 
 // Rutas protegidas (con middleware)
@@ -236,6 +237,13 @@ const publicRoutesPayJoy = [
     path: '/v1/payjoy/',
     route: require('./PayJoy/Productos/router')
   }
+]
+
+const publicRoutesPajJoyTransacciones = [
+  {
+    path: '/v1/payjoy/transacciones/',
+    route: require('./PayJoy/Transacciones/router')
+  },
 ]
 
 const publicRoutesmassend = [
@@ -315,6 +323,10 @@ publicRoutesmassend.forEach((route) => {
 
 // Aplica las rutas de PayJoy
 publicRoutesPayJoy.forEach((route) => {
+  app.use(route.path, route.route)
+})
+
+publicRoutesPajJoyTransacciones.forEach((route) => {
   app.use(route.path, route.route)
 })
 // Aplica las rutas de Massend Token

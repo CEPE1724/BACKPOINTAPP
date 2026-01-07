@@ -151,6 +151,7 @@ const entities = [
   require('../../../Lia/Credito/Parroquia/model'),
   require('../../../Lia/Credito/Barrio/model'),
   require('../../../Lia/Credito/Parentesco/model'),
+  require('../../../PayJoy/Transacciones/model')
 ]
 
 const AppDataSource = new DataSource({
