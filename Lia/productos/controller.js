@@ -16,13 +16,10 @@ exports.Productos_WEB_LHIA = async (req, res) => {
     if (filtroTitulo) {
       const terminos = procesarTerminosBusqueda(filtroTitulo)
       terminosProcesados = terminos.join(',')
-      // Log para debug
-      //console.log('Búsqueda original:', filtroTitulo)
-      //console.log('Términos procesados:', terminos)
     }
     const precioMinimo = (
       await AppDataSource.query(
-        'select top 1 wgc.ValorInt from WEB_GlobalConfig wgc where wgc.idWEB_GlobalConfig =23;'
+        'select top 1 wgc.ValorInt from WEB_GlobalConfig wgc where wgc.idWEB_GlobalConfig = 23;'
       )
     )[0].ValorInt
     const result = await AppDataSource.query(
@@ -81,9 +78,6 @@ exports.Ofertas_WEB_LHIA = async (req, res) => {
     if (filtroTitulo) {
       const terminos = procesarTerminosBusqueda(filtroTitulo)
       terminosProcesados = terminos.join(',')
-
-      //console.log('Búsqueda ofertas original:', filtroTitulo)
-      //console.log('Términos procesados:', terminos)
     }
 
     const result = await AppDataSource.query(
@@ -170,9 +164,6 @@ exports.Baratazos_WEB_LHIA = async (req, res) => {
     if (filtroTitulo) {
       const terminos = procesarTerminosBusqueda(filtroTitulo)
       terminosProcesados = terminos.join(',')
-
-      //console.log('Búsqueda baratazos original:', filtroTitulo)
-      //console.log('Términos procesados:', terminos)
     }
 
     const result = await AppDataSource.query(
@@ -453,18 +444,22 @@ exports.ObtenerTasaAnual = async () => {
 
 exports.CalcularValorCuota = async (capital, cuotas, tasaAnual) => {
   const cuotaSinPR = this.CalculaCuotaInicial(capital, cuotas, tasaAnual)
+
   const precioPointRespaldoSinIva = await AppDataSource.query(
     `EXEC Cre_CalcularPrecioPointRespaldo
           @valorCuota = @0,
           @numeroCuotas = @1`,
     [cuotaSinPR, cuotas]
   ).then((res) => res?.[0]?.Total ?? 0)
+
   const precioPointRespaldo = precioPointRespaldoSinIva * 1.15
   const MontoFinanciamiento = capital + precioPointRespaldo
+
   const cuotaConPR = this.CalculaCuotaInicial(
     MontoFinanciamiento,
     cuotas,
     tasaAnual
   )
+
   return cuotaConPR
 }
