@@ -19,7 +19,12 @@ const server = http.createServer(app)
 socketIo.init(server)
 
 // Middleware para analizar cuerpos de solicitud JSON y URL codificada
-app.use(express.json())
+// 🔒 Middleware especial para PayJoy: guarda rawBody para verificación de firma
+app.use(express.json({
+  verify: (req, res, buf) => {
+    req.rawBody = buf; // Buffer crudo para verificación HMAC
+  }
+}))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -172,6 +177,7 @@ const publicRoutes = [
     path: '/cobranza/api/v1/point/',
     route: require('./ApiCobrador/api/Nomina/router')
   },
+  
 ]
 
 // Rutas protegidas (con middleware)
@@ -223,6 +229,21 @@ const publicRoutesCognoware = [
     path: '/v1/cognoware/',
     route: require('./CognoWare/TransaccionesCognoware/router')
   }
+]
+// ruta de PAYJOY 
+
+const publicRoutesPayJoy = [
+  {
+    path: '/v1/payjoy/',
+    route: require('./PayJoy/Productos/router')
+  }
+]
+
+const publicRoutesPajJoyTransacciones = [
+  {
+    path: '/v1/payjoy/transacciones/',
+    route: require('./PayJoy/Transacciones/router')
+  },
 ]
 
 const publicRoutesmassend = [
@@ -300,6 +321,14 @@ publicRoutesmassend.forEach((route) => {
   app.use(route.path, route.route)
 })
 
+// Aplica las rutas de PayJoy
+publicRoutesPayJoy.forEach((route) => {
+  app.use(route.path, route.route)
+})
+
+publicRoutesPajJoyTransacciones.forEach((route) => {
+  app.use(route.path, route.route)
+})
 // Aplica las rutas de Massend Token
 
 // Aplica las rutas de Cuadricula
