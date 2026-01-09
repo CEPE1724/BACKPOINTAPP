@@ -7,7 +7,6 @@ require('dotenv').config({ path: '../../.env' }) // Cargar las variables de ento
 exports.Productos_WEB_LHIA = async (req, res) => {
   try {
     const tasaAnual = await this.ObtenerTasaAnual()
-    const numCuotas = 18
     const BaseUrl =
       process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
     const filtroTitulo = req.query.filtroTitulo
@@ -37,16 +36,32 @@ exports.Productos_WEB_LHIA = async (req, res) => {
       })
     }
     const productosConURL = await Promise.all(
-      result.map(async (p) => ({
-        ...p,
-        Cuotas: numCuotas,
-        ValorCuota: await exports.CalcularValorCuota(
+      result.map(async (p) => {
+        const { Tarifa, idWEB_Grupos, Credito, ...productoLimpio } = p
+        const cuotasMaximas = await exports.CalcularCuotasMaximas(
           p.Credito,
-          numCuotas,
+          p.idWEB_Grupos,
+          tasaAnual,
+          p.Tarifa
+        )
+        if (!cuotasMaximas) {
+          return {
+            ...productoLimpio,
+            URL: `${BaseUrl}producto/${encodeURIComponent(p.Titulo)}-${p.idItem}`
+          }
+        }
+        const valorCuota = await exports.CalcularValorCuota(
+          p.Credito,
+          cuotasMaximas,
           tasaAnual
-        ),
-        URL: `${BaseUrl}producto/${encodeURIComponent(p.Titulo)}-${p.idItem}`
-      }))
+        )
+        return {
+          ...productoLimpio,
+          Cuotas: cuotasMaximas,
+          ValorCuota: valorCuota,
+          URL: `${BaseUrl}producto/${encodeURIComponent(p.Titulo)}-${p.idItem}`
+        }
+      })
     )
     return res.status(200).json({
       status: 'success',
@@ -462,4 +477,29 @@ exports.CalcularValorCuota = async (capital, cuotas, tasaAnual) => {
   )
 
   return cuotaConPR
+}
+
+exports.CalcularCuotasMaximas = async (
+  precioCredito,
+  grupo,
+  tasaAnual,
+  tarifa
+) => {
+  if (tarifa === 1 || precioCredito < 100) {
+    return null
+  }
+  const cuotas = grupo === 2 ? [12, 9, 6, 3] : [18, 15, 12, 9, 6, 3]
+  let cuotaMaximaEncontrada = 0
+  for (const nCuotas of cuotas) {
+    const montoCuota = await this.CalculaCuotaInicial(
+      precioCredito,
+      nCuotas,
+      tasaAnual
+    )
+    if (montoCuota >= 30) {
+      cuotaMaximaEncontrada = nCuotas
+      break
+    }
+  }
+  return cuotaMaximaEncontrada
 }
