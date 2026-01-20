@@ -526,3 +526,132 @@ exports.Factura_Por_idCompra = async (req, res) => {
     })
   }
 }
+
+exports.ReporteRecibosCobro = async (req, res) => {
+  const { idCompra } = req.body
+
+  if (!idCompra) {
+    return res
+      .status(400)
+      .json({ status: 'error', message: 'idCompra es requerido' })
+  }
+
+  try {
+    // 1. Primera consulta: Anticipos
+    const resultado = await AppDataSource.query(
+      `exec dbo.ReporteHistorialAnticipos @0;`,
+      [idCompra]
+    )
+
+    // Si no hay anticipos, lanzamos el error 404 de inmediato y no consultamos bancos
+    if (!resultado || resultado.length === 0) {
+      throw new Error('404')
+    }
+
+    // 2. Segunda consulta: Bancos (Solo se ejecuta si hay anticipos)
+    const listaBancosRaw = await AppDataSource.query(
+      'Exec ListaCuentasDepositos'
+    )
+
+    // 3. Agrupar los datos por idAnticipo
+    const anticiposAgrupados = resultado.reduce((acc, curr) => {
+      const id = curr.idAnticipo
+      if (!acc[id]) {
+        acc[id] = {
+          cabecera: {
+            idAnticipo: curr.idAnticipo,
+            Secuencial: curr.Secuencial,
+            Fecha: new Date(curr.Fecha).toLocaleDateString('es-EC'),
+            Nombre: curr.Nombre,
+            Ruc: curr.Ruc,
+            Direccion: curr.Direccion,
+            Telefono: curr.Telefono,
+            TotalDescGestion: 0,
+            TotalDescMora: 0,
+            TotalGeneral: 0
+          },
+          detalles: []
+        }
+      }
+      acc[id].detalles.push({
+        Cuota: curr.Cuota,
+        Descripcion: curr.Concepto,
+        Valor: curr.ValorDetalle,
+        GestionCobranza: curr.GestionCobranza,
+        IntMora: curr.InteresMora,
+        DescDif: curr.DescDiferimiento,
+        Subtotal: curr.Subtotal
+      })
+      acc[id].cabecera.TotalDescGestion += parseFloat(curr.DescGestion || 0)
+      acc[id].cabecera.TotalDescMora += parseFloat(curr.DesMora || 0)
+      acc[id].cabecera.TotalGeneral += parseFloat(curr.Subtotal || 0)
+      return acc
+    }, {})
+
+    // 4. Mapear bancos específicos para evitar lógica en el EJS
+    const buscarEnRaw = (nombre) => {
+      const b = listaBancosRaw.find((x) =>
+        x.Descripcion.toUpperCase().includes(nombre.toUpperCase())
+      )
+      return b ? b.Descripcion : `${nombre} (Cuenta no disponible)`
+    }
+
+    const bancosFinales = {
+      pichincha: buscarEnRaw('PICHINCHA'),
+      guayaquil: buscarEnRaw('GUAYAQUIL'),
+      produbanco: buscarEnRaw('PRODUBANCO'),
+      pacifico: buscarEnRaw('PACIFICO')
+    }
+
+    // 5. Cargar Logo
+    const logoPath = path.join(__dirname, './image.png')
+    let logoBase64 = ''
+    if (fs.existsSync(logoPath)) {
+      logoBase64 = fs.readFileSync(logoPath, { encoding: 'base64' })
+    }
+
+    // 6. Renderizar HTML con los datos preparados
+    const html = await ejs.renderFile(
+      path.join(__dirname, './templates/Recibos.ejs'),
+      {
+        listaAnticipos: Object.values(anticiposAgrupados),
+        logoBase64,
+        bancos: bancosFinales
+      }
+    )
+
+    const options = {
+      format: 'A4',
+      border: { top: '10mm', right: '15mm', bottom: '10mm', left: '15mm' },
+      footer: {
+        height: '10mm',
+        contents: {
+          default:
+            '<div style="text-align: center; font-size: 8px;">Página {{page}} de {{pages}}</div>'
+        }
+      }
+    }
+
+    // 7. Generar y enviar PDF
+    pdf.create(html, options).toBuffer((err, buffer) => {
+      if (err) {
+        console.error('Error generando PDF:', err)
+        return res.status(500).send('Error generando PDF')
+      }
+      res.set({
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `attachment; filename=Recibos-Compra-${idCompra}.pdf`,
+        'Content-Length': buffer.length
+      })
+      res.send(buffer)
+    })
+  } catch (error) {
+    console.error('Error en ReporteRecibosCobro:', error)
+    const code = error.message === '404' ? 404 : 500
+    const msg =
+      error.message === '404'
+        ? 'No se encontraron anticipos'
+        : 'Error al generar el reporte'
+    res.status(code).json({ status: 'error', message: msg })
+  }
+}
