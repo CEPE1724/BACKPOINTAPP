@@ -34,7 +34,7 @@ exports.Compras_Por_Ruc = async (req, res) => {
 
     // 2. Solo si hay compras, consultamos las referencias
     const referencias = await AppDataSource.query(
-      `exec dbo.sp_ConsultarReferenciasPorCedula @0;`,
+      `exec dbo.ConsultarReferenciasPorCedula @0;`,
       [ruc]
     )
 
