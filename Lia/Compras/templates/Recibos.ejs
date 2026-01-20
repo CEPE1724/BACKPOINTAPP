@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      color: #333;
+    }
+
+    .recibo-container {
+      margin-bottom: 70px;
+      /* Espacio amplio entre recibos */
+      page-break-inside: avoid;
+    }
+
+    .header-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .header-subtitle {
+      text-align: center;
+      font-weight: bold;
+      font-size: 13px;
+      margin: 5px 0;
+    }
+
+    .linea {
+      border-top: 1px solid #000;
+      margin: 10px 0;
+    }
+
+    .info-table {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .info-table td {
+      padding: 2px 0;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .data-table th {
+      border-bottom: 1px solid #000;
+      text-align: left;
+      padding: 5px;
+      font-size: 10px;
+    }
+
+    .data-table td {
+      padding: 5px;
+    }
+
+    /* Línea que cierra los detalles */
+    .tabla-fin-linea {
+      border-bottom: 1.5px solid #000 !important;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .total-row td {
+      font-weight: bold;
+      font-size: 12px;
+      padding-top: 8px;
+      padding-bottom: 20px;
+      /* Espacio antes de las firmas */
+    }
+
+    /* Sección de Firmas */
+    .seccion-firmas {
+      width: 100%;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .seccion-firmas td {
+      text-align: center;
+      width: 50%;
+      vertical-align: bottom;
+    }
+
+    .linea-firma {
+      width: 80%;
+      border-top: 1px solid #000;
+      margin: 0 auto 5px auto;
+    }
+
+    .texto-firma {
+      font-weight: bold;
+      font-size: 10px;
+    }
+
+    .nota-informativa {
+      font-size: 9px;
+      font-style: italic;
+      margin-top: 15px;
+    }
+
+    .cuentas-bancarias {
+      margin-top: 30px;
+      font-weight: bold;
+      border: 1px solid #ccc;
+      padding: 15px;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+
+<body>
+
+  <% listaAnticipos.forEach(function(item, index) { %>
+    <div class="recibo-container">
+      <div class="linea"></div>
+      <h1 class="header-title">POINT TECHNOLOGY</h1>
+      <h2 class="header-subtitle">RECIBO DE COBRO No. <%= item.cabecera.Secuencial %>
+      </h2>
+
+      <div class="linea"></div>
+
+      <table class="info-table">
+        <tr>
+          <td width="15%"><strong>Fecha:</strong></td>
+          <td width="35%">
+            <%= item.cabecera.Fecha %>
+          </td>
+          <td width="50%"></td>
+        </tr>
+        <tr>
+          <td><strong>Cliente:</strong></td>
+          <td>
+            <%= item.cabecera.Nombre %>
+          </td>
+          <td><strong>C.I.:</strong>
+            <%= item.cabecera.Ruc %>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Dirección:</strong></td>
+          <td>
+            <%= item.cabecera.Direccion %>
+          </td>
+          <td><strong>Teléfono:</strong>
+            <%= item.cabecera.Telefono %>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Desc Gestión:</strong></td>
+          <td>
+            <%= item.cabecera.TotalDescGestion.toFixed(2) %>
+          </td>
+          <td><strong>Desc Mora:</strong>
+            <%= item.cabecera.TotalDescMora.toFixed(2) %>
+          </td>
+        </tr>
+      </table>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Cuota</th>
+            <th>Descripción</th>
+            <th class="text-right">Valor</th>
+            <th class="text-right">Gest. Cobranza</th>
+            <th class="text-right">Int. Mora</th>
+            <th class="text-right">Desc. Dif</th>
+            <th class="text-right">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% item.detalles.forEach(function(det, detIndex) { %>
+            <tr class="<%= detIndex === item.detalles.length - 1 ? 'tabla-fin-linea' : '' %>">
+              <td>
+                <%= det.Cuota %>
+              </td>
+              <td>
+                <%= det.Descripcion %>
+              </td>
+              <td class="text-right">
+                <%= det.Valor.toFixed(2) %>
+              </td>
+              <td class="text-right">
+                <%= det.GestionCobranza.toFixed(2) %>
+              </td>
+              <td class="text-right">
+                <%= det.IntMora.toFixed(2) %>
+              </td>
+              <td class="text-right">
+                <%= det.DescDif.toFixed(2) %>
+              </td>
+              <td class="text-right">
+                <%= det.Subtotal.toFixed(2) %>
+              </td>
+            </tr>
+            <% }); %>
+
+              <tr class="total-row">
+                <td colspan="6" class="text-right"></td>
+                <td class="text-right">
+                  <%= item.cabecera.TotalGeneral.toFixed(2) %>
+                </td>
+              </tr>
+        </tbody>
+      </table>
+
+      <table class="seccion-firmas">
+        <tr>
+          <td>
+            <div class="linea-firma"></div>
+            <span class="texto-firma">ENTREGUE CONFORME</span>
+          </td>
+          <td>
+            <div class="linea-firma"></div>
+            <span class="texto-firma">RECIBI CONFORME</span>
+          </td>
+        </tr>
+      </table>
+
+      <p class="nota-informativa">* Este documento fue generado de manera automática y es de carácter informativo.</p>
+
+      <div class="linea"></div>
+    </div>
+    <% }); %>
+
+      <div class="cuentas-bancarias">
+        <p style="margin-top: 0; text-transform: uppercase;">PUEDE REALIZAR SU PAGO MEDIANTE TRANSFERENCIA A LAS
+          SIGUIENTES CUENTAS:</p>
+        <table width="100%">
+          <thead>
+            <tr style="text-align: left;">
+              <th width="40%">BANCO</th>
+              <th width="60%">CTA. CORRIENTE / DESCRIPCIÓN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PICHINCHA</td>
+              <td>
+                <%= bancos.pichincha %>
+              </td>
+            </tr>
+            <tr>
+              <td>GUAYAQUIL</td>
+              <td>
+                <%= bancos.guayaquil %>
+              </td>
+            </tr>
+            <tr>
+              <td>PRODUBANCO</td>
+              <td>
+                <%= bancos.produbanco %>
+              </td>
+            </tr>
+            <tr>
+              <td>PACIFICO</td>
+              <td>
+                <%= bancos.pacifico %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</body>
+
+</html>
