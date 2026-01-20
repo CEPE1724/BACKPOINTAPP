@@ -7,41 +7,54 @@ const pdf = require('html-pdf')
 
 exports.Compras_Por_Ruc = async (req, res) => {
   const { ruc } = req.body
+
   if (!ruc) {
     return res.status(400).json({
       status: 'error',
       message: 'Cédula o Ruc es requerido'
     })
   }
+
   try {
+    // 1. Consultar primero las compras
     const compras = await AppDataSource.query(
-      `
-      exec dbo.ObtenerComprasPorRuc @0;
-      `,
+      `exec dbo.ObtenerComprasPorRuc @0;`,
       [ruc]
     )
+
+    // Validar si no hay compras para retornar temprano y ahorrar memoria/procesamiento
     if (!compras || compras.length === 0) {
-      throw new Error('404')
-    }
-    return res.status(200).json({
-      status: 'success',
-      message: 'Compras obtenidas correctamente',
-      data: compras,
-      totalRecords: compras.length
-    })
-  } catch (error) {
-    console.log(error)
-    if (error.message === '404') {
       return res.status(404).json({
         status: 'error',
         message: 'No se encontraron compras',
-        data: null,
+        data: [],
         totalRecords: 0
       })
     }
+
+    // 2. Solo si hay compras, consultamos las referencias
+    const referencias = await AppDataSource.query(
+      `exec dbo.ConsultarReferenciasPorCedula @0;`,
+      [ruc]
+    )
+
+    // 3. Inyectar las referencias en cada objeto de compra
+    const dataConReferencias = compras.map((compra) => ({
+      ...compra,
+      referencias: referencias || []
+    }))
+
+    return res.status(200).json({
+      status: 'success',
+      message: 'Compras y referencias obtenidas correctamente',
+      data: dataConReferencias,
+      totalRecords: dataConReferencias.length
+    })
+  } catch (error) {
+    console.error('Error en Compras_Por_Ruc:', error)
     return res.status(500).json({
       status: 'error',
-      message: 'Error al obtener las compras',
+      message: 'Error al obtener los datos',
       data: null,
       totalRecords: 0
     })
