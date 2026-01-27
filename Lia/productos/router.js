@@ -28,10 +28,18 @@ router.patch(
   validateToken,
   liaController.CarritoReducirDetalle
 )
+
 router.get(
   '/carrito/ObtenerCarrito-WEB-LHIA/:idWEB_Carrito',
   validateToken,
   liaController.CarritoObtenerCompleto
+)
+
+// Nueva ruta para aplicar cupón al carrito
+router.post(
+  '/carrito/AplicarCupon-WEB-LHIA',
+  validateToken,
+  liaController.AgregarCuponCarrito
 )
 
 module.exports = router

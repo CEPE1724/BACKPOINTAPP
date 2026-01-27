@@ -441,6 +441,79 @@ exports.CalculaCuotaInicial = (capital, cuotas, tasaAnual) => {
   return Math.round(valorCuotas * 100) / 100
 }
 
+/// consmir externo para agregar cupon al carrito pasandole el id del carrito 
+exports.AgregarCuponCarrito = async (req, res) => {
+  const API_URL = process.env.MARKETPLACE_API_URL ||
+    'https://ecommerce.appservices.com.ec/api/v1/'
+const MARKETPLACE_URL =
+    process.env.MARKETPLACE_URL || 'https://ecommerce.appservices.com.ec/'
+  try {
+    const { idWEB_Carrito } = req.body
+
+    // 🔹 Validación básica
+    if (!idWEB_Carrito) {
+      return res.status(400).json({
+        status: 400,
+        message: 'idWEB_Carrito es requerido',
+        data: null,
+        totalRecords: 0
+      })
+    }
+
+    // 🔹 Consumir API externa
+    const response = await fetch(
+      `${API_URL}carrito-compra/aplicar-cupon-lhia`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idWEB_Carrito })
+      }
+    )
+
+    // 🔹 Manejo correcto de errores HTTP
+    if (!response.ok) {
+      let errorBody
+
+      try {
+        errorBody = await response.json()
+      } catch {
+        errorBody = { message: 'Error en API externa' }
+      }
+
+      return res.status(response.status).json({
+        status: response.status,
+        message: errorBody.message || 'Error en API externa',
+        data: null,
+        totalRecords: 0
+      })
+    }
+
+    // 🔹 Respuesta exitosa
+        const data = await response.json()
+    const carritoURL = `${MARKETPLACE_URL}cargar-carrito/${idWEB_Carrito}`
+
+
+    return res.status(200).json({
+      status: 200,
+      message: data.message,
+      data: { URL: carritoURL},
+      totalRecords: 1
+    })
+
+  } catch (error) {
+    console.error('AgregarCuponCarrito Error:', error)
+
+    // 🔹 Error inesperado del backend intermedio
+    return res.status(500).json({
+      status: 500,
+      message: 'Error interno del servidor',
+      data: null,
+      totalRecords: 0
+    })
+  }
+}
+
+
 exports.ObtenerTasaAnual = async () => {
   const fechaActual = new Date()
   const idEntidadFinanciera = 1
