@@ -74,6 +74,13 @@ exports.subirDeposito = async (req, res) => {
     ) {
       throw new Error('400-body')
     }
+
+    const fechaInput = new Date(Fecha)
+    const hoy = new Date()
+    if (fechaInput > hoy) {
+      throw new Error('400-date')
+    }
+
     if (!file) {
       throw new Error('400-file')
     }
@@ -122,6 +129,9 @@ exports.subirDeposito = async (req, res) => {
       })
       blobStream.end(fileBuffer)
     })
+
+    //activar solo para pruebas
+    //throw new Error('400-insert')
 
     // 4. Ejecución del SP para grabar el depósito
     const resultGraba = await AppDataSource.query(
@@ -194,7 +204,26 @@ exports.subirDeposito = async (req, res) => {
       })
     }
 
-    // ... resto de tus validaciones (400-file, 400-insert, 409 duplicado, 500)
+    if (error.message === '400-date') {
+      return res.status(400).json({
+        status: 'error',
+        message: 'La fecha no puede ser mayor a la fecha actual.',
+        data: null,
+        totalRecords: 0
+      })
+    }
+
+    //activar solo para pruebas
+    //if (error.message === '400-insert') {
+    //  return res.status(400).json({
+    //    status: 'error',
+    //    message:
+    //      'llega hasta antes de insertar deposito, paso todas las pruebas',
+    //    data: null,
+    //    totalRecords: 0
+    //  })
+    //}
+
     return res.status(500).json({
       status: 'error',
       message: error.message.includes('ya existe')
